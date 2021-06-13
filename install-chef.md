@@ -44,7 +44,7 @@ chef-server-ctl reconfigure
 chef-manage-ctl reconfigure
 ```
 
-## Login https://MY_ip/login
+## Login https://MY_IP/login
 
 ## References
 - https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
