@@ -21,3 +21,16 @@ run: opscode-erchef: (pid 26962) 15828s; run: log: (pid 26686) 15935s
 run: postgresql: (pid 26785) 15831s; run: log: (pid 25812) 16020s
 run: redis_lb: (pid 26771) 15832s; run: log: (pid 26770) 15832s
 ```
+
+## Check log
+```bash
+chef-server-ctl tail
+```
+
+## Create user
+```bash
+chef-server-ctl user-create terraform Terra Form terraform@gmail.com 'terraform123' --filename terraform.pem
+```
+
+## References
+- https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
