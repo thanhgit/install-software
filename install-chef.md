@@ -1,6 +1,6 @@
 # Intall Chef  in centos 7
 
-## Bash script
+## Bash script install chef-server
 ```bash
 cd /tmp
 wget https://packages.chef.io/files/current/chef-server/14.5.13/el/7/chef-server-core-14.5.13-1.el7.x86_64.rpm
@@ -59,6 +59,10 @@ chef-server-ctl install opscode-reporting
 chef-server-ctl reconfigure
 opscode-reporting-ctl reconfigure
 ```
+
+## Instal chef-clien
+- ### Download starter-kit in Chef-server GUI
+- Unzip: `unzip chef-starter.zip`
 
 ## References
 - https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
