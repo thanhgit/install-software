@@ -32,5 +32,19 @@ chef-server-ctl tail
 chef-server-ctl user-create terraform Terra Form terraform@gmail.com 'terraform123' --filename terraform.pem
 ```
 
+## Create organization
+```bash
+chef-server-ctl org-create terra 'Terra corp' --association_user terraform --filename terra-validator.pem
+```
+
+## Instal some package
+```bash
+chef-server-ctl install chef-manage
+chef-server-ctl reconfigure
+chef-manage-ctl reconfigure
+```
+
+## Login https://MY_ip/login
+
 ## References
 - https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
