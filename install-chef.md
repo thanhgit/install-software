@@ -63,6 +63,13 @@ opscode-reporting-ctl reconfigure
 ## Instal chef-clien
 - ### Download starter-kit in Chef-server GUI
 - Unzip: `unzip chef-starter.zip`
+- Check config in `chef-repo/.chef/config.rb` file
+
+## Install chefdk
+```bash
+rpm -ivh https://packages.chef.io/files/stable/chefdk/2.2.1/el/7/chefdk-2.2.1-1.el7.x86_64.rpm
+knife ssl fetch 
+```
 
 ## References
 - https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
