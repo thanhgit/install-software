@@ -37,6 +37,11 @@ chef-server-ctl user-create terraform Terra Form terraform@gmail.com 'terraform1
 chef-server-ctl org-create terra 'Terra corp' --association_user terraform --filename terra-validator.pem
 ```
 
+## Create admin user
+```bash
+chef-server-ctl org-user-add terra terraform --admin
+```
+
 ## Instal Chef Manage
 ```bash
 chef-server-ctl install chef-manage
