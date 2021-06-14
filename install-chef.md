@@ -78,3 +78,4 @@ knife ssl fetch
 
 ## References
 - https://linuxthegreat.wordpress.com/2017/09/11/install-and-configure-chef-server-on-centos-7
+- https://medium.com/@karthikeyan_krishnaswamy/how-to-install-a-chef-server-workstation-and-client-on-amazon-redhat-8-ami-dc201979d5fc
