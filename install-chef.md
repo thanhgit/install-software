@@ -65,7 +65,7 @@ chef-server-ctl reconfigure
 opscode-reporting-ctl reconfigure
 ```
 
-## Instal chef-clien
+## Instal chef-client
 - ### Download starter-kit in Chef-server GUI
 - Unzip: `unzip chef-starter.zip`
 - Check config in `chef-repo/.chef/config.rb` file
