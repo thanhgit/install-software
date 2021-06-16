@@ -74,6 +74,7 @@ opscode-reporting-ctl reconfigure
 ```bash
 rpm -ivh https://packages.chef.io/files/stable/chefdk/2.2.1/el/7/chefdk-2.2.1-1.el7.x86_64.rpm
 knife ssl fetch 
+knife bootstrap 192.168.1.2 -N chef-node-1 –ssh-user root –sudo
 ```
 
 ## References
