@@ -4,6 +4,9 @@
 ```bash
 yum install -y https://repo.saltproject.io/yum/redhat/salt-repo-latest.el7.noarch.rpm
 yum install -y salt-master
+sed -i 's/# interface: 0.0.0.0/interface: 0.0.0.0/g' /etc/salt/master
+sed -i 's/#timeout: 5/timeout: 600/g' /etc/salt/master
+systemctl start salt-master
 ```
 
 ### Configuration
@@ -20,6 +23,9 @@ timeout: 600
 ```bash
 yum install -y https://repo.saltproject.io/yum/redhat/salt-repo-latest.el7.noarch.rpm
 yum install -y salt-minion
+sed -i 's/#master: salt/master: 192.168.1.4/g' /etc/salt/minion
+sed -i 's/#id:/id: saltclient2/g' /etc/salt/minion
+systemctl start salt-minion
 ```
 
 ### Configuration
