@@ -14,6 +14,10 @@ systemctl start salt-master
 ```text
 interface: 0.0.0.0
 timeout: 600
+
+file_roots:
+  base:
+    - /srv/salt
 ```
 - ### Start salt-master with `systemctl start salt-master`
 - ### Accept the salt-minion key with `salt-key -a saltclient`
