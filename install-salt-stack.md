@@ -19,6 +19,26 @@ timeout: 600
 - ### Accept the salt-minion key with `salt-key -a saltclient`
 - ### Verify salt-minion with `salt 'saltclient' test.ping`
 
+### Installing packages through single command
+```bash
+salt '*' pkg.install nmap
+---
+saltclient2:
+    ----------
+    nmap:
+        ----------
+        new:
+            2:6.40-19.el7
+        old:
+saltclient:
+    ----------
+    nmap:
+        ----------
+        new:
+            2:6.40-19.el7
+        old:
+```
+
 ## Install salt-minion
 ```bash
 yum install -y https://repo.saltproject.io/yum/redhat/salt-repo-latest.el7.noarch.rpm
