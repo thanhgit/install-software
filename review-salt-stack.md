@@ -8,7 +8,7 @@
 - ### Using states for configuration management
 - ### Using grains, pillars, and template
 
-## Use case
+## Use case to specify targets
 - ### With subnet `salt -S 192.168.0.0/24 test.ping`
 - ### With wildcards `salt '*' test.ping`
 - ### Using perl regular expression `salt -E '^[m|M]in.[e|o|u]n$' test.ping` or `salt --pcre '^[m|M]in.[e|o|u]n$' test.ping`
@@ -25,3 +25,11 @@
   - `salt -C 'G@os:Ubuntu and I@role:web and S@192.168.100.0/24' test.ping`
   - `salt -C 'min* or *ion' test.ping`
   - `salt -C 'web* or *qa,G@os:Arch' test.ping`
+- ### Nodegroup are used internally in Salt. Node groups must be defined as a list of targets (using compound syntax) in the Salt Master's configuration before you use command line
+```text
+nodegroups:
+  webdev: 'I@role:web,G@cluster:dev'
+  webqa: 'I@role:web,G@cluster:qa'
+  webprod: 'I@role:web,G@cluster:prod'
+```
+  - Execute with `salt -N webdev test.ping`
