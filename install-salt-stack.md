@@ -23,6 +23,16 @@ file_roots:
 - ### Accept the salt-minion key with `salt-key -a saltclient`
 - ### Verify salt-minion with `salt 'saltclient' test.ping`
 
+### Operational command
+- ### Delete keys
+```bash
+salt-key -d saltclient
+---
+The following keys are going to be deleted:
+Accepted Keys:
+saltclient
+```
+
 ### Installing packages through single command
 ```bash
 salt '*' pkg.install nmap
