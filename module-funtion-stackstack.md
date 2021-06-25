@@ -58,3 +58,16 @@ nfs:
     * httpd.service - The Apache HTTP Server
 ...
 ```
+- ### Remove httpd
+```bash
+salt nfs pkg.remove httpd
+---
+nfs:
+    ----------
+    httpd:
+        ----------
+        new:
+        old:
+            2.4.6-97.el7.centos
+```
+- ### Replace file with `file.replace` ~ `sed command`, `file.find`, `file.chown`, `file.get_mode`, `file.rename`
