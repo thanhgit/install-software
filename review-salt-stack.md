@@ -21,7 +21,7 @@
 - ### With grain PCRE `salt --grain-pcre 'os:red(hat|flag)' test.ping`
 - ### With pillar `salt -I 'my_var:my_val' test.ping`
 - ### With combound targets allow users to specify multiple targets types in single command
-![image](https://user-images.githubusercontent.com/21302811/123361329-0f663080-d599-11eb-8bc0-ac8ab183f791.png)
+  - ![image](https://user-images.githubusercontent.com/21302811/123361329-0f663080-d599-11eb-8bc0-ac8ab183f791.png)
   - `salt -C 'G@os:Ubuntu and I@role:web and S@192.168.100.0/24' test.ping`
   - `salt -C 'min* or *ion' test.ping`
   - `salt -C 'web* or *qa,G@os:Arch' test.ping`
