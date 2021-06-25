@@ -35,3 +35,26 @@ salt nfs test.version
 nfs:
     3000.9
 ```
+## Use case
+- ### Install httpd
+```bash
+salt nfs pkg.install httpd
+---
+nfs:
+    ----------
+    httpd:
+        ----------
+        new:
+            2.4.6-97.el7.centos
+        old:
+        
+salt nfs cmd.run cmd='systemctl start httpd'
+---
+nfs:
+
+salt nfs cmd.run cmd='systemctl status httpd'
+---
+nfs:
+    * httpd.service - The Apache HTTP Server
+...
+```
