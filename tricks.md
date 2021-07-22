@@ -18,3 +18,12 @@ sudo dpkg -f xxx.deb
 ```bash
 sudo dpkg -r package_name
 ```
+## Debug websocket
+- ### Install wscat
+  ```bash
+  npm install -g wscat
+  ```
+- ### How to use
+  ```bash
+  wscat -c wss://xxx.com
+  ```
