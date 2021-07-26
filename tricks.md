@@ -15,6 +15,11 @@
 sudo dpkg-reconfigure gdm3
 ```
  
+## Scan virus in ubuntu
+```bash
+clamscan --infected --recursive --remove /
+```
+
 ## Uninstall a deb file
 - ### Get package name
   ```bash
