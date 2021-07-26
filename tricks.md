@@ -9,6 +9,11 @@
   ```bash
   sudo modprobe uvcvideo
   ```
+  
+## Switch gdm3 and lightdm
+```bash
+sudo dpkg-reconfigure gdm3
+```
  
 ## Uninstall a deb file
 - ### Get package name
