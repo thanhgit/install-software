@@ -39,3 +39,8 @@ clamscan --infected --recursive --remove /
   ```bash
   wscat -c wss://xxx.com
   ```
+
+# If systemctl status -> degrated
+```bash
+systemctl reset-failed
+```
