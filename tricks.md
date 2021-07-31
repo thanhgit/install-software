@@ -44,7 +44,12 @@ clamscan --infected --recursive --remove /
 minikube start --memory 8192 --cpus 2
 ```
 
-# If systemctl status -> degrated
+## If systemctl status -> degrated
 ```bash
 systemctl reset-failed
+```
+
+## List installed-package in ubuntu
+```bash
+apt list --installed
 ```
