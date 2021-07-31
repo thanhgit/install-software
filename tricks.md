@@ -39,6 +39,10 @@ clamscan --infected --recursive --remove /
   ```bash
   wscat -c wss://xxx.com
   ```
+## Start minikube
+```bash
+minikube start --memory 8192 --cpus 2
+```
 
 # If systemctl status -> degrated
 ```bash
