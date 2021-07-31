@@ -61,3 +61,43 @@ curl --no-buffer --unix-socket /var/run/docker.sock http://localhost/events
 }
 ...
 ```
+- ### Create a tag to an image
+```bash
+curl -i -X POST --unix-socket /var/run/docker.sock "http://localhost/images/17851392168f/tag?repo=custom_tag&tag=latest"
+```
+```text
+HTTP/1.1 201 Created
+Api-Version: 1.41
+Docker-Experimental: false
+Ostype: linux
+Server: Docker/20.10.7 (linux)
+Date: Sat, 31 Jul 2021 22:20:48 GMT
+Content-Length: 0
+```
+
+- ### Stop a running container
+```bash
+curl --unix-socket /var/run/docker.sock -X POST http:/v1.24/container/container_id/stop | jq
+```
+
+- ### Pull a image
+```bash
+curl --unix-socket /var/run/docker.sock -X POST "http:/v1.24/images/create?fromImage=alpine"
+```
+```text
+{"status":"Pulling from library/alpine","id":"2.6"}
+{"status":"Image docker.io/library/alpine:2.6 uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/"}
+{"status":"Pulling fs layer","progressDetail":{},"id":"2a3ebcb7fbcc"}
+...
+{"status":"Pull complete","progressDetail":{},"id":"31603596830f"}
+{"status":"Digest: sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011"}
+{"status":"Pulling from library/alpine","id":"3.9"}
+{"status":"Digest: sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011"}
+{"status":"Pulling from library/alpine","id":"3"}
+{"status":"Digest: sha256:adab3844f497ab9171f070d4cae4114b5aec565ac772e2f2579405b78be67c96"}
+{"status":"Pulling from library/alpine","id":"edge"}
+{"status":"Digest: sha256:12341c2503d96f13a17b0c935ae9090034e317afdfc934f1e0df1a5be813e73e"}
+{"status":"Pulling from library/alpine","id":"latest"}
+{"status":"Digest: sha256:adab3844f497ab9171f070d4cae4114b5aec565ac772e2f2579405b78be67c96"}
+{"status":"Status: Downloaded newer image for alpine"}
+```
