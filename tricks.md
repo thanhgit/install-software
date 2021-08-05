@@ -72,3 +72,12 @@ aws cognito-idp admin-initiate-auth --region ap-northeast-1 --cli-input-json fil
     }
 }
 ```
+## Use base64
+- ### Encode
+```bash
+openssl base64 -in xxx.key -out key.txt
+```
+- ### Decode
+```bash
+openssl base64 -in yyy.crt -out crt.txt
+```
