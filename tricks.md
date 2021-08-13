@@ -81,3 +81,17 @@ openssl base64 -in xxx.key -out key.txt
 ```bash
 openssl base64 -in yyy.crt -out crt.txt
 ```
+
+## How to create P12 from .crt and .key
+```bash
+openssl pkcs12 \
+       -inkey xxx.key \
+       -in xxx.crt \
+       -export -out domain.pfx
+```
+
+## How to call curl from P12 file
+```bash
+curl -v --cert-type P12 -E domain.pfx:password https://xxx.com
+```
+
