@@ -35,3 +35,25 @@ grep -r hello /sys/ &> /dev/null
 ```text
 2
 ```
+
+## How to test
+- ### Test download
+```bash
+wget -o /dev/null https://github.com/elastic/kibana/archive/refs/tags/v6.8.18.tar.gz
+echo $?
+```
+```text
+0
+```
+- ### Check docker command
+```bash
+check_docker() {
+    command -v docker >& /dev/null
+    NODOCKER=$?
+    DOCKER=null
+    if [ "${NODOCKER}" == 0 ]; then
+        DOCKER=$(docker -v)
+    fi
+    echo ${DOCKER}
+}
+```
