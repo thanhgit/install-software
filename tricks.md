@@ -1,5 +1,10 @@
 # Common trick
 
+## Check OS info
+```
+inxi -Fxxxa
+```
+
 ## Camera operation in linux
 - ### Disable camera
   ```bash
