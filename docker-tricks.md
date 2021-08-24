@@ -117,3 +117,28 @@ e76fa4094262   yyyyyyyyyyyyyyy             0.00%     6.715MiB / 15.43GiB   0.04%
 ```bash
 docker run --net=host --rm --name=01basic_load russmckendrick/ab ab -k -n 10000 -c 5 http://0.0.0.0:8080/hello
 ```
+
+## List processes in container ~ `ps aux`
+```bash
+docker top xxx
+```
+```text
+UID                 PID                 PPID                C                   STIME               TTY                 TIME                CMD
+500                 848343              848323              0                   Thg                 823                 ?                   00:02:05 /bin/xxx
+```
+
+## Monitor host with cAdvisor
+- ### Run command
+```bash
+docker run \
+--detach=true \
+--volume=/:/rootfs:ro \
+--volume=/var/run:/var/run:rw \
+--volume=/sys:/sys:ro \
+--volume=/var/lib/docker/:/var/lib/docker:ro \
+--publish=8000:8080 \
+--privileged=true \
+--name=cadvisor \
+google/cadvisor:latest
+```
+- ### Access to http://localhost:8000
