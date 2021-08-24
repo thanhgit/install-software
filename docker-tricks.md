@@ -101,3 +101,19 @@ curl --unix-socket /var/run/docker.sock -X POST "http:/v1.24/images/create?fromI
 {"status":"Digest: sha256:adab3844f497ab9171f070d4cae4114b5aec565ac772e2f2579405b78be67c96"}
 {"status":"Status: Downloaded newer image for alpine"}
 ```
+
+## Docker monitor ( CPU MEMORY NET I/0 )
+```bash
+docker stats -a
+```
+```text
+CONTAINER ID   NAME                        CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O    PIDS
+217d24599df3   xxxxxxxxxxxxxxx             0.00%     96.53MiB / 15.43GiB   0.61%     0B / 0B          230MB / 0B   1
+e76fa4094262   yyyyyyyyyyyyyyy             0.00%     6.715MiB / 15.43GiB   0.04%     1.2MB / 34.2kB   0B / 0B      6
+```
+
+## Load testing
+- Ref: https://httpd.apache.org/docs/2.4/programs/ab.html
+```bash
+docker run --net=host --rm --name=01basic_load russmckendrick/ab ab -k -n 10000 -c 5 http://0.0.0.0:8080/hello
+```
