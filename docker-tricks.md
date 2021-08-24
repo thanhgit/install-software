@@ -5,7 +5,7 @@
 ps aux | grep docker
 ```
 ```text
-oot        1218  0.1  0.5 2494572 95288 ?       Ssl  Thg 823   3:36 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root        1218  0.1  0.5 2494572 95288 ?       Ssl  Thg 823   3:36 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
 root      848309  0.0  0.0 1962072 10536 ?       Sl   Thg 823   0:58 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8080 -container-ip 172.19.0.2 -container-port 8080
 thanhuit 1018997  0.3  0.3 1277460 51884 pts/7   Sl+  02:43   0:12 docker stats mywebhook_app_1
 root     1020527  0.0  0.0 1223088 4172 ?        Sl   02:52   0:01 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8000 -container-ip 172.17.0.2 -container-port 8080
