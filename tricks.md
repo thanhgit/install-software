@@ -173,6 +173,9 @@ VBoxManage createhd --filename /path/to/hard_drive_image/server_name.vdi --size 
 ```bash
 VBoxManage storagectl server_name --name "SATA Controller" --add sata --bootable on
 ```
+```bash
+VBoxManage storageattach server_name --storagectl "SATA Controller" --port 0 --device 0 --type hdd --medium /path/to/hard_drive_image/server_name.vdi
+```
 - ### List OS type
 ```bash
 VBoxManage list ostypes
@@ -193,3 +196,4 @@ VBoxMange controlvm "server_name" resume --type headless
 ```bash
 VBoxManage controlvm "server_name" poweroff --type headless
 ```
+- ### Ref: https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html
