@@ -146,6 +146,37 @@ sudo modprobe vboxnetflt
 ```bash
 VBoxManage list vms
 ```
+- ### List server running
+```bash
+VBoxManage list runningvms
+```
+- ### List server running detail
+```bash
+VBoxManage list -l runningvms
+```
+- ### Show detail of a server
+```bash
+VBoxManage showvminfo server_name
+```
+- ### Modify CPU, RAM
+```bash
+VBoxManage modifyvm server_name --cpus 2 --memory 2048 --vram 12
+```
+- ### Configuring a Virtual Network Adapter
+```bash
+ VBoxManage modifyvm server_name --nic1 bridged --bridgeadapter1 eth0
+```
+- ### Attaching Virtual Media to a VM
+```bash
+VBoxManage createhd --filename /path/to/hard_drive_image/server_name.vdi --size 5120 
+```
+```bash
+VBoxManage storagectl server_name --name "SATA Controller" --add sata --bootable on
+```
+- ### List OS type
+```bash
+VBoxManage list ostypes
+```
 - ### Start server
 ```bash
 VBoxManage startvm "server_name" --type headless
