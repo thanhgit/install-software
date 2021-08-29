@@ -130,3 +130,14 @@ openssl pkcs12 \
 curl -v --cert-type P12 -E domain.pfx:password https://xxx.com
 ```
 
+## Fix errors
+- ### Related to virtualbox
+```text
+WARNING: The character device /dev/vboxdrv does not exist.
+	 Please install the virtualbox-dkms package and the appropriate
+	 headers, most likely linux-headers-generic.
+```
+bash
+```
+sudo modprobe vboxdrv
+```
