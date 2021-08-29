@@ -140,4 +140,25 @@ WARNING: The character device /dev/vboxdrv does not exist.
 bash
 ```
 sudo modprobe vboxdrv
+sudo modprobe vboxnetflt
+```
+- ### List virtualbox
+```bash
+VBoxManage list vms
+```
+- ### Start server
+```bash
+VBoxManage startvm "server_name" --type headless
+```
+- ### Pause server
+```bash
+VBoxManage controlvm "server_name" pause --type headless
+```
+- ### To restart that paused VM
+```bash
+VBoxMange controlvm "server_name" resume --type headless
+```
+- ### To shut down the VM
+```bash
+VBoxManage controlvm "server_name" poweroff --type headless
 ```
