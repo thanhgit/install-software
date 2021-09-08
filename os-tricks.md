@@ -1,5 +1,12 @@
 # OS tricks
 
+## Backup with borgbackup
+```bash
+sudo apt-get install borgbackup
+```
+- ### Ref of push mode: https://viblo.asia/p/nguoi-ta-lam-cach-nao-de-backup-thuong-xuyen-thu-muc-rat-lon-bJzKm4MO59N
+- ### Ref of pull mode: https://borgbackup.readthedocs.io/en/stable/deployment/pull-backup.html
+
 ## In Unix ecosystem
 - ### `stdout` (file descriptor = 1)
 ```bash
