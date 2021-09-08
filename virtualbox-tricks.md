@@ -7,8 +7,7 @@ WARNING: The character device /dev/vboxdrv does not exist.
 	 Please install the virtualbox-dkms package and the appropriate
 	 headers, most likely linux-headers-generic.
 ```
-bash
-```
+```bash
 sudo modprobe vboxdrv
 sudo modprobe vboxnetflt
 ```
