@@ -152,3 +152,8 @@ docker run \
 google/cadvisor:latest
 ```
 - ### Access to http://localhost:8000
+
+## Observe history of docker image
+```bash
+docker history <image>:<tag> -H --no-trunc --format '{{.CreatedBy}}'
+```

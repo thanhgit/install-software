@@ -64,3 +64,42 @@ check_docker() {
     echo ${DOCKER}
 }
 ```
+
+## How to list packages in debian-based
+```bash
+dpkg -l | awk '{print $2}'
+```
+## How to specify package version in debian-base such as ubuntu
+- ### Get version
+```bash
+apt-cache show ufw | grep ^Version
+```
+```text
+Version: 0.36-6
+```
+
+- ### How to install a package with specific verison
+```bash
+apt-get install ufw=0.36-6
+```
+
+- ### How to get dependencies of a package
+```bash
+apt-cache --recurse depends ufw
+```
+
+- ### How to clean apt cache
+```bash
+apt-get autoremove
+apt-get clean
+```
+
+- ### Remove docs in debian-based
+```bash
+rm -rf /usr/share/doc/* /usr/share/man/* /usr/share/info/*
+```
+
+- ### How to delete `*.log` file
+```bash
+find /var | grep '\.log$' | xargs rm -v
+```
