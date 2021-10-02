@@ -103,3 +103,8 @@ rm -rf /usr/share/doc/* /usr/share/man/* /usr/share/info/*
 ```bash
 find /var | grep '\.log$' | xargs rm -v
 ```
+
+## How to clean cache DNS
+```bash
+sudo systemd-resolve --flush-caches
+```
