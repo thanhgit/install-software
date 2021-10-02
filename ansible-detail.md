@@ -75,3 +75,13 @@ OPTIONS (= is mandatory):
 ansible-playbook -i hosts demo-playbook.yml -kK
 ```
 - ### Using command `-K` to entering BECOME password
+
+## Ansible Roles
+- ### `Flexibility`: roles allow you to set up a specific structure to include variables, handlers, modules, and other plugins
+- ### `Ansible Galaxy` which is a central repository or hub for sharing, finding, and reusing your Ansible code
+
+## Create a structure
+```bash
+mkdir roles
+mkdir -p ./roles/web_server/{files,handlers,meta,templates,tasks,vars,defaults}
+```
