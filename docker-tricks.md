@@ -22,6 +22,11 @@ ID=$(docker run -d image-name /bin/bash)
 gzip -dc image.tgz | docker import - flat-image-name
 ```
 
+### Remove all untagged images
+```bash
+docker rmi $(docker images | grep “^” | awk '{split($0,a," "); print a[3]}')
+```
+
 ### Get environment settings
 ```bash
 docker run --rm ubuntu env
