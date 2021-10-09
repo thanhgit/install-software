@@ -1,5 +1,68 @@
 # Docker trick
 
+### Slim down Docker containers.
+```text
+Cleaning APT in a RUN layer: This must be done in the same layer as that of the other APT commands. 
+If not, the previous layers will still contain the original information and your images will still be large.
+```
+```text
+RUN {apt commands} \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+```
+- ### Flatten an image:
+```bash
+ID=$(docker run -d image-name /bin/bash)
+docker export $ID | docker import – flat-image-name
+```
+- ### For backup:
+```bash
+ID=$(docker run -d image-name /bin/bash)
+(docker export $ID | gzip -c > image.tgz)
+gzip -dc image.tgz | docker import - flat-image-name
+```
+
+### Get environment settings
+```bash
+docker run --rm ubuntu env
+```
+
+### Kill `running containers`
+```bash
+docker kill $(docker ps -q)
+```
+
+### Delete all containers (force!! running or stopped containers).
+```bash
+docker rm -f $(docker ps -qa)
+```
+
+### Delete old containers such as `weeks ago`
+```bash
+docker ps -a | grep 'weeks ago' | awk '{print $1}' | xargs docker rm
+```
+
+### Delete stopped containers
+```bash
+docker rm -v $(docker ps -a -q -f status=exited)
+```
+
+### Delete containers after stopping
+```bash
+docker stop $(docker ps -aq) && docker rm -v $(docker ps -aq)
+```
+
+### Delete dangling images
+```bash
+docker rmi $(docker images -q -f dangling=true)
+```
+
+### Delete dangling volumes. As of Docker 1.9.0
+```bash
+docker volume rm $(docker volume ls -q -f dangling=true)
+```
+
+
 ## See container port forwarding 
 ```bash
 ps aux | grep docker
