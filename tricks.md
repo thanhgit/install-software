@@ -1,5 +1,7 @@
 # Common trick
 
+## Linux common command
+- https://tel4vn.edu.vn/blog/top-30-cau-lenh-tren-linux-thuong-duoc-su-dung-trong-devops/
 ## Check OS info
 ```
 inxi -Fxxxa
