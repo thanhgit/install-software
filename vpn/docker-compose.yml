@@ -1,0 +1,19 @@
+version: "2"
+
+services:
+  openvpn:
+    image: kylemanna/openvpn:2.4
+    restart: unless-stopped
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "7777:1194/tcp"
+      - "8080:8080"
+    volumes:
+      - ./data:/etc/openvpn
+      - ./ovpn-admin:/usr/local/bin/ovpnadmin
+      - ./ovpn_run:/usr/local/bin/ovpn_run
+      - ./easyrsa:/usr/local/bin/easyrsa
+      - ./capassfile:/ect/openvpn/capassfile
+    network_mode: "bridge"
+    container_name: new-openvpn
