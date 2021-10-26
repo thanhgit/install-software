@@ -1,0 +1,63 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$script = <<SCRIPT
+sudo yum update -y
+# Packages required
+sudo yum install epel-release unzip curl vim -y
+sudo yum install git htop -y
+
+# Install required packages
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+
+# Configure docker repository
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+# Install Docker-ce
+sudo yum install docker-ce -y
+
+# Start Docker
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Post Installation Steps
+# Create Docker group
+sudo groupadd docker
+
+# Add user to the docker group
+sudo usermod -aG docker $USER
+
+echo "Installation Complete -- Logout and Log back"
+
+# Install docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# Permssion +x execute binary
+sudo chmod +x /usr/local/bin/docker-compose
+
+# Create link symbolic 
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+
+# Check Version docer-compose
+echo "Installation Complete -- Logout and Log back"
+docker-compose --version
+
+SCRIPT
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "bento/centos-7" # Centos 7
+  config.vm.hostname = "proxy-server"
+  config.vm.provision "shell", inline: $script, privileged: false
+
+  config.vm.network "public_network", ip: "192.168.1.70"
+
+  # Increase memory for Virtualbox
+  config.vm.provider "virtualbox" do |vb|
+        vb.name = "proxy-server"
+        vb.memory = 3069
+        vb.cpus = 1
+  end
+
+end
