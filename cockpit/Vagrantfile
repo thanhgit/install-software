@@ -1,0 +1,31 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+$script = <<SCRIPT
+sudo yum update -y
+# Packages required
+sudo yum install epel-release unzip curl vim -y
+sudo yum install git htop -y
+
+# Install required packages
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+
+sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+
+SCRIPT
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "bento/centos-7" # Centos 7
+  config.vm.hostname = "cockpit"
+  config.vm.provision "shell", inline: $script, privileged: false
+
+  config.vm.network "public_network", ip: "192.168.1.71"
+
+  # Increase memory for Virtualbox
+  config.vm.provider "virtualbox" do |vb|
+        vb.name = "cockpit"
+        vb.memory = 2048
+        vb.cpus = 1
+  end
+
+end
