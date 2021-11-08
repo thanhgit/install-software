@@ -126,6 +126,75 @@ vi ~/.curlrc
 capath=/etc/ssl/certs/
 cacert=/etc/ssl/certs/ca-certificates.crt
 ```
+
+### Change expire time
+- ### Change configuration in `/home/step/config/ca.json` at authority.claims.defaultTLSCertDuration
+```json
+{
+	"root": "/home/step/certs/root_ca.crt",
+	"federatedRoots": null,
+	"crt": "/home/step/certs/intermediate_ca.crt",
+	"key": "/home/step/secrets/intermediate_ca_key",
+	"address": ":9000",
+	"insecureAddress": "",
+	"dnsNames": [
+		"ca.teqhackathon.xyz"
+	],
+	"logger": {
+		"format": "text"
+	},
+	"db": {
+		"type": "badgerv2",
+		"dataSource": "/home/step/db",
+		"badgerFileLoadingMode": ""
+	},
+	"authority": {
+		"claims": {
+      			"minTLSCertDuration": "5m",
+      			"maxTLSCertDuration": "1680h",
+      			"defaultTLSCertDuration": "1680h",
+      			"disableRenewal": false,
+      			"minHostSSHCertDuration": "5m",
+      			"maxHostSSHCertDuration": "1680h",
+      			"defaultHostSSHCertDuration": "720h",
+      			"minUserSSHCertDuration": "5m",
+      			"maxUserSSHCertDuration": "24h",
+      			"defaultUserSSHCertDuration": "16h"
+    		},
+		"provisioners": [
+			{
+				"type": "JWK",
+				"name": "admin",
+				"key": {
+					"use": "sig",
+					"kty": "EC",
+					"kid": "31QWbSyDFGPki0ZbSlcCumRLpwRrRBhleg6aWYQsdYg",
+					"crv": "P-256",
+					"alg": "ES256",
+					"x": "kvKyMbXF9mzIMrcRrVpnjSgSqMbtRgbYEhVwMF35OMY",
+					"y": "CmGo9hs2Zoc4AVDC554IY3Z59SIxFL9FMQMMdUSbYqo"
+				},
+				"encryptedKey": "xxx"
+			}
+		]
+	},
+	"tls": {
+		"cipherSuites": [
+			"TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+			"TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256"
+		],
+		"minVersion": 1.2,
+		"maxVersion": 1.3,
+		"renegotiation": false
+	}
+}
+```
+- ### Apply configuration
+```bash
+docker stop ca-container-name
+docker start ca-container-name
+```
+
 ## Ref
 - https://hub.docker.com/r/smallstep/step-ca
 - https://reposhub.com/go/security/smallstep-certificates.html
