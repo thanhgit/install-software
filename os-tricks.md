@@ -1,5 +1,10 @@
 # OS tricks
 
+## Find out who is monopolizing or eating the CPUs
+```bash
+ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
+```
+
 ## Backup with borgbackup
 ```bash
 sudo apt-get install borgbackup
