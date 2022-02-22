@@ -1,5 +1,58 @@
 # OS tricks
 
+## Check whether your CentOS installation already has swap enabled
+```bash
+sudo swapon --show
+```
+```text
+NAME      TYPE      SIZE USED PRIO
+/dev/dm-1 partition 1.5G   0B   -1
+```
+
+## Check swap
+```bash
+free -m
+```
+
+## Enable swap
+- ### Skip non-existent devices
+```bash
+swapon -e
+```
+- ### Activate all of swap space.
+```bash
+swapon -a
+```
+
+## Disable swap
+```bash
+swapoff -a
+```
+
+## Swap parameter in system
+- ### `sysctl.conf`
+```bash
+vm.Swappiness = 10
+vm.vfs_cache_pressure = 50
+```
+
+## Check SSD or HDD
+```bash
+lsblk -d -o name,rota
+```
+- ### HDD - 1
+```text
+NAME  ROTA
+vda      1
+vdb      1
+```
+- ### SSD - 0
+```text
+NAME   ROTA
+sda       0
+sdb       0
+```
+
 ## Find out who is monopolizing or eating the CPUs
 ```bash
 ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10
