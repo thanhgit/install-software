@@ -1,5 +1,12 @@
 # Common trick
 
+## Update software
+```bash
+yum update --downloadonly --downloaddir=/tmp/polkit polkit
+cd /tmp/polkit
+rpm -Uvh polkit-0.112-26.el7_9.1.x86_64.rpm
+```
+
 ## Linux common command
 - https://tel4vn.edu.vn/blog/top-30-cau-lenh-tren-linux-thuong-duoc-su-dung-trong-devops/
 ## Check OS info
