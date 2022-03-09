@@ -21,6 +21,11 @@ wget -O step-ca.tar.gz https://dl.step.sm/gh-release/certificates/docs-ca-instal
 tar -xf step-ca.tar.gz
 sudo cp step-ca_0.17.4/bin/step-ca /usr/bin
 ```
+```bash
+rm -f step-ca.tar.gz
+rm -rf step-ca_0.17.4/
+```
+
 - ### Install cogsign
 ```bash
 wget https://github.com/sigstore/cosign/releases/download/v1.3.0/cosign-linux-amd64
