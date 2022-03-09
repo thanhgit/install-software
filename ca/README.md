@@ -88,7 +88,7 @@ echo <your password here> > /home/step/secrets/password
 ## Setting Up a Development Environment
 - ### Get CA_FINGERPRINT
 ```bash
-export CA_FINGERPRINT=$(docker run  -v step:/home/step smallstep/step-ca step certificate fingerprint /home/step/certs/root_ca.crt)
+export CA_FINGERPRINT=$(docker run --rm -v step:/home/step smallstep/step-ca step certificate fingerprint /home/step/certs/root_ca.crt)
 ```
 OR
 ```bash
