@@ -44,7 +44,7 @@ docker pull smallstep/step-ca
     - ### Generate a root and intermediate signing certificate for your CA
     - ### Create a JSON configuration file for step-ca
 ```bash
-docker run -it -v step:/home/step smallstep/step-ca step ca init
+docker run --rm -it -v step:/home/step smallstep/step-ca step ca init
 ```
 ```text
 there is no ca.json config file; please run step ca init, or provide config parameters via DOCKER_STEPCA_INIT_ vars
@@ -72,17 +72,23 @@ Generating intermediate certificate... done!
 ✔ Default configuration: /home/step/config/defaults.json
 ✔ Certificate Authority configuration: /home/step/config/ca.json
 ```
-- ### Decrypt the CA's private signing key
-```bash
-step-ca $(step path)/config/ca.json
-```
 
 - ### Save password in docker
 ```bash
-docker run -it -v step:/home/step smallstep/step-ca sh
+docker run --rm -it -v step:/home/step smallstep/step-ca sh
 ```
 ```bash
 echo <your password here> > /home/step/secrets/password
+```
+
+- ### Running step certificates
+```bash
+docker run -d --name step -p 9000:9000 -v step:/home/step smallstep/step-ca
+```
+
+- ### Decrypt the CA's private signing key
+```bash
+step-ca $(step path)/config/ca.json
 ```
 
 ## Setting Up a Development Environment
@@ -96,7 +102,7 @@ step certificate fingerprint $(step path)/certs/root_ca.crt
 ```
 - ### To configure step to access your CA from a new machine
 ```bash
-step ca bootstrap --ca-url https://ca.teqhackathon.xyz:9000 --fingerprint "${CA_FINGERPRINT}" --install
+step ca bootstrap --ca-url https://ca.util4dev.xyz:9000 --fingerprint "${CA_FINGERPRINT}" --install
 ```
 - ### Establish system-wide trust of your CA
 ```bash
