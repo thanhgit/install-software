@@ -206,6 +206,86 @@ docker stop ca-container-name
 docker start ca-container-name
 ```
 
+- ### Apply with Nginx
+
+<details>
+<summary>nginx.conf</summary>
+
+```yaml
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+        worker_connections 1024;
+        # multi_accept on;
+}
+
+http {
+        ##
+        # Basic Settings
+        ##
+        sendfile on;
+        proxy_buffer_size   128k;
+        proxy_buffers   4 256k;
+        proxy_busy_buffers_size   256k;
+
+        client_max_body_size 2048M;
+
+        server {
+        server_name docker.util4dev.xyz;
+        return 301 https://$host$request_uri;
+        }	
+
+        server {
+        listen              443 ssl;
+        server_name         docker.util4dev.xyz;
+        ssl_certificate     /etc/nginx/ssl/harbor/srv.crt;
+        ssl_certificate_key /etc/nginx/ssl/harbor/srv.key;
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+        location / {
+            proxy_pass         http://127.0.0.1:18080;
+            proxy_set_header   Host $host;
+            proxy_set_header   X-Real-IP $remote_addr;
+            proxy_set_header   X-Forwarded-Proto $scheme;
+            proxy_set_header   X-Forwarded-Host $server_name;
+        }
+        }
+        
+        # sonarqube
+        server {
+        server_name sonar.util4dev.xyz;
+        return 301 https://$host$request_uri;
+        }
+
+        server {
+        listen              443 ssl;
+        server_name         sonar.util4dev.xyz;
+        ssl_certificate     /etc/nginx/ssl/sonar/srv.crt;
+        ssl_certificate_key /etc/nginx/ssl/sonar/srv.key;
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+        ssl_protocols TLSv1.2 TLSv1.3;
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+        location / {
+            proxy_pass         http://127.0.0.1:19000;
+            proxy_set_header   Host $host;
+            proxy_set_header   X-Real-IP $remote_addr;
+            proxy_set_header   X-Forwarded-Proto $scheme;
+            proxy_set_header   X-Forwarded-Host $server_name;
+        }
+        }
+
+}	
+```
+</details>
+
 ## Ref
 - https://hub.docker.com/r/smallstep/step-ca
 - https://reposhub.com/go/security/smallstep-certificates.html
