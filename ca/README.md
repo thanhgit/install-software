@@ -1,5 +1,36 @@
 # Private Certificate Authority
 
+## How add ssl certificates to server
+### Refs:
+- https://manuals.gfi.com/en/kerio/connect/content/server-configuration/ssl-certificates/adding-trusted-root-certificates-to-the-server-1605.html
+- https://medium.com/@duhruh/trusting-your-docker-apps-setting-up-your-own-certificate-authority-7d1dbfb7dc4
+- https://return2.net/ca-certificate-gitlab-ci-dind/
+
+### Linux (Ubuntu, Debian)
+- ### Adding
+```bash
+cp -f LocalCA.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+```
+- ### Remove
+```bash
+rm -f /usr/local/share/ca-certificates/LocalCA.crt
+sudo update-ca-certificates --fresh
+```
+### Linux (CentOs 6)
+```bash
+yum install ca-certificates
+update-ca-trust force-enable
+```
+```bash
+cp -f LocalCA.crt /etc/pki/ca-trust/source/anchors/
+sudo update-ca-trust extract
+```
+### Linux (CentOs 5)
+```bash
+cat LocalCA.crt >>/etc/pki/tls/certs/ca-bundle.crt
+```
+
 ## How to install commandline
 - ### Install wget
 ```bash
