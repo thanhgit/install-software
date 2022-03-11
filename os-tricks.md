@@ -4,6 +4,41 @@
 ```bash
 badblocks -sv /dev/sda
 ```
+- ### Ref: https://askubuntu.com/questions/291570/mark-bad-sectors-on-hard-drive-without-formatting/490549#490549
+```bash
+sudo apt-get install smartmontools
+```
+- ### Read all attributes from the first disk
+```bash
+sudo smartctl --all /dev/sda
+```
+- ### You can even trigger self tests of the disk when supported by your model
+```bash
+sudo smartctl -t long /dev/sda
+```
+- ### Ref: https://www.debugpoint.com/2020/07/scan-repair-bad-sector-disk-linux/
+- ### To identify the disk partition which you want to scan for bad sectors
+```bash
+lsblk -o name,mountpoint,label,size,uuid
+```
+- ### Scan to find bad sectors
+```bash
+badblocks -v /dev/sda1 > ~/bad_sectors.txt
+```
+- ### Repair Bad Sectors
+```bash
+sudo e2fsck -cfpv /dev/sda1
+```
+OR
+- ### You can also specify the bad_sectors.txt file created in the earlier steps as well to force e2fsck to repair those in the file only via the below command
+```bash
+sudo e2fsck -l bad_sectors.txt /dev/sda1
+```
+OR
+- ### For other file systems (such as FAT32)
+```bash
+sudo fsck -l bad_sectors.txt /dev/sda1
+```
 
 ## Check whether your CentOS installation already has swap enabled
 ```bash
