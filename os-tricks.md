@@ -1,5 +1,10 @@
 # OS tricks
 
+## How to test disk
+```bash
+badblocks -sv /dev/sda
+```
+
 ## Check whether your CentOS installation already has swap enabled
 ```bash
 sudo swapon --show
