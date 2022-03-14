@@ -1,5 +1,10 @@
 # Docker trick
 
+### Using `skopeo` to interact with registry such as: copy, delete image
+```bash
+skopeo delete docker://localhost:5000/imagename:latest
+```
+
 ### Slim down Docker containers.
 ```text
 Cleaning APT in a RUN layer: This must be done in the same layer as that of the other APT commands. 
