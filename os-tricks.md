@@ -93,6 +93,17 @@ pkill -U tester
 ```bash
 usermod -s /sbin/nologin nginx_usr1
 ```
+
+## How to remove ubuntu-desktop
+```bash
+apt-get remove ubuntu-desktop -y
+apt-get autoremove -y
+```
+```bash
+apt-get remove nautilus nautilus-* gnome-power-manager gnome-screensaver gnome-termina* gnome-pane* gnome-applet* gnome-bluetooth gnome-desktop* gnome-sessio* gnome-user* gnome-shell-common zeitgeist-core libzeitgeist* gnome-control-center gnome-screenshot -y
+apt-get autoremove -y
+```
+
 ## How to test disk
 ```bash
 badblocks -sv /dev/sda
