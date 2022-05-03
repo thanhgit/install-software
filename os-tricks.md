@@ -1,5 +1,34 @@
 # OS tricks
 
+### Check temperature
+- ### CPU
+```bash
+sensors
+```
+---
+```text
+Adapter: ISA adapter
+Package id 0:  +66.0°C  (high = +74.0°C, crit = +94.0°C)
+Core 0:        +64.0°C  (high = +74.0°C, crit = +94.0°C)
+Core 1:        +63.0°C  (high = +74.0°C, crit = +94.0°C)
+Core 2:        +61.0°C  (high = +74.0°C, crit = +94.0°C)
+Core 3:        +66.0°C  (high = +74.0°C, crit = +94.0°C)
+
+nouveau-pci-0100
+Adapter: PCI adapter
+temp1:        +42.0°C  (high = +95.0°C, hyst =  +3.0°C)
+                       (crit = +105.0°C, hyst =  +5.0°C)
+                       (emerg = +135.0°C, hyst =  +5.0°C)
+```
+- ### Disk
+```bash
+hddtemp /dev/sda
+```
+---
+```text
+/dev/sda: Kingmax SSD 240GB: 33°C
+```
+
 ### Troubleshooting with `journalctl`
 ```bash
 journalctl -n 50 -p err 
