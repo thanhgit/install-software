@@ -97,14 +97,7 @@ curl --unix-socket /var/run/docker.sock http://locahost/images/json | jq
     "Containers": -1,
     "Created": 1627452842,
     "Id": "sha256:17851392168f28d0325f5fede52b66bae9f2740724e5c3c6ebceb9b33199axxx",
-    "Labels": null,
-    "ParentId": "sha256:771c5fab999937f042b0c367bfd705f2c04029f128c8a6aaba3be6fc61260xxx",
-    "RepoDigests": null,
-    "RepoTags": [
-      "container_name:latest"
-    ],
-    "SharedSize": -1,
-    "Size": 30578184,
+...
     "VirtualSize": 30578184
   },
   ...
@@ -122,23 +115,7 @@ curl --no-buffer --unix-socket /var/run/docker.sock http://localhost/events
 {
    "status":"destroy",
    "id":"9e8224f668d90c06529c5b9ad2e2ab0428b51e69adb8533312840186d78832db",
-   "from":"migrate/migrate:v4.14.1",
-   "Type":"container",
-   "Action":"destroy",
-   "Actor":{
-      "ID":"9e8224f668d90c06529c5b9ad2e2ab0428b51e69adb8533312840186d78832db",
-      "Attributes":{
-         "com.docker.compose.config-hash":"91da9e012c4e095434b813c3bfdc054fc4c9ac3a56d7ff0643f95c600af74b4b",
-         "com.docker.compose.container-number":"1",
-         "com.docker.compose.oneoff":"False",
-         "com.docker.compose.project":"docker",
-         "com.docker.compose.service":"migrate",
-         "com.docker.compose.version":"1.21.2",
-         "image":"migrate/migrate:v4.14.1",
-         "name":"docker_migrate_1"
-      }
-   },
-   "scope":"local",
+...
    "time":1627769313,
    "timeNano":1627769313567352230
 }
@@ -172,14 +149,6 @@ curl --unix-socket /var/run/docker.sock -X POST "http:/v1.24/images/create?fromI
 {"status":"Image docker.io/library/alpine:2.6 uses outdated schema1 manifest format. Please upgrade to a schema2 image for better future compatibility. More information at https://docs.docker.com/registry/spec/deprecated-schema-v1/"}
 {"status":"Pulling fs layer","progressDetail":{},"id":"2a3ebcb7fbcc"}
 ...
-{"status":"Pull complete","progressDetail":{},"id":"31603596830f"}
-{"status":"Digest: sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011"}
-{"status":"Pulling from library/alpine","id":"3.9"}
-{"status":"Digest: sha256:414e0518bb9228d35e4cd5165567fb91d26c6a214e9c95899e1e056fcd349011"}
-{"status":"Pulling from library/alpine","id":"3"}
-{"status":"Digest: sha256:adab3844f497ab9171f070d4cae4114b5aec565ac772e2f2579405b78be67c96"}
-{"status":"Pulling from library/alpine","id":"edge"}
-{"status":"Digest: sha256:12341c2503d96f13a17b0c935ae9090034e317afdfc934f1e0df1a5be813e73e"}
 {"status":"Pulling from library/alpine","id":"latest"}
 {"status":"Digest: sha256:adab3844f497ab9171f070d4cae4114b5aec565ac772e2f2579405b78be67c96"}
 {"status":"Status: Downloaded newer image for alpine"}

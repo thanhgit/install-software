@@ -53,10 +53,6 @@ clamscan --infected --recursive --remove /
   ```bash
   wscat -c wss://xxx.com
   ```
-## Start minikube
-```bash
-minikube start --memory 8192 --cpus 2
-```
 
 ## If systemctl status -> degrated
 ```bash
@@ -68,24 +64,6 @@ systemctl reset-failed
 apt list --installed
 ```
 
-## Interact cognito CLI
-```bash
-aws cognito-idp sign-up --region xxx --client-id yyy --username zzz --password ppp
-
-aws cognito-idp admin-confirm-sign-up --region xxx --user-pool-id uuu --username zzz
-
-aws cognito-idp admin-initiate-auth --region ap-northeast-1 --cli-input-json file://auth.json
-
-{
-    "UserPoolId": "uuu",
-    "ClientId": "yyy",
-    "AuthFlow": "ALLOW_USER_SRP_AUTH",
-    "AuthParameters": {
-        "USERNAME": "zzz",
-        "PASSWORD": "ppp"
-    }
-}
-```
 ## Use base64
 - ### Encode
 ```bash
