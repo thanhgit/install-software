@@ -131,6 +131,9 @@ step-ca $(step path)/config/ca.json
 ```bash
 export CA_FINGERPRINT=$(docker run --rm -v step:/home/step smallstep/step-ca step certificate fingerprint /home/step/certs/root_ca.crt)
 ```
+```bash
+export | grep CA
+```
 OR
 ```bash
 step certificate fingerprint $(step path)/certs/root_ca.crt
