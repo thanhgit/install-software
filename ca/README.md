@@ -114,7 +114,11 @@ echo <your password here> > /home/step/secrets/password
 
 - ### Running step certificates
 ```bash
-docker run -d --name step -p 9000:9000 -v step:/home/step smallstep/step-ca
+docker run -d --restart always --name step -p 9000:9000 -v step:/home/step smallstep/step-ca
+```
+OR
+```bash
+docker update --restart always step
 ```
 
 - ### Decrypt the CA's private signing key
