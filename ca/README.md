@@ -151,7 +151,32 @@ step certificate install $(step path)/certs/root_ca.crt
 ```bash
 step ca certificate util4dev.local srv.crt srv.key
 ```
+- ### Ngix ssl
+```text
+server {
+            listen 80;
+            server_name xxx.util4dev.xyz;
+            return 301 https://$host$request_uri;
+        }
 
+        server {
+            server_name xxx.util4dev.xyz;
+
+            location / {
+                proxy_pass         http://192.168.1.yy:zz;
+                proxy_redirect     off;
+                proxy_set_header   Host $host;
+                proxy_set_header   X-Real-IP $remote_addr;
+                proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header   X-Forwarded-Host $server_name;
+            }
+
+
+            listen 443 ssl;
+            ssl_certificate /etc/nginx/ssl/xxx/srv.crt;
+            ssl_certificate_key /etc/nginx/ssl/xxx/srv.key;
+       }
+```
 - ### How to get root certificate
 ```bash
 step ca root root.crt
