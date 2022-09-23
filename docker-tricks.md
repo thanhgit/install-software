@@ -1,9 +1,24 @@
 # Docker trick
 
+### View CPU and RAM in pod
+```bash
+kubectl exec -it pod_name -- /bin/bash
+```
+- ### For CPU usage
+```bash
+cat /sys/fs/cgroup/cpu/cpuacct.usage
+```
+- ### For RAM usage
+```bash
+cat /sys/fs/cgroup/memory/memory.usage_in_bytes
+```
+---
+
 ### Using `skopeo` to interact with registry such as: copy, delete image
 ```bash
 skopeo delete docker://localhost:5000/imagename:latest
 ```
+---
 
 ### Slim down Docker containers.
 ```text
@@ -26,6 +41,7 @@ ID=$(docker run -d image-name /bin/bash)
 (docker export $ID | gzip -c > image.tgz)
 gzip -dc image.tgz | docker import - flat-image-name
 ```
+---
 
 ### Remove all untagged images
 ```bash
@@ -83,6 +99,7 @@ root      848309  0.0  0.0 1962072 10536 ?       Sl   Thg 823   0:58 /usr/bin/do
 thanhuit 1018997  0.3  0.3 1277460 51884 pts/7   Sl+  02:43   0:12 docker stats mywebhook_app_1
 root     1020527  0.0  0.0 1223088 4172 ?        Sl   02:52   0:01 /usr/bin/docker-proxy -proto tcp -host-ip 0.0.0.0 -host-port 8000 -container-ip 172.17.0.2 -container-port 8080
 ```
+
 ## How to use unix-socket with docker daemon
 - ### List of available image
 ```bash
