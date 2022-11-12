@@ -34,6 +34,12 @@ sudo dpkg-reconfigure gdm3
 clamscan --infected --recursive --remove /
 ```
 
+### Update current time on server
+```bash
+CURRENT=$(wget -qSO- --max-redirect=0 google.com 2>&1 | grep Date: | cut -d' ' -f5-8)Z
+sudo date -s "$CURRENT"
+```
+
 ## Uninstall a deb file
 - ### Get package name
   ```bash
