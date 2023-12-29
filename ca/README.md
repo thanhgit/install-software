@@ -83,7 +83,7 @@ there is no ca.json config file; please run step ca init, or provide config para
 What would you like to name your new PKI?
 ✔ (e.g. Smallstep): LocalCA
 What DNS names or IP addresses would you like to add to your new CA?
-✔ (e.g. ca.smallstep.com[,1.1.1.1,etc.]): ca.teqhackathon.xyz
+✔ (e.g. ca.smallstep.com[,1.1.1.1,etc.]): ca.util4dev.shop
 What IP and port will your new CA bind to?
 ✔ (e.g. :443 or 127.0.0.1:443): :9000
 What would you like to name the CA's first provisioner?
@@ -140,7 +140,7 @@ step certificate fingerprint $(step path)/certs/root_ca.crt
 ```
 - ### To configure step to access your CA from a new machine
 ```bash
-step ca bootstrap --ca-url https://ca.util4dev.xyz:9000 --fingerprint "${CA_FINGERPRINT}" --install
+step ca bootstrap --ca-url https://ca.util4dev.shop:9000 --fingerprint "${CA_FINGERPRINT}" --install
 ```
 - ### Establish system-wide trust of your CA
 ```bash
