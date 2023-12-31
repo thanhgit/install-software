@@ -106,7 +106,7 @@ Generating intermediate certificate... done!
 
 - ### Save password in docker
 ```bash
-docker run --rm -it -v step:/home/step smallstep/step-ca sh
+docker run --rm -it -v $PWD/step:/home/step smallstep/step-ca sh
 ```
 ```bash
 echo <your password here> > /home/step/secrets/password
