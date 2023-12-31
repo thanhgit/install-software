@@ -265,8 +265,8 @@ cacert=/etc/ssl/certs/ca-certificates.crt
 ```
 - ### Apply configuration
 ```bash
-docker stop ca-container-name
-docker start ca-container-name
+docker stop step
+docker start step
 ```
 
 - ### Apply with Nginx
