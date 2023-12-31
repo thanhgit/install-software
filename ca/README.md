@@ -114,7 +114,7 @@ echo <your password here> > /home/step/secrets/password
 
 - ### Running step certificates
 ```bash
-docker run -d --restart always --name step -p 9000:9000 -v step:/home/step smallstep/step-ca
+docker run -d --restart always --name step -p 9000:9000 -v $PWD/step:/home/step smallstep/step-ca
 ```
 OR
 ```bash
