@@ -149,7 +149,10 @@ step certificate install $(step path)/certs/root_ca.crt
 
 - ### How to create certificate for domain
 ```bash
-step ca certificate util4dev.local srv.crt srv.key
+step ca certificate .util4dev.local local.srv.crt local.srv.key
+```
+```bash
+step ca certificate .util4dev.shop shop.srv.crt shop.srv.key
 ```
 - ### Ngix ssl
 ```text
