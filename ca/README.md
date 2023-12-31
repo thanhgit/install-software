@@ -75,7 +75,7 @@ docker pull smallstep/step-ca
     - ### Generate a root and intermediate signing certificate for your CA
     - ### Create a JSON configuration file for step-ca
 ```bash
-docker run --rm -it -v step:/home/step smallstep/step-ca step ca init
+docker run --rm -it -v $PWD/step:/home/step smallstep/step-ca step ca init
 ```
 ```text
 there is no ca.json config file; please run step ca init, or provide config parameters via DOCKER_STEPCA_INIT_ vars
