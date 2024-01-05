@@ -352,6 +352,11 @@ http {
 ```
 </details>
 
+### Set capability open port 443, 80 for node
+```bash
+sudo setcap 'cap_net_bind_service=+ep' `which node`
+```
+
 ## Ref
 - https://hub.docker.com/r/smallstep/step-ca
 - https://reposhub.com/go/security/smallstep-certificates.html
