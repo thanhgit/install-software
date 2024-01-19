@@ -18,3 +18,14 @@ go mod edit -require github.com/wilk/uuid@0.0.1
 ```bash
 go get -v -t ./...
 ```
+```bash
+go mod tidy
+```
+
+### Install and run govulncheck
+```bash
+go install golang.org/x/vuln/cmd/govulncheck@latest
+```
+```bash
+govulncheck ./...
+```
