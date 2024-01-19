@@ -357,6 +357,11 @@ http {
 sudo setcap 'cap_net_bind_service=+ep' `which node`
 ```
 
+### Update CA for sonarsource/sonar-scanner-cli [link](https://hub.docker.com/r/sonarsource/sonar-scanner-cli)
+```bash
+keytool -import -noprompt -alias LocalCA -file root_ca.crt -storepass changeit -cacerts
+```
+
 ## Ref
 - https://hub.docker.com/r/smallstep/step-ca
 - https://reposhub.com/go/security/smallstep-certificates.html
