@@ -29,3 +29,11 @@ go install golang.org/x/vuln/cmd/govulncheck@latest
 ```bash
 govulncheck ./...
 ```
+
+### Install and run deadcode
+````bash
+go install golang.org/x/tools/cmd/deadcode@latest
+```
+```bash
+deadcode -test ./...
+```
