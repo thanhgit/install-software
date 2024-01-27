@@ -362,6 +362,39 @@ sudo setcap 'cap_net_bind_service=+ep' `which node`
 keytool -import -noprompt -alias LocalCA -file root_ca.crt -storepass changeit -cacerts
 ```
 
+### Update root ca for containerd
+- ### Copy root CA
+```bash
+cd /etc/containerd/
+cp -f ~/.step/certs/root_ca.crt .
+chmod 777 root_ca.crt
+```
+- ### Config `config.toml`
+```yaml
+[plugins]
+  [plugins."io.containerd.grpc.v1.cri"]
+    sandbox_image = "k8s.gcr.io/pause:3.3"
+    max_container_log_line_size = -1
+    [plugins."io.containerd.grpc.v1.cri".containerd]
+      default_runtime_name = "runc"
+      snapshotter = "overlayfs"
+      [plugins."io.containerd.grpc.v1.cri".containerd.runtimes]
+        [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc]
+          runtime_type = "io.containerd.runc.v2"
+          runtime_engine = ""
+          runtime_root = ""
+          [plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+            systemdCgroup = true
+    [plugins."io.containerd.grpc.v1.cri".registry]
+      [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
+          endpoint = ["https://registry-1.docker.io"]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.util4dev.shop"]
+          endpoint = ["https://docker.util4dev.shop"]
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."docker.util4dev.shop".tls]
+      ca_file   = "/etc/containerd/root_ca.crt" 
+```
+
 ## Ref
 - https://hub.docker.com/r/smallstep/step-ca
 - https://reposhub.com/go/security/smallstep-certificates.html
