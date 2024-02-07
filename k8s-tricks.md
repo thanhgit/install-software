@@ -4,6 +4,9 @@
 ```bash
 kubectl run -it debug --image=nicolaka/netshoot
 ```
+```bash
+kubectl run --rm -it debug --image=nicolaka/netshoot
+```
 
 ## Create config file
 ```bash
