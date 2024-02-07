@@ -1,5 +1,10 @@
 # Kubernetes tricks
 
+### Debug k8s
+```bash
+kubectl run -it debug --image=nicolaka/netshoot
+```
+
 ## Create config file
 ```bash
 server=https://192.168.1.64:6443
