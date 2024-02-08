@@ -8,6 +8,37 @@ kubectl run -it debug --image=nicolaka/netshoot
 kubectl run --rm -it debug --image=nicolaka/netshoot
 ```
 
+### Set up Corefile
+```bash
+kubectl edit cm coredns
+```
+```yaml
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health {
+            lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+          pods insecure
+          fallthrough in-addr.arpa ip6.arpa
+          ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+          prefer_udp
+        }
+        cache 5
+
+        loop
+        reload
+        loadbalance
+    }
+kind: ConfigMap
+```
+
 ## Create config file
 ```bash
 server=https://192.168.1.64:6443
