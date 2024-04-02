@@ -154,6 +154,11 @@ step ca certificate .util4dev.local local.srv.crt local.srv.key
 ```bash
 step ca certificate .util4dev.shop shop.srv.crt shop.srv.key
 ```
+
+- ### Verify certificate.crt and root-ca.crt
+```bash
+step certificate verify ./certificate.crt --roots ~/.step/certs/root_ca.crt
+```
 - ### Ngix ssl
 ```text
 server {
