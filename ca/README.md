@@ -159,6 +159,12 @@ step ca certificate .util4dev.shop shop.srv.crt shop.srv.key
 ```bash
 step certificate verify ./certificate.crt --roots ~/.step/certs/root_ca.crt
 ```
+
+- ### Check
+```bash
+./check.sh shop.srv.key shop.srv.crt root_ca.crt
+```
+
 - ### Ngix ssl
 ```text
 server {
