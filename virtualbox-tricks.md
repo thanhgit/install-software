@@ -66,3 +66,17 @@ VBoxMange controlvm "server_name" resume --type headless
 VBoxManage controlvm "server_name" poweroff --type headless
 ```
 - ### Ref: https://www.oracle.com/technical-resources/articles/it-infrastructure/admin-manage-vbox-cli.html
+
+### Register gitlab-runner in docker-machine
+```bash
+sudo gitlab-runner register \
+    	-u http://192.168.33.10/ci \
+    	-r psu73HL3bCXbGj4dXcay \
+    	-n \
+    	--executor docker+machine \
+    	--docker-image "microsoft/dotnet:2-sdk" \
+    	--machine-machine-driver "virtualbox" \
+    	--machine-machine-name "%s" \
+    	--tag-list "dotnet-core"\
+    	--name "docker-machine-runner"
+```
