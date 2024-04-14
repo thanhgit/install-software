@@ -92,3 +92,35 @@ openssl pkcs12 \
 ```bash
 curl -v --cert-type P12 -E domain.pfx:password https://xxx.com
 ```
+
+### Set up the ACME script ready to request a free SSL certificate and private key from Let’s Encrypt
+- ### Install
+```bash
+apt install -y socat
+curl https://get.acme.sh | sh
+alias acme.sh=~/.acme.sh/acme.sh
+acme.sh --upgrade --auto-upgrade
+```
+- ### Setup default CA
+```bash
+acme.sh --set-default-ca --server letsencrypt
+```
+- ### Issue `Elliptic Curve Cryptography certificate for hostname`
+```bash
+acme.sh --issue -d demo.example.com --standalone --keylength ec-256
+```
+- ### Generate certificate
+```bash
+acme.sh --install-cert -d demo.example.com --ecc --fullchain-file /tmp/fullchain.cer --key-file /demo/private.key
+```
+- ### Force certificate renewal
+```bash
+acme.sh --renew -d demo.example.com --force --ecc
+```
+- ### Using
+```yaml
+tls:
+  cert: /tmp/fullchain.cer
+  key: /tmp/private.key
+```
+
