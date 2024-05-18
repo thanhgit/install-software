@@ -1,5 +1,25 @@
 # Virtualbox
 
+### Increase disk size on a Vagrant VM
+- ### Install plugin
+```bash
+vagrant plugin install vagrant-disksize
+```
+- ### Configure Vagrantfile
+```bash
+Vagrant.configure('2') do |config|
+  ...
+  config.vm.box = 'ubuntu/xenial64'
+  config.disksize.size = '50GB'
+  ...
+end
+```
+- ### Apply configuration
+```bash
+vagrant halt && vagrant up
+```
+- ### `Note:` this will not work with vagrant reload
+
 ## Fix errors
 - ### Related to virtualbox
 ```text
