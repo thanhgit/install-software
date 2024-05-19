@@ -16,7 +16,7 @@ sda                         8:0    0   64G  0 disk
 ```
 - ### Increase 50% free disk
 ```bash
-lvextend -r -l +50%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+sudo lvextend -r -l +50%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
 ```
 - ### Resize the physical volume
 ```bash
