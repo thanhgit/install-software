@@ -1,5 +1,28 @@
 # Virtualbox
 
+### Increase disk size LVM (sda3)
+- ### Check disk
+```bash
+lsblk
+```
+```text
+NAME                      MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+...
+sda                         8:0    0   64G  0 disk 
+├─sda1                      8:1    0    1M  0 part 
+├─sda2                      8:2    0    2G  0 part /boot
+└─sda3                      8:3    0   62G  0 part 
+  └─ubuntu--vg-ubuntu--lv 253:0    0 46.5G  0 lvm  /
+```
+- ### Increase 50% free disk
+```bash
+lvextend -r -l +50%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+```
+- ### Resize the physical volume
+```bash
+sudo pvresize /dev/sda3
+```
+
 ### Increase disk size on a Vagrant VM
 - ### Install plugin
 ```bash
