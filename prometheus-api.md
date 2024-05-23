@@ -74,8 +74,14 @@ http://localhost:9090/api/v1/query?query=monitor_status{monitor_name=~"git.util4
 ```
 
 ### Query range with rule
+- ### Get datetime
 ```bash
-http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name=%22demo%20test%22}&start=1716420484.395&end=1716424084.394&step=14
+date -u --iso-8601=ns | sed s/+00:00/Z/ | sed s/,/./
+```
+- ### `step` attritute ~ `query resolution step width` in duration format or float number of seconds
+- ### Query
+```bash
+http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name="git.util4dev.xyz"}&start=2024-05-23T11:00:44.049124558Z&end=2024-05-23T11:02:44.049124558Z&step=60
 ```
 ```json
 {
@@ -89,17 +95,24 @@ http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name=%22de
                     "instance": "uptime-kuma:3001",
                     "job": "uptime",
                     "monitor_hostname": "null",
-                    "monitor_name": "demo test",
-                    "monitor_port": "53",
+                    "monitor_name": "git.util4dev.xyz",
+                    "monitor_port": "null",
                     "monitor_type": "http",
-                    "monitor_url": "https://google.com"
+                    "monitor_url": "https://git.util4dev.xyz/"
                 },
                 "values": [
                     [
-                        1716420484.395,
-                        "1"
+                        1716462044.049,
+                        "0"
                     ],
-                    //...
+                    [
+                        1716462104.049,
+                        "0"
+                    ],
+                    [
+                        1716462164.049,
+                        "0"
+                    ]
                 ]
             }
         ]
