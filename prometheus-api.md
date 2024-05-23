@@ -107,6 +107,44 @@ http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name=%22de
 }
 ```
 
+### Get targets
+```bash
+http://localhost:9090/api/v1/targets
+```
+```json
+{
+    "status": "success",
+    "data": {
+        "activeTargets": [
+            {
+                "discoveredLabels": {
+                    "__address__": "uptime-kuma:3001",
+                    "__metrics_path__": "/metrics",
+                    "__scheme__": "http",
+                    "__scrape_interval__": "30s",
+                    "__scrape_timeout__": "10s",
+                    "job": "uptime"
+                },
+                "labels": {
+                    "instance": "uptime-kuma:3001",
+                    "job": "uptime"
+                },
+                "scrapePool": "uptime",
+                "scrapeUrl": "http://uptime-kuma:3001/metrics",
+                "globalUrl": "http://uptime-kuma:3001/metrics",
+                "lastError": "",
+                "lastScrape": "2024-05-23T10:41:32.506241132Z",
+                "lastScrapeDuration": 0.130893469,
+                "health": "up",
+                "scrapeInterval": "30s",
+                "scrapeTimeout": "10s"
+            }
+        ],
+        "droppedTargets": []
+    }
+}
+```
+
 ### Querying label names
 ```bash
 http://localhost:9090/api/v1/labels
