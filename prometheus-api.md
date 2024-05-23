@@ -145,6 +145,29 @@ http://localhost:9090/api/v1/targets
 }
 ```
 
+### Get target metadata
+```bash
+http://localhost:9090/api/v1/targets/metadata
+```
+```json
+{
+    "status": "success",
+    "data": [
+        {
+            "target": {
+                "instance": "uptime-kuma:3001",
+                "job": "uptime"
+            },
+            "metric": "monitor_cert_days_remaining",
+            "type": "gauge",
+            "help": "The number of days remaining until the certificate expires",
+            "unit": ""
+        },
+        //...
+    ]
+}
+```
+
 ### Querying label names
 ```bash
 http://localhost:9090/api/v1/labels
