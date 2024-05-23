@@ -106,3 +106,47 @@ http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name=%22de
     }
 }
 ```
+
+### Querying label names
+```bash
+http://localhost:9090/api/v1/labels
+```
+```json
+{
+    "status": "success",
+    "data": [
+        "__name__",
+        "instance",
+        "job",
+        "kind",
+        "le",
+        "major",
+        "minor",
+        "monitor_hostname",
+        "monitor_name",
+        "monitor_port",
+        "monitor_type",
+        "monitor_url",
+        "patch",
+        "space",
+        "type",
+        "version"
+    ]
+}
+```
+
+### Querying label values
+```bash
+http://localhost:9090/api/v1/label/monitor_name/values
+```
+```json
+{
+    "status": "success",
+    "data": [
+        "common services",
+        "demo test",
+        "git.util4dev.xyz",
+        "test"
+    ]
+}
+```
