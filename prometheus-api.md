@@ -99,7 +99,7 @@ http://localhost:9090/api/v1/query_range?query=monitor_status{monitor_name=%22de
                         1716420484.395,
                         "1"
                     ],
-                    #...
+                    //...
                 ]
             }
         ]
