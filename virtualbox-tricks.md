@@ -12,7 +12,7 @@ vi /lib/systemd/system/ssh.service
 - ### Adding 2 line to [Service] section
 ```bash
 CPUSchedulingPolicy=fifo
-CPUSchedulingPriority=-1
+CPUSchedulingPriority=18
 ```
 - ### Restart
 ```bash
