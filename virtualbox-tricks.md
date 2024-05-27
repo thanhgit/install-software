@@ -2,7 +2,7 @@
 
 ### Check priority of processes in linux
 ```bash
-ps -e -o uid,pid,ppid,pri,ni,cmd
+ps -e -o uid,pid,ppid,pri,ni,cmd | grep ssh
 ```
 
 ### Enhance vagrant ~ priority sshd process
