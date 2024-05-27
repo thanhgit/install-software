@@ -1,5 +1,20 @@
 # Virtualbox
 
+### Enhance vagrant ~ priority sshd process
+```bash
+vi /lib/systemd/system/ssh.service
+```
+- ### Adding 2 line to [Service] section
+```bash
+CPUSchedulingPolicy=fifo
+CPUSchedulingPriority=20
+```
+- ### Restart
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart sshd
+```
+
 ### Increase disk size LVM (sda3)
 - ### Check disk
 ```bash
