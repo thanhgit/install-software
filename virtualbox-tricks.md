@@ -1,5 +1,10 @@
 # Virtualbox
 
+### Check priority of processes in linux
+```bash
+ps -e -o uid,pid,ppid,pri,ni,cmd
+```
+
 ### Enhance vagrant ~ priority sshd process
 ```bash
 vi /lib/systemd/system/ssh.service
