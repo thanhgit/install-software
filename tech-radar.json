@@ -167,7 +167,7 @@
       "title": "Backstage",
       "quadrant": "infrastructure"
     },
-        {
+    {
       "timeline": [
         {
           "moved": 0,
@@ -180,6 +180,13 @@
       "id": "roadie",
       "title": "Managed Backstage",
       "quadrant": "infrastructure"
-    }
+    },
+    {
+      "url": "https://engineering.zalando.com/tags/golang.html",
+      "key": "golang",
+      "id": "golang",
+      "title": "Golang",
+      "quadrant": "languages"
+    },
   ]
 }
