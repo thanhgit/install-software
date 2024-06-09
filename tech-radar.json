@@ -182,6 +182,13 @@
       "quadrant": "infrastructure"
     },
     {
+      "timeline": [
+        {
+          "moved": 0,
+          "ringId": "use",
+          "date": "2024-02-09T00:00:00.000Z"
+        }
+      ],
       "url": "https://engineering.zalando.com/tags/golang.html",
       "key": "golang",
       "id": "golang",
