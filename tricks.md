@@ -4,8 +4,7 @@
 <img src="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" />
 </a>
 
-<h1>11ty-2301</h1>
-<p>Here's a link to <a href="https://google.com" target="_blank">Google</a></p>
+[Download](https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg)
 
 
 ## Update software
