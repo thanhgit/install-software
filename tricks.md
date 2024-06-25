@@ -1,5 +1,7 @@
 # Common trick
 
+[![FLipkart](https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg)](https://www.flipkart.com 'target="_blank"')
+
 ## Update software
 ```bash
 yum update --downloadonly --downloaddir=/tmp/polkit polkit
