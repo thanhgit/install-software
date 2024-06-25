@@ -1,10 +1,6 @@
-# Common trick
+# Common tricks
 
-<a href="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" target="_blank" rel="noopener noreferrer">
-<img src="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" />
-</a>
-
-[Download](https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg "download")
+[logo]: https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg download "Logo Title Text 2"
 
 
 ## Update software
