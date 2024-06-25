@@ -4,6 +4,9 @@
 <img src="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" />
 </a>
 
+Here's a link to [Google](https://google.com){target="_blank"}
+
+
 ## Update software
 ```bash
 yum update --downloadonly --downloaddir=/tmp/polkit polkit
