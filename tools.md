@@ -9,7 +9,7 @@ const search = title[0].outerText.substring(0,8).replaceAll(' ', '-')
 console.log(search)
 
 const imgs_arr = []
-Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.includes("https://") && i.includes(search)).forEach(item => imgs_arr.push(item))
+Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.includes("https://") && i.includes(search)).forEach(item => console.log(item))
 
-console.log("string", imgs_arr.join(','))
+console.log(imgs_arr.join(','))
 ```
