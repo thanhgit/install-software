@@ -9,7 +9,8 @@ const search = title[0].outerText.substring(0,8).replaceAll(' ', '-')
 console.log(search)
 
 const imgs_arr = []
-Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.includes("https://") && i.includes(search)).forEach(item => imgs_arr.push(item))
+Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.includes("https://") && i.includes(search)).forEach(item => console.log(item))
 
 console.log(imgs_arr.toString())
 ```
+![image](https://github.com/thanhgit/install-software/assets/21302811/9f8ee869-c72d-403a-890d-9d889af1f303)
