@@ -14,3 +14,9 @@ Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.i
 console.log(imgs_arr.toString())
 ```
 ![image](https://github.com/thanhgit/install-software/assets/21302811/9f8ee869-c72d-403a-890d-9d889af1f303)
+
+### https://us.shein.com/
+```javascript
+
+```
+![image](https://github.com/thanhgit/install-software/assets/21302811/f73324bf-7bef-4fac-8907-c18035ad569c)
