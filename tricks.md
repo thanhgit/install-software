@@ -1,8 +1,6 @@
 # Common trick
 
-[Demo](https://www.flipkart.com){target="_blank"}
-
-<a href="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" target="_blank">
+<a href="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" target="_blank" rel="noopener noreferrer">
 <img src="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" />
 </a>
 
