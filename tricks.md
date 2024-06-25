@@ -4,7 +4,7 @@
 <img src="https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg" />
 </a>
 
-[Download](https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg)
+[Download](https://m.media-amazon.com/images/I/71MGiPTwXAL._AC_UY218_.jpg "download")
 
 
 ## Update software
