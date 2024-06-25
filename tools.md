@@ -20,3 +20,6 @@ console.log(imgs_arr.toString())
 
 ```
 ![image](https://github.com/thanhgit/install-software/assets/21302811/f73324bf-7bef-4fac-8907-c18035ad569c)
+
+### Copy image link
+![image](https://github.com/thanhgit/install-software/assets/21302811/45c2126a-4d30-4b0f-99a6-d96ddb4ecc37)
