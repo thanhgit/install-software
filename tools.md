@@ -11,5 +11,5 @@ console.log(search)
 const imgs_arr = []
 Array.from(document.getElementsByTagName("img")).map(i => i.src).filter(i => i.includes("https://") && i.includes(search)).forEach(item => imgs_arr.push(item))
 
-console.log(imgs_arr.join(','))
+console.log("string", imgs_arr.join(','))
 ```
