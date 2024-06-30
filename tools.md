@@ -1,5 +1,28 @@
 # Common tools
 
+| abc | defghi |
+:-: | -----------:
+bar | baz
+
+> # Service
+> name: nginx
+> 
+> replicas: 3
+
+
+- [x] foo
+  - [ ] bar
+  - [x] baz
+- [ ] bim
+
+<http://example.com?find=\*>
+
+[foo](/bar\* "ti\*tle")
+
+[foo]
+
+[foo]: /bar\* "ti\*tle"
+
 ### [A tool for writing better scripts](https://github.com/google/zx)
 
 ### https://vi.aliexpress.com
