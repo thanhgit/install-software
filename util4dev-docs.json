@@ -1,14 +1,18 @@
-[
-  {
-    "path": "/",
-    "query": "",
-    "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
-    "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
-  },
-  {
-    "path": "search",
-    "query": "",
-    "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
-    "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
-  }
-]
+{
+  "docWeb": "https://docs.util4dev.shop/docs/intro",
+  "videoChannel": "https://www.youtube.com/@DevopsPlatformEngineering",
+  "docs" : [
+    {
+      "path": "/",
+      "query": "",
+      "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
+      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
+    },
+    {
+      "path": "search",
+      "query": "",
+      "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
+      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
+    }
+  ]
+}
