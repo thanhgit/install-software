@@ -30,7 +30,10 @@
         "sidebar-root.admin-view.read",
         "sidebar-root.workflow.read",
         "scaffolder.read",
-        "rag-ai.ask.read"
+        "rag-ai.ask.read",
+        "role-as.dev.read",
+        "role-as.sec.read",
+        "role-as.ops.read"
       ]
     }
   ]
