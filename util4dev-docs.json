@@ -6,7 +6,13 @@
       "path": "/",
       "query": "",
       "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
-      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
+      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e",
+      "permissions": [
+        "rag-ai.ask.read",
+        "role-as.dev.read",
+        "role-as.sec.read",
+        "role-as.ops.read"
+      ]
     },
     {
       "path": "search",
