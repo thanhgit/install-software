@@ -18,7 +18,15 @@
       "path": "search",
       "query": "",
       "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
-      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e"
+      "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e",
+      "permissions": [
+        "sidebar-root.release-manager.read",
+        "sidebar-root.explore.read",
+        "sidebar-root.admin-view.read",
+        "sidebar-root.workflow.read",
+        "scaffolder.read",
+        "rag-ai.ask.read"
+      ]
     }
   ]
 }
