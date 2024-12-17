@@ -83,7 +83,7 @@ there is no ca.json config file; please run step ca init, or provide config para
 What would you like to name your new PKI?
 ✔ (e.g. Smallstep): LocalCA
 What DNS names or IP addresses would you like to add to your new CA?
-✔ (e.g. ca.smallstep.com[,1.1.1.1,etc.]): ca.util4dev.shop
+✔ (e.g. ca.smallstep.com[,1.1.1.1,etc.]): ca.util4dev.tech
 What IP and port will your new CA bind to?
 ✔ (e.g. :443 or 127.0.0.1:443): :9000
 What would you like to name the CA's first provisioner?
@@ -140,7 +140,7 @@ step certificate fingerprint $(step path)/certs/root_ca.crt
 ```
 - ### To configure step to access your CA from a new machine
 ```bash
-step ca bootstrap --ca-url https://ca.util4dev.shop:9000 --fingerprint "${CA_FINGERPRINT}" --install
+step ca bootstrap --ca-url https://ca.util4dev.tech:9000 --fingerprint "${CA_FINGERPRINT}" --install
 ```
 - ### Establish system-wide trust of your CA
 ```bash
@@ -152,7 +152,7 @@ step certificate install $(step path)/certs/root_ca.crt
 step ca certificate .util4dev.local local.srv.crt local.srv.key
 ```
 ```bash
-step ca certificate .util4dev.shop shop.srv.crt shop.srv.key
+step ca certificate .util4dev.tech shop.srv.crt shop.srv.key
 ```
 
 - ### Verify certificate.crt and root-ca.crt
@@ -400,9 +400,9 @@ chmod 777 root_ca.crt
       [plugins."io.containerd.grpc.v1.cri".registry.mirrors]
         [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.io"]
           endpoint = ["https://registry-1.docker.io"]
-        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.util4dev.shop"]
-          endpoint = ["https://docker.util4dev.shop"]
-    [plugins."io.containerd.grpc.v1.cri".registry.configs."docker.util4dev.shop".tls]
+        [plugins."io.containerd.grpc.v1.cri".registry.mirrors."docker.util4dev.tech"]
+          endpoint = ["https://docker.util4dev.tech"]
+    [plugins."io.containerd.grpc.v1.cri".registry.configs."docker.util4dev.tech".tls]
       ca_file   = "/etc/containerd/root_ca.crt" 
 ```
 
