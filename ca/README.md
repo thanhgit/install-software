@@ -129,7 +129,7 @@ step-ca $(step path)/config/ca.json
 ## Setting Up a Development Environment
 - ### Get CA_FINGERPRINT
 ```bash
-export CA_FINGERPRINT=$(docker run --rm -v step:/home/step smallstep/step-ca step certificate fingerprint /home/step/certs/root_ca.crt)
+export CA_FINGERPRINT=$(docker exec step step certificate fingerprint /home/step/certs/root_ca.crt)
 ```
 ```bash
 export | grep CA
