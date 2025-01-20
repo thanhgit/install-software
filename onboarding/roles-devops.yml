@@ -1,0 +1,15 @@
+onboarding:
+  roles:
+    - role: "Devops"
+      checklists:
+        - title: "Developer Tools Setup"
+          tasks:
+            - task: "Install IDE"
+              link: "https://www.jetbrains.com/idea/"
+            - task: "Configure Version Control"
+              link: "https://git-scm.com/"
+      access:
+        - item: "GitHub: Access to Repositories"
+          link: "https://github.com/"
+        - item: "Gitlab: Access to Repositories"
+          link: "https://gitlab.com/"
