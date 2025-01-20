@@ -1,0 +1,68 @@
+onboarding:
+  projects:
+    - name: "Project Util4dev IDP"
+      checklists:
+        - title: "Setup Development Environment"
+          tasks:
+            - task: "Install VS Code"
+              link: "https://code.visualstudio.com/"
+            - task: "Setup Git"
+              link: "https://git-scm.com/"
+            - task: "Clone Project Repository"
+      access:
+        - item: "Gitlab: Add to Members to Util4dev IDP repo"
+          link: "https://gitlab.example.com"
+        - item: "Jira: Add to Project Util4dev IDP"
+          link: "https://jira.example.com"
+        - item: "Confluence: Add to Project Util4dev IDP Space"
+          link: "https://confluence.example.com"
+        - item: "Slack: Invite to Project Util4dev IDP Channel"
+          link: "https://slack.example.com"
+    - name: "Project Alpha"
+      checklists:
+        - title: "Setup Development Environment"
+          tasks:
+            - task: "Install VS Code"
+              link: "https://code.visualstudio.com/"
+            - task: "Setup Git"
+              link: "https://git-scm.com/"
+            - task: "Clone Project Repository"
+      access:
+        - item: "Jira: Add to Project Alpha"
+          link: "https://jira.example.com"
+        - item: "Confluence: Add to Project Alpha Space"
+          link: "https://confluence.example.com"
+        - item: "Slack: Invite to Project Alpha Channel"
+          link: "https://slack.example.com"
+    - name: "Project Beta"
+      checklists:
+        - title: "Setup Data Analysis Environment"
+          tasks:
+            - task: "Install Python"
+              link: "https://www.python.org/"
+            - task: "Setup Jupyter Notebook"
+              link: "https://jupyter.org/"
+            - task: "Clone Data Repository"
+      access:
+        - item: "Jira: Add to Project Beta"
+          link: "https://jira.example.com"
+        - item: "Confluence: Add to Project Beta Space"
+          link: "https://confluence.example.com"
+        - item: "Slack: Invite to Project Beta Channel"
+          link: "https://slack.example.com"
+    - name: "Project Gama"
+      checklists:
+        - title: "Setup Data Analysis Environment"
+          tasks:
+            - task: "Install Python"
+              link: "https://www.python.org/"
+            - task: "Setup Jupyter Notebook"
+              link: "https://jupyter.org/"
+            - task: "Clone Data Repository"
+      access:
+        - item: "Jira: Add to Project Beta"
+          link: "https://jira.example.com"
+        - item: "Confluence: Add to Project Beta Space"
+          link: "https://confluence.example.com"
+        - item: "Slack: Invite to Project Beta Channel"
+          link: "https://slack.example.com"
