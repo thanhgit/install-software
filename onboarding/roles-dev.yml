@@ -1,0 +1,33 @@
+onboarding:
+  roles:
+    - role: "Developer"
+      checklists:
+        - title: "Developer Tools Setup"
+          tasks:
+            - task: "Install IDE"
+              link: "https://www.jetbrains.com/idea/"
+            - task: "Configure Version Control"
+              link: "https://git-scm.com/"
+      access:
+        - item: "GitHub: Access to Repositories"
+          link: "https://github.com/"
+    - role: "Data Scientist"
+      checklists:
+        - title: "Data Tools Setup"
+          tasks:
+            - task: "Install Data Analysis Tools"
+              link: "https://www.anaconda.com/"
+            - task: "Setup Data Access"
+      access:
+        - item: "Database: Access to Data Warehouse"
+          link: "https://example.com/data-warehouse"
+    - role: "Tester"
+      checklists:
+        - title: "Data Tools Setup"
+          tasks:
+            - task: "Install Test Tools"
+              link: "https://www.anaconda.com/"
+            - task: "Setup tool Access"
+      access:
+        - item: "Database: Access to Data base for testing"
+          link: "https://example.com/"
