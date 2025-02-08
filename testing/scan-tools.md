@@ -1,5 +1,16 @@
 # Scan tools
 
+#### `Polaris scoring`
+- #### Install
+```bash
+helm repo add fairwinds-stable https://charts.fairwinds.com/stable
+helm upgrade --install polaris fairwinds-stable/polaris --namespace polaris --create-namespace
+```
+- #### Port-fowarding
+```bash
+kubectl port-forward --namespace polaris svc/polaris-dashboard 8080:80
+```
+
 #### `rbac-lookup`
 - #### Install
 ```bash
