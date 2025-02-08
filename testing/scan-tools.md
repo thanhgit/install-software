@@ -11,9 +11,15 @@ sudo mv rbac-lookup /usr/local/bin/
 ```bash
 rbac-lookup
 ```
-- #### View all users
+- #### View all user, group, serviceaccount
 ```bash
-rbac-lookup --kind User
+rbac-lookup --kind user
+```
+```bash
+rbac-lookup --kind group
+```
+```bash
+rbac-lookup --kind serviceaccount
 ```
 - #### View a specific role
 ```bash
