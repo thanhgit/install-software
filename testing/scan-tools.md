@@ -13,13 +13,13 @@ rbac-lookup
 ```
 - #### View all user, group, serviceaccount
 ```bash
-rbac-lookup --kind user
+rbac-lookup --kind user --output wide
 ```
 ```bash
-rbac-lookup --kind group
+rbac-lookup --kind group --output wide
 ```
 ```bash
-rbac-lookup --kind serviceaccount
+rbac-lookup --kind serviceaccount --output wide
 ```
 - #### View a specific role
 ```bash
