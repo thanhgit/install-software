@@ -21,3 +21,21 @@ policy-reporter                policy-reporter                policy-reporter   
 trivy-operator-polr-adapter    trivy-operator-polr-adapter    trivy-adapter        3              0.10.0       0.10.0                      false    false    
 trivy-operator                 trivy-operator                 trivy-system         3              0.25.0       0.26.0                      true     false    
 ```
+- #### Find containers
+```bash
+nova find --containers --format table
+```
+```text
+Container Name                                  Current Version    Old     Latest      Latest Minor     Latest Patch
+==============                                  ===============    ===     ======      =============    =============
+registry.k8s.io/coredns/coredns                 v1.11.1            true    v1.12.0     v1.12.0          v1.11.4     
+registry.k8s.io/etcd                            3.5.15-0           true    3.5.17-0    3.5.15-0         3.5.15-0    
+mirror.gcr.io/aquasec/trivy-operator            0.23.0             true    0.24.0      0.23.0           0.23.1      
+xpkg.upbound.io/upbound/provider-kubernetes     v0.16.0            true    v0.16.2     v0.16.0          v0.16.2     
+registry.k8s.io/kube-scheduler                  v1.31.0            true    v1.32.1     v1.32.1          v1.31.5     
+registry.k8s.io/kube-controller-manager         v1.31.0            true    v1.32.1     v1.32.1          v1.31.5     
+registry.k8s.io/kube-proxy                      v1.31.0            true    v1.32.1     v1.32.1          v1.31.5     
+registry.k8s.io/kube-apiserver                  v1.31.0            true    v1.32.1     v1.32.1          v1.31.5     
+ghcr.io/kyverno/policy-reporter/trivy-plugin    0.3.1              true    0.4.1       0.3.1            0.3.1       
+ghcr.io/aquasecurity/trivy                      0.58.2             true    0.59.1      0.58.2           0.58.2      
+```
