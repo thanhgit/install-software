@@ -10,6 +10,8 @@ helm upgrade --install polaris fairwinds-stable/polaris --namespace polaris --cr
 ```bash
 kubectl port-forward --namespace polaris svc/polaris-dashboard 8080:80
 ```
+![image](https://github.com/user-attachments/assets/1b86d5b0-ed33-45c0-9782-0ca63043971a)
+
 
 #### `rbac-lookup`
 - #### Install
