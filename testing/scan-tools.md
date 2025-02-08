@@ -1,5 +1,25 @@
 # Scan tools
 
+#### `rbac-lookup`
+- #### Install
+```bash
+wget https://github.com/FairwindsOps/rbac-lookup/releases/download/v0.10.2/rbac-lookup_0.10.2_Linux_x86_64.tar.gz
+tar -xvf rbac-lookup_0.10.2_Linux_x86_64.tar.gz
+sudo mv rbac-lookup /usr/local/bin/
+```
+- #### View all roles
+```bash
+rbac-lookup
+```
+- #### View all users
+```bash
+rbac-lookup --kind User
+```
+- #### View a specific role
+```bash
+rbac-lookup crossplane
+```
+
 #### `Nova`
 - #### Install
 ```bash
