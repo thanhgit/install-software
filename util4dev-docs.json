@@ -1,11 +1,11 @@
 {
-  "docWeb": "https://docs.util4dev.shop/docs/intro",
+  "docWeb": "https://docs.util4dev.tech/docs/intro",
   "videoChannel": "https://www.youtube.com/@DevopsPlatformEngineering",
   "docs" : [
     {
       "path": "/",
       "query": "",
-      "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
+      "docPage": "https://docs.util4dev.tech/docs/tutorial-basics/idp-home",
       "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e",
       "permissions": [
         "sidebar-root.release-manager.read",
@@ -22,7 +22,7 @@
     {
       "path": "search",
       "query": "",
-      "docPage": "https://docs.util4dev.shop/docs/tutorial-basics/idp-home",
+      "docPage": "https://docs.util4dev.tech/docs/tutorial-basics/idp-home",
       "video": "https://www.youtube.com/embed/n-NhU5ws04I?si=ymuRWpU1UcyfIr5e",
       "permissions": [
         "sidebar-root.release-manager.read",
