@@ -1,0 +1,12 @@
+[
+  {
+    "role": "security",
+    "tools": [
+      {
+        "url": "https://github.com/infobyte/faraday",
+        "label": "Faraday",
+        "icon": ""
+      }
+    ]
+  }
+]
