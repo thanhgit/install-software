@@ -1,0 +1,146 @@
+[
+  {
+    "title": "Community",
+    "isExpanded": false,
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/icons8/web.png",
+        "label": "Website",
+        "url": "https://docs.util4dev.tech/"
+      },
+      {
+        "iconUrl": "/homepage/icons/icons8/external-blog-copywriting-itim2101-lineal-itim2101.png",
+        "label": "Blog",
+        "url": "https://docs.util4dev.tech/blog"
+      },
+      {
+        "iconUrl": "/homepage/icons/icons8/youtube-play.png",
+        "label": "YouTube Channel",
+        "url": "https://www.youtube.com/channel/UCmYt1d5cxECuOFpdaqd--Jw"
+      },
+      {
+        "iconUrl": "/homepage/icons/cncf.svg",
+        "label": "Platform engineering",
+        "url": "https://platformengineering.org/"
+      }
+    ]
+  },
+  {
+    "title": "Developer Tools",
+    "isExpanded": true,
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/podman_logo.svg",
+        "label": "Podman Desktop",
+        "url": "https://podman-desktop.io"
+      },
+      {
+        "iconUrl": "/homepage/icons/docker.svg",
+        "label": "Docker",
+        "url": "https://www.docker.com"
+      },
+      {
+        "iconUrl": "/homepage/icons/quay.svg",
+        "label": "Quay.io",
+        "url": "https://quay.io/"
+      },
+      {
+        "iconUrl": "/homepage/icons/vscode.svg",
+        "label": "Visual Studio Code",
+        "url": "https://code.visualstudio.com/"
+      }
+    ]
+  },
+  {
+    "title": "CI/CD Tools",
+    "isExpanded": true,
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/argo-icon-color.svg",
+        "label": "ArgoCD",
+        "url": "https://argoproj.github.io/cd/"
+      },
+      {
+        "iconUrl": "/homepage/icons/gitlab.svg",
+        "label": "Gitlab Runner",
+        "url": "https://docs.gitlab.com/runner/"
+      },
+      {
+        "iconUrl": "/homepage/icons/icons8/github.png",
+        "label": "Github Actions",
+        "url": "https://github.com/features/actions"
+      }
+    ]
+  },
+  {
+    "title": "Infra",
+    "isExpanded": true,
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/kubernetes.svg",
+        "label": "Kubernetes",
+        "url": "https://kubernetes.io/"
+      },
+      {
+        "iconUrl": "/homepage/icons/icons8/openshift.png",
+        "label": "OpenShift",
+        "url": "https://docs.openshift.com/"
+      },
+      {
+        "iconUrl": "/homepage/icons/kafka.svg",
+        "label": "Kafka",
+        "url": "https://kafka.apache.org/"
+      },
+      {
+        "iconUrl": "/homepage/icons/rabbitmq.svg",
+        "label": "RabbitQM",
+        "url": "https://www.rabbitmq.com/"
+      },
+      {
+        "iconUrl": "/homepage/icons/linux.svg",
+        "label": "Linux",
+        "url": "https://www.linux.org/"
+      }
+    ]
+  },
+  {
+    "title": "Monitoring Tools",
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/grafana.svg",
+        "label": "Grafana",
+        "url": "https://grafana.com/"
+      },
+      {
+        "iconUrl": "/homepage/icons/prometheus.svg",
+        "label": "Prometheus",
+        "url": "https://grafana.com/"
+      }
+    ]
+  },
+  {
+    "title": "Security Tools",
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/icons8/security-checked.png",
+        "label": "GitHub Security",
+        "url": "https://docs.github.com/en/code-security"
+      },
+      {
+        "iconUrl": "/homepage/icons/keycloak.svg",
+        "label": "Keycloak",
+        "url": "https://www.keycloak.org/"
+      },
+      {
+        "iconUrl": "/homepage/icons/vault.svg",
+        "label": "Vault",
+        "url": "https://www.vaultproject.io/"
+      },
+      {
+        "iconUrl": "/homepage/icons/sonarqube.svg",
+        "label": "SonarQube",
+        "url": "https://www.sonarsource.com/open-source-editions/"
+      }
+    ]
+  }
+]
