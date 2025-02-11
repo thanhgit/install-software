@@ -73,6 +73,22 @@
     ]
   },
   {
+    "title": "Automation Tools",
+    "isExpanded": false,
+    "links": [
+      {
+        "iconUrl": "/homepage/icons/n8n.svg",
+        "label": "n8n",
+        "url": "https://n8n.io"
+      },
+      {
+        "iconUrl": "/homepage/icons/semaphoreci.svg",
+        "label": "Semaphore CI",
+        "url": "https://semaphoreui.com"
+      }
+    ]
+  },
+  {
     "title": "Infra",
     "isExpanded": true,
     "links": [
