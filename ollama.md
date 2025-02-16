@@ -1,5 +1,9 @@
 # How to use Ollama
 
+#### Models support tools
+- #### Tutorial: https://ollama.com/blog/tool-support
+- #### [Link](https://ollama.com/search?c=tools)
+
 #### Enable GPU
 - #### Get GPU UUID
 ```bash
