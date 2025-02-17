@@ -75,3 +75,9 @@ Answer: [your answer here (In the same language as the user's question)]
 
 Below is the current conversation consisting of interleaving human and assistant messages.
 ```
+
+### `Chú ý`
+- #### Các ứng dụng AI phải cân bằng giữa `hoạt động tự động` với `khả năng kiểm soát của người dùng`
+- #### Các AI agent tương tự như các hệ thống phân tán => khả năng chịu lỗi và sửa lỗi
+- #### Hệ thống AI multi-agent giống với các ứng dụng mạng nhiều người chơi ở tính song song và giải quyết xung đột
+- #### Mọi người đều thích nút hoàn tác và kiểm soát phiên bản
