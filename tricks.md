@@ -1,5 +1,9 @@
 # Common tricks
 
+## How to increase CPU/RAM available to VSCode
+- #### File -> Preferences -> Settings
+- #### Type: `files.maxMemoryForLargeFilesMB`
+
 ## Update software
 ```bash
 yum update --downloadonly --downloaddir=/tmp/polkit polkit
