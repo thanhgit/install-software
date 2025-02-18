@@ -2,6 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/0ad50b64-abb5-41a3-8018-c8bda4889c0c)
 
+![image](https://github.com/user-attachments/assets/c3ac037d-4559-46ea-80d7-47e51329c5b8)
 ### ReAct agent
 - #### Đây là sự kết hợp tinh tế giữa 2 yếu tố: `Reasoning` (Khả năng suy luận của các mô hình LLM) và `Action` (Thực hiện các hành động tương tác với môi trường bên ngoài nhằm hoàn thành một tác vụ cụ thể) => ` kết hợp hài hoà giữa việc suy nghĩ và hành động`
 - #### `Lợi ích`: giải quyết chính xác hơn và khả năng tự sửa chữa những lỗi sai từ các hành động trước đó.
