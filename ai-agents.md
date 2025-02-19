@@ -13,3 +13,6 @@ async function reflect(state) {
 }
 ```
 #### `Multi-agent` ~ can accomplish more than a single agent
+- #### `Subgraphs` are graphs that are used as part of another graph
+  - #### `Calling a Subgraph Directly` (attach a subgraph directly as a node)
+  - #### `Calling a Subgraph with a Function` (define a subgraph with a completely different schema)
