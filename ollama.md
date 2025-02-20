@@ -4,6 +4,16 @@
 - #### Tutorial: https://ollama.com/blog/tool-support
 - #### [Link](https://ollama.com/search?c=tools)
 
+#### Configuration
+- #### Change OLLAMA_ORIGINS => allow requests from all
+```bash
+Environment=OLLAMA_ORIGINS=*
+```
+- #### Change OLLAMA_HOST
+```bash
+Environment=OLLAMA_HOST=127.0.0.1:11434
+```
+
 #### Enable GPU
 - #### Get GPU UUID
 ```bash
