@@ -13,3 +13,5 @@
 
 #### Autogen group chat
 ![image](https://github.com/user-attachments/assets/380a844c-10bb-4fc6-a0d3-6e77001e528c)
+- #### Agents and messages are held with the group chat
+- #### `Chat manager` coordinates the message responses to reduce conversation overlap
