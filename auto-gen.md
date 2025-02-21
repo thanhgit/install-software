@@ -5,3 +5,5 @@
 
 #### User proxy agent
 ![image](https://github.com/user-attachments/assets/4a8ded40-f305-43a6-91c2-63a250bc5dd6)
+- #### It works to replace the required human feedback and evaluation
+- #### Using this agent to interact with others
