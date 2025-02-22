@@ -20,3 +20,4 @@ async function reflect(state) {
 
 ![image](https://github.com/user-attachments/assets/1c584501-c403-4161-9087-319b2516f064)
 ### `Memory`
+- #### `knowledge store` ~ allowing users to create memory stores that can be configured for various uses and apps
