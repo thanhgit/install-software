@@ -4,7 +4,7 @@
 #### CAG
 - #### CAG transforms the way data interacts with LLMs by prioritizing preloading and caching mechanisms
 - #### minimizes reliance on external infrastructure, using in-memory caching and extended context utilization.
-- #### For example
+- #### Example for CAG
 ```python
 import openai
 
@@ -30,6 +30,47 @@ def query_with_cag(context, query):
 
 # Sample Query
 print(query_with_cag(knowledge_base, "When was the Eiffel Tower completed?"))
+```
+- #### Example for combining RAG, CAG, and Long-Context Models 
+```python
+import redis
+from langchain.chains import RetrievalQA
+from langchain.vectorstores import FAISS
+from langchain.embeddings import OpenAIEmbeddings
+from langchain.llms import OpenAI
+
+# Initialize Redis Cache
+cache = redis.StrictRedis(host="localhost", port=6379, db=0)
+
+# Load LLM
+llm = OpenAI(model_name="gpt-4-turbo")
+
+# Load FAISS Retriever for RAG
+retriever = FAISS.load_local("faiss_index", OpenAIEmbeddings()).as_retriever()
+rag_chain = RetrievalQA(llm=llm, retriever=retriever)
+
+def hybrid_query(query):
+    query_hash = hashlib.sha256(query.encode()).hexdigest()
+    
+    # Step 1: Check Cache (CAG)
+    if cache.exists(query_hash):
+        return cache.get(query_hash).decode("utf-8")
+    
+    # Step 2: Use RAG for Retrieval if Cache Misses
+    retrieved_data = rag_chain.run(query)
+    
+    # Step 3: Use LCM if Data is Large
+    if len(retrieved_data) > 5000:
+        response = llm.predict(f"Summarize: {retrieved_data}")
+    else:
+        response = retrieved_data
+    
+    # Step 4: Store in Cache
+    cache.set(query_hash, response, ex=3600)
+    return response
+
+query = "What are the key AI advancements in 2024?"
+print(hybrid_query(query))
 ```
 
 ![image](https://github.com/user-attachments/assets/0ad50b64-abb5-41a3-8018-c8bda4889c0c)
