@@ -1,4 +1,10 @@
 # LLM tricks
+- #### RAG thrives on dynamic datasets that evolve, while CAG excels at static datasets where latency and simplicity are priorities.
+
+#### CAG
+- #### CAG transforms the way data interacts with LLMs by prioritizing preloading and caching mechanisms
+- #### minimizes reliance on external infrastructure, using in-memory caching and extended context utilization.
+
 
 ![image](https://github.com/user-attachments/assets/0ad50b64-abb5-41a3-8018-c8bda4889c0c)
 
