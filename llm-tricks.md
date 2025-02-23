@@ -1,5 +1,6 @@
 # LLM tricks
 - #### RAG thrives on dynamic datasets that evolve, while CAG excels at static datasets where latency and simplicity are priorities.
+- #### Prompts are the heart of an agent’s function
 
 #### CAG
 - #### CAG transforms the way data interacts with LLMs by prioritizing preloading and caching mechanisms
