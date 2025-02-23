@@ -29,6 +29,7 @@ async function reflect(state) {
   - #### Reasoning (Lý Luận): AI cần khả năng suy luận logic để xử lý thông tin.
   - #### Programming (Lập Trình): AI có thể đọc, viết và sửa mã lập trình.
   - #### Performance (Hiệu Suất): Tổng hợp kiến thức nhanh chóng giúp cải thiện tốc độ và độ chính xác.
+
 #### Models (Mô Hình)
 - #### Các mô hình AI là trái tim của AI Agent, bao gồm các mô hình học sâu (Deep Learning), xử lý ngôn ngữ tự nhiên (NLP), thị giác máy tính (Computer Vision), và suy luận ký hiệu (Symbolic Reasoning).
 - #### Liên quan đến:
@@ -41,3 +42,25 @@ async function reflect(state) {
   - #### Cost (Chi Phí): Quản lý chi phí tính toán khi AI mở rộng.
   - #### Efficiency (Hiệu Quả): Đảm bảo AI hoạt động tối ưu với ít tài nguyên hơn.
   - #### Telemetry (Giám Sát Dữ Liệu): Thu thập dữ liệu để theo dõi hiệu suất và điều chỉnh mô hình.
+
+![image](https://github.com/user-attachments/assets/779e8a3a-5b70-41ce-901f-266e84623c8c)
+#### Các yếu tố hỗ trợ khác
+- #### Reasoning (Lý Luận - Biểu Tượng Bóng Đèn)
+    - #### AI phải có khả năng suy luận logic, phân tích dữ liệu và giải quyết vấn đề.
+    - #### Quan trọng trong việc tổng hợp kiến thức và lập trình.
+- #### Programming (Lập Trình - Biểu Tượng Code)
+  - #### AI có thể đọc, viết và sửa lỗi mã nguồn.
+  - #### Giúp AI thích nghi với các hệ thống và tác vụ khác nhau.
+- #### Performance (Hiệu Suất - Biểu Tượng Đồng Hồ Tốc Độ)
+  - #### Đánh giá tốc độ và độ chính xác của AI.
+  - #### Giúp tối ưu hóa hiệu suất trong quá trình hoạt động.
+- #### Benchmarks (Tiêu Chuẩn Đánh Giá - Biểu Tượng Biểu Đồ)
+  - #### Các chỉ số đo lường hiệu suất của AI so với các tiêu chuẩn đặt ra.
+- #### Telemetry (Giám Sát Dữ Liệu - Biểu Tượng Biểu Đồ Dữ Liệu)
+  - #### Thu thập thông tin về cách AI hoạt động để cải thiện hệ thống.
+- #### Efficiency (Hiệu Quả - Biểu Tượng Bánh Răng)
+  - #### Đảm bảo AI sử dụng tài nguyên hợp lý, tránh lãng phí.
+- #### Cost (Chi Phí - Biểu Tượng Túi Tiền)
+  - #### Quản lý chi phí phần cứng, phần mềm và vận hành AI.
+
+
