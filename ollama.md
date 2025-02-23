@@ -59,3 +59,25 @@ curl http://localhost:11434/api/embed -d '{
   "input": "Llamas are members of the camelid family"
 }'
 ```
+
+### Create an Agent
+```typescript
+import { Agent } from "@mastra/core/agent";
+import { openai } from '@ai-sdk/openai";
+export const myAgent = new Agent({
+  name: "My Agent",
+  instructions: "You are a helpful assistant.",
+  model: openai("gpt-4o-mini"),
+});
+```
+
+
+
+
+
+
+
+
+
+
+
