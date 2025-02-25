@@ -74,6 +74,8 @@ query = "What are the key AI advancements in 2024?"
 print(hybrid_query(query))
 ```
 
+![image](https://github.com/user-attachments/assets/9db120ff-0a0b-45ad-a95c-55bf90e2aeea)
+
 ![image](https://github.com/user-attachments/assets/0ad50b64-abb5-41a3-8018-c8bda4889c0c)
 
 ![image](https://github.com/user-attachments/assets/c3ac037d-4559-46ea-80d7-47e51329c5b8)
