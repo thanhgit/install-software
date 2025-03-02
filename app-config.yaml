@@ -1,2 +1,6 @@
-app:
-  title: Util4Ops Company
+genai:
+  webAgents:
+    - name: Chat GPT
+      url: https://chatgpt.com
+    - name: Deep AI Customer
+      url: https://deepai.org/chat/free-chatgpt
