@@ -9,4 +9,6 @@ genai:
     - name: Deepseek
       url: https://deepai.org/chat/free-chatgpt
 app:
-  title: Util4Ops
+  title: Util4Ops component
+update:
+  version: 1.0.0
