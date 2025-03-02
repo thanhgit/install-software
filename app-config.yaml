@@ -11,4 +11,4 @@ genai:
 app:
   title: Util4Ops component
 update:
-  version: 1.0.1
+  version: '2'
