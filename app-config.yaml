@@ -4,5 +4,7 @@ genai:
       url: https://chatgpt.com
     - name: Deep AI Customer
       url: https://deepai.org/chat/free-chatgpt
+    - name: Stable fution
+      url: https://deepai.org/chat/free-chatgpt
 app:
   title: Util4Ops company
