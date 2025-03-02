@@ -9,4 +9,4 @@ genai:
     - name: Deepseek
       url: https://deepai.org/chat/free-chatgpt
 app:
-  title: Util4Ops company
+  title: Util4Ops
