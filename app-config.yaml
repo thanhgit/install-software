@@ -6,8 +6,8 @@ genai:
       url: https://deepai.org/chat/free-chatgpt
     - name: Stable fusion
       url: https://deepai.org/chat/free-chatgpt
-    # - name: Deepseek
-    #   url: https://deepai.org/chat/free-chatgpt
+    - name: Deepseek
+      url: https://deepai.org/chat/free-chatgpt
 app:
   title: Util4Ops component
 update:
