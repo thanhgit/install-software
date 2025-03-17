@@ -32,6 +32,17 @@ inxi -Fxxxa
 ```bash
 sudo dpkg-reconfigure gdm3
 ```
+
+## Fix error: login loop => long time to wait
+- ### Edit file /etc/gdm3/custom.conf
+- ### Not enable nvidia
+```bash
+#WaylandEnable=false
+```
+- ### Enable nvidia
+```bash
+WaylandEnable=false
+```
  
 ## Scan virus in ubuntu
 ```bash
