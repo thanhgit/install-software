@@ -43,6 +43,8 @@ sudo dpkg-reconfigure gdm3
 ```bash
 WaylandEnable=false
 ```
+
+## Disable secure boot before using `nvidia-smi`
  
 ## Scan virus in ubuntu
 ```bash
