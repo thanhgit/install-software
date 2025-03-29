@@ -1,5 +1,11 @@
 # AI agent
 
+### AI agent check list
+#### `Problem Definition`
+- #### This process repeats frequently and generates enough data to justify automation
+- #### You have explored easier automation systems like Script based automation or RPA
+- #### Want to automate because of manual work, inconsistencies, or human errors
+
 ![image](https://github.com/user-attachments/assets/ae86799d-2795-4f31-8ef6-4a43767aa958)
 ### AI agent architecture to deal with many tools
 ![image](https://github.com/user-attachments/assets/a2d0d675-4cf6-4cb5-b1c0-7050768945c1)
