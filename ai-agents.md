@@ -5,6 +5,30 @@
 - #### This process repeats frequently and generates enough data to justify automation
 - #### You have explored easier automation systems like Script based automation or RPA
 - #### Want to automate because of manual work, inconsistencies, or human errors
+- #### Your Each task is very valuable (i.e >$2 per task)
+- #### You have a defined problem that AI Agent can solve
+- #### Problem aligns with your organization’s longterm strategic goals
+
+#### `Stakeholder Status`
+- #### You have surveyed your users to understand their needs and concerns
+- #### You have taken your stakeholders insights on how and when to build the solution
+- #### You have a trainer/consultant who can train your employees to pickup faster
+- #### Those who will use the AI Agents know how it will influence their work routines
+- #### You have established a feedback loop for stakeholders to report issues during AI deployment
+
+#### `Data Requirement`
+- #### You have tools in place to clean and preprocess raw data for AI ready use
+- #### Your data is diverse enough to avoid biased AI outcomes
+- #### You have continuous data feedback loop for improving your agents
+- #### All the legal agreements in place for using third-party data, if applicable
+
+#### `System adaptability`
+- #### Your existing systems (CRM, ERP, databases) can integrate with an AI agent
+- #### You understand that Agentic Development Life cycle is different than typical SDLC
+- #### You have human-in-the-loop mechanisms for cases where AI confidence is low
+- #### You have determined who will take care of the agentic system maintenence after it is deployed
+- #### You have metrics in place to evaluate AI agent
+- #### You have fallback logic for cases where data sources are incomplete or unverifiable
 
 ![image](https://github.com/user-attachments/assets/ae86799d-2795-4f31-8ef6-4a43767aa958)
 ### AI agent architecture to deal with many tools
