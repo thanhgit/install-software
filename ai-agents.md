@@ -30,6 +30,18 @@
 - #### You have metrics in place to evaluate AI agent
 - #### You have fallback logic for cases where data sources are incomplete or unverifiable
 
+#### `Observability`
+- #### You have implemented robust monitoring and logging systems
+- #### You have mechanisms in place to automatically detect and alert on failures or anomalies
+- #### You have systems that regularly collect and analyze performance metrics
+- #### You have a system to integrate user feedback into the observability framework, allowing for continuous improvement based on real-world usage
+
+#### `Security and Compliance`
+- #### You have implemented robust security, including encryption and access controls
+- #### You have ensured that AI agent deployment complies with all relevant regulations, such as GDPR, CCPA, and industry-specific standards
+- #### You maintain comprehensive audit trails for AI agent activities to facilitate accountability and compliance audits
+- #### You have an incident response plan in place to address any security breaches or compliance issues related to AI agents
+
 ![image](https://github.com/user-attachments/assets/ae86799d-2795-4f31-8ef6-4a43767aa958)
 ### AI agent architecture to deal with many tools
 ![image](https://github.com/user-attachments/assets/a2d0d675-4cf6-4cb5-b1c0-7050768945c1)
