@@ -1,5 +1,10 @@
 # AI agent
 
+### MCP interacts with security tools
+- #### `Security is fragmented`: We have dozens of tools generating alerts, logs, and findings => MCP can pull this disparate data together without custom development.
+- #### `Not all security professionals code`: Many security analysts and leaders aren’t engineers who can code => MCP bridges this gap, allowing non-technical users to get the insights they need through natural language
+- #### `Security drowns in data`: Everything in security needs context. Only data engineering deals with more information volume — but those folks already know how to query it effectively
+
 ### AI agent check list
 #### `Problem Definition`
 - #### This process repeats frequently and generates enough data to justify automation
