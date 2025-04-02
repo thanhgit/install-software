@@ -1,5 +1,22 @@
 # AI agent
 
+![image](https://github.com/user-attachments/assets/1ea801d6-2841-49e8-a022-a85ca69297bc)
+### `𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗣𝗮𝘁𝘁𝗲𝗿𝗻`
+- #### The agent reviews and critiques its own output using a Main LLM + Critique LLM
+- #### Iterates until the answer is `"good enough"`
+
+### `𝗥𝗲𝗔𝗰𝘁 𝗣𝗮𝘁𝘁𝗲𝗿𝗻 + 𝗥𝗔𝗚`
+- #### The agent reasons + uses RAG tools (like vector DBs)
+- #### Works great for real-world RAG or Agentic-RAG & retrieval tasks based on internal knowledge base
+
+### `𝗧𝗼𝗼𝗹 𝗨𝘀𝗲 𝗣𝗮𝘁𝘁𝗲𝗿𝗻 (𝘃𝗶𝗮 𝗠𝗖𝗣 𝗦𝗲𝗿𝘃𝗲𝗿)`
+- #### The agent doesn’t just guess - it takes actions by calling external tools
+- #### MCP makes tool use structured and scalable
+
+### `𝗠𝘂𝗹𝘁𝗶-𝗔𝗴𝗲𝗻𝘁 𝗣𝗮𝘁𝘁𝗲𝗿𝗻`
+- #### Different specialized agents (like a generalist, knowledge agent, etc.) work together
+- #### A central “CEO” agent delegates, collects responses, reflects, and makes the final decision
+
 ### MCP interacts with security tools
 - #### `Security is fragmented`: We have dozens of tools generating alerts, logs, and findings => MCP can pull this disparate data together without custom development.
 - #### `Not all security professionals code`: Many security analysts and leaders aren’t engineers who can code => MCP bridges this gap, allowing non-technical users to get the insights they need through natural language
