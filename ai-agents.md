@@ -1,5 +1,37 @@
 # AI agent
 
+1️⃣ Intent & Entity Extraction
+→ Quickly classify the user intent (LLM or lightweight classifiers)
+→ Extract key entities to filter or refine the search scope
+
+2️⃣ Keyword-Based Retrieval (BM25)
+→ Fast, precise, and effective for exact matches
+
+3️⃣ BM25 + Entity + Synonym Expansion
+→ Enhance keyword retrieval by recognizing synonyms and structured fields
+
+4️⃣ Vector Search with Pre-trained Bi-Encoders
+→ Use sentence-transformers or other general-purpose embeddings
+
+5️⃣ Vector Search with Fine-Tuned Models
+→ Adapt embeddings to your domain-specific content
+
+6️⃣ Vector Search with LLM Embeddings
+→ Rich, context-aware embeddings, but can be slower and costly
+
+7️⃣ Hybrid Search: BM25 + Vector
+→ Combine semantic and keyword retrieval for better coverage
+
+8️⃣ Hybrid + Re-ranking (Bi-Encoder)
+→ Use bi-encoders to re-rank results for higher relevance
+
+9️⃣ Cross-Encoder Re-ranking (Fine-Tuned - repeat the same as Bi-encoder)
+→ Highest quality re-ranking with deep relevance modeling
+
+🔟 Combine Methods Intelligently
+→ Mix BM25, Vector, Entity Extraction, and Cross-Encoder
+→ Tailor to your use case and optimize for latency, cost, and quality
+
 ![image](https://github.com/user-attachments/assets/1ea801d6-2841-49e8-a022-a85ca69297bc)
 ### `𝗥𝗲𝗳𝗹𝗲𝗰𝘁𝗶𝗼𝗻 𝗣𝗮𝘁𝘁𝗲𝗿𝗻`
 - #### The agent reviews and critiques its own output using a Main LLM + Critique LLM
