@@ -33,3 +33,10 @@
 
 - AI Agent: Applies updates and patches and monitors system performance.
 - Human: Acts upon user feedback, provides ongoing support, addresses complex issues, and plans for future enhancements.
+
+### 1. RAG
+![image](https://github.com/user-attachments/assets/99e87dab-b62b-4435-aac8-71617c14d5a0)
+
+### 2. AI Agent
+![image](https://github.com/user-attachments/assets/acf112fc-4f7d-48ab-82a6-8f5180e95ec1)
+
