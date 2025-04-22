@@ -34,9 +34,20 @@
 - AI Agent: Applies updates and patches and monitors system performance.
 - Human: Acts upon user feedback, provides ongoing support, addresses complex issues, and plans for future enhancements.
 
-### 1. RAG
+### Consideration
+- #### 1. RAG
 ![image](https://github.com/user-attachments/assets/99e87dab-b62b-4435-aac8-71617c14d5a0)
 
-### 2. AI Agent
+- ### 2. AI Agent
 ![image](https://github.com/user-attachments/assets/acf112fc-4f7d-48ab-82a6-8f5180e95ec1)
+
+### Từ ‘In the loop’ đến ‘On the loop’: Cách AI tái định hình vai trò của con người trong doanh nghiệp⚡️
+- #### 🤖 Không còn đơn thuần là những chatbot chỉ biết phản hồi, AI Agents ngày nay đã trở thành “nhân viên số” thực thụ, có thể lập kế hoạch, thực hiện và tự điều chỉnh công việc một cách chủ động.
+- #### `“Chúng ta đang bước từ kỷ nguyên "Human in the loop", nơi con người chỉ giám sát AI` => `"Human on the loop", nơi con người và AI hợp tác chủ động như những cộng sự thực thụ"`
+
+### 📈 Trước sự phát triển mạnh mẽ của AI Agent => đề xuất chiến lược 4P để doanh nghiệp chủ động ứng dụng và triển khai hiệu quả:
+- #### 🔹 `Process` - Thiết kế lại quy trình vận hành doanh nghiệp để AI Agents có thể phối hợp mượt mà với con người.
+- #### 🔹 `People` - Đào tạo nhân sự để thích nghi với môi trường làm việc cùng AI.
+- #### 🔹 `Platform` - Xây dựng nền tảng dữ liệu đủ mạnh để tích hợp và vận hành AI Agents.
+- #### 🔹 `Product` - Tận dụng AI Agents để tạo ra sản phẩm sáng tạo và nâng cao trải nghiệm cá nhân hóa cho khách hàng
 
