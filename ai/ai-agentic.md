@@ -38,3 +38,6 @@ async with finder_agent:
 ![image](https://github.com/user-attachments/assets/c2d49668-775f-4387-be0c-e42b22599ce0)
 - #### Python library: `py_trees`
 - #### `Agentic behavior trees (ABTs)` implement behavior trees on assistant and agent systems
+
+#### Refs:
+- #### https://www.linkedin.com/pulse/4-main-ai-agent-design-patterns-recommend-andrew-ng-yiman-huang-nwype/
