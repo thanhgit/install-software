@@ -4,6 +4,9 @@
 ![image](https://github.com/user-attachments/assets/5334855d-e64f-409a-84e3-6c999eece565)
 
 - #### is a system comprising multiple autonomous agents that can interact, collaborate, and cooperate to achieve shared goals
+- #### `Negotiation` ~ is the process through which agents reach agreements on how to share resources, divide tasks, or resolve conflicts
+![image](https://github.com/user-attachments/assets/e38ed039-fac9-4d2c-8ccb-33b0e129e769)
+
 - #### `Autonomy` ~ each agent makes self-contained decisions based on its perception of the environment and its objectives
 - #### `Interaction` ~ to share information, negotiate tasks, and coordinate their actions
 - #### `Adaptability` ~ exibility to adapt and change their behavior in response to changes in the environment or changes in the individual agents’ goals
