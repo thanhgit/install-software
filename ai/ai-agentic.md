@@ -1,5 +1,7 @@
 # AI agentic
 - #### understanding the need for `controls and guardrails` on autonomous agents and using control barrier functions
+- #### `Self-governance` implies that the system can make its own decisions, set its own goals, and regulate its behavior based on its internal rules, models, and decision-making algorithms
+
 ![image](https://github.com/user-attachments/assets/5f758396-da1c-47c1-8029-310c740c8175)
 
 #### MCP framework
