@@ -37,7 +37,8 @@
 - #### `Planning and reasoning` ~ the agent employs reasoning techniques and algorithms to formulate plans and make decisions such as: `constraint satisfaction`, `logical inference`, `search algorithms`, or `heuristic-based planning`
 - #### `Plan execution` ~ agent executes the corresponding actions in the environment => `potentially modifying the environment` or `achieving specific goals`
 
-
+#### `Reactive architectures`
+![image](https://github.com/user-attachments/assets/c295ef8d-4b42-4caa-b32c-89ca45d6a60e)
 
 
 
