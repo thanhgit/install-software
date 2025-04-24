@@ -29,3 +29,16 @@
 - #### `Reactivity` ~ respond to changes and events occurring in their environment in real time => allows agents to adapt to dynamic conditions, ensuring their actions remain relevant and eﬀective
 - #### `Proactiveness` ~ predict future needs, challenges, or opportunities, and take the initiative to plan and act accordingly => goal-oriented and actively pursue strategies to achieve their objectives
 - #### `Social ability` ~ Many intelligent agents operate in multi-agent systems => interact and cooperate with other agents or humans to achieve common goals
+
+### `Sense-plan-act cycle`
+![image](https://github.com/user-attachments/assets/51745a1c-6ae2-44df-9d18-4ad8efa7c4e7)
+- #### `Sensing` (cảm biến) ~ agent perceives and acquires information about the environment
+- #### `Knowledge updating` ~ the perceived information is used to update the agent’s internal knowledge base => maintains an accurate representation of the current state of the environment
+- #### `Planning and reasoning` ~ the agent employs reasoning techniques and algorithms to formulate plans and make decisions such as: `constraint satisfaction`, `logical inference`, `search algorithms`, or `heuristic-based planning`
+- #### `Plan execution` ~ agent executes the corresponding actions in the environment => `potentially modifying the environment` or `achieving specific goals`
+
+
+
+
+
+
