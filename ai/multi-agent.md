@@ -1,5 +1,7 @@
 # Multi-agent system
+
 ![image](https://github.com/user-attachments/assets/6b46e565-4f19-491f-a558-7414d7d3587c)
+![image](https://github.com/user-attachments/assets/5334855d-e64f-409a-84e3-6c999eece565)
 
 - #### is a system comprising multiple autonomous agents that can interact, collaborate, and cooperate to achieve shared goals
 - #### `Autonomy` ~ each agent makes self-contained decisions based on its perception of the environment and its objectives
