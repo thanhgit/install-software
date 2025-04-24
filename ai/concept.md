@@ -41,6 +41,13 @@
 - #### It uses simple condition-action rules for fast and low-level responses.
 ![image](https://github.com/user-attachments/assets/c295ef8d-4b42-4caa-b32c-89ca45d6a60e)
 
-
-
-
+#### `Hybrid architectures`
+- #### A reactive layer for fast and low-level responses
+- #### A deliberative layer for high-level reasoning and planning
+- #### `Task decomposition` ~ Break down complex tasks into subtasks that can be handled by the appropriate layer\
+- #### `Multiplan selection`
+  - #### `Deliberative layer` can generate multiple potential plans or strategies
+  - #### `Reactive layer` can dynamically select and execute the most suitable plan based on the current environmental conditions
+  - #### `Planning with external modules` ~ deliberative layer can incorporate external modules or specialized algorithms for tasks such as path planning, resource allocation, or scheduling, leveraging domain-speci c knowledge and techniques
+  - #### `Reflection and refinement` ~ deliberative layer can reflect on the outcomes of executed plans, learn from experience, and refine its reasoning and planning processes accordingly, enabling continuous improvement and adaptation
+  - #### `Memory-augmented planning` ~ deliberative layer can maintain a memory or history of past experiences, decisions, and outcomes, enabling it to leverage this knowledge in future planning and reasoning processes
