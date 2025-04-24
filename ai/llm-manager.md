@@ -6,6 +6,7 @@
 ![image](https://github.com/user-attachments/assets/bb40f4e0-bf18-45f5-a3f9-fc824f9f1a08)
 
 ### 5 key data assets that power the smartest AI agents 2
+![image](https://github.com/user-attachments/assets/a95f1f8a-1f97-4057-891d-3d69d37f6a78)
 
 #### 1. 𝗣𝗿𝗼𝗺𝗽𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗿:
 - #### Consumes User-Profile API as a Data Asset which gives the AI real-time context about who it's talking to preferences, behavior, and recent actions without exposing personal data.
@@ -28,6 +29,7 @@
 - #### • Embeddings and domain data: understands meaning, not just words 
 - #### • Around 30% fewer hallucinations: answers backed by real knowledge
 
+![image](https://github.com/user-attachments/assets/0033204b-284d-49d1-aeae-c1221eff33dc)
 #### 4. 𝗧𝗼𝗼𝗹 𝗢𝗿𝗰𝗵𝗲𝘀𝘁𝗿𝗮𝘁𝗼𝗿:
 - #### Consumes Real-Time Inventory / Pricing Feed as a Data Asset which gives it up-to-the-second info to make the right move, right now.
 - #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
