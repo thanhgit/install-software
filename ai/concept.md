@@ -15,3 +15,10 @@
 - #### Cho phép phản hồi sâu sắc hơn, đặc biệt đối với các vấn đề phức tạp
 - #### `Ngữ cảnh tốt đảm bảo AI có thông tin cần thiết để trả lời`
 - #### `Nhiệm vụ phức tạp:` Các nhiệm vụ như phân tích pháp lý, tư vấn y tế, hoặc nghiên cứu khoa học đòi hỏi sự kết hợp mạnh mẽ của cả hai phương pháp, với trọng tâm đặc biệt vào kỹ thuật thiết kế ngữ cảnh.
+
+#### `Workflows`
+- #### are systems where LLMs and tools are orchestrated through predefined code paths
+
+#### `Agents`
+- #### are systems where LLMs dynamically direct their own processes and tool usage, maintaining control over how they accomplish tasks
+- #### `First` understand basic LLM workflows before building AI agents,
