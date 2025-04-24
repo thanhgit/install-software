@@ -27,3 +27,4 @@
 - #### It is a complex, self-governed entity that perceives its environment and takes action to achieve certain goals or objectives
 - #### It strictly adhere to a prede ned set of rules to highly advanced systems with the ability to learn and adapt from experience
 - #### `Reactivity` ~ respond to changes and events occurring in their environment in real time => allows agents to adapt to dynamic conditions, ensuring their actions remain relevant and eﬀective
+- #### `Proactiveness` ~ predict future needs, challenges, or opportunities, and take the initiative to plan and act accordingly => goal-oriented and actively pursue strategies to achieve their objectives
