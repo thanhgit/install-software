@@ -1,6 +1,11 @@
 # AI agentic
 - #### understanding the need for `controls and guardrails` on autonomous agents and using control barrier functions
 - #### `Self-governance` implies that the system can make its own decisions, set its own goals, and regulate its behavior based on its internal rules, models, and decision-making algorithms
+- #### `Self-organization` : the ability to organize and structure its own internal processes, resources, and behavior without external intervention
+- #### `Self-regulation` : the capability to monitor and adjust its own actions and outputs based on feedback from the environment or internal states, to ensure it operates within desired parameters or constraints
+- #### `Self-adaptation` : the ability to modify its behavior, strategies, or decision-making processes in response to changes in the environment or its own internal conditions, to achieve its goals more eﬀectively
+- #### `Self-optimization` : the ability to continuously improve its performance, eﬃciency, or decision-making capabilities through learning, experience, or evolutionary processes
+- #### `Self-determination` : the ability to set its own objectives, priorities, and courses of action based on its internal decision-making processes, without being entirely controlled by external forces
 
 ![image](https://github.com/user-attachments/assets/5f758396-da1c-47c1-8029-310c740c8175)
 
