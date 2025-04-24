@@ -1,5 +1,7 @@
 # AI agent
 
+![image](https://github.com/user-attachments/assets/50ee640d-5aea-4ce3-84f9-bc246a6027a4)
+
 1️⃣ Intent & Entity Extraction
 → Quickly classify the user intent (LLM or lightweight classifiers)
 → Extract key entities to filter or refine the search scope
