@@ -11,3 +11,24 @@
 - #### • GDPR-safe - respects privacy
 - #### • Under 250 ms latency
 - #### • Drives hyper-personal prompts: no generic responses
+
+#### 2. 𝗟𝗟𝗠 𝗥𝗲𝗮𝘀𝗼𝗻𝗶𝗻𝗴:
+- #### Consumes Low-Latency Model endpoint as a Data Asset which processes the prompt and generates a response and ensures that “thinking” happens fast, even at scale.
+- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
+- #### • Under 300 ms P99 latency: even during peak loads 
+- #### • Edge-cached and replicated: close to users 
+- #### • Scalable: never slows down
+
+ #### 3. 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗮𝗻𝗱 𝗠𝗲𝗺𝗼𝗿𝘆:
+- #### Consumes Vector DB / Knowledge Graph as a Data Asset which helps it to remember, reason, and retrieve accurate facts on demand.
+- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
+- #### • Under 50 ms ANN search: finds relevant facts instantly 
+- #### • Embeddings and domain data: understands meaning, not just words 
+- #### • Around 30% fewer hallucinations: answers backed by real knowledge
+
+#### 4. 𝗧𝗼𝗼𝗹 𝗢𝗿𝗰𝗵𝗲𝘀𝘁𝗿𝗮𝘁𝗼𝗿:
+- #### Consumes Real-Time Inventory / Pricing Feed as a Data Asset which gives it up-to-the-second info to make the right move, right now.
+- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
+- #### • Sub-second updates on stock, pricing, analytics 
+- #### • Exactly-once delivery: no duplicate actions 
+- #### • Prevents double-selling: even on high-demand days
