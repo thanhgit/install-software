@@ -21,3 +21,11 @@
 “It is raining or it is sunny” can be expressed as Rain ∨ Sunny in propositional logic
 “Eventually, the system will stabilize” can be modeled as ◇ Stable in temporal logic
 ```
+
+#### `Deductive reasoning`
+![image](https://github.com/user-attachments/assets/2c61ba5b-94cc-4740-88f0-114372b38fa1)
+- #### is a fundamental form of logical reasoning that follows a top-down approach\
+
+#### `Inductive reasoning`
+![image](https://github.com/user-attachments/assets/bf8f42c5-7b0f-4794-8b77-f8183ded0da1)
+- #### follows a bottom-up methodology, involves making generalizations or deriving probable conclusions from a set of specific observations or data points
