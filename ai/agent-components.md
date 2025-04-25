@@ -12,3 +12,12 @@
 #### `Frames`
 - #### knowledge about objects, situations, or events is stored in data structures
 - #### Each frame consists of a collection of attribute-value pairs that describe the properties and characteristics of the concept being represented
+
+#### `Logic-based representations`
+- #### takes a more formal, mathematical route => encode facts, rules, and axioms about a domain
+- #### formal logical languages such as propositional logic , rst-order logic , or specialized modal/temporal logics
+```
+“All humans are mortal” can be represented as ∀ x (Human(x) → Mortal(x)) in rst-order logic
+“It is raining or it is sunny” can be expressed as Rain ∨ Sunny in propositional logic
+“Eventually, the system will stabilize” can be modeled as ◇ Stable in temporal logic
+```
