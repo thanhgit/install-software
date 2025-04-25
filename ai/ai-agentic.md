@@ -1,4 +1,7 @@
 # AI agentic
+
+- #### `Decision-making` and `planning` are critical capabilities for intelligent agents to achieve their goals eﬀectively
+- #### Agents need to analyze various possible scenarios, evaluate outcomes, and select the action(s) that will lead to the most desirable outcome based on their preferences and constraints
 - #### understanding the need for `controls and guardrails` on autonomous agents and using control barrier functions
 - #### `Self-governance` implies that the system can make its own decisions, set its own goals, and regulate its behavior based on its internal rules, models, and decision-making algorithms
 - #### `Self-organization` : the ability to organize and structure its own internal processes, resources, and behavior without external intervention
