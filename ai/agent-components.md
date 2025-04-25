@@ -24,8 +24,15 @@
 
 #### `Deductive reasoning`
 ![image](https://github.com/user-attachments/assets/2c61ba5b-94cc-4740-88f0-114372b38fa1)
-- #### is a fundamental form of logical reasoning that follows a top-down approach\
+- #### is a fundamental form of logical reasoning that follows a top-down approach
+- #### Applied to Mathematics/geometry, Law, Software verification, Network routing
 
 #### `Inductive reasoning`
 ![image](https://github.com/user-attachments/assets/bf8f42c5-7b0f-4794-8b77-f8183ded0da1)
 - #### follows a bottom-up methodology, involves making generalizations or deriving probable conclusions from a set of specific observations or data points
+- #### Applied to Scientific method, ML, Pattern recognition, Data Mining, Natural language acquisition
+
+#### `Abductive reasoning` ~ inference to the best explanation
+![image](https://github.com/user-attachments/assets/b0fa321d-126d-4a4b-a9c5-db4585e40fae)
+- #### is a form of reasoning that works backward – attempting to find the most plausible explanations or premises that could account for a given set of observations or data
+- #### Applied to Medical diagnosis, Fault detection, Forensics/criminal investigation, AI planning, Scienti c discovery
