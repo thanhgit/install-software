@@ -36,3 +36,10 @@
 ![image](https://github.com/user-attachments/assets/b0fa321d-126d-4a4b-a9c5-db4585e40fae)
 - #### is a form of reasoning that works backward – attempting to find the most plausible explanations or premises that could account for a given set of observations or data
 - #### Applied to Medical diagnosis, Fault detection, Forensics/criminal investigation, AI planning, Scienti c discovery
+
+#### `Utility function`
+- #### enable the agent to compare and choose actions that maximize expected utility
+
+
+
+
