@@ -4,6 +4,13 @@
 - ##### Agents need the ability to reason about the available tools ~ understanding the functionality, capabilities, and limitations of each tool, as well as the contexts and conditions under which they can be applied eﬀectively
 - #### Focus on providing well-de ned tools with clear descriptions, rather than implementing complex reasoning mechanisms
 
+![image](https://github.com/user-attachments/assets/1cf50aa6-ccbf-4ae9-b3fa-0000e8fff0e6)
+#### `Planning for tool use`
+- #### First, understands the goals through natural language processing
+- #### Second, identifying which tools are needed and in what sequence they should be used
+- #### To follow prede ned decomposition rules
+- #### To adapts its planning based on the specific context and requirements of each request
+
 ![image](https://github.com/user-attachments/assets/50ee640d-5aea-4ce3-84f9-bc246a6027a4)
 
 1️⃣ Intent & Entity Extraction
