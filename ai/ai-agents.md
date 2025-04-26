@@ -10,6 +10,7 @@
 - #### Second, identifying which tools are needed and in what sequence they should be used
 - #### To follow prede ned decomposition rules
 - #### To adapts its planning based on the specific context and requirements of each request
+- #### Agent can adjust its plans based on new information or changing circumstances
 
 ![image](https://github.com/user-attachments/assets/50ee640d-5aea-4ce3-84f9-bc246a6027a4)
 
