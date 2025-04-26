@@ -1,5 +1,9 @@
 # AI agent
 
+#### `Reasoning about tools`
+- ##### Agents need the ability to reason about the available tools ~ understanding the functionality, capabilities, and limitations of each tool, as well as the contexts and conditions under which they can be applied eﬀectively
+- #### Focus on providing well-de ned tools with clear descriptions, rather than implementing complex reasoning mechanisms
+
 ![image](https://github.com/user-attachments/assets/50ee640d-5aea-4ce3-84f9-bc246a6027a4)
 
 1️⃣ Intent & Entity Extraction
