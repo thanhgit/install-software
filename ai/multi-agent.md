@@ -50,6 +50,11 @@ coordinator = Agent(
 )
 ```
 
+### Principles of role-based modeling
+- #### `Separation of interaction logic` from inner algorithmic logic ~ design collaborative LLM agents that need to coordinate eﬀectively while maintaining clear responsibilities and interaction patterns
+- #### `Dynamic role assignment` ~ by assigning speci c roles to agents based on their capabilities and the system’s requirements
+- #### `Modular system organization` ~ supports the separation of concerns and allows for modular and reusable design in multi-agentsystems
+
 ### `Manager` agent ~ coordinators in CWD model
 - #### is responsible for monitoring the system’s operations, managing resources, and ensuring timely task completion
 - #### Monitoring the progress of planning processes
