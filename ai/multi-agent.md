@@ -38,6 +38,8 @@
   - #### `Planning with feedback` for monitoring and modifying plans by `input`, `env changes` and `direct human feedback`
 
 ### Coordinator agent
+- #### `backstory` provides depth and context to how the agent approaches its responsibilities.
+- #### Design `backstory` is a carefully crafted narrative that shapes the agent’s decision-making process, interaction style, communicates with other agents, and approaches problem-solving
 ```python
 coordinator = Agent(
   role="Strategic Planning Manager",
@@ -47,3 +49,34 @@ coordinator = Agent(
   verbose=True
 )
 ```
+
+### `Manager` agent ~ coordinators in CWD model
+- #### is responsible for monitoring the system’s operations, managing resources, and ensuring timely task completion
+- #### Monitoring the progress of planning processes
+- #### Allocating resources (for example, computational resources and access to external APIs) to other agents
+- #### Ensuring that plans are generated within specified time constraints
+
+### `Analyst` agent 
+- #### possesses expertise in analyzing data and providing insights and recommendations based on its findings
+- #### can inform and guide decision-making processes within the system
+- #### Analyzing customer preferences and trends
+- #### Providing recommendations based on data analysis
+- #### Identifying potential cost-saving opportunities
+- #### Summarizing outcomes and recommendations for the user
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
