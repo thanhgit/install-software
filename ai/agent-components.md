@@ -1,5 +1,13 @@
 # Agent components
 
+### `System prompts`
+- #### defines their core characteristics and operational parameters
+- #### establish an agent’s persistent traits, boundaries, and behavioral frameworks throughout its operational life cycle
+- #### Role definition and scope of responsibilities
+- #### Constraints and operational boundaries
+- #### Communication protocols with other agents
+- #### Decision-making frameworks specific to their role
+
 ### `Knowledge representation` 
 - #### provides the mechanisms for encoding an agent’s understanding of its env into formats amenable to reasoning and decision-making processes
 
