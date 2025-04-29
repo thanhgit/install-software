@@ -1,4 +1,8 @@
 # Multi-agent system
+- #### `Langgraph` giúp xây hệ thống multi-agent có trạng thái
+- #### `Autogen` giúp thiết lập hội thoại multi-agent
+- #### `CrewAI` giúp các agents phối hợp theo vai trò + kế hoạch
+- #### `[LangChain Agent Executor]` giúp agent gọi công cụ theo ReAct
 
 ![image](https://github.com/user-attachments/assets/6b46e565-4f19-491f-a558-7414d7d3587c)
 ![image](https://github.com/user-attachments/assets/5334855d-e64f-409a-84e3-6c999eece565)
