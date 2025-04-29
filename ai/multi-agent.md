@@ -36,3 +36,14 @@
 - #### Agent organizes tasks to achieve higher-level goals with:
   - #### `Planning without feedback` for autonomous agents make decisions independently
   - #### `Planning with feedback` for monitoring and modifying plans by `input`, `env changes` and `direct human feedback`
+
+### Coordinator agent
+```python
+coordinator = Agent(
+  role="Strategic Planning Manager",
+  backstory="A veteran project manager who has successfully led diverse teams in Silicon Valley startups, known for
+    balancing innovation with practical execution. Expertise in bridging communication gaps between technical and
+    non-technical teams while maintaining focus on key deliverables.",
+  verbose=True
+)
+```
