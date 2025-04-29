@@ -56,7 +56,7 @@ coordinator = Agent(
 - #### Allocating resources (for example, computational resources and access to external APIs) to other agents
 - #### Ensuring that plans are generated within specified time constraints
 
-### `Analyst` agent 
+### `Analyst` agent ~ workers in CWD model
 - #### possesses expertise in analyzing data and providing insights and recommendations based on its findings
 - #### can inform and guide decision-making processes within the system
 - #### Analyzing customer preferences and trends
@@ -64,15 +64,19 @@ coordinator = Agent(
 - #### Identifying potential cost-saving opportunities
 - #### Summarizing outcomes and recommendations for the user
 
+### `Reflector` agent ~ workers in CWD model
+- #### observes the system’s performance and identifies areas for improvement
+- #### can suggest changes or adjustments that would enhance eﬃciency and eﬀectiveness
+- #### Analyze customer feedback and satisfaction levels
+- #### Identify bottlenecks or ineﬃciencies in the planning process
+- #### Propose improvements to the system’s algorithms or workflows
 
-
-
-
-
-
-
-
-
+### `Searcher` agent ~ workers in CWD model
+- #### explores the problem space, constantly seeking new solutions and sharing relevant information with other agents
+- #### involves innovation, adapts the system to cope with novel situations
+- #### Discover new activities, approaches
+- #### Explore alternative options or workflows
+- #### Share information about emerging trends or regulations with other agents
 
 
 
