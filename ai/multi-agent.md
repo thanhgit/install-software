@@ -78,9 +78,12 @@ coordinator = Agent(
 - #### Explore alternative options or workflows
 - #### Share information about emerging trends or regulations with other agents
 
-
-
-
+#### `Task Interpreter` ~ delegators in CWD model
+- #### serves as a bridge between the coordinators and workers, mapping high-level tasks into lower-level, concrete, and performable actions for the worker agents
+- #### ensures that tasks are well de ned and understood by the workers.
+- #### Break down a customer’s request into specific subtasks (for example, fight booking, hotel reservation, or activity planning)
+- #### Translate the customer’s preferences into actionable tasks for the worker agents
+- #### Ensure that the tasks assigned to the worker agents are clear and unambiguous
 
 
 
