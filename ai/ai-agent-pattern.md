@@ -1,5 +1,6 @@
 # AI agent pattterns
 
+![Ai agent patterns](ai-agent patterns.gif)
 ### Reflection Pattern
 - #### AI “reviews” its own work—spotting mistakes and iterating until the final outcome is polished.
 - #### Think of it like a self-critique cycle where the model refines each draft before presenting the result!
