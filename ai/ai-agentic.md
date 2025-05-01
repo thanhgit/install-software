@@ -49,5 +49,31 @@ async with finder_agent:
 - #### Python library: `py_trees`
 - #### `Agentic behavior trees (ABTs)` implement behavior trees on assistant and agent systems
 
+### AI agent fails
+- #### `Too broad` ~ companies expect agents to solve open-closed tasks
+- #### `Old playbooks` ~ try to test AI like regular software (`It doesn't work`)
+- #### `Change resistance` ~ team give up when agents need training not just coding
+- #### `Wrong processes` ~ traditional IT processes don't fit non-deterministic AI behaviour
+
+### Solutions
+- #### Because blaming the tech is easier than admitting we need a new way of working.
+- #### `THE WINNERS ADAPT`. The rest quit
+- #### Real-world benchmark
+  - #### 75% end-to-end automation
+  - #### 40-60% faster call resolutions
+  - #### 6-point boost in customer satisfaction scores
+- #### Rethink `how work gets done`
+  - #### How to use tools (database, APIs, scripts, ...)
+  - #### How remember context such as shor-long terms
+  - #### How to adapt through feedback loops 
+  - #### How to plan and execute multi-step workflows
+  - #### How to follow business logic and guardrails
+
+### How to build `AI agent`
+- #### `Decomposing tasks`: Breaking big goals into small, logical steps
+- #### `Managing memory`: Keeping workflows coherent over time
+- #### `Catching hallucinations`: Making sure agents fact-check themselves
+- #### `Scaling efficiently`: Keeping costs down while complexity rises
+
 #### Refs:
 - #### https://www.linkedin.com/pulse/4-main-ai-agent-design-patterns-recommend-andrew-ng-yiman-huang-nwype/

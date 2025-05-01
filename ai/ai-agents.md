@@ -1,8 +1,46 @@
 # AI agent
+- #### Executes workflows on behalf of users
+- #### Empowered by LLM and external tools
+- #### Able to autonomously make and refine decisions
+- #### Resolving complex decision-making 
+- #### Handling of unstructured data sources 
+
+#### Core `principles of design excellence`
+- #### `Model`
+  - #### Choose the ideal model based on precise functional requirements
+  - #### Adopt streamlined models to improve efficiency and reduce costs
+- #### `Tool`
+  - #### Employ advanced APIs to ensure seamless integration and boost automation
+  - #### Enhance operational efficiency using state-of-the-art technological tools
+- #### `Instructions`
+  - #### Incorporate intuitive user prompts to significantly increase engagement
+  - #### Apply advanced techniques such as chain-of-thought processing
+- #### `Memory`
+  - #### Formulate effective strategies for managing both short-term and long-term memory
+  - #### Utilize memory functionality to enable agents to adapt to user preferences and environments
+- #### Using `Single-Agent Systems`
+  - #### Efficiently manage repetitive tasks
+  - #### Expand capabilities through modular instruction sets
+- #### Using `Multi-Agent Systems`
+  - #### Complex scenarios with extensive logic branching
+  - #### High demand on computational resources
+  - #### Need for specialized roles such as manager, executor, or verifier
+  - #### Implement orchestration carefully to `optimise resources and efficiency`
+- #### Establish Guardrails as Digital Firewalls
+  - #### Ensure robust data privacy and safe outputs
+  - #### Optimize the balance between user experience and control mechanisms
+- #### Implement human oversight in scenarios involving
+  - #### Decisions with high risk and significant impact
+  - #### Situations where error thresholds are 
+- #### Optimize default settings
+  - #### Effectively handle unforeseen situations
+  - #### Eliminate purposeless loops
+  - #### Incorporate human oversight in uncertain scenarios
+  - #### `Design with full deployment and operations in mind`, not just the initial demo
 
 #### `Reasoning about tools`
 - ##### Agents need the ability to reason about the available tools ~ understanding the functionality, capabilities, and limitations of each tool, as well as the contexts and conditions under which they can be applied eﬀectively
-- #### Focus on providing well-de ned tools with clear descriptions, rather than implementing complex reasoning mechanisms
+- #### Focus on providing well-defined tools with clear descriptions, rather than implementing complex reasoning mechanisms
 
 ![image](https://github.com/user-attachments/assets/1cf50aa6-ccbf-4ae9-b3fa-0000e8fff0e6)
 #### `Planning for tool use`
