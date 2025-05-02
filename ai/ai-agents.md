@@ -263,6 +263,8 @@ async function reflect(state) {
   - #### `Ví dụ`: Nếu chatbot AI ngừng hoạt động, chuyển hướng yêu cầu khách hàng đến đội ngũ hỗ trợ con người
 - #### Bảo vệ và sao lưu dữ liệu AI
 - #### Đánh giá tác động của gián đoạn AI
+  - #### Xác định hậu quả nếu AI bị gián đoạn (lỗi thuật toán, mất dữ liệu huấn luyện, tấn công mạng nhắm vào mô hình AI).
+  - #### Ví dụ: mất khả năng ra quyết định, giảm trải nghiệm khách hàng, hoặc vi phạm pháp lý.
 
 
 
