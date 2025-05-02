@@ -246,3 +246,30 @@ async function reflect(state) {
 - #### Đừng “full tự động” từ đầu → hãy giám sát bán tự động
 - #### Chọn công cụ mở, có tính bảo mật
 - #### Luôn có người kiểm tra, thiết lập giới hạn rõ ràng
+
+
+### Business Continuity Plan (BCP) cho AI System/AI Agent
+- #### BCP là kế hoạch chi tiết để duy trì hoặc khôi phục các hoạt động kinh doanh quan trọng trong và sau sự cố
+- #### BCP cần được thiết kế để xử lý các đặc điểm kỹ thuật và rủi ro khi áp dụng công nghệ AI
+- #### Xác định vai trò của AI trong chuỗi hoạt động kinh doanh
+  - #### `AI System`: thường được sử dụng trong các quy trình như phân tích dữ liệu lớn, dự đoán, tối ưu hóa chuỗi cung ứng, hoặc tự động hóa quy trình kinh doanh (RPA)
+  - #### `AI Agent`: như chatbot, trợ lý ảo, hoặc agent tự động ra quyết định, ... thường đóng vai trò giao tiếp trực tiếp với khách hàng hoặc hỗ trợ nhân viên nội bộ
+  - #### `Action`: Lập danh sách các quy trình kinh doanh phụ thuộc vào AI system/AI agent và xác định mức độ quan trọng của chúng (critical, high, medium, low)
+- #### `Phát hiện sự cố`: Thiết lập hệ thống giám sát (monitoring) để phát hiện sớm các vấn đề của AI, như giảm độ chính xác của mô hình, thời gian phản hồi chậm, hoặc dữ liệu đầu vào bất thường
+- #### `Phân loại sự cố`: Xác định mức độ nghiêm trọng của sự cố AI (ví dụ: lỗi nhỏ, gián đoạn hoàn toàn, hoặc rò rỉ dữ liệu)
+- #### `Quy trình ứng phó`:
+  - #### Chuyển đổi tạm thời: Chuyển sang quy trình thủ công hoặc hệ thống dự phòng (như mô hình AI đơn giản hơn) khi AI gặp sự cố
+  - #### `Thông báo`: Thông báo cho các bên liên quan (khách hàng, đội ngũ nội bộ) nếu sự cố ảnh hưởng đến dịch vụ
+  - #### `Ví dụ`: Nếu chatbot AI ngừng hoạt động, chuyển hướng yêu cầu khách hàng đến đội ngũ hỗ trợ con người
+- #### Bảo vệ và sao lưu dữ liệu AI
+
+
+
+
+
+
+
+
+
+
+
