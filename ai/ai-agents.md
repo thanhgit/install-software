@@ -211,4 +211,38 @@ async function reflect(state) {
 - #### Cost (Chi Phí - Biểu Tượng Túi Tiền)
   - #### Quản lý chi phí phần cứng, phần mềm và vận hành AI.
 
+### Nhược điểm của AI Agents
+- #### Điều bạn cần biết để kiểm soát Ai Agents tốt hơn
+- #### Dù AI Agents đang mở ra cơ hội cực lớn cho doanh nghiệp, nhưng chúng không phải là “đũa thần”
 
+#### ⚠️ 1. Không ổn định hoặc “ngớ ngẩn” khi ra quyết định
+- #### AI Agents đôi khi hành động rất... ngớ ngẩn:
+- #### Trả lời vòng vo, hành động sai logic như: gọi API sai cách, quên ngữ cảnh, vòng lặp vô hạn hoặc “mắc kẹt” trong một bước
+- #### 🧠 Lý do: AI Agents vẫn dựa trên LLM, không thật sự “hiểu” như con người. Dù có memory hay toolset, chúng không giỏi tư duy logic phức tạp hoặc phản ứng linh hoạt với môi trường chưa từng gặp.
+
+#### ⚠️ 2. Khó kiểm soát và dự đoán
+- #### Khi một Agent có quyền tự động hành động (gửi email, tạo task, cập nhật dữ liệu…), nếu không giới hạn rõ, nó có thể: gửi nhầm khách hàng, lập báo cáo sai, thay đổi dữ liệu không kiểm soát, ...
+- #### ✅ Cần có sandbox, kiểm duyệt hoặc cơ chế “approval” trước khi Agent hành động.
+
+#### ⚠️ 3. Thiếu bảo mật và riêng tư nếu dùng sai
+- #### Một số Agent được kết nối với dữ liệu nội bộ, email, CRM, Google Drive... Nếu không kiểm soát tốt: dữ liệu nhạy cảm có thể bị “lọt” ra ngoài, agent có thể gửi thông tin nhầm đối tượng
+- #### 🔒 Hãy kiểm tra kỹ giới hạn truy cập, chỉ dùng công cụ đáng tin cậy, và luôn có audit log.
+
+#### ⚠️ 4. Chi phí có thể tăng nhanh nếu mở rộng mà không kiểm soát
+- #### Ban đầu, chi phí rẻ (có thể dưới 50 USD/tháng). Nhưng nếu: dùng nhiều mô hình mạnh (GPT-4, Claude), gọi API/phân tích data liên tục, chạy hàng chục Agent song song
+- #### ==> Hoá đơn cloud hoặc OpenAI API có thể tăng đột biến.
+
+#### ⚠️ 5. Không thay thế hoàn toàn con người
+- #### AI Agents tốt nhất vẫn cần: con người giám sát và định hướng mục tiêu, đánh giá đầu ra
+- #### Đảm bảo đạo đức và chất lượng
+- #### AI Agents không giỏi sáng tạo chiến lược, giải quyết mâu thuẫn, xử lý ngoại lệ chưa từng thấy. Chúng “làm” giỏi hơn “nghĩ”.
+
+#### ⚠️ 6. Thiếu chuẩn chung, dễ bị “lock-in”
+- #### Mỗi công cụ (CrewAI, LangChain, Superagent...) có cách xây dựng Agent khác nhau. Nếu chọn nhầm nền tảng => sau này khó chuyển đổi, không tương thích với hệ thống lớn hơn
+- #### 🎯 Nên ưu tiên công cụ open-source, chuẩn LangChain, hoặc nền tảng dễ xuất dữ liệu.
+
+#### ✅ Tóm lại: Cơ hội lớn – nhưng cần đi đúng cách
+- #### AI Agents rất mạnh khi dùng đúng, nhưng cũng có thể gây phiền toái hoặc tổn thất nếu triển khai ẩu, không kiểm soát.
+- #### Đừng “full tự động” từ đầu → hãy giám sát bán tự động
+- #### Chọn công cụ mở, có tính bảo mật
+- #### Luôn có người kiểm tra, thiết lập giới hạn rõ ràng
