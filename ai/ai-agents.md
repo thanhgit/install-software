@@ -262,6 +262,7 @@ async function reflect(state) {
   - #### `Thông báo`: Thông báo cho các bên liên quan (khách hàng, đội ngũ nội bộ) nếu sự cố ảnh hưởng đến dịch vụ
   - #### `Ví dụ`: Nếu chatbot AI ngừng hoạt động, chuyển hướng yêu cầu khách hàng đến đội ngũ hỗ trợ con người
 - #### Bảo vệ và sao lưu dữ liệu AI
+- #### Đánh giá tác động của gián đoạn AI
 
 
 
