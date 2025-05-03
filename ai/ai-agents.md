@@ -260,7 +260,6 @@ async function reflect(state) {
 - #### Chọn công cụ mở, có tính bảo mật
 - #### Luôn có người kiểm tra, thiết lập giới hạn rõ ràng
 
-
 ### Business Continuity Plan (BCP) cho AI System/AI Agent
 - #### BCP là kế hoạch chi tiết để duy trì hoặc khôi phục các hoạt động kinh doanh quan trọng trong và sau sự cố
 - #### BCP cần được thiết kế để xử lý các đặc điểm kỹ thuật và rủi ro khi áp dụng công nghệ AI
@@ -279,13 +278,89 @@ async function reflect(state) {
   - #### Xác định hậu quả nếu AI bị gián đoạn (lỗi thuật toán, mất dữ liệu huấn luyện, tấn công mạng nhắm vào mô hình AI).
   - #### Ví dụ: mất khả năng ra quyết định, giảm trải nghiệm khách hàng, hoặc vi phạm pháp lý.
 
+### Kiểm soát rủi ro khi triển khai AI Agents
+- #### 🤖 AI Agents rất mạnh. Nhưng nếu không kiểm soát, bạn có thể: gửi nhầm email cho khách hàng VIP, xoá nhầm dữ liệu CRM, phân tích sai => báo cáo sai => có thể quyết định sai, lộ thông tin nội bộ ra ngoài
+- #### Và tệ nhất: `mất niềm tin của khách hàng hoặc đội ngũ`
+- #### `Bắt đầu nhỏ, giám sát chặt, học từ lỗi` → Bạn sẽ dần xây được `một hệ thống AI Agents vừa mạnh, vừa an toàn, vừa đáng tin`
 
+#### 🎯 1. Rủi ro phổ biến khi dùng AI Agents 
+- #### `Bảo mật dữ liệu` như agent truy cập file nhạy cảm và gửi nhầm email 
+- #### `Hành vi sai lệch` như agent gửi thông tin sai và vô nghĩa
+- #### `Tốn chi phí bất ngờ` như agent bị dính vòng lặp công việc ~ gọi API đến LLM liên tục => tốn token 
+- #### `Vòng lặp vô hạn` ~ agent không thoát khỏi vòng lặp công việc do thiết kế sai
+- #### `Thiếu kiểm duyệt` như agent gửi thông tin chưa kiểm duyệt ra công chúng hoặc các bên liên quan chưa được cấp quyền
+- #### `Trách nhiệm không rõ` ~ ai là người chịu trách nhiệm khi AI hoạt động sai
 
+#### ✅ 2. Nguyên tắc vàng: "Human-in-the-loop"
+- #### 🔍 Hãy đảm bảo mọi hành động của AI Agent đều có “mắt người” kiểm duyệt ở giai đoạn đầu. Ví dụ như:
+  - #### Agent viết email → người duyệt trước khi gửi
+  - #### Agent phân tích dữ liệu → review trước khi báo cáo
+  - #### Agent tạo task nội bộ → manager approve
+- #### `Không để Agent tự ý hành động nếu chưa có cơ chế rollback`
 
+#### ✅ 3. Dùng sandbox và hạn quyền truy cập dữ liệu
+- #### Đừng đưa Agent vào "sân chơi thật" ngay lập tức. 
+- #### Tạo `môi trường Sandbox / môi trường test riêng`:
+  - #### Agent chạy thử với dữ liệu giả lập
+  - #### Dùng tài khoản test (không thật)
+- #### Tạo ra môi trương có quyền hạn truy cập:
+  - #### Chỉ cho phép Agent đọc (không ghi) dữ liệu ban đầu
+  - #### Không cho truy cập folder chứa dữ liệu nhạy cảm (hợp đồng, tài chính)
+  - #### Nếu dùng Google Workspace, chỉ cấp quyền “Viewer” cho Agent
 
+#### ✅ 4. Giới hạn hành vi của Agent bằng “Guardrails”
+- #### Guardrails là các “rào chắn” để giới hạn hành vi AI. Một số cách triển khai:
+- #### Agent chỉ được thực hiện 3 hành động mỗi giờ
+- #### Không cho phép Agent gửi email chứa các từ nhạy cảm
+- #### Luôn hỏi lại người dùng nếu gặp tình huống chưa chắc chắn
+- #### Ví dụ: Dùng công cụ như GuardrailsAI, Rebuff, hoặc thiết kế trực tiếp trong flow của LangChain.
 
+#### ✅ 5. Luôn có log + lịch sử hành vi của Agent
+- #### 🚨 Trong mọi công cụ AI Agents, hãy bật hoặc ghi lại:
+- #### Agent đã làm gì, lúc nào, với ai?
+- #### Có ai đã phê duyệt bước nào?
+- #### Output cuối cùng của Agent là gì?
+- #### → Nếu có lỗi xảy ra, bạn có thể truy vết, sửa, và học từ đó.
 
+#### ✅ 6. Cẩn trọng với dữ liệu khách hàng
+- #### Nếu Agent truy cập: CRM, Email khách hàng, Lịch sử mua hàng
+- #### → Bạn cần bảo đảm các yếu tố:
+  - #### Không gửi nhầm cho khách không liên quan
+  - #### Không “đoán” sai về hành vi khách
+  - #### Không lưu thông tin nhạy cảm vào bộ nhớ AI (prompt, memory)
+- #### 👉 Luôn dùng cơ chế tách dữ liệu nhạy cảm ra khỏi phần xử lý AI (ví dụ: thay tên khách hàng bằng ID ẩn danh).
 
+#### ✅ 7. Chiến lược kiểm soát chi phí AI
+- #### Một số Agent dùng LLMs mạnh như GPT-4, Claude, Gemini… có thể ngốn chi phí rất nhanh nếu:
+  - #### Tạo nhiều vòng lặp
+  - #### Dùng context lớn, không tối ưu
+  - #### Gọi API liên tục không caching
+- #### 📌 Giải pháp:
+  - #### Dùng GPT-3.5 cho task đơn giản
+  - #### Giới hạn số lần gọi API mỗi Agent mỗi ngày
+  - #### Thiết lập báo động nếu chi phí vượt ngưỡng
+  - #### Log token usage bằng công cụ như LangSmith hoặc DashScope
 
+#### ✅ 8. Huấn luyện đội ngũ nội bộ
+- #### Agent không thể tự sửa mình. Nhưng con người có thể học cách quản trị Agent.
+  - #### Đào tạo team về cách đánh giá output AI
+  - #### Có checklist kiểm duyệt nội dung trước khi xuất bản
+  - #### Xây dựng quy trình rollback nếu Agent sai
 
+#### ✅ 9. Có chính sách nội bộ về trách nhiệm AI
+- #### 📝 Hãy ghi rõ:
+  - #### Agent nào phụ trách mảng nào
+  - #### Ai là người chịu trách nhiệm cuối cùng nếu có sự cố
+  - #### Khi nào thì được dùng Agent để giao tiếp với khách hàng
 
+#### 📌 Checklist: 10 câu hỏi trước khi để Agent hoạt động tự động
+- #### Agent có bị giới hạn hành vi không?
+- #### Có sandbox/test trước chưa?
+- #### Có cơ chế phê duyệt hành động không?
+- #### Agent truy cập đúng dữ liệu (và chỉ đúng đó)?
+- #### Có log, audit đầy đủ không?
+- #### Dữ liệu khách hàng được bảo vệ thế nào?
+- #### Output có được kiểm duyệt trước khi công khai?
+- #### Có giới hạn chi phí/token không?
+- #### Nhân viên nào chịu trách nhiệm giám sát Agent?
+- #### Có khả năng rollback không?
