@@ -5,7 +5,20 @@
 - #### Resolving complex decision-making 
 - #### Handling of unstructured data sources 
 
-#### Core `principles of design excellence`
+![](./media/types-of-ai-agent.png)
+### Type of AI agents
+- #### `Task` 
+  - #### Focus on discrete, well-defined single-purpose tasks a
+  - #### To improve personal productivity by handling time-consuming tasks
+  - #### Such as: travel booking assistants, research and summarization copilots, ...
+- #### `Process` as a domain-specific agent
+  - #### Designed to manage end-to-end workflows tailored to specific domains such as supply chain, customer service, healthcare diagnostics, finance, or retail
+  - #### Such as a fraud detection agent, Drug discovery agents, recommendation engines, and customer segmentation tools, ...
+- #### `Role`
+  - #### Targeted at role-specific functions supporting defined tasks, such as data engineers, DevOps professionals, or project managers
+  - #### Such as SDR agents, customer success copilots, supply chain assistants, financial advisor agents, ...
+
+### Core `principles of design excellence`
 - #### `Model`
   - #### Choose the ideal model based on precise functional requirements
   - #### Adopt streamlined models to improve efficiency and reduce costs

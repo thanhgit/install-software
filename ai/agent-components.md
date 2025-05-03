@@ -49,5 +49,15 @@
 - #### enable the agent to compare and choose actions that maximize expected utility
 
 
+#### `Reactive agents` 
+- #### Functions based on predefined rules or conditions
+- #### responding to environmental triggers without any internal representation of that environment
+- #### Such as chatbot generates replies based on keywords in user input
+- #### Lacking memory of past interactions or the ability to learn => `effective for basic tasks`
 
+#### `Deliberative agents` 
+- #### makes decisions based on reasoning, planning, and an internal model of the world
+- #### assess potential actions based on predicted outcomes
 
+#### `Hybrid agents`
+- #### It combine the strengths of both reactive and deliberative approaches, creating more robust systems

@@ -30,12 +30,26 @@
 - #### `Proactiveness` ~ predict future needs, challenges, or opportunities, and take the initiative to plan and act accordingly => goal-oriented and actively pursue strategies to achieve their objectives
 - #### `Social ability` ~ Many intelligent agents operate in multi-agent systems => interact and cooperate with other agents or humans to achieve common goals
 
-### `Sense-plan-act cycle`
+## `Sense-reasoning-plan-act cycle`
+
 ![image](https://github.com/user-attachments/assets/51745a1c-6ae2-44df-9d18-4ad8efa7c4e7)
-- #### `Sensing` (cảm biến) ~ agent perceives and acquires information about the environment
-- #### `Knowledge updating` ~ the perceived information is used to update the agent’s internal knowledge base => maintains an accurate representation of the current state of the environment
-- #### `Planning and reasoning` ~ the agent employs reasoning techniques and algorithms to formulate plans and make decisions such as: `constraint satisfaction`, `logical inference`, `search algorithms`, or `heuristic-based planning`
-- #### `Plan execution` ~ agent executes the corresponding actions in the environment => `potentially modifying the environment` or `achieving specific goals`
+#### `Sensing` (cảm biến) 
+- #### Agent perceives and acquires information about the environment => `determine desired outcomes`
+- #### Event: `detect a new email` => `process and respond intelligently` as sale role in automating key tasks and streamlining workflows
+
+#### `Knowledge updating` ~ the perceived information is used to update the agent’s internal knowledge base => maintains an accurate representation of the current state of the environment
+
+![](./media/multi-step-ai-agent.png)
+#### `Planning and reasoning` 
+- #### Uses LLM with advanced reasoning capabilities + chain-of-thought reasoning, reason-act (ReAct), and few-shot learning
+- #### Agent employs reasoning techniques and algorithms to formulate plans and make decisions such as: `constraint satisfaction`, `logical inference`, `search algorithms`, or `heuristic-based planning`
+- #### Event == interprets the desired objective ==> breaks objective down into granular tasks required to achieve it
+
+#### `Plan execution` 
+- #### Aent executes the corresponding actions in the environment => `potentially modifying the environment` or `achieving specific goals`
+- #### Agents orchestrate workflows by seamlessly connecting to appropriate systems of record such as RAG, function calling
+- #### To utilize short-term memory for active sessions 
+- #### To tap into external apps for long-term memory, such as retrieving a customer’s preferences or purchase history stored in a database management system => empowers agents to deliver context-aware, personalized, and efficient outcomes
 
 #### `Reactive architectures` 
 - #### It uses simple condition-action rules for fast and low-level responses.
@@ -51,3 +65,5 @@
   - #### `Planning with external modules` ~ deliberative layer can incorporate external modules or specialized algorithms for tasks such as path planning, resource allocation, or scheduling, leveraging domain-speci c knowledge and techniques
   - #### `Reflection and refinement` ~ deliberative layer can reflect on the outcomes of executed plans, learn from experience, and refine its reasoning and planning processes accordingly, enabling continuous improvement and adaptation
   - #### `Memory-augmented planning` ~ deliberative layer can maintain a memory or history of past experiences, decisions, and outcomes, enabling it to leverage this knowledge in future planning and reasoning processes
+
+### `Sense` -> `Reason` -> `p`
