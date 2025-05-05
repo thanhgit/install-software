@@ -364,3 +364,33 @@ async function reflect(state) {
 - #### Có giới hạn chi phí/token không?
 - #### Nhân viên nào chịu trách nhiệm giám sát Agent?
 - #### Có khả năng rollback không?
+
+#### AI agent tốt nên ghi lại log mỗi khi làm việc
+![image](https://github.com/user-attachments/assets/ce7d5990-2329-41e5-9ecc-3c5e85d92339)
+
+#### Gợi ý công cụ dễ dùng để giám sát AI agent
+![image](https://github.com/user-attachments/assets/66cc6a86-1a6b-4f1b-a05e-85cbff49e30a)
+
+#### Checklist kiểm tra AI agent mỗi tuần 
+![image](https://github.com/user-attachments/assets/fc008ab5-d771-4eb4-b827-99da61d2709b)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
