@@ -51,3 +51,16 @@
 - #### 🔹 `Platform` - Xây dựng nền tảng dữ liệu đủ mạnh để tích hợp và vận hành AI Agents.
 - #### 🔹 `Product` - Tận dụng AI Agents để tạo ra sản phẩm sáng tạo và nâng cao trải nghiệm cá nhân hóa cho khách hàng
 
+![](./media/how-ai-agentic-works.gif)
+### How AI agentic works
+- #### `Key phases of the OODA loop` (Observe, Orient, Decide, Act)
+- #### `Supporting sub-nodes` that detail essential functions such as sensing, context analysis, planning, and feedback
+- #### Most current AI systems `operate reactively, responding only when prompted and following strict, predefined patterns` => limits their ability to handle dynamic situations and truly assist in complex scenarios.
+- #### `Agentic AI` implement a multi-layered architecture that enables autonomous operation, continuous learning, and ethical decision-making, allowing AI to become a proactive partner rather than just a tool.
+- #### 1 - Operates on Core Principles of autonomous operation, goal-driven behavior, context awareness, and self-improvement
+- #### 2 - Features an Autonomy Engine that enables self-initiated actions and resource management
+- #### 3 - Uses Adaptive Learning to continuously evolve through reinforcement learning and pattern recognition
+- #### 4 - Incorporates a Decision Matrix for real-time risk assessment and scenario simulation
+- #### 5 - Maintains ethical boundaries through a dedicated Governance layer
+- #### 6 - Integrates with other AI agents through a collaborative ecosystem
+- #### 7 - Represents the next evolution in AI, moving from reactive to proactive intelligence

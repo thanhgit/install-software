@@ -94,5 +94,12 @@ coordinator = Agent(
 - #### Translate the customer’s preferences into actionable tasks for the worker agents
 - #### Ensure that the tasks assigned to the worker agents are clear and unambiguous
 
+![](./media/mas-driven-architecture.jpeg)
+### `Why Enterprises Are Adopting MAS`
+- #### `Decoupled Architecture` – Each agent evolves independently
+- #### `Cognitive Orchestration` – LLMs plan next steps based on SOPs and context
+- #### `Audit-Ready` – Full traceability of every decision and data change
+- #### `Scalable & Observable` – Agents can be deployed and monitored as microservices
 
-
+![](./media/comparing-agentic-frameworks.gif)
+### So sánh giữa các AI agentic frameworks

@@ -66,3 +66,49 @@
 - #### Ensure inputs and outputs of each agent are valid and safe
 - #### Especially important when agents handle sensitive or confidential information
 - #### Prevents errors or harmful outputs from propagating through your workflow
+
+![](./media/common-patterns.jpeg)
+### Common patterns
+#### `ReAct`: The core pattern powering agents
+- #### Though, Act, Observation
+- #### Planning, Validating, Executing
+- #### One-shot query planning vs. Dynamic Planning
+
+![](./media/ai-agentic-workflow-patterns.gif)
+#### `Workflows` (predefined code paths)
+- #### Prompt Chaining
+- #### Parallelization
+
+#### `Semi-workflows` (LLM controls predefined control paths)
+- #### Orchestrator-worker
+- #### Evaluator optimizer pattern
+- #### Routing
+- #### Reflection
+
+#### `Pure agentic` (full flexibility)
+
+#### `Multi-Agents Architectures`
+- #### Network (or Swarm)
+- #### Supervisor
+- #### Supervisor (with tool-calling)
+- #### Hierarchical
+- #### Custom multi-agent workflow
+
+### System Design & LLMOps
+#### `Observability`
+- #### Prompt Monitoring
+- #### Prompt Versioning
+- #### User Feedback
+- #### LLM Evaluation
+#### `Serving` ~ Deployment architectures (batch, realtime, async)
+#### `Web Servers` (e.g., FastAPI)
+#### Infrastructure scaling
+#### Inference optimization
+#### Cloud Infrastructure
+- #### AWS Cloud Architecture
+- #### IaC + CI/CD
+- #### Docker
+- #### CI/CD/CT
+- #### IaC
+#### `MCP` && `A2A`
+#### Model Gateway + Guardrails + Prompt Caching

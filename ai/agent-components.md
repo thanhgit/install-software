@@ -61,3 +61,16 @@
 
 #### `Hybrid agents`
 - #### It combine the strengths of both reactive and deliberative approaches, creating more robust systems
+
+![](./media/llm-to-agents-evolution.jpg)
+### Từ LLM đến AI agents
+- #### `LLM`: Mô hình ngôn ngữ lớn như GPT, Claude, hay Gemini ở giai đoạn đầu chủ yếu thực hiện một nhiệm vụ: trả lời dựa trên văn bản được huấn luyện.
+- #### `RAG (Retrieval-Augmented Generation)`: Giúp mô hình "đọc thêm" dữ liệu bên ngoài (qua tìm kiếm), mở rộng kiến thức beyond dữ liệu huấn luyện ban đầu.
+- #### `Functions`: Mở ra cánh cửa cho AI hành động gọi API, thao tác dữ liệu, tự động hóa nhiệm vụ.
+- #### `Reasoning`: Năng lực suy luận bắt đầu xuất hiện cho phép xử lý các yêu cầu phức tạp hơn thay vì chỉ hồi đáp bề mặt.
+- #### `Memory` ~ mô hình bắt đầu "ghi nhớ" trạng thái, tiến trình và bối cảnh giữa các lần tương tác => chuyển từ "LLM" đến "AI agent" có trí nhớ, vai trò, mục tiêu và năng lực nhất định
+- #### `Team of Agents` là một đội ngũ các Agent: Phối hợp, chia nhiệm vụ, đối thoại, lập kế hoạch.
+- #### `GraphRAG`: Kết nối tri thức có cấu trúc giống như mạng tri thức giữa các agent.
+- #### `MultiLLM`: Một Agent không chỉ dùng 1 LLM, mà có thể phối hợp nhiều LLM để tối ưu (ví dụ: Claude tư duy logic, GPT sáng tạo nội dung...).
+- #### `Collective Intelligence của AI` chia sẻ tri thức với nhau qua lớp Shared Knowledge tạo nên một dạng "trí tuệ tập thể máy" -> `trở thành một hệ thống đồng đội kỹ thuật số cùng học, cùng tối ưu, cùng phát triển.`
+- #### `Tools Former` cho phép Agent tự tạo công cụ phục vụ chính mình (tự lập trình, tự điều chỉnh cách làm việc).
