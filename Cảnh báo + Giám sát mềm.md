@@ -28,3 +28,41 @@ Thông báo trực tiếp trên ứng dụng, hoặc bảng:
 
 Điều này giúp người dân biết rõ mình đang lựa chọn gì, tăng tính tự nguyện nhưng có hậu quả rõ ràng.
 ```
+
+#### 🧠 Cơ chế tâm lý và hành vi
+| Tác động                       | Lý do xảy ra                                                                         |
+| ------------------------------ | ------------------------------------------------------------------------------------ |
+| **Tự điều chỉnh hành vi**      | Khi biết tuyến đang bị giám sát và đã cảnh báo, người dân sẽ chuyển hướng nếu có thể |
+| **Tăng hiệu quả giám sát mềm** | Không cần phạt mạnh, chỉ cần hiện diện của thông tin và công nghệ đủ để điều chỉnh   |
+| **Tạo áp lực xã hội tích cực** | Người dân thấy người khác đi đường vòng cũng dễ làm theo, tạo hiệu ứng lan truyền    |
+
+#### ✅ Ưu điểm của mô hình này
+```
+Chi phí cưỡng chế thấp nhưng hiệu quả hành vi cao
+
+Linh hoạt, có thể triển khai từng bước theo khu vực trọng điểm
+
+Minh bạch và công bằng: người dân biết rõ mình bị cảnh báo trước
+
+Giảm cần thiết phải phạt, chỉ xử lý khi người dân cố ý vi phạm
+```
+
+#### 🔧 Một số gợi ý để hoàn thiện:
+| Thành phần             | Gợi ý                                                                          |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| **Bảng điện tử**       | Ưu tiên các vị trí dễ nhìn thấy trước ngã tư, điểm giao lộ                     |
+| **Ứng dụng di động**   | Cho phép cá nhân hóa cảnh báo (ví dụ: “Bạn thường đi tuyến A – đang ùn tắc”)   |
+| **Camera hành vi**     | Tích hợp nhận diện biển số + ghi thời gian quyết định vào vùng tắc             |
+| **Phản hồi người dân** | Cho phép người dùng báo cáo sai sót hoặc lỗi hệ thống (tránh bức xúc)          |
+| **Dữ liệu học máy**    | Học hành vi người dân qua thời gian để điều chỉnh thông báo cho thông minh hơn |
+
+
+
+
+
+
+
+
+
+
+
