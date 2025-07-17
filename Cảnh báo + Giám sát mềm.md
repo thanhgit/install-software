@@ -56,7 +56,24 @@ Giảm cần thiết phải phạt, chỉ xử lý khi người dân cố ý vi 
 | **Phản hồi người dân** | Cho phép người dùng báo cáo sai sót hoặc lỗi hệ thống (tránh bức xúc)          |
 | **Dữ liệu học máy**    | Học hành vi người dân qua thời gian để điều chỉnh thông báo cho thông minh hơn |
 
+#### 🌍 Các ví dụ thực tế tương tự
+- #### ✅ Ve­rona, Ý – Hệ thống AI giám sát và cảnh báo tại giao lộ Porta Nuova
+Thử nghiệm cảm biến radar kết hợp camera AI để phát hiện mật độ xe, phân loại phương tiện và dự báo ách tắc thời gian thực. Từ đó điều chỉnh tín hiệu đèn hoặc đưa cảnh báo giải pháp phù hợp .
 
+- #### ✅ Pittsburgh, Mỹ – SURTRAC Adaptive Traffic Signal System
+Hệ thống điều tiết đèn giao thông tự động, điều chỉnh tín hiệu theo lưu lượng thực tế, giảm thời gian di chuyển 25% và thời gian chờ khoảng 40% .
+
+- #### ✅ Los Angeles, USA – ATSAC (Automated Traffic Surveillance and Control)
+Kết hợp camera và cảm biến để điều chỉnh tín hiệu liên tục, cải thiện lưu lượng, giảm ùn tắc đáng kể .
+
+- #### ✅ Singapore – Green Wave & ITS
+Hệ thống điều phối luồng xe thông minh, dựa vào dữ liệu liên tục, ưu tiên xe công cộng và xe khẩn cấp, giảm tắc 15–20%, giảm khí thải .
+
+- #### ✅ Ấn Độ (Vijayawada) – Dự án chính thức SARTHI
+Triển khai thử nghiệm hệ thống AI bao gồm nhận diện biển số, giám sát vi phạm và điều chỉnh tín hiệu theo lưu lượng giao thông .
+
+- #### ✅ Nagpur (Ấn Độ) – Hệ thống IITMS
+Dự án tín hiệu giao thông thông minh với camera ANPR và hệ thống đèn giao thông tự động. Dù dự án đang gặp trục trặc kỹ thuật, nhưng cũng là ví dụ cấp thành phố đầu tiên tích hợp cả giám sát và dữ liệu hành vi .
 
 
 
