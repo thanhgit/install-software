@@ -241,3 +241,62 @@ streamlit run context_builder_app.py
 * Thêm upload **vector store / document**
 * Tích hợp API để gửi context đến LLM endpoint
 
+<img width="1616" height="584" alt="image" src="https://github.com/user-attachments/assets/e4427e47-b822-4916-a029-10ebf1b5c7b4" />
+Có — **context engineering rất quan trọng**, và **là yếu tố cốt lõi** để một AI agent hỗ trợ vận hành (operations assistant) hoạt động **chính xác, ổn định, và hiệu quả**.
+
+---
+
+## ✅ Vì sao context engineering quan trọng trong AI agent hỗ trợ vận hành?
+
+AI agent cho mục đích "operations" thường có các đặc điểm sau:
+
+| Đặc điểm                                | Vai trò context                                      |
+| --------------------------------------- | ---------------------------------------------------- |
+| ⚙️ Làm việc liên tục nhiều vòng         | Giữ được trạng thái và tiến trình                    |
+| 📋 Phải hiểu quy trình nghiệp vụ        | Đưa vào prompt quy trình, rule và mục tiêu đúng lúc  |
+| ⏱️ Phản ứng linh hoạt với thay đổi      | Context phải cập nhật sát thực tế (real-time or RAG) |
+| 🧠 Giao tiếp với người & hệ thống khác  | Biết “ai đang nói”, đang ở đâu trong tiến trình      |
+| ❌ Rất dễ bị lỗi khi thông tin mâu thuẫn | Phân vùng context kỹ, tránh clash & distraction      |
+
+Nếu không quản lý context tốt → Agent:
+
+* **lẫn lộn task**
+* **xử lý sai quy trình**
+* **hỏi lại thông tin đã có**
+* hoặc **tạo ra phản hồi rời rạc, không theo ngữ cảnh**
+
+---
+
+## 🔧 Những kỹ thuật context engineering cụ thể nên dùng trong agent vận hành
+
+| Kỹ thuật context                    | Cách áp dụng                                                                                               |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Context Windows**                 | Giữ trạng thái hội thoại gần nhất (task state) và thông tin người dùng trong cửa sổ trượt (sliding window) |
+| **Retrieval (RAG)**                 | Truy vấn SOP, policy, lịch làm việc,… từ DB khi cần chứ không nhét hết vào prompt                          |
+| **Context Tagging**                 | Gán nhãn cho context (ví dụ: `#ticket-id-123`, `#onboarding-phase`) để dễ truy xuất và lọc                 |
+| **Session Summary**                 | Sau mỗi tác vụ hoặc vòng hội thoại dài, agent tự tạo bản tóm tắt nội bộ để sử dụng trong phiên sau         |
+| **Role-based Context Partitioning** | Nếu agent tương tác nhiều vai trò (user, supervisor, IT, HR), thì phân vùng riêng từng loại context        |
+| **Context Decay / Pruning**         | Xóa bớt các thông tin không còn liên quan trong các phiên mới                                              |
+
+---
+
+## 🧪 Ví dụ thực tế: Agent hỗ trợ vận hành trong công ty logistics
+
+Giả sử AI agent giúp đội điều phối vận chuyển:
+
+* **Khi điều phối xe hàng**: agent phải nhớ các order gần đây, lịch xe chạy, driver đang làm việc → dùng **context window + retrieval**
+* **Khi có sự cố (ví dụ: xe hỏng)**: cần truy xuất **SOP về xử lý sự cố**, gọi đúng người → dùng **context tagging + role-aware retrieval**
+* **Qua nhiều ca làm việc**: context cũ không còn quan trọng → dùng **context pruning** để giảm độ dài
+* **Cần giữ tiến trình nhiệm vụ**: dùng **session summary** để biết "task này đã làm tới đâu"
+
+---
+
+## 🎯 Kết luận
+
+### ✅ **Có — context engineering là cần thiết** nếu bạn muốn agent hỗ trợ vận hành:
+
+* Nhớ đúng điều cần nhớ
+* Phản ứng đúng thời điểm
+* Làm đúng vai trò
+
+### ❌ Không có context tốt → agent dễ “suy nghĩ sai” → phản hồi kém chất lượng, ảnh hưởng đến vận hành thực tế.
