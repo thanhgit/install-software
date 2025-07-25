@@ -104,3 +104,140 @@ Các xu hướng đáng chú ý hiện nay:
 * **Reasoning là kết quả (outcome)**
 
 Khi thiết kế context đúng cách, bạn không còn cần prompt thông minh nữa — bạn có một **hệ thống có tư duy**.
+
+---
+hãy viết streamlit app để quản lý context engineering với các thành phần như: system prompt, user prompt, short-term memory , long-term memory, RAG, tools, structured output, guardrail để cấu hình lên một context engineering như mô tả ở trên  
+
+Dưới đây là một **ứng dụng Streamlit đơn giản để quản lý context engineering** với các thành phần cơ bản như bạn yêu cầu:
+
+---
+
+## 🧠 Mục tiêu của app:
+
+* Cho phép cấu hình:
+
+  * `system prompt`
+  * `user prompt`
+  * `short-term memory`
+  * `long-term memory`
+  * `RAG documents`
+  * `tools` (danh sách chức năng giả định)
+  * `structured output format`
+  * `guardrails` (validation/logic cơ bản)
+* Kết hợp các thành phần để tạo **context package**
+* Cho phép xuất ra JSON cấu hình context
+
+---
+
+## ✅ 1. Mã nguồn `context_builder_app.py`
+
+```python
+import streamlit as st
+import json
+
+st.set_page_config(page_title="🧠 Context Engineering Builder", layout="wide")
+
+st.title("🧠 Context Engineering Builder")
+st.markdown("Thiết kế context đầy đủ cho hệ thống LLM agent.")
+
+# Tabs
+tabs = st.tabs([
+    "System Prompt", "User Prompt", "Memory", "RAG", "Tools", "Structured Output", "Guardrails", "Final Context"
+])
+
+# 1. SYSTEM PROMPT
+with tabs[0]:
+    st.header("🧾 System Prompt")
+    system_prompt = st.text_area("System Prompt", height=150, placeholder="Bạn là một trợ lý AI thông minh...")
+
+# 2. USER PROMPT
+with tabs[1]:
+    st.header("👤 User Prompt")
+    user_prompt = st.text_area("User Prompt", height=150, placeholder="Hãy giúp tôi lên kế hoạch học Python...")
+
+# 3. MEMORY
+with tabs[2]:
+    st.subheader("🧠 Short-term Memory (session-based)")
+    stm = st.text_area("Short-term Memory", height=100, placeholder="Câu trả lời gần nhất, ngữ cảnh trước đó...")
+
+    st.subheader("📦 Long-term Memory (persistent)")
+    ltm = st.text_area("Long-term Memory", height=100, placeholder="Thông tin người dùng, lịch sử tương tác...")
+
+# 4. RAG
+with tabs[3]:
+    st.header("📚 RAG Documents")
+    rag_sources = st.text_area("List of document chunks or sources", placeholder="docs/faq.pdf, vector_db/index.json...")
+    rag_embedding_model = st.selectbox("Embedding Model", ["OpenAI", "Cohere", "Local (e.g. Instructor)"])
+    rag_top_k = st.slider("Top-K retrieved", 1, 10, 3)
+
+# 5. TOOLS
+with tabs[4]:
+    st.header("🧰 Tools")
+    tools_list = st.multiselect("Select tools available to the model", [
+        "Calculator", "Weather API", "Search", "File Reader", "Web Browser", "Code Interpreter"
+    ])
+    st.text("Bạn có thể định nghĩa toolchain riêng ở backend.")
+
+# 6. STRUCTURED OUTPUT
+with tabs[5]:
+    st.header("📤 Structured Output Format")
+    output_format = st.text_area("JSON Schema hoặc template output", placeholder='{"task": "", "steps": [], "result": ""}')
+
+# 7. GUARDRAILS
+with tabs[6]:
+    st.header("🛡️ Guardrails")
+    toxicity_check = st.checkbox("❌ Reject toxic output")
+    safety_check = st.checkbox("✅ Ensure tool use is validated")
+    max_tokens = st.number_input("🔢 Max Tokens Allowed", min_value=100, max_value=8000, value=2048)
+
+# 8. FINAL CONTEXT COMPOSER
+with tabs[7]:
+    st.header("🧩 Final Context Configuration")
+    if st.button("🧬 Generate Context JSON"):
+        context_package = {
+            "system_prompt": system_prompt,
+            "user_prompt": user_prompt,
+            "memory": {
+                "short_term": stm,
+                "long_term": ltm,
+            },
+            "rag": {
+                "sources": rag_sources.split(","),
+                "embedding_model": rag_embedding_model,
+                "top_k": rag_top_k,
+            },
+            "tools": tools_list,
+            "output_format": output_format,
+            "guardrails": {
+                "toxicity_filter": toxicity_check,
+                "tool_validation": safety_check,
+                "max_tokens": max_tokens,
+            }
+        }
+
+        st.success("✅ Context package generated!")
+        st.code(json.dumps(context_package, indent=2), language="json")
+
+        st.download_button("📥 Download Context JSON", data=json.dumps(context_package, indent=2), file_name="context_package.json")
+
+```
+
+---
+
+## 🧪 Cách chạy:
+
+Lưu vào `context_builder_app.py`, sau đó chạy:
+
+```bash
+streamlit run context_builder_app.py
+```
+
+---
+
+## 🔮 Gợi ý mở rộng:
+
+* Kết nối với **LangChain** / **LlamaIndex** để test context live
+* Thêm **preview mẫu prompt tổng hợp**
+* Thêm upload **vector store / document**
+* Tích hợp API để gửi context đến LLM endpoint
+
