@@ -28,6 +28,7 @@
 ### Some chatGPT prompts
 
 ![](./media/llm-post-training.gif)
+
 ### `LLM can reason` by right post-training.
 #### ✅ Inference-time reasoning methods, which can be applied at inference time, without needing to retrain your model:
 - #### Tree of Thoughts (ToT), search through reasoning paths
@@ -44,3 +45,62 @@ And relevant context:
 {context}
 Please respond to the user query using information and facts provided in the context.
 ```
+<img width="1198" height="748" alt="image" src="https://github.com/user-attachments/assets/1d9f4794-a137-4c5c-b765-2d8b0174c07f" />
+
+## 🔧 Prompting chỉ là bề nổi — Context Engineering là tầng suy nghĩ
+
+Prompting vẫn hữu dụng — nó là điểm khởi đầu. Nhưng **Context Engineering** mới là nơi **tư duy hệ thống thật sự bắt đầu**.
+
+Chúng ta không chỉ cần mô hình **nói ra điều gì đó**, mà cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**.
+
+Việc phân tích các yếu tố như:
+
+* công cụ (tools),
+* bộ nhớ (memory),
+* truy xuất có bổ trợ (RAG),
+* và chiến lược phân bổ token (token budgeting)
+
+…là điều mà hầu hết nhóm AI đang thiếu.
+
+Chúng ta không còn “chơi chữ” với mô hình nữa — **mà đang bắt đầu thiết kế logic.**
+
+---
+
+## 🧠 Từ lý thuyết đến thực tiễn
+
+Hoàn toàn đúng khi nói: **không có một framework scale được nếu chỉ dựa vào trial-and-error prompt**.
+
+> “Teaching the model what matters, why it matters, and how to reason about it”
+> — đó không phải là prompt nữa, đó là **dạy tư duy**.
+
+Đặc biệt là việc **kiến trúc để xử lý overflow**, đó là vấn đề ngày càng rõ khi:
+
+* context window tăng,
+* dữ liệu đầu vào ngày càng phức tạp,
+* và không có chiến lược pruning/token budgeting tốt thì mô hình sẽ bị "ngộp".
+
+---
+
+## 🛠 Vai trò của công cụ: Tooling cho Context Design
+
+Một câu hỏi đáng giá: **tooling nào giúp thực hiện được context engineering một cách thực tiễn?**
+
+Các xu hướng đáng chú ý hiện nay:
+
+* **LangGraph, LangChain Expression Language (LCEL)**: Cho phép xây dựng context flow có kiểm soát (stateful logic).
+* **LlamaIndex, Haystack**: Hỗ trợ semantic chunking, context injection có cấu trúc.
+* **PromptLayer, Traceloop**: Tracking + debugging prompt/context behavior để học từ thực tế.
+* **MemGPT, Agentic memory frameworks**: Khởi đầu cho “LLM với trí nhớ thật sự” — rất quan trọng cho context dài hạn.
+* **tiktoken + Custom token routers**: Để phân bổ và kiểm soát token budget theo mục tiêu.
+
+---
+
+## 💡 Tóm lại
+
+> “It’s not just about what the model says — it’s about what it sees, and why it should care.”
+
+* **Context là hạ tầng (infrastructure)**
+* **Engineering là giao diện (interface)**
+* **Reasoning là kết quả (outcome)**
+
+Khi thiết kế context đúng cách, bạn không còn cần prompt thông minh nữa — bạn có một **hệ thống có tư duy**.
