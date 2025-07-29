@@ -3,7 +3,15 @@
 - #### Empowered by LLM and external tools
 - #### Able to autonomously make and refine decisions
 - #### Resolving complex decision-making 
-- #### Handling of unstructured data sources 
+- #### Handling of unstructured data sources
+
+#### Agentic app cần có:
+- #### `Durable execution`
+```
+* Background execution
+* Heartbeat signals
+* Resumable runs
+```
 
 ![](./media/types-of-ai-agent.png)
 ### Type of AI agents
