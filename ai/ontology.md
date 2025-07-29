@@ -3,6 +3,7 @@
 * `Properties` are defined independently and outside the classes
 * `Individuals` can belong to one class, but also to several classes (this is multiple instantiation, which is similar to multiple inheritance, but for instances)
 > **Ontology không chỉ mô tả tri thức — nó còn tổ chức và chia sẻ tri thức một cách linh hoạt, mở đường cho nhiều ứng dụng sử dụng cùng một nền tảng tri thức.**
+* Phương pháp nội suy căn bản: `bất cứ điều gì không bị cấm chính thức đều được coi là có thể thực hiện được`, ví dụ shape có thể vửa là tròn vừa là vuông
 
 ## 🧠 Vai Trò Của Ontology Hình Thức (Formal Ontologies)
 ### 1. 🧮 **Suy Luận Tự Động (Automatic Reasoning)**
