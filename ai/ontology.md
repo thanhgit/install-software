@@ -11,3 +11,7 @@
 * Sử dụng **IRI (Internationalized Resource Identifier)** để định danh các thực thể (entity).
 * Nhờ đó, các ontology có thể chia sẻ cùng một **không gian tên (namespace)** và liên kết với nhau.
 * Cho phép định nghĩa **mối quan hệ tương đương** giữa các thực thể giống nhau trong các ontology khác nhau.
+
+📌 Ví dụ:
+* Nếu định nghĩa cùng một thực thể nhưng đặt tên khác nhau trong hai ontology riêng biệt
+* => thì có thể thêm quan hệ tương đương để hợp nhất chúng thành **một thực thể duy nhất**.
