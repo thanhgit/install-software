@@ -7,11 +7,28 @@
 
 #### Agentic app cần có:
 - #### `Durable execution`
-```
-* Background execution
-* Heartbeat signals
-* Resumable runs
-```
+  ```
+  * Background execution
+  * Heartbeat signals
+  * Resumable runs
+  ```
+- #### `Stage management`
+  ```
+  * Persist and manage agent context across steps and failures
+  * EX: memory, tool outputs, intermediate results 
+  ```
+- #### `Humman-in-the-loop`
+  ```
+  * Wait for user feedback
+  * Pause and resume workflows without custom polling or queues 
+  ```
+- #### `Bursty concurrency`
+  ```
+  * Absorb spikes in usage for stable performance under heavy loads with:
+    * Task queues
+    * Horizontal auto-scaling
+  ```
+
 
 ![](./media/types-of-ai-agent.png)
 ### Type of AI agents
