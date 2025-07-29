@@ -28,7 +28,13 @@
     * Task queues
     * Horizontal auto-scaling
   ```
-
+- #### `Streaming visibility`
+  ```
+  * Stream agent output in real-time to improve user experience, with
+    * Token-level streaming
+    * Custom data streaming
+    * Dynammic UI components
+  ```
 
 ![](./media/types-of-ai-agent.png)
 ### Type of AI agents
