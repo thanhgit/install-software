@@ -1,5 +1,7 @@
 # Ontology
 * is a set of entities, which can be classes, properties, or individuals
+* `Properties` are defined independently and outside the classes
+* `Individuals` can belong to one class, but also to several classes (this is multiple instantiation, which is similar to multiple inheritance, but for instances)
 
 ## 🧠 Vai Trò Của Ontology Hình Thức (Formal Ontologies)
 ### 1. 🧮 **Suy Luận Tự Động (Automatic Reasoning)**
