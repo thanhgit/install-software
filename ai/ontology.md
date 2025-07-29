@@ -54,3 +54,17 @@ Việc **liên kết tri thức** sẽ mở ra khả năng **suy luận mới**.
 * **Dễ bảo trì:** Chỉ cần cập nhật ở một nơi.
 * **Tái sử dụng tri thức:** Nhiều hệ thống có thể dùng chung.
 * **Dễ mở rộng:** Khi cần phát triển thêm tính năng, không phải xây lại từ đầu.
+
+## 🚫 Ràng buộc Loại Trừ Trong Ontology dùng disjoint
+* Cần **khai báo hai lớp `Round` và `Rod` là *disjoint classes*** (lớp loại trừ nhau).
+* Nghĩa là:
+
+  > **Không có cá thể nào** (individual) **có thể thuộc về cả hai lớp này cùng lúc.**
+
+### 🎯 Ý nghĩa tổng quát:
+
+* **Tính nhất quán của tri thức:**
+  Ràng buộc này đảm bảo dữ liệu không mâu thuẫn (ví dụ: một vi khuẩn không thể bị mô tả có hai hình dạng cùng lúc).
+
+* **Hạn chế lỗi logic trong suy luận tự động:**
+  Hệ thống reasoner có thể phát hiện lỗi nếu một cá thể bị gán vào cả hai lớp loại trừ.
