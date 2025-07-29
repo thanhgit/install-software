@@ -68,3 +68,42 @@ Việc **liên kết tri thức** sẽ mở ra khả năng **suy luận mới**.
 
 * **Hạn chế lỗi logic trong suy luận tự động:**
   Hệ thống reasoner có thể phát hiện lỗi nếu một cá thể bị gán vào cả hai lớp loại trừ.
+
+## 🚫 **Ràng buộc Loại Trừ Cho Các Kiểu Tập Hợp (Grouping) Trong Ontology**
+Đảm bảo rằng các **kiểu tập hợp (grouping)** của vi khuẩn trong ontology **không bị chồng lặp logic**, bằng cách sử dụng các **lớp loại trừ nhau (disjoint classes)**.
+
+1. **Khai báo `InSmallChain` và `InLongChain` là lớp loại trừ nhau**:
+
+   * Một vi khuẩn không thể vừa ở chuỗi ngắn **vừa** ở chuỗi dài cùng lúc.
+
+2. **Khai báo các lớp `Isolated`, `InPair`, `InCluster`, `InChain` là *pairwise disjoint***:
+
+   * Nghĩa là **bất kỳ cặp nào trong số các lớp này đều loại trừ nhau**.
+   * Ví dụ: một vi khuẩn không thể **vừa Isolated vừa InCluster**.
+
+### ⚠️ Lưu ý quan trọng:
+
+> **Ràng buộc “disjoint” chỉ áp dụng với *các giá trị trong cùng một quan sát grouping***
+> Nó **không cấm** một vi khuẩn có nhiều dạng tập hợp khác nhau trong các điều kiện khác nhau.
+
+#### 📍 Ví dụ:
+
+* Một vi khuẩn như **Pseudomonas** có thể được quan sát là:
+
+  * **Isolated** trong điều kiện A
+  * **InPair** trong điều kiện B
+
+⛔ Nhưng **một tập hợp cụ thể** không thể **vừa Isolated vừa InPair** đồng thời.
+
+---
+
+### 🎯 Ý nghĩa tổng quát:
+
+* Đảm bảo rằng các lớp biểu diễn **tình huống cụ thể** không bị mâu thuẫn logic.
+* Cho phép mô hình hóa các trường hợp **đa hình dạng** (đa grouping) trong thực tế, nhưng vẫn giữ cho từng grouping riêng lẻ nhất quán.
+
+---
+
+### 💬 Kết luận:
+
+> **Ràng buộc loại trừ (disjoint)** giúp tăng tính **logic và chính xác** cho ontology, trong khi vẫn cho phép **tính linh hoạt khi mô tả thực thể có nhiều đặc điểm.**
