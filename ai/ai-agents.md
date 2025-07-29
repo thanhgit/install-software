@@ -5,6 +5,66 @@
 - #### Resolving complex decision-making 
 - #### Handling of unstructured data sources
 
+## 🚀 Muốn Xây Dựng AI Agent Thông Minh Hơn?
+### 1. 🛠️ **Ưu Tiên Xây Dựng Công Cụ Trước**
+
+**Thiết kế, viết code và kiểm thử công cụ thật kỹ trước khi kết nối với AI.**
+
+> Công cụ là phần **ổn định và dễ kiểm soát nhất** trong hệ thống. Nếu nó không hoạt động tốt, agent cũng không thể hoạt động tốt.
+
+---
+
+### 2. 🧱 **Bắt Đầu Với Công Cụ Đơn Giản**
+
+**Xây dựng một vài công cụ nền tảng, đa năng trước.**
+
+> Đừng phức tạp hóa mọi thứ bằng việc tạo ra quá nhiều công cụ ngay từ đầu. Ít nhưng chất lượng sẽ dễ kiểm soát hơn.
+
+---
+
+### 3. 🧑‍💻 **Khởi Đầu Với Một Agent Duy Nhất**
+
+**Sau khi có công cụ cốt lõi, hãy thử nghiệm với một agent đơn.**
+
+> Cách này giúp bạn dễ dàng phát hiện lỗi, tinh chỉnh và tối ưu hệ thống trước khi mở rộng sang nhiều agent hay quy trình phức tạp hơn.
+
+---
+
+### 4. 🧠 **Dùng Mô Hình AI Tốt Nhất Ngay Từ Đầu**
+
+**Hãy bắt đầu bằng mô hình mạnh nhất (như Claude Sonnet hoặc GPT-4).**
+
+> Tránh việc agent hoạt động không đúng chỉ vì giới hạn của mô hình yếu. Sau khi ổn định, bạn có thể cân nhắc chuyển sang mô hình rẻ hơn nếu cần.
+
+---
+
+### 5. 🧾 **Ghi Log & Trace Mọi Thứ**
+
+**Agent thường có những hành vi khó lường.**
+
+> Dùng các công cụ như `LangSmith`, `Langfuse`, hoặc hệ thống logging riêng để theo dõi từng hành động. Đây là chìa khóa để debug hiệu quả.
+
+---
+
+### 6. 🚧 **Xác Định Điểm Nghẽn (Bottleneck)**
+
+**Khi hiệu suất kém, hãy xem log để tìm ra nguyên nhân thực sự.**
+
+> Có thể do giới hạn ngữ cảnh, công cụ yếu, prompt chưa tốt... Hãy xử lý đúng chỗ:
+> – Cải thiện prompt
+> – Thêm công cụ chuyên biệt
+> – Chia nhỏ công việc cho nhiều agent
+
+---
+
+### 7. 🧩 **Kết Hợp Workflow và Agent**
+
+**Với các tác vụ phức tạp, hãy thử kết hợp giữa workflow và agent.**
+
+> Mỗi bước trong workflow có thể là một agent nhỏ. Cách làm này giúp tăng hiệu quả, khả năng mở rộng và dễ bảo trì hơn.
+
+---
+
 #### Agentic app cần có:
 - #### `Durable execution`
   ```
