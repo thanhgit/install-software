@@ -222,27 +222,50 @@ with tabs[7]:
 
 ```
 
----
-
-## 🧪 Cách chạy:
-
-Lưu vào `context_builder_app.py`, sau đó chạy:
-
-```bash
-streamlit run context_builder_app.py
-```
-
----
-
-## 🔮 Gợi ý mở rộng:
-
-* Kết nối với **LangChain** / **LlamaIndex** để test context live
-* Thêm **preview mẫu prompt tổng hợp**
-* Thêm upload **vector store / document**
-* Tích hợp API để gửi context đến LLM endpoint
-
 <img width="1616" height="584" alt="image" src="https://github.com/user-attachments/assets/e4427e47-b822-4916-a029-10ebf1b5c7b4" />
-Có — **context engineering rất quan trọng**, và **là yếu tố cốt lõi** để một AI agent hỗ trợ vận hành (operations assistant) hoạt động **chính xác, ổn định, và hiệu quả**.
+
+#### Context engineering is no longer optional, it's a key pillar in building reliable AI agents
+6 ways to provide context to AI Agents ⬇️
+
+📌 INSTRUCTIONS - Set the stage clearly:
+
+* Who: Give your AI a role ("Act as a senior developer")
+* Why: Explain the bigger picture and business value
+* What: Define success criteria and expected outcomes
+
+📌 REQUIREMENTS - The "how-to" blueprint:
+
+* Step-by-step processes
+* Style guidelines and coding standards
+* Performance constraints and security requirements
+* Response formats (JSON, plain text, etc.)
+* Examples of what TO do and what NOT to do
+* Pro tip: Negative examples are gold for fixing common mistakes!
+
+📌 KNOWLEDGE - Feed your AI the right information:
+
+* External context: Industry knowledge, business models, market facts
+* Task context: Workflows, documentation, structured data
+* Think of it as giving your AI a comprehensive briefing
+
+📌 MEMORY - Enable your AI to remember:
+
+* Short-term: Chat history, current reasoning steps
+* Long-term: User preferences, past experiences, learned procedures
+* Note: Memory isn't just prompt text—it's managed by your orchestration layer
+
+📌 TOOLS - Describe available functions clearly:
+
+* What each tool does
+* How to use it properly
+* Expected parameters and return values
+* Remember: Tool descriptions are micro-prompts that guide AI reasoning!
+
+📌 TOOL RESULTS - The feedback loop:
+
+* AI requests tool execution in special format
+* System responds with results
+* AI continues with enriched context
 
 ---
 
