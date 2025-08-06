@@ -10,3 +10,11 @@
 
 #### Biểu đồ phân tích về nghịch lý trong vận hành
 <img width="1325" height="520" alt="image" src="https://github.com/user-attachments/assets/fe88f9d3-0f9f-4de0-85ef-23911f1cd057" />
+
+```
+Chuẩn bị dữ liệu đầu vào thật tốt
+
+Chọn một metric có thể giám sat một cách tự động, đánh giá sự cải thiện nó
+
+Luôn luôn có kế hoạch dự phòng trong trường hợp AI xử lý sai 
+```
