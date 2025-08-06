@@ -15,6 +15,7 @@
 Chuẩn bị dữ liệu đầu vào thật tốt
 
 Chọn một metric có thể giám sat một cách tự động, đánh giá sự cải thiện nó
+VD: mean time to restore
 
 Luôn luôn có kế hoạch dự phòng trong trường hợp AI xử lý sai 
 ```
