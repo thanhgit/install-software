@@ -1,4 +1,5 @@
-# Prompt engineering
+# Prompt engineering && Context engineering 
+
 - #### Prompting is about shaping behaviour, which must be:
     - #### Repeatable
     - #### Testable
@@ -7,9 +8,9 @@
 
 ### Prompt engineering lifecyle
 - #### `𝟏. 𝐃𝐞𝐬𝐢𝐠𝐧`
-    - #### Like software, it starts with intent.
-    - #### Define the agent’s role, the task, and the output expectations.
-    - #### Set tone, constraints, and structure. Think of it like writing an API contract in plain English.
+    - #### Like software, it starts with intent
+    - #### Define the agent’s role, the task, and the output expectations
+    - #### Set tone, constraints, and structure. Think of it like writing an API contract in plain English
 
 - #### `𝟐. 𝐓𝐞𝐬𝐭 - 𝐃𝐞𝐩𝐥𝐨𝐲`
     - #### Test against edge cases, noisy context, and failure scenarios.
@@ -135,21 +136,28 @@ Các xu hướng đáng chú ý hiện nay:
 
 ## 💡 Tóm lại
 
-> “It’s not just about what the model says — it’s about what it sees, and why it should care.”
+> Khi bạn thiết kế context đúng cách, bạn không cần “prompt thông minh” nữa — vì bạn đã xây dựng một hệ thống có khả năng tư duy. 
+> Bởi vì AI sẽ tự lập luận chính xác, vì nó đã “thấy đúng thứ, theo đúng cách, vì đúng lý do.”
 
-* **Context là hạ tầng (infrastructure)**
-* **Engineering là giao diện (interface)**
-* **Reasoning là kết quả (outcome)**
+#### 1. **Context là hạ tầng (infrastructure)**
 
-Khi thiết kế context đúng cách, bạn không còn cần prompt thông minh nữa — bạn có một **hệ thống có tư duy**.
+* Context là **nền tảng dữ liệu mà mô hình tiếp cận được**: hướng dẫn, ví dụ, dữ liệu truy xuất,...
+* Nếu context **mập mờ, rải rác hoặc quá dài**, mô hình sẽ "thấy" sai hoặc thiếu sót, từ đó **lý luận sai**.
+* Nghĩa là: **Nếu “đầu vào” lộn xộn, “đầu ra” sẽ vô nghĩa.**
+
+#### 2. **Engineering là giao diện (interface)**
+
+* Đây là **cách bạn cấu trúc prompt**, kiểm soát token, sử dụng bộ nhớ, phân tầng thông tin.
+* Một interface tốt sẽ giúp AI **hiểu rõ thông tin nào là quan trọng**, từ đó **tập trung đúng mục tiêu**.
+* Giao diện tốt giúp AI “biết nhìn vào đâu”.
+
+#### 3. **Reasoning là kết quả (outcome)**
+
+* Là khả năng **lập luận và đưa ra phản hồi logic, chính xác** của mô hình.
+* Nếu context được thiết kế tốt, AI không chỉ “nói đúng” mà còn **hiểu lý do tại sao phải trả lời như vậy**.
+
 
 ---
-hãy viết streamlit app để quản lý context engineering với các thành phần như: system prompt, user prompt, short-term memory , long-term memory, RAG, tools, structured output, guardrail để cấu hình lên một context engineering như mô tả ở trên  
-
-Dưới đây là một **ứng dụng Streamlit đơn giản để quản lý context engineering** với các thành phần cơ bản như bạn yêu cầu:
-
----
-
 ## 🧠 Mục tiêu của app:
 
 * Cho phép cấu hình:
@@ -350,14 +358,3 @@ Giả sử AI agent giúp đội điều phối vận chuyển:
 * **Qua nhiều ca làm việc**: context cũ không còn quan trọng → dùng **context pruning** để giảm độ dài
 * **Cần giữ tiến trình nhiệm vụ**: dùng **session summary** để biết "task này đã làm tới đâu"
 
----
-
-## 🎯 Kết luận
-
-### ✅ **Có — context engineering là cần thiết** nếu bạn muốn agent hỗ trợ vận hành:
-
-* Nhớ đúng điều cần nhớ
-* Phản ứng đúng thời điểm
-* Làm đúng vai trò
-
-### ❌ Không có context tốt → agent dễ “suy nghĩ sai” → phản hồi kém chất lượng, ảnh hưởng đến vận hành thực tế.
