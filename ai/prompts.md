@@ -29,7 +29,7 @@
 
 ![](./media/llm-post-training.gif)
 
-### `LLM can reason` by right post-training.
+### `LLM can reason` by right post-training
 #### ✅ Inference-time reasoning methods, which can be applied at inference time, without needing to retrain your model:
 - #### Tree of Thoughts (ToT), search through reasoning paths
 - #### Chain of Thought (CoT) prompting, prompt models to generate intermediate reasoning steps
@@ -49,9 +49,9 @@ Please respond to the user query using information and facts provided in the con
 
 ## 🔧 Prompting chỉ là bề nổi — Context Engineering là tầng suy nghĩ
 
-Prompting vẫn hữu dụng — nó là điểm khởi đầu. Nhưng **Context Engineering** mới là nơi **tư duy hệ thống thật sự bắt đầu**.
+Prompting vẫn hữu dụng — nó là điểm khởi đầu. Nhưng **Context Engineering** mới là nơi **tư duy hệ thống thật sự bắt đầu**
 
-Chúng ta không chỉ cần mô hình **nói ra điều gì đó**, mà cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**.
+Chúng ta không chỉ cần mô hình **nói ra điều gì đó**, mà cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**
 
 Việc phân tích các yếu tố như:
 
@@ -60,9 +60,47 @@ Việc phân tích các yếu tố như:
 * truy xuất có bổ trợ (RAG),
 * và chiến lược phân bổ token (token budgeting)
 
-…là điều mà hầu hết nhóm AI đang thiếu.
+Chúng ta không còn “chơi chữ” với mô hình nữa — **mà đang bắt đầu thiết kế logic**
 
-Chúng ta không còn “chơi chữ” với mô hình nữa — **mà đang bắt đầu thiết kế logic.**
+**Thêm context ≠ AI thông minh hơn** bởi vì quá nhiều thông tin **gây phân mảnh** và làm AI mất “tập trung”
+
+### **97% kỹ sư AI đang làm sai cách “context prompting”**
+→ Sai lầm trị giá **2.3 triệu USD** đang hủy hoại hiệu quả AI trong doanh nghiệp.
+
+### 📉 **Vấn đề thường gặp**:
+
+Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → khiến AI **giảm độ chính xác**, **tăng chi phí**, và **giảm tốc độ**.
+
+* **Dữ liệu thực tế (847+ audit)**:
+
+  * Prompt 47,000 tokens → **chỉ 23% chính xác ❌**
+  * Prompt 1,200 tokens → **91% chính xác ✅**
+
+### 🧩 Cách tối ưu context:
+
+**1️⃣ Phân bổ token hợp lý:**
+
+* Hướng dẫn (Instructions): 15%
+* Ví dụ mẫu (Examples): 25%
+* Dữ liệu trích xuất (Retrieved data): 45%
+* Đầu vào người dùng: 15%
+
+**2️⃣ Sắp xếp “trí nhớ” của AI theo lớp:**
+
+* Chỉ phiên chat hiện tại
+* 3 lượt hội thoại gần nhất liên quan
+* 3 nguồn thông tin phù hợp nhất
+* Tri thức nén (compressed knowledge)
+
+**3️⃣ Mẹo truy xuất dữ liệu (retrieval):**
+👉 5 kết quả **phù hợp hoàn hảo** tốt hơn 50 kết quả **mơ hồ**
+→ Quá nhiều lựa chọn **giảm độ chính xác**.
+
+### 🏆 **Kết quả thực tế trong doanh nghiệp:**
+
+* **Client A**: Chất lượng tăng 340%
+* **Client B**: Giảm lỗi 67%
+* **Client C**: Tốc độ gấp 5 lần
 
 ---
 
