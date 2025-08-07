@@ -28,17 +28,6 @@
 ![](./media/prompting-example.jpeg)
 ### Some chatGPT prompts
 
-![](./media/llm-post-training.gif)
-
-### `LLM can reason` by right post-training
-#### ✅ Inference-time reasoning methods, which can be applied at inference time, without needing to retrain your model:
-- #### Tree of Thoughts (ToT), search through reasoning paths
-- #### Chain of Thought (CoT) prompting, prompt models to generate intermediate reasoning steps
-- #### Reasoning + Acting, use tools or function calls during reasoning
-- #### Self-feedback, prompt the model to critique and refine its own output
-- #### Episodic Memory Agents, maintain a memory buffer to improve multi-step reasoning
-- #### Self-consistency, sample multiple reasoning paths and select the most consistent answer
-
 ### A RAG prompt
 ```text
 Here is a user query: {query}.
@@ -50,16 +39,19 @@ Please respond to the user query using information and facts provided in the con
 
 ## 🔧 Prompting chỉ là bề nổi — Context Engineering là tầng suy nghĩ
 
-Prompting vẫn hữu dụng — nó là điểm khởi đầu. Nhưng **Context Engineering** mới là nơi **tư duy hệ thống thật sự bắt đầu**
+Prompting vẫn hữu dụng — nó là điểm khởi đầu
 
-Chúng ta cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**
+Nhưng **Context Engineering** 
+* mới là nơi **tư duy hệ thống thật sự bắt đầu**
+* nghệ thuật thiết kế môi trường thông tin động và liên tục để AI có thể tư duy và hành động hiệu quả.
 
-Việc phân tích các yếu tố như:
+Chúng ta cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian** từ việc phân tích các yếu tố như:
 
 * công cụ (tools),
-* bộ nhớ (memory),
-* truy xuất có bổ trợ (RAG),
-* và chiến lược phân bổ token (token budgeting)
+* Quản lý trạng thái, bộ nhớ (memory),
+* Phản hồi từ công cụ và kết quả, định dạng rõ ràng
+* Hệ thống truy xuất tri thức có bổ trợ (RAG) 
+* và chiến lược phân bổ token (token budgeting) đòi hỏi tư duy hệ thống (system thinking)	
 
 **Thêm context ≠ AI thông minh hơn** bởi vì quá nhiều thông tin **gây phân mảnh** và làm AI mất “tập trung”
 
