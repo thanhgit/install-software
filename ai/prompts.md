@@ -52,7 +52,7 @@ Please respond to the user query using information and facts provided in the con
 
 Prompting vẫn hữu dụng — nó là điểm khởi đầu. Nhưng **Context Engineering** mới là nơi **tư duy hệ thống thật sự bắt đầu**
 
-Chúng ta không chỉ cần mô hình **nói ra điều gì đó**, mà cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**
+Chúng ta cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian**
 
 Việc phân tích các yếu tố như:
 
@@ -61,9 +61,9 @@ Việc phân tích các yếu tố như:
 * truy xuất có bổ trợ (RAG),
 * và chiến lược phân bổ token (token budgeting)
 
-Chúng ta không còn “chơi chữ” với mô hình nữa — **mà đang bắt đầu thiết kế logic**
-
 **Thêm context ≠ AI thông minh hơn** bởi vì quá nhiều thông tin **gây phân mảnh** và làm AI mất “tập trung”
+
+Less context = Greater quality, more speed, lower spend
 
 ### **97% kỹ sư AI đang làm sai cách “context prompting”**
 → Sai lầm trị giá **2.3 triệu USD** đang hủy hoại hiệu quả AI trong doanh nghiệp.
@@ -91,7 +91,7 @@ Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → kh
 * Chỉ phiên chat hiện tại
 * 3 lượt hội thoại gần nhất liên quan
 * 3 nguồn thông tin phù hợp nhất
-* Tri thức nén (compressed knowledge)
+* Domain knowledge ngắn gọn 
 
 **3️⃣ Mẹo truy xuất dữ liệu (retrieval):**
 👉 5 kết quả **phù hợp hoàn hảo** tốt hơn 50 kết quả **mơ hồ**
