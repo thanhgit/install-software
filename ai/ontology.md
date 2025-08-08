@@ -5,6 +5,23 @@
 > **Ontology không chỉ mô tả tri thức — nó còn tổ chức và chia sẻ tri thức một cách linh hoạt, mở đường cho nhiều ứng dụng sử dụng cùng một nền tảng tri thức.**
 * Phương pháp nội suy căn bản: `bất cứ điều gì không bị cấm chính thức đều được coi là có thể thực hiện được`, ví dụ shape có thể vửa là tròn vừa là vuông
 
+### **Ontology là gì?**
+
+Ontology là một cách có cấu trúc để mô tả:
+
+* **Những gì tồn tại** trong lĩnh vực của bạn (ví dụ: con người, địa điểm, tài liệu)
+* **Cách chúng liên kết với nhau** (ví dụ: *worksAt*, *authoredBy*)
+* **Các quy tắc** xác định mối quan hệ đó
+
+→ Có thể hiểu như một **bản thiết kế ngữ nghĩa** (semantic blueprint) cho dữ liệu.
+
+### **Cách xây dựng một ontology (không cần bằng Tiến sĩ):**
+
+1. **Xác định lĩnh vực tri thức**: Bạn đang mô hình hóa loại kiến thức nào?
+2. **Liệt kê các khái niệm chính**: Chúng sẽ trở thành các “lớp” (ví dụ: *Person*, *Product*, *Event*)
+3. **Xác định các mối quan hệ**: Ví dụ: *Person → worksAt → Company*
+4. **Thêm thuộc tính** cho từng lớp: Ví dụ: *Person → hasName → String*
+
 ## 🧠 Vai Trò Của Ontology Hình Thức (Formal Ontologies)
 ### 1. 🧮 **Suy Luận Tự Động (Automatic Reasoning)**
 
