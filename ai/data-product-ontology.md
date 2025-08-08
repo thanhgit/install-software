@@ -133,3 +133,43 @@ Trong dự án gần đây xây dựng trợ lý RAG cho tuân thủ nhân sự,
 Vấn đề này rất quan trọng với những ai làm trong lĩnh vực tuân thủ hoặc môi trường rủi ro cao:
 
 👉 Làm sao để ontology grounding và chuyên môn hóa agent mở rộng được khi sự mơ hồ luôn tồn tại?
+
+---
+
+### Một từ, hai góc nhìn, cùng một chẩn đoán: Chuẩn bị ý nghĩa
+
+**Jérémy Ravenel** chỉ ra rằng vấn đề tích hợp dữ liệu không phải thiếu kỹ thuật mà chính là khủng hoảng về **ngữ nghĩa**:
+
+> “Cùng khách hàng. Nhãn khác nhau.
+> Cùng con số. Định nghĩa khác nhau.
+> Cùng mục tiêu. Không có ý nghĩa chung.”
+
+Theo ông, nếu bạn chỉ thêm cấu trúc, thực chất là đang chuẩn hóa sự hỗn loạn, chứ không phải hợp nhất dữ liệu.
+
+---
+
+**Tony Seale**, từ góc độ kiến thức đồ thị (knowledge graph), phân biệt giữa:
+
+* **Ngữ nghĩa tiềm ẩn (latent semantics)**: được máy học (như LLMs) ngấm ngầm nắm bắt
+* **Ngữ nghĩa có cơ sở (grounded semantics)**: bắt rễ từ thực tại, văn hóa và ngữ cảnh tổ chức
+
+Ông nhấn mạnh: “Khi mọi thứ trở nên thông minh, thì **ý nghĩa mới là yếu tố tạo khác biệt**.”
+
+---
+
+### Tóm lại từ hai góc nhìn:
+
+| Jérémy Ravenel                                                                      | Tony Seale                                                                                                |
+| ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
+| Tập trung vào sự **phân mảnh về vận hành**, nơi các bộ phận “hiểu khác nhau”        | Tập trung vào ranh giới giữa **AI thông minh nhưng thiếu ngữ cảnh** và ngữ nghĩa gốc                      |
+| Kết luận: thiếu ngữ nghĩa chung dẫn đến **không đồng bộ mà là sai lệch quy mô lớn** | Kết luận: khi trao quyền hiểu cho AI mà quên mã hóa ngữ nghĩa tổ chức, chúng ta mất “hiểu cho chính mình” |
+
+---
+
+### Sự hội tụ: semantics không chỉ là công cụ, mà là một phương pháp có chủ đích
+
+Không chỉ là dùng semantics như một kỹ thuật xử lý dữ liệu, mà:
+
+* Đó là một **kỷ luật** cần được xây dựng có mục đích.
+* Tạo dựng nền tảng ngữ nghĩa rõ ràng: **“Chúng ta nói gì?”**
+* Và từ đó mới đặt ra câu hỏi: **“Chúng ta muốn AI hiểu điều gì cho chúng ta?”**
