@@ -22,6 +22,18 @@ Ontology là một cách có cấu trúc để mô tả:
 3. **Xác định các mối quan hệ**: Ví dụ: *Person → worksAt → Company*
 4. **Thêm thuộc tính** cho từng lớp: Ví dụ: *Person → hasName → String*
 
+Ontology giúp AI:
+
+* **Xác định khái niệm và mối quan hệ**
+* **Lý luận theo ngữ cảnh**, vượt khỏi nhận diện mẫu đơn thuần
+* Đạt đến **trí tuệ có thể giải thích được** (explainable intelligence)
+
+### **Ontology và hạ tầng công nghệ hiện đại**
+
+* **Kết hợp với**: Cơ sở dữ liệu đồ thị và vector
+* **Tăng khả năng tương tác**: Giúp các hệ thống giao tiếp hiệu quả hơn
+* **Trở thành nền tảng cốt lõi** trong thời đại GenAI
+
 ## 🧠 Vai Trò Của Ontology Hình Thức (Formal Ontologies)
 ### 1. 🧮 **Suy Luận Tự Động (Automatic Reasoning)**
 
