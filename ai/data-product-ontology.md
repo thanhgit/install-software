@@ -1,5 +1,6 @@
 # Data product ontology
 - #### https://ekgf.github.io/dprod/#abstract
+- #### `Toàn bộ giá trị trên thị trường AI agent sẽ thuộc về chip và thứ mà chúng ta gọi là ontology`
 - #### 💡 Nguyên tắc số 1: `Hiểu tất cả khách hàng` bởi:
 ```
 → Kiến thức chuyên sâu theo miền
@@ -10,6 +11,7 @@
 → Every decision has meaning
 → Every action has purpose
 ```
+- #### ✅ Nguyên tắc số 2: `Suy nghĩ lớn, nhưng phải gói nó vào sản phẩm thực tế mà người dùng yêu`
 
 * **Không cần code, không rườm rà cú pháp** — tập trung vào tư duy nghiệp vụ và miền kiến thức.
 * **Ưu tiên trực quan** — dùng sơ đồ, biểu đồ nhiều hơn cấu trúc dữ liệu.
