@@ -6,6 +6,9 @@
 → Dữ liệu tái sử dụng được
 → Các LLM được tinh chỉnh kỹ càng
 ```
+* **Không cần code, không rườm rà cú pháp** — tập trung vào tư duy nghiệp vụ và miền kiến thức.
+* **Ưu tiên trực quan** — dùng sơ đồ, biểu đồ nhiều hơn cấu trúc dữ liệu.
+* **Phối hợp nhóm** — tạo sự đồng thuận giữa chuyên gia, lập trình viên và bên liên quan.
 
 ### 🚀 **Từ dữ liệu thô đến sản phẩm dữ liệu thật sự**
 
@@ -85,4 +88,28 @@ Các mô hình này được huấn luyện trên nội dung internet tổng qu�
 * Tiết kiệm thời gian quý báu tại mọi điểm tiếp xúc.
 * Giảm lỗi AI “tạo chuyện” khi kết hợp LLM với tri thức và dữ liệu thực tế của bạn.
 
+### ⚙️ **Vai trò trong phát triển Ontology**
+
+Bắt đầu từ nhu cầu kinh doanh => tạo mô hình khái niệm => rồi chuyển thành ontology chính thức => cuối cùng xây dựng knowledge graph phục vụ AI
+
+```mermaid
+graph LR
+A[Nhu cầu kinh doanh] --> B[Mô hình khái niệm]
+B --> C{Ontology chính thức}
+C --> D[Knowledge Graph]
+D --> E[Ứng dụng AI]
+```
+
+* **Đầu vào:** Kiến thức chuyên môn, mục tiêu doanh nghiệp
+* **Đầu ra:** Biểu đồ UML/OntoUML, định nghĩa khái niệm
+* **Công cụ:** Whiteboard, Visual Paradigm, Protégé
+
+---
+
+### 🏗️ **4 Thành phần cốt lõi của Mô hình hóa Khái niệm**
+
+1. **Lớp (Classes):** Các khái niệm chính (ví dụ: `Máy móc`, `Cảm biến`, `Báo cáo bảo trì`)
+2. **Mối quan hệ (Relationships):** Cách các lớp liên kết (ví dụ: `Máy có Cảm biến`, `Cảm biến kích hoạt Cảnh báo`)
+3. **Thuộc tính (Attributes):** Tính chất của lớp hoặc mối quan hệ (ví dụ: `Máy: số seri`, `Cảnh báo: mức độ nghiêm trọng`)
+4. **Ràng buộc (Constraints):** Quy tắc nghiệp vụ (ví dụ: “Máy quan trọng phải kiểm tra hàng ngày”)
 
