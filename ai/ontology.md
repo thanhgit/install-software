@@ -136,3 +136,24 @@ Việc **liên kết tri thức** sẽ mở ra khả năng **suy luận mới**.
 ### 💬 Kết luận:
 
 > **Ràng buộc loại trừ (disjoint)** giúp tăng tính **logic và chính xác** cho ontology, trong khi vẫn cho phép **tính linh hoạt khi mô tả thực thể có nhiều đặc điểm.**
+
+### 🧩 **Quá trình học ontology (Ontology Learning)**
+
+* **Ontology Learning** là quá trình trích xuất và xây dựng ontology từ tri thức đã có, ví dụ từ các **tập văn bản**.
+* Quá trình này thường được hình dung như một **chiếc bánh nhiều lớp** ("ontology learning cake"), mỗi lớp tương ứng với một **nhiệm vụ con** như:
+
+  * Trích xuất thuật ngữ
+  * Nhận diện từ đồng nghĩa
+  * Phân loại khái niệm
+  * Xác định quan hệ giữa các khái niệm, v.v.
+
+---
+
+### 🧠 **Ontology Learning trong kiến trúc neuro-symbolic**
+
+Trong bối cảnh kiến trúc **neuro-symbolic**, quá trình học ontology có thể được thực hiện bằng cách **giải quyết đồng thời hai bài toán trích xuất thông tin (Information Extraction - IE):**
+
+1. **Named Entity Recognition (NER)** – nhận diện thực thể
+2. **Relation Extraction (RE)** – trích xuất quan hệ giữa các thực thể
+
+✅ Việc kết hợp NER và RE giúp bao phủ toàn bộ các nhiệm vụ trong "ontology learning cake".
