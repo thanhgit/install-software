@@ -34,6 +34,40 @@ Ontology giúp AI:
 * **Tăng khả năng tương tác**: Giúp các hệ thống giao tiếp hiệu quả hơn
 * **Trở thành nền tảng cốt lõi** trong thời đại GenAI
 
+### 🔍 **Ontology không phải Knowledge Graph**
+
+Hai thuật ngữ này thường bị nhầm lẫn nhưng **không giống nhau**:
+
+> **Ontology** là **bản thiết kế (schema)**.
+> **Knowledge Graph** là **dữ liệu thực tế**.
+
+### 🧭 **Ontology = Bản thiết kế**
+
+Ontology là mô tả chính thức của một miền kiến thức, bao gồm:
+
+* **Khái niệm** (ví dụ: `Thiết bị`, `Con người`, `Quy trình`)
+* **Quan hệ** (ví dụ: `sở hữu`, `thực hiện`, `nằm ở`)
+* **Ràng buộc** (ví dụ: số lượng, phạm vi)
+* **Các quy tắc logic (Axioms)**
+
+Ontology là mô hình **đặt logic lên trước**, tập trung vào miền kiến thức, và không phụ thuộc công nghệ.
+
+### 🧩 **Knowledge Graph = Ontology đã được áp dụng trên dữ liệu thực**
+
+Knowledge Graph là cấu trúc dữ liệu dạng đồ thị dựa trên ontology để tổ chức:
+
+* **Các thực thể cụ thể** (ví dụ: `Cảm biến#123`, `Nguyễn Văn A`)
+* **Các sự kiện, sự thật** (ví dụ: `Cảm biến#123 nằm ở Phòng 12`)
+* **Quan hệ theo dạng bộ ba (Subject–Predicate–Object)**
+
+Nó là mô hình **dữ liệu thực tế**, linh hoạt, có thể truy vấn bằng ngôn ngữ như SPARQL hay GraphQL
+
+### 🚀 **Tại sao điều này quan trọng?**
+
+* Ontology giúp tạo ra **ý nghĩa rõ ràng**
+* Knowledge Graph giúp dữ liệu trở nên **dễ tìm kiếm và khai thác**
+* Kết hợp cùng nhau thúc đẩy các ứng dụng như **AI có thể giải thích được**, **hệ thống đề xuất**, **tự động hóa**, v.v.
+
 ## 🧠 Vai Trò Của Ontology Hình Thức (Formal Ontologies)
 ### 1. 🧮 **Suy Luận Tự Động (Automatic Reasoning)**
 
