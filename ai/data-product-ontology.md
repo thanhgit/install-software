@@ -5,7 +5,12 @@
 → Kiến thức chuyên sâu theo miền
 → Dữ liệu tái sử dụng được
 → Các LLM được tinh chỉnh kỹ càng
+
+→ Every data point has context
+→ Every decision has meaning
+→ Every action has purpose
 ```
+
 * **Không cần code, không rườm rà cú pháp** — tập trung vào tư duy nghiệp vụ và miền kiến thức.
 * **Ưu tiên trực quan** — dùng sơ đồ, biểu đồ nhiều hơn cấu trúc dữ liệu.
 * **Phối hợp nhóm** — tạo sự đồng thuận giữa chuyên gia, lập trình viên và bên liên quan.
@@ -104,8 +109,6 @@ D --> E[Ứng dụng AI]
 * **Đầu ra:** Biểu đồ UML/OntoUML, định nghĩa khái niệm
 * **Công cụ:** Whiteboard, Visual Paradigm, Protégé
 
----
-
 ### 🏗️ **4 Thành phần cốt lõi của Mô hình hóa Khái niệm**
 
 1. **Lớp (Classes):** Các khái niệm chính (ví dụ: `Máy móc`, `Cảm biến`, `Báo cáo bảo trì`)
@@ -113,3 +116,18 @@ D --> E[Ứng dụng AI]
 3. **Thuộc tính (Attributes):** Tính chất của lớp hoặc mối quan hệ (ví dụ: `Máy: số seri`, `Cảnh báo: mức độ nghiêm trọng`)
 4. **Ràng buộc (Constraints):** Quy tắc nghiệp vụ (ví dụ: “Máy quan trọng phải kiểm tra hàng ngày”)
 
+---
+
+### 🚀 **Multi-agent reasoning** đang trở thành nền tảng cho AI thế hệ mới.
+
+**Knowledge graphs** và **ontology-driven communication** — giúp các agent suy luận, lập kế hoạch và phối hợp thông minh hơn.
+
+Trong dự án gần đây xây dựng trợ lý RAG cho tuân thủ nhân sự, có nhận thấy:
+
+* Logic dự phòng giữa các agent
+* Sự trôi nghĩa trong tìm kiếm ngữ nghĩa
+* `Metadata giải thích` là những yếu tố then chốt — đặc biệt khi “kiến thức” không chỉ kỹ thuật mà còn mang tính quy định pháp lý
+
+Vấn đề này rất quan trọng với những ai làm trong lĩnh vực tuân thủ hoặc môi trường rủi ro cao:
+
+👉 Làm sao để ontology grounding và chuyên môn hóa agent mở rộng được khi sự mơ hồ luôn tồn tại?
