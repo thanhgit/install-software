@@ -1,9 +1,17 @@
 # Data product ontology
-https://ekgf.github.io/dprod/#abstract
+- #### https://ekgf.github.io/dprod/#abstract
+- #### 💡 Nguyên tắc số 1: `Hiểu tất cả khách hàng` bởi:
+```
+→ Kiến thức chuyên sâu theo miền
+→ Dữ liệu tái sử dụng được
+→ Các LLM được tinh chỉnh kỹ càng
+```
 
 ### 🚀 **Từ dữ liệu thô đến sản phẩm dữ liệu thật sự**
 
-Mọi doanh nghiệp đều muốn trở thành tổ chức **dựa trên dữ liệu (data-driven)**, và một cách hiệu quả để làm điều đó là **xây dựng dữ liệu thành sản phẩm**. Nhưng chỉ đơn giản gói dữ liệu trong kho thành bảng biểu, metadata, hay schema thì chưa đủ — vì đó chưa phải là sản phẩm dữ liệu thực sự.
+Mọi doanh nghiệp đều muốn trở thành tổ chức **dựa trên dữ liệu (data-driven)**, và một cách hiệu quả để làm điều đó là **xây dựng dữ liệu thành sản phẩm**
+
+Nhưng chỉ đơn giản gói dữ liệu trong kho thành bảng biểu, metadata, hay schema thì chưa đủ — vì đó chưa phải là sản phẩm dữ liệu thực sự.
 
 ---
 
@@ -19,7 +27,9 @@ Mọi doanh nghiệp đều muốn trở thành tổ chức **dựa trên dữ l
 
 ### 🧩 **Giải pháp: Business Ontology**
 
-**Business Ontology** là một cách chính thức, có thể đọc được bằng máy để mô tả cách doanh nghiệp suy nghĩ và hoạt động. Ontology không chỉ mô tả cấu trúc dữ liệu, mà còn định nghĩa các khái niệm như:
+**Business Ontology** là một cách chính thức, có thể đọc được bằng máy để mô tả cách doanh nghiệp suy nghĩ và hoạt động
+
+Ontology không chỉ mô tả cấu trúc dữ liệu, mà còn định nghĩa các khái niệm như:
 
 * “Khách hàng đang hoạt động (Active Customer)”
 * “Doanh thu định kỳ hàng quý (Quarterly Recurring Revenue)”
@@ -49,10 +59,30 @@ DPROD — một Data Product Ontology mở — giúp bạn mô tả sản phẩm
 
 ---
 
-### 🤖 **Sẵn sàng cho AI**
-
-Khi tích hợp với các tác nhân LLM (Large Language Models), hệ thống này giúp tổ chức bạn **chuẩn bị tốt cho kỷ nguyên AI** mà không cần thay đổi nền tảng lớn lao — chỉ bằng cách phát triển từng sản phẩm dữ liệu, từng khái niệm một.
+Dưới đây là bản tóm tắt tương tự, dễ hiểu và súc tích:
 
 ---
 
-Bạn muốn mình giúp bạn xây dựng một ontology doanh nghiệp hoặc mô hình Semantic Layer cho dữ liệu không?
+### 🌍 **Hiểu khách hàng mọi ngôn ngữ, giảm chi phí 35%**
+
+Mỗi ngày, doanh nghiệp xử lý lượng dữ liệu khổng lồ. Với dữ liệu có cấu trúc thì dễ, nhưng khoảng một nửa dữ liệu doanh nghiệp là **dữ liệu phi cấu trúc** — email, chat, tài liệu — rất khó xử lý, tốn nhiều nhân lực và thời gian.
+
+---
+
+### 🤐 **Khách hàng không nói “ngôn ngữ doanh nghiệp” thường bị hiểu sai hoặc bỏ qua**
+
+Mỗi công ty có một “ngôn ngữ nội bộ”. Khách hàng dùng ngôn ngữ khác thường không được hiểu đúng, trở nên “vô hình”.
+
+---
+
+### 🤖 **LLMs như ChatGPT đã thay đổi cuộc chơi — nhưng vẫn còn hạn chế**
+
+Các mô hình này được huấn luyện trên nội dung internet tổng quát, chủ yếu là tiếng Anh. Chúng không hiểu sản phẩm của bạn, không biết ngôn ngữ riêng và đôi khi tạo ra thông tin sai (hallucination).
+
+### 🚀 **Lợi ích**
+
+* Khách hàng được hỗ trợ ngay lập tức bằng nhiều ngôn ngữ qua tìm kiếm và chatbot đa ngôn ngữ.
+* Tiết kiệm thời gian quý báu tại mọi điểm tiếp xúc.
+* Giảm lỗi AI “tạo chuyện” khi kết hợp LLM với tri thức và dữ liệu thực tế của bạn.
+
+
