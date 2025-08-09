@@ -106,6 +106,49 @@
 ### **26. Hãy tin vào "hành vi nổi lên" (emergent behavior)**
 
 * Agent có thể phối hợp theo cách không dự đoán trước, nhưng vẫn **đúng mục tiêu và hợp lệ** – đó chính là tương lai cần chấp nhận và kiểm soát.
+---
+#### **AI agents trong các hệ thống phức tạp của con người**, dựa trên lý thuyết về **tính phức tạp** (complexity science):
+
+1. **Tính phức tạp không đơn giản là “lộn xộn”**
+```
+đó là hệ thống nơi **nguyên nhân – kết quả không rõ ràng**
+
+kết quả xuất hiện từ tương tác và không thể kiểm soát bằng logic tuyến tính
+
+Càng cố kiểm soát, hệ thống càng dễ vỡ
+```
+
+2. **AI agents ngày nay giả định rằng thế giới có trật tự**
+```
+có thể học từ dữ liệu quá khứ để đưa ra hành động đúng
+
+Nhưng các hệ thống con người như tuyển dụng, pháp lý, chẩn đoán, v.v. không vận hành theo cách đó – **chúng là hệ thống phức tạp, tiến hóa theo ngữ cảnh và sự tham gia.**
+```
+
+3. **Các agent "tỏ ra hiểu biết", nhưng không có năng lực phán đoán**
+```
+chúng không sống trong thế giới thật, không cảm nhận hậu quả, không có tri thức ngầm (tacit knowledge)
+
+Chúng đưa ra kết luận dựa vào dữ liệu, chứ không hiểu được giá trị của kết luận đó trong hoàn cảnh cụ thể
+```
+
+4. **Tri thức ngầm không thể mã hóa hoàn toàn bằng dữ liệu hay ngôn ngữ.**
+```
+Nó được tích lũy từ trải nghiệm, từ sự tham gia, từ việc “ở trong cuộc”
+
+Khi ta cố biến cái ngầm thành cái rõ ràng (explicit), ta thường **đánh mất chiều sâu và ý nghĩa**
+```
+
+5. **Nguy cơ không nằm ở việc agent ngu ngốc**, mà là ở chỗ **chúng được yêu cầu hành động trong những hệ thống mà chúng không thể thực sự hiểu được**
+```
+Và con người lại tin tưởng chúng như thể chúng hiểu
+```
+
+6. Không phủ nhận việc xây dựng agent, nhưng cần **ý thức rõ bối cảnh đang can thiệp vào**
+```
+Trong hệ thống phức tạp, cần khung hỗ trợ (scaffolding), phản hồi, và sự tham gia – chứ không phải quyết định giả tạo dựa trên ngôn ngữ trôi chảy.
+```
+→ **Hãy biết khi nào nên dùng agent – và khi nào không nên.**
 
 ---
 **Các vấn đề hiện tại của hệ thống agent gồm:**
