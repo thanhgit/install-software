@@ -1,4 +1,10 @@
 # Operating principles of Enterprise AI:
+Các LLM (Lập trình mô phỏng) đã có khả năng vô cùng mạnh mẽ, nhưng cuộc chiến thực sự bây giờ nằm ở lớp ứng dụng
+
+Không phải làm cho các mô hình thông minh hơn, mà là làm cho chúng hữu ích hơn — chứng minh giá trị và thúc đẩy doanh thu
+
+Nếu các phòng thí nghiệm AI muốn tồn tại, đây là nơi họ cần tập trung
+
 ![](./media/ai-transformation-journey.png)
 
 **Enterprise AI (AI cho doanh nghiệp)** sẽ được định hình không bởi các mô hình AI riêng lẻ, mà bởi **mạng lưới các agent (tác tử AI)** tương tác, phối hợp linh hoạt trong toàn bộ hạ tầng doanh nghiệp
