@@ -1,32 +1,111 @@
 # Operating principles of Enterprise AI:
 ![](./media/ai-transformation-journey.png)
 
-- #### 1. Enterprise AI won’t be centralized => `it’ll be a choreography of agents across your stack`
-- #### 2. AI adoption won’t fail because of models => `It’ll fail because of interoperability`
-- #### 3. MCPs and Agent-to-Agent standards will become the TCP/IP of enterprise AI
-- #### 4. Agent-to-agent coordination is the enterprise glue of the AI era
-- #### 5. `Orchestration will shift from rule-based to context-based`: dynamic, adaptive, truly intelligent
-- #### 6. Agent networks will decide who leads based on intent, not hierarchy
-- #### 7. Salesforce, Workday, Box... each will own its workflow, but not the full customer journey
-- #### 8. The monolith is dead => `Long live the mesh of intelligent agents`
-- #### 9. Agents are not products. They’re participants in workflows.
-- #### 10. `Composable AI is like Lego for workflows`. You bring your blocks. The system will build itself.
-- #### 11. AI is no longer a layer; it’s the fabric stitching the enterprise together
-- #### 12. `AgentOps will become the new DevOps`
-- #### 13. You won’t debug code, you’ll debug conversations between agents
-- #### 14. Legacy IT is already struggling => `Agent-based architectures will widen the gap`
-- #### 15. Building an agent is easy => `Getting 50 to work together is not`
-- #### 16. Enterprise IT isn’t ready. Most data isn’t even accessible, let alone AI-ready.
-- #### 17. Agent networks will force a reckoning with your data infrastructure
-- #### 18. Horizontal agent orchestration will emerge when no clear system owns the workflow
-- #### 19. Agent interactions will need the same auditability and traceability as financial systems.
-- #### 20. You’ll need `governance not just over data, but over agent behavior`
-- #### 21. How your agents reason will be subject to compliance
-- #### 22. An agent is only as trustworthy as the data it’s trained on.
-- #### 23. The battle for AI supremacy `will be won in orchestration, not inference`
-- #### 24. `Vertical agents will dominate first` - `Horizontal orchestration will follow`
-- #### 25. The true value of Enterprise AI lies in seamless agent collaboration, adapting in real-time across systems 
-- #### 26. `Trust in emergent behavior`. What happens when agents "coordinate" in ways we didn’t design for - but are still technically compliant?
+**Enterprise AI (AI cho doanh nghiệp)** sẽ được định hình không bởi các mô hình AI riêng lẻ, mà bởi **mạng lưới các agent (tác tử AI)** tương tác, phối hợp linh hoạt trong toàn bộ hạ tầng doanh nghiệp
+
+### **1. Hệ thống AI doanh nghiệp sẽ phi tập trung**
+
+* Không còn AI trung tâm hóa, mà là sự **kết hợp đa tác tử xuyên suốt các hệ thống** trong doanh nghiệp.
+
+### **2. Rào cản lớn nhất không phải mô hình AI, mà là khả năng tương tác**
+
+* Việc **không tương thích giữa các hệ thống, công cụ và agent** sẽ khiến quá trình triển khai AI thất bại.
+
+### **3. Các tiêu chuẩn như MCPs & agent-to-agent sẽ là "TCP/IP" mới**
+
+* Những **giao thức chung để agent giao tiếp** sẽ là nền tảng không thể thiếu, như TCP/IP của Internet.
+
+### **4. Điều phối agent là "chất keo" gắn kết hệ thống AI doanh nghiệp**
+
+* Khả năng **phối hợp giữa các agent** sẽ tạo ra giá trị, chứ không chỉ là bản thân agent.
+
+### **5. Orchestration sẽ chuyển từ quy tắc sang ngữ cảnh**
+
+* Điều phối không còn cứng nhắc theo luật, mà sẽ **thích ứng theo bối cảnh, thông minh, linh hoạt.**
+
+### **6. Agent không cần cấp bậc, mà sẽ phân vai theo mục tiêu**
+
+* Trong mạng lưới agent, **sự chủ động đến từ "ý định", không phải "vai trò cấp bậc".**
+
+### **7. Các nền tảng như Salesforce, Workday, Box... chỉ quản lý một phần quy trình**
+
+* Không nền tảng nào kiểm soát toàn bộ hành trình khách hàng, cần sự **liên kết xuyên hệ thống.**
+
+### **8. Kiến trúc nguyên khối đã lỗi thời**
+
+* **Thế hệ mới là mạng lưới agent thông minh**, phối hợp mềm dẻo, tự điều chỉnh.
+
+### **9. Agent không phải sản phẩm độc lập**
+
+* **Chúng là thành phần tham gia vào luồng công việc**, không phải công cụ riêng lẻ.
+
+### **10. AI có thể được lắp ghép như Lego**
+
+* **Composable AI** cho phép tùy chỉnh các block chức năng, tạo hệ thống theo nhu cầu cụ thể.
+
+### **11. AI không còn là lớp phụ trợ, mà là "kết cấu nền"**
+
+* AI trở thành **phần vải liền mạch kết nối toàn bộ hệ sinh thái doanh nghiệp.**
+
+### **12. AgentOps sẽ thay thế DevOps**
+
+* Việc **quản trị, giám sát, vận hành agent** sẽ trở thành kỹ năng cốt lõi mới, tương tự DevOps ngày nay.
+
+### **13. Debug sẽ chuyển từ code sang hội thoại giữa các agent**
+
+* Không còn sửa lỗi dòng code, mà là **phân tích logic hội thoại giữa agent.**
+
+### **14. Hệ thống CNTT cũ đã khó khăn – agent sẽ khiến khoảng cách càng lớn**
+
+* Kiến trúc agent yêu cầu nền tảng hiện đại – **hệ thống cũ sẽ bị tụt lại xa hơn.**
+
+### **15. Xây một agent dễ – để 50 agent hoạt động cùng nhau rất khó**
+
+* **Tính phối hợp quy mô lớn là thách thức thật sự** trong kiến trúc AI doanh nghiệp.
+
+### **16. Doanh nghiệp chưa sẵn sàng – dữ liệu chưa đủ điều kiện cho AI**
+
+* Phần lớn dữ liệu **vẫn chưa truy cập được, chứ chưa nói đến dùng cho AI.**
+
+### **17. Agent sẽ buộc doanh nghiệp phải cải tổ hạ tầng dữ liệu**
+
+* Các yêu cầu mới từ mạng lưới agent sẽ **ép buộc doanh nghiệp nâng cấp data pipeline.**
+
+### **18. Sự điều phối ngang sẽ phát sinh khi không hệ thống nào kiểm soát hoàn toàn**
+
+* Trong các luồng công việc không có "chủ sở hữu", **agent sẽ phối hợp ngang hàng.**
+
+### **19. Agent cần có khả năng kiểm toán, truy vết như hệ thống tài chính**
+
+* **Minh bạch, truy xuất và giám sát hành vi của agent** sẽ trở nên thiết yếu.
+
+### **20. Quản trị không chỉ là dữ liệu, mà cả hành vi của agent**
+
+* Cần hệ thống **governance để kiểm soát cách agent vận hành và tương tác.**
+
+### **21. Logic suy luận của agent sẽ chịu sự ràng buộc của quy định**
+
+* **Compliance sẽ mở rộng sang cách suy nghĩ và hành động của AI.**
+
+### **22. Agent chỉ đáng tin cậy nếu dữ liệu của nó đáng tin**
+
+* **Chất lượng và nguồn dữ liệu là yếu tố quyết định độ tin cậy của agent.**
+
+### **23. Cuộc đua AI sẽ không thắng bằng inference, mà bằng điều phối**
+
+* Giá trị không nằm ở việc **AI trả lời thông minh đến đâu**, mà ở **cách agent phối hợp hiệu quả.**
+
+### **24. Agent theo chiều dọc sẽ thống trị trước, orchestration ngang sẽ theo sau**
+
+* Ban đầu sẽ là **agent chuyên sâu theo từng chức năng**, sau đó là **mạng lưới phối hợp đa năng.**
+
+### **25. Giá trị cốt lõi nằm ở khả năng phối hợp agent xuyên hệ thống, theo thời gian thực**
+
+* **Khả năng thích ứng và tương tác linh hoạt giữa các agent** mới là nơi tạo ra lợi thế.
+
+### **26. Hãy tin vào "hành vi nổi lên" (emergent behavior)**
+
+* Agent có thể phối hợp theo cách không dự đoán trước, nhưng vẫn **đúng mục tiêu và hợp lệ** – đó chính là tương lai cần chấp nhận và kiểm soát.
 
 ---
 **Các vấn đề hiện tại của hệ thống agent gồm:**
