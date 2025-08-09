@@ -5,6 +5,8 @@ Không phải làm cho các mô hình thông minh hơn, mà là làm cho chúng 
 
 Nếu các phòng thí nghiệm AI muốn tồn tại, đây là nơi họ cần tập trung
 
+`Classification là để giải bài toán đã định nghĩa. Clustering là để khám phá bài toán cần giải`
+
 ![](./media/ai-transformation-journey.png)
 
 **Enterprise AI (AI cho doanh nghiệp)** sẽ được định hình không bởi các mô hình AI riêng lẻ, mà bởi **mạng lưới các agent (tác tử AI)** tương tác, phối hợp linh hoạt trong toàn bộ hạ tầng doanh nghiệp
