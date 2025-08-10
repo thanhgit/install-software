@@ -1,6 +1,6 @@
 # Agentic SDLC
 - #### https://github.com/patchy631/ai-engineering-hub/tree/main/rag-sql-router
-- 
+
 ![image](https://github.com/user-attachments/assets/e30c36df-5ce4-46ba-9c1d-a2b5e6166c1d)
 
 ### 1. Problem Definition:
@@ -65,3 +65,67 @@
 - #### 5 - Maintains ethical boundaries through a dedicated Governance layer
 - #### 6 - Integrates with other AI agents through a collaborative ecosystem
 - #### 7 - Represents the next evolution in AI, moving from reactive to proactive intelligence
+
+---
+Một số dự án **mã nguồn mở (open-source)** nổi bật ngoài `NVIDIA-AI-Blueprints/data-flywheel` có hỗ trợ **liên tục cải thiện AI agents** hoặc cung cấp khả năng theo dõi, huấn luyện và điều chỉnh agent theo thời gian:
+
+## 1. AgentNeo
+
+Một framework đang được phát triển, tập trung vào việc **giám sát, đánh giá và tối ưu hóa hệ thống AI agent**. Theo chia sẻ trên Reddit:
+
+> “A framework for monitoring, evaluating, and optimizing agentic AI systems.” ([Reddit][1])
+
+AgentNeo hỗ trợ:
+
+* Tracing chi tiết các tương tác của agent (ví dụ OpenAI và Litellm).
+* Visualization hệ thống đa-agent.
+* Tối ưu hiệu suất, caching, xác định điểm nghẽn.
+* Đánh giá cạnh tranh qua “Agent Arena”.
+
+---
+
+## 2. Avalanche
+
+Thư viện mã nguồn mở dành cho **continual learning** — học liên tục từ các luồng dữ liệu thay đổi, rất phù hợp cho các hệ thống AI cần cải thiện theo thời gian. ([arXiv][2])
+
+---
+
+## 3. Agents (AIWaves)
+
+Một thư viện hỗ trợ xây dựng ngôn ngữ agent tự động với các tính năng như:
+
+* Lên kế hoạch (planning), bộ nhớ (memory), sử dụng công cụ (tool usage), tương tác đa-agent, kiểm soát biểu tượng chi tiết.
+* Hữu ích cho việc phát triển agent tự động hóa và có thể mở rộng. ([arXiv][3], [Reddit][4])
+
+---
+
+## 4. Frameworks hỗ trợ đa-agent và workflow nâng cao
+
+Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và quản lý hệ thống agent hiệu quả:
+
+* **AutoGen (Microsoft)**: Phát triển và triển khai các hệ thống đa-agent với khả năng giao tiếp linh hoạt và có thể tùy chỉnh. ([DEV Community][5])
+* **MetaGPT**: Thiết lập hệ thống agent theo vai trò như trong các nhóm phát triển phần mềm—Product Manager, QA, Developer, v.v. ([DEV Community][6])
+* **OpenAGI**: Nền tảng AGI mã nguồn mở kết hợp nhiều mô hình chuyên biệt với học tăng cường từ phản hồi tác vụ (RLTF). ([Medium][7])
+
+---
+
+## 5. Các công cụ hỗ trợ xây dựng và triển khai agent
+
+* **LangChain**: Framework phổ biến để xây dựng workflow cho AI agents, đặc biệt với sự hỗ trợ trong quan sát và đánh giá. ([puppyagent.com][8], [Wikipedia][9])
+* **CrewAI**: Xây dựng hệ thống multi-agent team với vai trò rõ ràng, dễ mở rộng và sử dụng trong doanh nghiệp. ([NAITIVE AI Consutling Agency Blog][10], [AI Software Agent][11])
+* **AutoGPT** & **LoopGPT**: Các agent tự động, khả năng cải thiện qua vòng lặp liên tục. LoopGPT còn tối ưu hơn về chi phí vận hành và kiểm soát tài nguyên. ([Wikipedia][12], [Medium][7])
+* **BabyAGI**, **Swarm**, **CopilotKit**, **MetaGPT**, **Daytona**… là những framework phổ biến hỗ trợ agent đa tác vụ và đa mục đích. ([Reddit][13])
+* **Flowise AI**: Công cụ kéo-thả (no-code) để xây dựng agent dựa trên LangChain. ([Reddit][14])
+* **Haystack**: Hỗ trợ Retrieval-Augmented Generation (RAG) cho các agent xử lý truy vấn tìm kiếm thông minh. ([Reddit][14])
+
+---
+
+## Tóm tắt so sánh nhanh:
+
+| Dự án/Framework                                      | Tính năng nổi bật                                             |
+| ---------------------------------------------------- | ------------------------------------------------------------- |
+| **AgentNeo**                                         | Giám sát, đánh giá, tối ưu hệ thống agent liên tục            |
+| **Avalanche**                                        | Học liên tục từ dữ liệu thay đổi (continual learning)         |
+| **Agents (AIWaves)**                                 | Agent với planning, memory, tool usage và multi-agent control |
+| **AutoGen / MetaGPT / OpenAGI**                      | Workflow agent phức tạp, vai trò rõ ràng, học từ phản hồi     |
+| **LangChain, CrewAI, AutoGPT, Flowise, Haystack...** | Hỗ trợ xây dựng, quan sát, multi-agent, cải tiến liên tục     |
