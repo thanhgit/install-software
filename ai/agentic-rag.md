@@ -23,3 +23,19 @@
 - #### 4. `Tìm nạp dữ liệu`: Quy trình này sử dụng các công cụ (ví dụ: tìm kiếm vector để lấy lại) để thu thập dữ liệu liên quan từ cơ sở kiến thức.
 - #### 5. `Tối ưu hóa gợi ý`: AI agent kết hợp data đã truy xuất với truy vấn và gợi ý hệ thống, áp dụng lý luận cho thông tin nhập LLM.
 - #### 6. `Thế hệ phản hồi`: LLM xử lý đầu vào tối ưu hóa để sản xuất và cung cấp đầu ra cuối cùng.
+
+#### NeuroSymbolic cho suy luận trên Knowledge Graphs (KGs)
+Hai thái cực: 
+
+(1) Các phương pháp biểu tượng (symbolic), dựa trên luật, dễ hiểu và tận dụng tri thức miền, nhưng hạn chế về hiệu năng và khả năng mở rộng
+
+(2) Các phương pháp học nhúng (embedding), có hiệu suất cao nhưng lại là “hộp đen”, thiếu khả năng giải thích
+
+* **Module neural**: thường là mạng nơ-ron sâu dùng để sinh ra embedding cho KG.
+* **Module symbolic**: sử dụng luật logic hoặc tri thức dạng quy tắc, thường là từ ontology hay nguồn chuyên gia.
+
+Các phương pháp này có một số đặc điểm nổi bật mà các phương pháp thuần túy symbolic hoặc neural không có được:
+
+1. **Tính dễ giải thích (Interpretability)**: Các hệ thống symbolic vốn có khả năng giải thích tự nhiên, trong khi các phương pháp embedding thường không. Tuy nhiên, các phương pháp neurosymbolic cho thấy khả năng giữ được mức độ giải thích nhất định mà không làm giảm hiệu năng đáng kể, dù một số vẫn đánh đổi hiệu năng để đạt được khả năng diễn giải.
+
+2. **Huấn luyện có định hướng (Guided Training)**: Nhờ tích hợp tri thức từ ontology hoặc chuyên gia, các mô hình có thể tránh việc “tái học” các mẫu đã biết, từ đó dẫn đến quá trình học hiệu quả hơn, đặc biệt trong những tình huống dữ liệu hạn chế. Trong khi các phương pháp embedding cần khối lượng lớn dữ liệu huấn luyện và thường phải huấn luyện trước (pre-training) với chi phí cao, thì neurosymbolic có thể đạt hiệu quả tương tự thông qua tích hợp tri thức vào quá trình học.
