@@ -65,6 +65,17 @@
 - #### 5 - Maintains ethical boundaries through a dedicated Governance layer
 - #### 6 - Integrates with other AI agents through a collaborative ecosystem
 - #### 7 - Represents the next evolution in AI, moving from reactive to proactive intelligence
+---
+#### Công thức hành vi của AI agent:
+**Hành vi = Năng lực × Động lực × Kích hoạt**
+
+* *Năng lực* là những gì mô hình có thể làm (huấn luyện).
+* *Động lực* là điều mô hình muốn (thưởng, phản hồi).
+* *Kích hoạt* là khi nào và tại sao nó hành động (ngữ cảnh, vai trò).
+
+`Cần`: triển khai thực tế, quan sát lâu dài, và can thiệp khi hành vi lệch chuẩn
+
+`Mục tiêu`: An toàn, công bằng, và tính phù hợp không phải là đặc tính cố định mà luôn thay đổi theo môi trường
 
 ---
 Một số dự án **mã nguồn mở (open-source)** nổi bật ngoài `NVIDIA-AI-Blueprints/data-flywheel` có hỗ trợ **liên tục cải thiện AI agents** hoặc cung cấp khả năng theo dõi, huấn luyện và điều chỉnh agent theo thời gian:
