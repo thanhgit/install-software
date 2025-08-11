@@ -46,3 +46,25 @@ Các phương pháp này có một số đặc điểm nổi bật mà các phư
 
 5. **Phụ thuộc dài hạn (Long-range Dependencies)**: Nhiều GNN hiện nay gặp khó khăn trong việc học các quan hệ giữa những nút cách nhau nhiều bước (hops) do hiện tượng "oversquashing" và "oversmoothing". Trong khi đó, các luật logic có thể biểu diễn các quan hệ dài thông qua chuỗi liên kết logic. Tuy nhiên, suy luận logic trên KG lớn có thể không khả thi về mặt tính toán. Một số phương pháp neurosymbolic lai được thiết kế để khắc phục điểm yếu này bằng cách kết hợp khả năng biểu diễn của logic và hiệu năng của học sâu.
 
+---
+
+#### 🧠 **Ba loại suy luận được phân tích:**
+
+### 1. **Suy luận diễn dịch (Deductive reasoning)**
+
+* Là quá trình rút ra kết luận chắc chắn từ các tiền đề logic đúng (nếu A → B và B → C thì A → C).
+* Kết luận có tính **chắc chắn và bảo toàn sự thật** nếu lập luận hợp lệ.
+* LLMs gặp khó khăn với suy luận diễn dịch thực sự do bản chất **xác suất** và thiếu tính đảm bảo logic chặt chẽ.
+* Điều này là **rào cản lớn** nếu muốn ứng dụng LLMs trong các hệ thống yêu cầu độ tin cậy cao.
+
+### 2. **Suy luận quy nạp (Inductive reasoning)**
+
+* Rút ra kết luận có xác suất cao dựa trên các quan sát cụ thể.
+* Không đảm bảo tính đúng tuyệt đối nhưng **LLMs lại làm rất tốt điều này**, nhờ khả năng tổng quát hóa thống kê từ dữ liệu lớn.
+* Dù chưa hiểu rõ cách chúng “nén” và “khái quát hóa” thông tin, nhưng hiệu quả là rõ ràng.
+
+### 3. **Suy luận theo lối giả thuyết (Abductive reasoning)**
+
+* Thu thập quan sát, đưa ra suy luận và chọn giả thuyết hợp lý nhất.
+* Đây là loại suy luận linh hoạt, phản ánh cách con người thường đưa ra kết luận trong thực tế.
+* Tác giả đề xuất một **hướng tiếp cận hứa hẹn**: kết hợp khả năng khớp mẫu (inductive) của LLMs với hệ thống logic hình thức (knowledge graphs) để tạo thành **vòng lặp neuro-symbolic năng động**, giúp cải thiện suy luận thực sự.
