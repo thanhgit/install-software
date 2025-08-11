@@ -68,3 +68,18 @@ Các phương pháp này có một số đặc điểm nổi bật mà các phư
 * Thu thập quan sát, đưa ra suy luận và chọn giả thuyết hợp lý nhất.
 * Đây là loại suy luận linh hoạt, phản ánh cách con người thường đưa ra kết luận trong thực tế.
 * Tác giả đề xuất một **hướng tiếp cận hứa hẹn**: kết hợp khả năng khớp mẫu (inductive) của LLMs với hệ thống logic hình thức (knowledge graphs) để tạo thành **vòng lặp neuro-symbolic năng động**, giúp cải thiện suy luận thực sự.
+
+### **Neuro-Symbolic: Tích hợp symbolic knowledge vào neural systems**
+
+* Đây là nơi **logic** gặp **học sâu**:
+
+  * Knowledge graphs = dữ liệu có cấu trúc & quy tắc logic
+  * LLMs = học cách biểu diễn và sinh ngôn ngữ theo pattern
+    → **Kết hợp lại = Mô hình có thể "suy luận" một cách có định hướng hơn**
+
+**“Suy luận diễn dịch thực sự”**, bạn vẫn cần:
+
+* Một lớp kiểm định logic rõ ràng
+* Hoặc một mô hình kết hợp giữa **neural + symbolic**
+
+### → Giải pháp hứa hẹn: **LLM + Knowledge Graph + Logic Engine (neurosymbolic hybrid)**
