@@ -73,9 +73,16 @@
 * *Động lực* là điều mô hình muốn (thưởng, phản hồi).
 * *Kích hoạt* là khi nào và tại sao nó hành động (ngữ cảnh, vai trò).
 
-`Cần`: triển khai thực tế, quan sát lâu dài, và can thiệp khi hành vi lệch chuẩn
+`Cần`: triển khai thực tế, quan sát lâu dài, và can thiệp khi hành vi lệch chuẩn, từ đó giúp AI agent thể hiện hành vi phù hợp hơn với chuẩn mực đạo đức trong nhiều bối cảnh, bao gồm tương tác người-máy và đa tác nhân
 
-`Mục tiêu`: An toàn, công bằng, và tính phù hợp không phải là đặc tính cố định mà luôn thay đổi theo môi trường
+Dùng cấu trúc hành vi 3 yếu tố (năng lực, động lực, kích hoạt) như một triết lý thiết kế mới, không chỉ để phân tích hành vi sau khi xảy ra, mà để định hình hành vi ngay từ đầu.
+
+- #### `Mục tiêu`:
+```
+An toàn, công bằng, và tính phù hợp không phải là đặc tính cố định mà luôn thay đổi theo môi trường
+
+Với 5 nguyên tắc cốt lõi: công bằng, an toàn, khả năng giải thích, trách nhiệm và quyền riêng tư
+```
 
 ---
 Một số dự án **mã nguồn mở (open-source)** nổi bật ngoài `NVIDIA-AI-Blueprints/data-flywheel` có hỗ trợ **liên tục cải thiện AI agents** hoặc cung cấp khả năng theo dõi, huấn luyện và điều chỉnh agent theo thời gian:
