@@ -14,6 +14,43 @@
 | **3. Monitor**       | Theo dõi hành vi model khi prompt thay đổi  | Theo dõi tính liên quan, lỗi truy xuất, "context drift" (khi dữ kiện cũ/lỗi vẫn lọt vào)                         |
 | **4. Secure**        | Tránh prompt injection, misuse              | Ngăn context chứa dữ liệu nhạy cảm, kiểm soát truy xuất (context-level security), quản lý nguồn tin đáng tin cậy |
 
+## 🧠 Vì sao quản lý context như prompt lifecycle là quan trọng?
+
+1. **Context = logic + dữ liệu → quyết định đầu ra của model**
+
+   * Nếu prompt là “API”, thì context là “dữ liệu đầu vào” cho API đó.
+2. **Context cần kiểm soát chất lượng như code**:
+
+   * Không để trùng lặp, lỗi, xung đột nguồn → tránh hallucination.
+3. **Context sống động**:
+
+   * Nó thay đổi theo thời gian, phiên bản model, hành vi người dùng → cần quan sát và bảo trì.
+
+## 🔧 Gợi ý các hành vi trong từng giai đoạn với context
+
+### 1. **Design**
+
+* Lựa chọn rõ: nguồn context nào → mục tiêu nào?
+* Gắn metadata (loại, độ tin cậy, ngày cập nhật, ID…)
+* Chuẩn hóa cấu trúc: schema, field name, canonical terms
+
+### 2. **Test - Deploy**
+
+* Thử trên các truy vấn lệch hướng, thiếu thông tin
+* Đánh giá các truy xuất: đủ chưa, chính xác không, quá dài không?
+* Đưa vào workflow → xem ngữ cảnh phản hồi có logic và hữu ích không
+
+### 3. **Monitor**
+
+* Log toàn bộ truy vấn + context được sử dụng
+* So sánh output trước/sau khi thay context
+* Tự động kiểm tra: "Fact drift", "Outdated data", "Irrelevant injection"
+
+### 4. **Secure**
+
+* Sanitize context: không chứa dữ liệu nhạy cảm
+* Quản lý truy cập theo role (ai được phép lấy context nào)
+* Kiểm soát context đầu vào của LLM để tránh prompt injection qua context
 
 ![](./media/prompting-example.jpeg)
 ### Some chatGPT prompts
