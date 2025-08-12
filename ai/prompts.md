@@ -6,24 +6,14 @@
     - #### Maintainable
 - #### `𝐓𝐞𝐱𝐭 = 𝐂𝐨𝐝𝐞 𝐏𝐫𝐨𝐦𝐩𝐭𝐬 = 𝐒𝐲𝐬𝐭𝐞𝐦𝐬` ~ `If your agents run on prompts, you need to treat them like production code.` 
 
-### Prompt engineering lifecyle
-- #### `𝟏. 𝐃𝐞𝐬𝐢𝐠𝐧`
-    - #### Like software, it starts with intent
-    - #### Define the agent’s role, the task, and the output expectations
-    - #### Set tone, constraints, and structure. Think of it like writing an API contract in plain English
+### Prompt engineering and context engineering lifecyle
+| Giai đoạn            | Prompt                                      | Context                                                                                                          |
+| -------------------- | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| **1. Design**        | Xác định vai trò, đầu ra, cấu trúc prompt   | Xác định nguồn context: schemas, facts, tone, format. Chọn chunking, định nghĩa metadata.                        |
+| **2. Test - Deploy** | Kiểm thử prompt với dữ liệu đầu vào đa dạng | Kiểm thử context retrieval (đủ/ngắn/gọn/lọc đúng). Đánh giá performance trong tác vụ thực tế.                    |
+| **3. Monitor**       | Theo dõi hành vi model khi prompt thay đổi  | Theo dõi tính liên quan, lỗi truy xuất, "context drift" (khi dữ kiện cũ/lỗi vẫn lọt vào)                         |
+| **4. Secure**        | Tránh prompt injection, misuse              | Ngăn context chứa dữ liệu nhạy cảm, kiểm soát truy xuất (context-level security), quản lý nguồn tin đáng tin cậy |
 
-- #### `𝟐. 𝐓𝐞𝐬𝐭 - 𝐃𝐞𝐩𝐥𝐨𝐲`
-    - #### Test against edge cases, noisy context, and failure scenarios.
-    - #### Once stable, prompts are deployed into real workflows and applications where they become executable logic.
-
-- #### `𝟑. 𝐌𝐨𝐧𝐢𝐭𝐨𝐫`
-    - #### Prompts don’t stay perfect.
-    - #### As models and data evolve, so does behavior.
-    - #### Observability is essential to ensure quality over time.
-
-- #### `𝟒. 𝐒𝐞𝐜𝐮𝐫𝐞`
-    - #### Prompts break systems if left unchecked: `Prompt injection`, `Unsafe tool calls`, `Data leaks`
-    - #### Prompt engineering includes governance and guardrails.
 
 ![](./media/prompting-example.jpeg)
 ### Some chatGPT prompts
