@@ -14,7 +14,12 @@
 | **Abduction** | Hiện tượng → Giải thích                     | Cỏ ướt → Có thể do mưa           | Đoán nguyên nhân hợp lý        |
 | **Loại trừ**  | Loại bỏ khả năng → Giữ lại khả năng còn lại | Nếu không A, không B → phải là C | Rất mạnh khi giới hạn lựa chọn |
 
-Cảm ơn bạn đã làm rõ! Giờ mình sẽ tập trung vào **ứng dụng của suy luận quy nạp ngược (Abduction)** — một dạng suy luận cực kỳ quan trọng nhưng thường bị bỏ qua trong so sánh với diễn dịch và quy nạp.
+| Dạng suy luận                  | Đặc điểm                                      | Mục tiêu                         | Cơ sở dữ liệu          |
+| ------------------------------ | --------------------------------------------- | -------------------------------- | ---------------------- |
+| **Diễn dịch (Deduction)**      | Từ luật → đến kết luận cụ thể                 | Suy ra cái chắc chắn đúng        | Luật + dữ kiện         |
+| **Quy nạp (Induction)**        | Từ dữ kiện → đến quy luật tổng quát           | Rút ra khuôn mẫu                 | Quan sát lặp lại       |
+| **Abduction (Suy diễn ngược)** | Từ kết quả → đoán nguyên nhân hợp lý nhất     | Giải thích hiện tượng            | Tri thức nền + dữ kiện |
+| **Loại trừ**                   | Loại các khả năng sai → giữ lại khả năng đúng | Tìm đáp án đúng trong số hữu hạn | Danh sách các khả năng |
 
 ---
 
