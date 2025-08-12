@@ -39,6 +39,10 @@ Please respond to the user query using information and facts provided in the con
 
 ## 🔧 Prompting chỉ là bề nổi — Context Engineering là tầng suy nghĩ
 
+👉 *Chất lượng đầu ra của LLM phụ thuộc trực tiếp vào chất lượng ngữ cảnh đầu vào.*
+
+**Muốn câu trả lời tốt → cung cấp ngữ cảnh rõ, có cấu trúc, đầy đủ và có nguồn.**
+
 Prompting vẫn hữu dụng — nó là điểm khởi đầu
 
 Nhưng **Context Engineering** 
@@ -148,6 +152,43 @@ Các xu hướng đáng chú ý hiện nay:
 * Là khả năng **lập luận và đưa ra phản hồi logic, chính xác** của mô hình.
 * Nếu context được thiết kế tốt, AI không chỉ “nói đúng” mà còn **hiểu lý do tại sao phải trả lời như vậy**.
 
+### ✅ **Danh sách kiểm tra ngữ cảnh (1 phút):**
+
+* Nhiệm vụ + tiêu chí thành công
+* Định nghĩa, schema
+* Ví dụ điển hình, kể cả biên
+* Dữ kiện có nguồn
+* Kết quả từ công cụ liên quan
+
+---
+
+### ⚡ **Tăng chất lượng nhanh chóng:**
+
+* **Xử lý dữ liệu trước khi hỏi**: chia khối (chunking), gắn metadata, lọc
+* **Ưu tiên cấu trúc thay vì văn xuôi**: schema tốt hơn đoạn văn
+* **Loại bỏ trùng lặp, giới hạn thời gian**
+* **Tối ưu ngữ cảnh hơn là prompt khéo léo**
+
+---
+
+### 📈 **Mẫu ngữ cảnh hiệu quả:**
+
+* Định nghĩa schema đầu vào/ra (I/O), kiểu dữ liệu, giá trị hợp lệ
+* Cung cấp bằng chứng trước hướng dẫn (evidence-first)
+* Ràng buộc rõ ràng: MUST/NEVER + tiêu chí đánh giá
+* Giới hạn chunk + ưu tiên dữ liệu gần nhất (90 ngày)
+* Chuẩn hóa thực thể (entity normalization)
+* Gồm kết quả từ công cụ nếu cần (tool trace)
+
+---
+
+### ❌ **Lỗi phổ biến khi thiết lập ngữ cảnh:**
+
+* Ngữ cảnh quá dài, nội dung chính bị lấp
+* Nguồn dữ liệu xung đột hoặc trùng lặp
+* Dữ liệu không sắp xếp, thiếu liên quan
+* Thiếu mã nguồn, không có quy tắc phân xử
+* Trộn lẫn hướng dẫn với dữ liệu một cách lộn xộn
 
 ---
 ## 🧠 Mục tiêu của app:
