@@ -5,6 +5,35 @@
 > **Ontology không chỉ mô tả tri thức — nó còn tổ chức và chia sẻ tri thức một cách linh hoạt, mở đường cho nhiều ứng dụng sử dụng cùng một nền tảng tri thức.**
 * Phương pháp nội suy căn bản: `bất cứ điều gì không bị cấm chính thức đều được coi là có thể thực hiện được`, ví dụ shape có thể vửa là tròn vừa là vuông
 
+### 📌 **Các dạng suy luận phổ biến:**
+
+| Loại suy luận | Hướng đi                                    | Ví dụ                            | Đặc trưng                      |
+| ------------- | ------------------------------------------- | -------------------------------- | ------------------------------ |
+| **Diễn dịch** | Luật → Kết luận                             | Tất cả A là B. A → B             | Chắc chắn nếu luật đúng        |
+| **Quy nạp**   | Dữ liệu → Luật                              | Thấy 100 A là B → A có thể là B  | Có xác suất, không chắc chắn   |
+| **Abduction** | Hiện tượng → Giải thích                     | Cỏ ướt → Có thể do mưa           | Đoán nguyên nhân hợp lý        |
+| **Loại trừ**  | Loại bỏ khả năng → Giữ lại khả năng còn lại | Nếu không A, không B → phải là C | Rất mạnh khi giới hạn lựa chọn |
+
+## ✅ **Suy luận loại trừ (Eliminative Reasoning)**
+
+### 🔍 **Định nghĩa:**
+
+Suy luận loại trừ là quá trình **loại bỏ các khả năng không phù hợp**, để tiến tới kết luận hợp lý nhất còn lại. Nó thường được biểu diễn như:
+
+> **Nếu không phải A, không phải B, không phải C → Vậy là D**
+
+Hoặc như bạn nói:
+
+> **Nếu trời mưa thì cỏ ướt. Nhưng cỏ không ướt → Vậy trời không mưa.**
+
+### ✅ **Ứng dụng:**
+
+* **Chẩn đoán y khoa**: Nếu không phải bệnh A, B, D → có thể là bệnh C
+* **AI & hệ thống chuyên gia**: Hệ thống rule-based dùng loại trừ để thu hẹp đáp án
+* **Suy luận hình sự**: Loại bỏ nghi phạm không có chứng cứ → khoanh vùng thủ phạm
+* **Debug phần mềm**: Không phải lỗi mạng, không phải cấu hình → có thể là bug logic
+
+---
 ### **Ontology là gì?**
 
 Ontology là một cách có cấu trúc để mô tả:
