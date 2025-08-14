@@ -83,3 +83,11 @@ Các phương pháp này có một số đặc điểm nổi bật mà các phư
 * Hoặc một mô hình kết hợp giữa **neural + symbolic**
 
 ### → Giải pháp hứa hẹn: **LLM + Knowledge Graph + Logic Engine (neurosymbolic hybrid)**
+
+---
+![](./media/lag.jpeg)
+Logic-Augmented Generation (LAG)
+- a novel paradigm that reframes knowledge augmentation through systematic question decomposition and dependency-aware reasoning
+
+RCR-Router
+- a modular and role-aware context routing framework designed to enable efficient, adaptive collaboration in multi-agent LLMs
