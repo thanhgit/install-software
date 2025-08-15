@@ -398,3 +398,46 @@ Cả hai pipeline đều được chạy định kỳ trên **Hadoop cluster t�
 * Xử lý dữ liệu **quy mô cực lớn**
 * Giữ cho các thành phần **modular, linh hoạt và có thể mở rộng**
 
+#### **Mô hình dữ liệu đồ thị & hệ quản trị**
+
+Walmart đã **đánh giá hai mô hình đồ thị chính** cho nhu cầu đọc/ghi của hệ thống:
+
+* **LPG (Labelled Property Graph)**
+* **RDF (Resource Description Framework)**
+
+Sau nhiều thử nghiệm, nhóm quyết định chọn **LPG** vì nó phù hợp hơn với các trường hợp sử dụng cụ thể của họ. Một số tiêu chí cân nhắc gồm khả năng ghi dữ liệu nhanh, mô hình linh hoạt và hỗ trợ tốt cho biểu diễn thuộc tính trực tiếp trên đỉnh và cạnh.
+
+Về hệ quản trị cơ sở dữ liệu đồ thị, nhóm đã:
+
+* Thử nghiệm với nhiều lựa chọn nội bộ
+* **Chọn Azure Cosmos DB (Graph model)** là nền tảng chính
+* **Phối hợp với nhóm Azure** để bổ sung khả năng ingest dữ liệu hàng loạt qua Java
+* Sử dụng ngôn ngữ **Gremlin** cho các truy vấn và phép duyệt đồ thị (graph traversal)
+
+### **Ứng dụng thực tế trong Walmart**
+
+Do kích thước khổng lồ của **catalog sản phẩm Walmart**, quá trình xây dựng Retail Graph được triển khai theo **chiến lược từng bước theo danh mục (category-by-category)**:
+
+#### 1. **Danh mục đầu tiên: Home & Garden**
+
+* Đây là danh mục khởi đầu trong quá trình xây dựng Retail Graph
+* Nhóm thực hiện **A/B testing trên trang sản phẩm** với sự phối hợp từ nhóm đề xuất sản phẩm
+* Áp dụng mối quan hệ **Product ↔ Product** để cải thiện các gợi ý thay thế và bổ sung
+
+#### 2. **Tìm kiếm ngữ nghĩa (Semantic Search)**
+
+* Nhóm tìm kiếm thương mại điện tử phối hợp chặt chẽ với nhóm Retail Graph
+* Xây dựng **hệ thống hiểu truy vấn mới (query understanding)** dựa trên các mối quan hệ trong graph
+* Đang triển khai **interleaving test và A/B test** để thu thập phản hồi từ người dùng về khả năng tìm kiếm mới
+
+### Retail Graph là một dự án có quy mô lớn, đòi hỏi:
+
+* **Lặp lại nhanh (rapid iteration)**
+* **Thử nghiệm liên tục (experimentation)**
+* **Sẵn sàng học từ sai lầm** để tinh chỉnh giải pháp phù hợp
+
+Dù các kết quả ban đầu rất hứa hẹn, nhóm thừa nhận rằng họ **mới chỉ khám phá “bề nổi”** của vấn đề. Việc xây dựng một đồ thị tri thức toàn diện cho hệ thống bán lẻ như Walmart là **hành trình lâu dài**, đòi hỏi sự kết hợp giữa kỹ thuật, chiến lược và khả năng học hỏi liên tục.
+
+> **"Công nghệ chỉ là một phần – điều làm nên khác biệt là con người đứng sau nó."**
+> Nhóm kỹ sư và nhà khoa học dữ liệu chính là lực lượng nòng cốt biến Retail Graph thành hiện thực.
+
