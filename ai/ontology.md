@@ -346,8 +346,6 @@ Quá trình xây dựng Retail Graph là **sự kết hợp giữa NLP, hệ th�
 
 > **Điều làm nên sức mạnh của Retail Graph không chỉ là công nghệ AI, mà là năng lực hiểu đúng và sâu sắc dữ liệu sản phẩm.**
 
-Dưới đây là **bản tóm tắt đầy đủ**, viết theo phong cách nhất quán với các phần trước, tập trung vào việc xây dựng quan hệ **Product ↔ Product**, kiến trúc hệ thống và quy trình xử lý dữ liệu trong **Retail Graph** của Walmart:
-
 #### **2. Product ↔ Product: Tìm kiếm sản phẩm thay thế (substitutes)**
 
 Để xác định **sản phẩm thay thế cho một SKU**, Walmart kết hợp **dữ liệu văn bản** và **dữ liệu hình ảnh** — đặc biệt quan trọng với các ngành hàng như **nội thất, thời trang**, nơi mà **tính tương đồng thị giác** ảnh hưởng lớn đến khả năng thay thế.
@@ -387,8 +385,6 @@ Khi bắt đầu xây dựng Retail Graph, Walmart **không cố định một k
   * Xây dựng **Hive UDFs** (User Defined Functions) trên Hadoop để thực thi các module ở quy mô hàng trăm triệu SKU.
   * Sử dụng hạ tầng **on-prem Hadoop cluster** của nhóm nền tảng dữ liệu.
 
----
-
 ### **Pipeline xử lý dữ liệu: Hai luồng chính**
 
 1. **Product ↔ Entities**
@@ -402,10 +398,3 @@ Cả hai pipeline đều được chạy định kỳ trên **Hadoop cluster t�
 * Xử lý dữ liệu **quy mô cực lớn**
 * Giữ cho các thành phần **modular, linh hoạt và có thể mở rộng**
 
----
-
-### **Kết luận: Retail Graph không chỉ là đồ thị - mà là một nền tảng hệ sinh thái AI**
-
-Việc xây dựng mối quan hệ **sản phẩm với sản phẩm** đòi hỏi sự kết hợp chặt chẽ giữa thị giác máy tính, NLP và logic nghiệp vụ. Bên cạnh đó, việc lựa chọn kiến trúc tiến hóa cho phép Walmart thích ứng nhanh với nhu cầu, thay đổi và quy mô tăng trưởng của hệ thống bán lẻ toàn cầu.
-
-> **Retail Graph là kết quả của sự đầu tư không chỉ vào AI, mà vào hạ tầng, kiến trúc, và chiến lược dữ liệu có tầm nhìn dài hạn.**
