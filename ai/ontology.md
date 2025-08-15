@@ -340,10 +340,72 @@ Vì quá trình trích xuất có thể tạo ra **nhiễu (noise)** hoặc khá
 * Sử dụng **kết hợp heuristic và kiểm duyệt thủ công** để lọc bỏ nhiễu
 * Đảm bảo rằng **chỉ dữ liệu sạch, có chất lượng cao mới được đưa vào đồ thị tri thức**
 
----
-
 ### **Kết luận: Đồ thị tri thức không chỉ là AI – mà là nền tảng dữ liệu thông minh**
 
 Quá trình xây dựng Retail Graph là **sự kết hợp giữa NLP, hệ thống luật, học máy và kiểm duyệt thủ công**. Từ việc trích xuất thực thể, gán ngữ nghĩa đúng theo ngữ cảnh, đến việc loại bỏ nhiễu – tất cả đều nhằm mục tiêu tạo ra một **hệ sinh thái tri thức đáng tin cậy** cho sản phẩm.
 
 > **Điều làm nên sức mạnh của Retail Graph không chỉ là công nghệ AI, mà là năng lực hiểu đúng và sâu sắc dữ liệu sản phẩm.**
+
+Dưới đây là **bản tóm tắt đầy đủ**, viết theo phong cách nhất quán với các phần trước, tập trung vào việc xây dựng quan hệ **Product ↔ Product**, kiến trúc hệ thống và quy trình xử lý dữ liệu trong **Retail Graph** của Walmart:
+
+#### **2. Product ↔ Product: Tìm kiếm sản phẩm thay thế (substitutes)**
+
+Để xác định **sản phẩm thay thế cho một SKU**, Walmart kết hợp **dữ liệu văn bản** và **dữ liệu hình ảnh** — đặc biệt quan trọng với các ngành hàng như **nội thất, thời trang**, nơi mà **tính tương đồng thị giác** ảnh hưởng lớn đến khả năng thay thế.
+
+Quy trình chính:
+
+1. **Sinh embedding**:
+
+   * Tạo **text embedding** từ mô tả sản phẩm
+   * Tạo **image embedding** từ hình ảnh sản phẩm
+2. **Tìm hàng xóm gần nhất (KNN)**:
+
+   * Đưa embedding vào **FAISS index** (thư viện của Facebook cho tìm kiếm tương đồng hiệu quả)
+   * Trích xuất tập ứng viên từ KNN bằng cả hai loại embedding
+3. **Xếp hạng theo danh mục**:
+
+   * Áp dụng logic xếp hạng theo danh mục cụ thể.
+   * Ví dụ: Trong ngành nội thất, yếu tố như **“phong cách trang trí”** (mid-century, farmhouse, coastal...) được ưu tiên để đánh giá mức độ thay thế.
+
+➡️ Kết quả cuối cùng là tập sản phẩm thay thế phù hợp về cả **nội dung lẫn ngữ cảnh thẩm mỹ**.
+
+---
+
+### **Kiến trúc hệ thống: Linh hoạt, tiến hóa và quy mô lớn**
+
+Khi bắt đầu xây dựng Retail Graph, Walmart **không cố định một kiến trúc cuối cùng** – thay vào đó áp dụng nguyên lý **Kiến trúc Tiến hóa (Evolutionary Architecture)**:
+
+> **“Cho phép thay đổi có định hướng theo thời gian trên nhiều chiều – và chấp nhận sự không hoàn thiện ban đầu.”**
+
+#### Một số nguyên tắc kiến trúc chính:
+
+* **Thành phần linh hoạt:**
+  Các module như trích xuất và liên kết thực thể được thiết kế dưới dạng **thư viện độc lập**, sau đó mở ra dưới dạng **REST API** để dễ tích hợp.
+
+* **Tích hợp với hệ thống lớn:**
+
+  * Xây dựng **Hive UDFs** (User Defined Functions) trên Hadoop để thực thi các module ở quy mô hàng trăm triệu SKU.
+  * Sử dụng hạ tầng **on-prem Hadoop cluster** của nhóm nền tảng dữ liệu.
+
+---
+
+### **Pipeline xử lý dữ liệu: Hai luồng chính**
+
+1. **Product ↔ Entities**
+2. **Product ↔ Product**
+
+Cả hai pipeline đều được chạy định kỳ trên **Hadoop cluster tại chỗ**, xử lý lượng lớn dữ liệu sản phẩm. Sau khi xử lý xong, kết quả được đưa vào **Cosmos DB trên Azure** thông qua các API nạp dữ liệu hàng loạt.
+
+➡️ Hệ thống được thiết kế để:
+
+* Dễ thử nghiệm, tạo bản mẫu (POC) và lặp lại nhanh
+* Xử lý dữ liệu **quy mô cực lớn**
+* Giữ cho các thành phần **modular, linh hoạt và có thể mở rộng**
+
+---
+
+### **Kết luận: Retail Graph không chỉ là đồ thị - mà là một nền tảng hệ sinh thái AI**
+
+Việc xây dựng mối quan hệ **sản phẩm với sản phẩm** đòi hỏi sự kết hợp chặt chẽ giữa thị giác máy tính, NLP và logic nghiệp vụ. Bên cạnh đó, việc lựa chọn kiến trúc tiến hóa cho phép Walmart thích ứng nhanh với nhu cầu, thay đổi và quy mô tăng trưởng của hệ thống bán lẻ toàn cầu.
+
+> **Retail Graph là kết quả của sự đầu tư không chỉ vào AI, mà vào hạ tầng, kiến trúc, và chiến lược dữ liệu có tầm nhìn dài hạn.**
