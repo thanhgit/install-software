@@ -290,3 +290,60 @@ Trong bối cảnh kiến trúc **neuro-symbolic**, quá trình học ontology c
 2. **Relation Extraction (RE)** – trích xuất quan hệ giữa các thực thể
 
 ✅ Việc kết hợp NER và RE giúp bao phủ toàn bộ các nhiệm vụ trong "ontology learning cake".
+
+---
+### **Xây dựng Retail Graph: Từ dữ liệu sản phẩm đến mạng lưới tri thức**
+
+Trong quá trình phát triển **Retail Graph**, Walmart tập trung vào hai loại **mối quan hệ chính**:
+
+1. **Sản phẩm ↔ Thực thể (Product ↔ Entities)**
+2. **Sản phẩm ↔ Sản phẩm (Product ↔ Product)** — gồm **sản phẩm thay thế** (substitutes) và **sản phẩm bổ trợ** (complements)
+
+#### 1. **Product ↔ Entities: Liên kết sản phẩm với khái niệm**
+
+Để xây dựng mạng lưới liên kết giữa sản phẩm và thực thể, nhóm bắt đầu từ **nội dung mô tả sản phẩm**. Mục tiêu là trích xuất thực thể (entities), liên kết chúng với khái niệm trừu tượng hoặc cụ thể, và hình thành các **bộ ba (triples)** trong đồ thị tri thức. Một **lớp kiểm duyệt (governance layer)** được thêm vào, cho phép con người rà soát các bộ ba có độ tin cậy thấp nhằm giữ chất lượng cao.
+
+##### a. **Trích xuất thực thể (Entity Extraction)**
+
+Dữ liệu mô tả sản phẩm rất đa dạng – có khi là đoạn văn dài, có khi chỉ là danh sách gạch đầu dòng ngắn. Để thích ứng, Walmart phát triển **hai mô hình trích xuất song song**:
+
+* **i. Mô hình NLP (xử lý ngôn ngữ tự nhiên):**
+  Dựa trên **POS Tagger của Stanford Core NLP**, mô hình này phù hợp với các tiêu đề/ngữ cảnh thiếu cấu trúc, ví dụ như mô tả sản phẩm dạng liệt kê điểm nổi bật.
+
+* **ii. Mô hình heuristic (dựa trên quy tắc):**
+  Khai thác định dạng đặc thù từ nhà cung cấp (HTML, bullet points...) và sử dụng **các quy tắc cố định** để tách và hiểu các đặc tính sản phẩm.
+
+👉 Trong thực tế, **cả hai mô hình được dùng song song** để cân bằng giữa **độ chính xác (heuristic)** và **độ bao phủ (NLP)**.
+
+##### b. **Liên kết thực thể (Entity Linking)**
+
+Sau khi trích xuất, bước tiếp theo là xác định **ngữ nghĩa** của thực thể và **mối liên hệ với SKU**. Đây là một bước phức tạp, vì cùng một từ như **“cherry”** có thể mang nhiều nghĩa:
+
+* Mùi hương (nến)
+* Vị (nước ép)
+* Màu sắc (quần áo)
+* Bề mặt hoàn thiện (nội thất)
+* Loại trái cây (grocery)
+
+➡️ Việc liên kết thực thể yêu cầu mô hình **phân biệt theo ngữ cảnh**, thường là **loại sản phẩm**. Kết quả là các **triple** gồm (SKU - thực thể - thuộc tính).
+
+Walmart bắt đầu với việc xây dựng một **từ điển thực thể thủ công** dựa trên các SKU bán chạy (giả định có dữ liệu tốt). Sau đó áp dụng:
+
+* **Bước 1:** Liệt kê các thực thể ứng viên từ từ điển
+* **Bước 2:** Dùng mô hình xếp hạng theo ngữ cảnh để chọn thực thể phù hợp nhất
+
+##### c. **Quản trị thực thể (Entity Governance)**
+
+Vì quá trình trích xuất có thể tạo ra **nhiễu (noise)** hoặc khái niệm không rõ ràng, Walmart triển khai một **mô-đun quản trị**:
+
+* Xây dựng từ điển từ metadata hiện tại để xác định "unknown" hoặc "noise"
+* Sử dụng **kết hợp heuristic và kiểm duyệt thủ công** để lọc bỏ nhiễu
+* Đảm bảo rằng **chỉ dữ liệu sạch, có chất lượng cao mới được đưa vào đồ thị tri thức**
+
+---
+
+### **Kết luận: Đồ thị tri thức không chỉ là AI – mà là nền tảng dữ liệu thông minh**
+
+Quá trình xây dựng Retail Graph là **sự kết hợp giữa NLP, hệ thống luật, học máy và kiểm duyệt thủ công**. Từ việc trích xuất thực thể, gán ngữ nghĩa đúng theo ngữ cảnh, đến việc loại bỏ nhiễu – tất cả đều nhằm mục tiêu tạo ra một **hệ sinh thái tri thức đáng tin cậy** cho sản phẩm.
+
+> **Điều làm nên sức mạnh của Retail Graph không chỉ là công nghệ AI, mà là năng lực hiểu đúng và sâu sắc dữ liệu sản phẩm.**
