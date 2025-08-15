@@ -6,6 +6,16 @@
 * Phương pháp nội suy căn bản: `bất cứ điều gì không bị cấm chính thức đều được coi là có thể thực hiện được`, ví dụ shape có thể vửa là tròn vừa là vuông
 * Giá trị thực nằm ở tầng dữ liệu và ngữ nghĩa – nơi Knowledge Graph đóng vai trò cốt lõi
 
+### **Grounding là rào cản lớn cuối cùng của AI hiện đại**
+
+Cho đến khi có một **cuộc cách mạng tiếp theo** trong AI – nơi mô hình ngôn ngữ có thể kết nối ngôn ngữ với hành động, thế giới vật lý, và nhân quả – thì:
+
+* LLMs vẫn sẽ **chỉ là cỗ máy thống kê cao cấp**
+* **Sự hiểu biết thật sự**, **sáng tạo**, và **diễn giải có ý nghĩa** vẫn phụ thuộc vào con người
+* Knowledge graph dù mạnh mẽ đến đâu cũng cần **tính thích ứng** và khả năng thừa nhận sự mơ hồ, không chắc chắn
+
+> **AI hiện tại không có khái niệm "thế giới". Và không thể "hiểu" nếu không được grounding vào nó.**
+
 ### 📌 **Các dạng suy luận phổ biến:**
 
 | Loại suy luận | Hướng đi                                    | Ví dụ                            | Đặc trưng                      |
