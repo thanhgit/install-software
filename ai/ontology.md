@@ -4,6 +4,7 @@
 * `Individuals` can belong to one class, but also to several classes (this is multiple instantiation, which is similar to multiple inheritance, but for instances)
 > **Ontology không chỉ mô tả tri thức — nó còn tổ chức và chia sẻ tri thức một cách linh hoạt, mở đường cho nhiều ứng dụng sử dụng cùng một nền tảng tri thức.**
 * Phương pháp nội suy căn bản: `bất cứ điều gì không bị cấm chính thức đều được coi là có thể thực hiện được`, ví dụ shape có thể vửa là tròn vừa là vuông
+* Giá trị thực nằm ở tầng dữ liệu và ngữ nghĩa – nơi Knowledge Graph đóng vai trò cốt lõi
 
 ### 📌 **Các dạng suy luận phổ biến:**
 
@@ -21,13 +22,11 @@
 | **Abduction (Suy diễn ngược)** | Từ kết quả → đoán nguyên nhân hợp lý nhất     | Giải thích hiện tượng            | Tri thức nền + dữ kiện |
 | **Loại trừ**                   | Loại các khả năng sai → giữ lại khả năng đúng | Tìm đáp án đúng trong số hữu hạn | Danh sách các khả năng |
 
----
+## ✅ **Suy luận quy nạp ngược (Abduction)**
 
-## ✅ **Tóm tắt về suy luận quy nạp ngược (Abduction)**
+* là quá trình **tìm lời giải thích hợp lý nhất cho một hiện tượng hoặc tập dữ liệu**
 
-* **Định nghĩa:** Suy luận abduction là quá trình **tìm lời giải thích hợp lý nhất cho một hiện tượng hoặc tập dữ liệu.**
-
-* Còn gọi là: **“inference to the best explanation”**.
+* Còn gọi là: **“inference to the best explanation”**
 
 * Cấu trúc điển hình:
 
