@@ -221,3 +221,32 @@ Tương lai của agent còn rộng mở, nhưng sẽ không tự thành hình n
 
 4. **Xử lý sự cố (Resolution):**
    Khác với hệ thống truyền thống, hành vi agent có tính xác suất và thích nghi, khiến việc xử lý lỗi không thể đơn giản hay cố định. Việc sửa lỗi cục bộ có thể gây ra hiệu ứng dây chuyền và bất ổn hệ thống. Do đó, cần cách tiếp cận lặp lại, kết hợp giám sát liên tục, kiểm thử nhiều vòng, các chiến lược hệ thống (rollback, guardrail...) và can thiệp ở mức mô hình (tối ưu prompt, tự điều chỉnh).
+
+---
+Zero-Trust framework for AI agent
+
+1. Never Trust, Always Verify 🔐
+  * OAuth2 tokens for every action
+  * Decentralized identity credentials (DIDs)
+  * Least-privilege access only
+  * Continuous behavior monitoring
+
+3. Identity & Authentication 🆔
+  * AWS IAM roles with session auth
+  * Azure Entra ID conditional policies
+  * GCP workload identity federation
+  * Scoped tokens rotating every 15 minutes
+
+4. Runtime Controls 🛡️
+  * Real-time, context-aware policy enforcement
+  * Auto-revoke privileges on anomalies
+  * Encrypted tunnels & VPC isolation per agent
+
+5. Monitoring & Response 🚨
+  * AWS CloudWatch & Azure Monitor logs
+  * ML-driven threat detection
+  * Auto-quarantine in under 30 sec
+
+6. Governance & Orchestration 🌐
+  * Immutable audit trails & compliance reports
+  * Federated identity and unified policies across clouds
