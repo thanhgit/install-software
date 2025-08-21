@@ -1,5 +1,7 @@
 # Customer support workflow
 
+https://medium.com/data-science-collective/5-agent-workflows-you-need-to-master-and-exactly-how-to-use-them-1b8726d17d4c
+
 ![](./media/customer-support-agentic-workflow.gif)
 
 ### 𝟏. 𝐅𝐫𝐨𝐧𝐭𝐞𝐧𝐝 𝐋𝐚𝐲𝐞𝐫:
