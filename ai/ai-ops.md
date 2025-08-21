@@ -1,5 +1,8 @@
 # Cách dùng AI-OPS giải quyết sự có
 
+https://strategizeyourcareer.com/p/write-a-postmortem-like-a-senior
+https://strategizeyourcareer.com/p/why-most-engineers-fail-at-knowledge
+
 ### AI-Ops là gì 
 
 <img width="965" height="439" alt="image" src="https://github.com/user-attachments/assets/01f53c0f-9e27-47bb-a703-40e993324ccf" />
