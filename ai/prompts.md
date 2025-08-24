@@ -446,6 +446,17 @@ extractor = dspy. Refine(ExtractEvents, N=3, reward_fn=self_check, threshold=Tru
 
 điều chỉnh các prompt của hệ thống AI hoặc thậm chí là trọng số (weights) của LLM
 
+```python
+extractor.set_lm(llama_1b) # configure the extractor to a tiny LM
+
+# Create a simple judge with a larger LLM to assess the accuracy of extractions
+judge = dspy.ChainOfThought("subject, thread, predicted_events -> accurate: bool")
+judge.set_lm(gpt41)
+
+# Optimize the extractor for using the tiny LM
+optimizer = dspy.MIPR0v2(metric=judge)
+optimized_extractor = optimizer.compile(extractor, trainset=email_threads[:100])
+```
 
 
 
