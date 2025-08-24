@@ -69,6 +69,9 @@ Please respond to the user query using information and facts provided in the con
 👉 *Chất lượng đầu ra của LLM phụ thuộc trực tiếp vào chất lượng ngữ cảnh đầu vào*
 
 **Muốn câu trả lời tốt → cung cấp ngữ cảnh rõ, có cấu trúc, đầy đủ và có nguồn**
+* Đúng thông tin
+* Đúng format
+* Đúng thời điểm
 
 Nhưng **Context Engineering** 
 * mới là nơi **tư duy hệ thống thật sự bắt đầu**
