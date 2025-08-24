@@ -384,7 +384,7 @@ Giả sử AI agent giúp đội điều phối vận chuyển:
 
 ### CE trong dspy
 
-#### 1: DSPy Signatures giúp LLM định nghĩa function có cấu trúc
+#### `DSPy Signatures` giúp LLM định nghĩa function có cấu trúc
 
 <img width="980" height="446" alt="image" src="https://github.com/user-attachments/assets/f023949d-106c-4885-b562-ca164f8106b2" />
 
@@ -426,13 +426,25 @@ Là những vấn đề kỹ thuật phát sinh trong quá trình thiết kế, 
 | **Lỗi lắp đặt (poor installation)** | Hệ thống tích hợp sai, cấu hình không chuẩn                                                                |
 | **Nguy cơ sinh học (biohazards)**   | Tiếp xúc với dữ liệu độc hại hoặc không an toàn (ví dụ: dữ liệu chứa thông tin nhạy cảm, gây lệch mô hình) |
 
-#### 2: DSPy Modules áp dụng các chiến lược suy luận vào signatures
+#### `DSPy Modules` áp dụng các chiến lược suy luận vào signatures
 
 Trao đổi chiến lược theo cách linh hoạt mà không cần điều chỉnh lời nhắc mỗi lần!
 
+```python
+extractor = dspy. ChainOfThought(ExtractEvents)
 
+extractions = extractor.batch(email_threads, num_threads=32)
+```
+```python
+extractor = dspy. ReAct(ExtractEvents, tools=[OCR, search_other_emails])
+```
+```python
+extractor = dspy. Refine(ExtractEvents, N=3, reward_fn=self_check, threshold=True)
+```
 
+#### `DSPy Optimizers` 
 
+điều chỉnh các prompt của hệ thống AI hoặc thậm chí là trọng số (weights) của LLM
 
 
 
