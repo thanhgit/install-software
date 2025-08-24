@@ -14,19 +14,19 @@
 | **3. Monitor**       | Theo dõi hành vi model khi prompt thay đổi  | Theo dõi tính liên quan, lỗi truy xuất, "context drift" (khi dữ kiện cũ/lỗi vẫn lọt vào)                         |
 | **4. Secure**        | Tránh prompt injection, misuse              | Ngăn context chứa dữ liệu nhạy cảm, kiểm soát truy xuất (context-level security), quản lý nguồn tin đáng tin cậy |
 
-## 🧠 Vì sao quản lý context như prompt lifecycle là quan trọng?
+## 🧠 Vì sao quản lý context lifecycle là quan trọng?
 
 1. **Context = logic + dữ liệu → quyết định đầu ra của model**
 
-   * Nếu prompt là “API”, thì context là “dữ liệu đầu vào” cho API đó.
+   * Nếu prompt là “API”, thì context là “dữ liệu đầu vào” cho API đó
 2. **Context cần kiểm soát chất lượng như code**:
 
-   * Không để trùng lặp, lỗi, xung đột nguồn → tránh hallucination.
+   * Không để trùng lặp, lỗi, xung đột nguồn → tránh hallucination
 3. **Context sống động**:
 
-   * Nó thay đổi theo thời gian, phiên bản model, hành vi người dùng → cần quan sát và bảo trì.
+   * Nó thay đổi theo thời gian, phiên bản model, hành vi người dùng → cần quan sát và bảo trì
 
-## 🔧 Gợi ý các hành vi trong từng giai đoạn với context
+## 🔧 Các hành vi trong từng giai đoạn với context
 
 ### 1. **Design**
 
@@ -64,17 +64,15 @@ Please respond to the user query using information and facts provided in the con
 ```
 <img width="1198" height="748" alt="image" src="https://github.com/user-attachments/assets/1d9f4794-a137-4c5c-b765-2d8b0174c07f" />
 
-## 🔧 Prompting chỉ là bề nổi — Context Engineering là tầng suy nghĩ
+## 🔧 Prompting chỉ là khởi đầu — Context Engineering là tầng suy nghĩ
 
-👉 *Chất lượng đầu ra của LLM phụ thuộc trực tiếp vào chất lượng ngữ cảnh đầu vào.*
+👉 *Chất lượng đầu ra của LLM phụ thuộc trực tiếp vào chất lượng ngữ cảnh đầu vào*
 
-**Muốn câu trả lời tốt → cung cấp ngữ cảnh rõ, có cấu trúc, đầy đủ và có nguồn.**
-
-Prompting vẫn hữu dụng — nó là điểm khởi đầu
+**Muốn câu trả lời tốt → cung cấp ngữ cảnh rõ, có cấu trúc, đầy đủ và có nguồn**
 
 Nhưng **Context Engineering** 
 * mới là nơi **tư duy hệ thống thật sự bắt đầu**
-* nghệ thuật thiết kế môi trường thông tin động và liên tục để AI có thể tư duy và hành động hiệu quả.
+* nghệ thuật thiết kế môi trường thông tin động và liên tục để AI có thể tư duy và hành động hiệu quả
 
 Chúng ta cần mô hình **hiểu điều đó, suy luận, và cải thiện qua thời gian** từ việc phân tích các yếu tố như:
 
@@ -88,19 +86,16 @@ Chúng ta cần mô hình **hiểu điều đó, suy luận, và cải thiện q
 
 Less context = Greater quality, more speed, lower spend
 
-### **97% kỹ sư AI đang làm sai cách “context prompting”**
-→ Sai lầm trị giá **2.3 triệu USD** đang hủy hoại hiệu quả AI trong doanh nghiệp.
+📉 **Vấn đề thường gặp**:
 
-### 📉 **Vấn đề thường gặp**:
-
-Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → khiến AI **giảm độ chính xác**, **tăng chi phí**, và **giảm tốc độ**.
+* Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → khiến AI **giảm độ chính xác**, **tăng chi phí**, và **giảm tốc độ**.
 
 * **Dữ liệu thực tế (847+ audit)**:
 
   * Prompt 47,000 tokens → **chỉ 23% chính xác ❌**
   * Prompt 1,200 tokens → **91% chính xác ✅**
 
-### 🧩 Cách tối ưu context:
+🧩 Cách tối ưu context:
 
 **1️⃣ Phân bổ token hợp lý:**
 
@@ -118,30 +113,26 @@ Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → kh
 
 **3️⃣ Mẹo truy xuất dữ liệu (retrieval):**
 👉 5 kết quả **phù hợp hoàn hảo** tốt hơn 50 kết quả **mơ hồ**
-→ Quá nhiều lựa chọn **giảm độ chính xác**.
 
-### 🏆 **Kết quả thực tế trong doanh nghiệp:**
+→ Quá nhiều lựa chọn **giảm độ chính xác**
 
-* **Client A**: Chất lượng tăng 340%
-* **Client B**: Giảm lỗi 67%
-* **Client C**: Tốc độ gấp 5 lần
+### 🧠 Prompt không phù hợp để lập trình
 
----
-
-## 🧠 Từ lý thuyết đến thực tiễn
-
-Hoàn toàn đúng khi nói: **không có một framework scale được nếu chỉ dựa vào trial-and-error prompt**.
+* Chúng làm rối thiết kế hệ thống thực tế của bạn với nhiều lựa chọn nhỏ ngẫu nhiên
+* Từ ngữ chính xác và ví dụ cho LLM cụ thể này
+* Chiến lược suy luận
+* Định dạng dữ liệu và hướng dẫn định dạng đầu ra
+  
+Hoàn toàn đúng khi nói: **không có một framework scale được nếu chỉ dựa vào trial-and-error prompt**
 
 > “Teaching the model what matters, why it matters, and how to reason about it”
-> — đó không phải là prompt nữa, đó là **dạy tư duy**.
+> đó không phải là prompt nữa, đó là **dạy tư duy**.
 
 Đặc biệt là việc **kiến trúc để xử lý overflow**, đó là vấn đề ngày càng rõ khi:
 
 * context window tăng,
 * dữ liệu đầu vào ngày càng phức tạp,
 * và không có chiến lược pruning/token budgeting tốt thì mô hình sẽ bị "ngộp".
-
----
 
 ## 🛠 Vai trò của công cụ: Tooling cho Context Design
 
