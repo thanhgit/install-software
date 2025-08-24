@@ -15,7 +15,20 @@ curl http://localhost:8000/v1/chat/completions -H "Content-Type: application/jso
 }'
 ```
 
-# **chuyển ngôn ngữ tự nhiên sang DSL** với độ chính xác
+## 📌 Tại sao AI "hiểu" code syntax tốt hơn?
+
+| Yếu tố                           | Ngôn ngữ tự nhiên              | Code / Syntax           |
+| -------------------------------- | ------------------------------ | ----------------------- |
+| **Cấu trúc**                     | Lỏng, có thể mập mờ            | Rất chặt, chính xác     |
+| **Độ nhất quán**                 | Thấp (nhiều cách nói cùng 1 ý) | Cao                     |
+| **Mức độ mơ hồ**                 | Cao                            | Thấp                    |
+| **Tập huấn luyện LLM**           | Nhiều, nhưng đa dạng           | Ít hơn, nhưng chuẩn hóa |
+| **Ánh xạ sang logic máy**        | Khó                            | Rất dễ                  |
+| **Khả năng tái sử dụng pattern** | Kém                            | Rất cao                 |
+
+**LLM (như Qwen, GPT, Claude)** có thể **tái lập cấu trúc suy luận logic** hoặc tạo ra hành vi nhất quán **dễ hơn nhiều** nếu bạn dùng syntax dạng DSL / pseudo-code thay vì mô tả tự nhiên
+
+# **Chuyển ngôn ngữ tự nhiên sang DSL** với độ chính xác
 
 | Framework / Kỹ thuật            | Điểm mạnh                                       | Mức độ phù hợp           |
 | ------------------------------- | ----------------------------------------------- | ------------------------ |
