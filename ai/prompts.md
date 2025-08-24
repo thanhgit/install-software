@@ -382,10 +382,12 @@ Giả sử AI agent giúp đội điều phối vận chuyển:
 * **Qua nhiều ca làm việc**: context cũ không còn quan trọng → dùng **context pruning** để giảm độ dài
 * **Cần giữ tiến trình nhiệm vụ**: dùng **session summary** để biết "task này đã làm tới đâu"
 
-#### CE trong dspy
+### CE trong dspy
 
-1: DSPy Signatures giúp LLM định nghĩa function có cấu trúc 
+#### 1: DSPy Signatures giúp LLM định nghĩa function có cấu trúc
+
 <img width="980" height="446" alt="image" src="https://github.com/user-attachments/assets/f023949d-106c-4885-b562-ca164f8106b2" />
+
 ```python
 # Task
 class ExtractEvents(dspy.Signature):
@@ -405,13 +407,14 @@ class ExtractEvents(dspy.Signature):
 ```
 
 Signatures đại diện cho các mối quan tâm về:
+
 * Chiến lược suy luận (CoT? Agents? Reflection?)
 * Learning (Instructions? Examples? RL?)
 * LM “plumbing” concerns ám chỉ phần "hạ tầng nền tảng"
   * Những quy trình, kết nối, logic,
   * Cấu hình chạy phía sau để hệ thống hoạt động tốt
 
-#### LM “plumbing” concerns
+`LM “plumbing” concerns`
 
 Là những vấn đề kỹ thuật phát sinh trong quá trình thiết kế, triển khai hoặc vận hành LM
 
@@ -423,9 +426,9 @@ Là những vấn đề kỹ thuật phát sinh trong quá trình thiết kế, 
 | **Lỗi lắp đặt (poor installation)** | Hệ thống tích hợp sai, cấu hình không chuẩn                                                                |
 | **Nguy cơ sinh học (biohazards)**   | Tiếp xúc với dữ liệu độc hại hoặc không an toàn (ví dụ: dữ liệu chứa thông tin nhạy cảm, gây lệch mô hình) |
 
+#### 2: DSPy Modules áp dụng các chiến lược suy luận vào signatures
 
-
-
+Trao đổi chiến lược theo cách linh hoạt mà không cần điều chỉnh lời nhắc mỗi lần!
 
 
 
