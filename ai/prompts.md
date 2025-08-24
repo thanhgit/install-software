@@ -134,43 +134,37 @@ Hoàn toàn đúng khi nói: **không có một framework scale được nếu c
 * dữ liệu đầu vào ngày càng phức tạp,
 * và không có chiến lược pruning/token budgeting tốt thì mô hình sẽ bị "ngộp".
 
-## 🛠 Vai trò của công cụ: Tooling cho Context Design
+🛠 Vai trò của công cụ: `Tooling cho Context Design`
 
-Một câu hỏi đáng giá: **tooling nào giúp thực hiện được context engineering một cách thực tiễn?**
+**Tooling nào giúp thực hiện được context engineering một cách thực tiễn?**
 
-Các xu hướng đáng chú ý hiện nay:
-
-* **LangGraph, LangChain Expression Language (LCEL)**: Cho phép xây dựng context flow có kiểm soát (stateful logic).
-* **LlamaIndex, Haystack**: Hỗ trợ semantic chunking, context injection có cấu trúc.
-* **PromptLayer, Traceloop**: Tracking + debugging prompt/context behavior để học từ thực tế.
+* **LangGraph, LangChain Expression Language (LCEL)**: Cho phép xây dựng context flow có kiểm soát (stateful logic)
+* **LlamaIndex, Haystack**: Hỗ trợ semantic chunking, context injection có cấu trúc
+* **PromptLayer, Traceloop**: Tracking + debugging prompt/context behavior để học từ thực tế
 * **MemGPT, Agentic memory frameworks**: Khởi đầu cho “LLM với trí nhớ thật sự” — rất quan trọng cho context dài hạn.
-* **tiktoken + Custom token routers**: Để phân bổ và kiểm soát token budget theo mục tiêu.
+* **tiktoken + Custom token routers**: Để phân bổ và kiểm soát token budget theo mục tiêu
 
----
+> Xây dựng một hệ thống có khả năng tư duy bằng thiết kế context thay vi "prompt thông minh"
+> 
+> => AI sẽ tự lập luận chính xác, vì nó đã “thấy đúng thứ, theo đúng cách, vì đúng lý do”
 
-## 💡 Tóm lại
-
-> Khi bạn thiết kế context đúng cách, bạn không cần “prompt thông minh” nữa — vì bạn đã xây dựng một hệ thống có khả năng tư duy. 
-> Bởi vì AI sẽ tự lập luận chính xác, vì nó đã “thấy đúng thứ, theo đúng cách, vì đúng lý do.”
-
-#### 1. **Context là hạ tầng (infrastructure)**
+1. **Context là hạ tầng (infrastructure)**
 
 * Context là **nền tảng dữ liệu mà mô hình tiếp cận được**: hướng dẫn, ví dụ, dữ liệu truy xuất,...
-* Nếu context **mập mờ, rải rác hoặc quá dài**, mô hình sẽ "thấy" sai hoặc thiếu sót, từ đó **lý luận sai**.
-* Nghĩa là: **Nếu “đầu vào” lộn xộn, “đầu ra” sẽ vô nghĩa.**
+* Nếu context **mập mờ, rải rác hoặc quá dài**, mô hình sẽ "thấy" sai hoặc thiếu sót, từ đó **lý luận sai**
+* => **Nếu “input” lộn xộn, “output” sẽ vô nghĩa**
 
-#### 2. **Engineering là giao diện (interface)**
+2. **Engineering là giao diện (interface)**
 
-* Đây là **cách bạn cấu trúc prompt**, kiểm soát token, sử dụng bộ nhớ, phân tầng thông tin.
-* Một interface tốt sẽ giúp AI **hiểu rõ thông tin nào là quan trọng**, từ đó **tập trung đúng mục tiêu**.
-* Giao diện tốt giúp AI “biết nhìn vào đâu”.
+* **Cách bạn cấu trúc prompt** ~ kiểm soát token, sử dụng bộ nhớ, phân tầng thông tin
+* AI **hiểu rõ thông tin nào là quan trọng** => **tập trung đúng mục tiêu**.
 
-#### 3. **Reasoning là kết quả (outcome)**
+3. **Reasoning là kết quả (outcome)**
 
-* Là khả năng **lập luận và đưa ra phản hồi logic, chính xác** của mô hình.
-* Nếu context được thiết kế tốt, AI không chỉ “nói đúng” mà còn **hiểu lý do tại sao phải trả lời như vậy**.
+* Là khả năng **lập luận và đưa ra phản hồi logic, chính xác**
+* Nếu context được thiết kế tốt => AI có nhiều bằng chứng để trình bày **lý do tại sao phải trả lời như vậy**
 
-### ✅ **Danh sách kiểm tra ngữ cảnh (1 phút):**
+✅ **Danh sách kiểm tra ngữ cảnh (1 phút):**
 
 * Nhiệm vụ + tiêu chí thành công
 * Định nghĩa, schema
@@ -178,18 +172,7 @@ Các xu hướng đáng chú ý hiện nay:
 * Dữ kiện có nguồn
 * Kết quả từ công cụ liên quan
 
----
-
-### ⚡ **Tăng chất lượng nhanh chóng:**
-
-* **Xử lý dữ liệu trước khi hỏi**: chia khối (chunking), gắn metadata, lọc
-* **Ưu tiên cấu trúc thay vì văn xuôi**: schema tốt hơn đoạn văn
-* **Loại bỏ trùng lặp, giới hạn thời gian**
-* **Tối ưu ngữ cảnh hơn là prompt khéo léo**
-
----
-
-### 📈 **Mẫu ngữ cảnh hiệu quả:**
+📈 **Mẫu ngữ cảnh hiệu quả:**
 
 * Định nghĩa schema đầu vào/ra (I/O), kiểu dữ liệu, giá trị hợp lệ
 * Cung cấp bằng chứng trước hướng dẫn (evidence-first)
@@ -198,9 +181,7 @@ Các xu hướng đáng chú ý hiện nay:
 * Chuẩn hóa thực thể (entity normalization)
 * Gồm kết quả từ công cụ nếu cần (tool trace)
 
----
-
-### ❌ **Lỗi phổ biến khi thiết lập ngữ cảnh:**
+❌ **Lỗi phổ biến khi thiết lập ngữ cảnh:**
 
 * Ngữ cảnh quá dài, nội dung chính bị lấp
 * Nguồn dữ liệu xung đột hoặc trùng lặp
@@ -208,8 +189,7 @@ Các xu hướng đáng chú ý hiện nay:
 * Thiếu mã nguồn, không có quy tắc phân xử
 * Trộn lẫn hướng dẫn với dữ liệu một cách lộn xộn
 
----
-## 🧠 Mục tiêu của app:
+#### 🧠 App demo:
 
 * Cho phép cấu hình:
 
@@ -224,9 +204,7 @@ Các xu hướng đáng chú ý hiện nay:
 * Kết hợp các thành phần để tạo **context package**
 * Cho phép xuất ra JSON cấu hình context
 
----
-
-## ✅ 1. Mã nguồn `context_builder_app.py`
+#### ✅ 1. Mã nguồn `context_builder_app.py`
 
 ```python
 import streamlit as st
@@ -322,7 +300,6 @@ with tabs[7]:
 <img width="1616" height="584" alt="image" src="https://github.com/user-attachments/assets/e4427e47-b822-4916-a029-10ebf1b5c7b4" />
 
 #### Context engineering is no longer optional, it's a key pillar in building reliable AI agents
-6 ways to provide context to AI Agents ⬇️
 
 📌 INSTRUCTIONS - Set the stage clearly:
 
@@ -364,9 +341,7 @@ with tabs[7]:
 * System responds with results
 * AI continues with enriched context
 
----
-
-## ✅ Vì sao context engineering quan trọng trong AI agent hỗ trợ vận hành?
+### ✅ Vì sao context engineering quan trọng trong AI agent hỗ trợ vận hành?
 
 AI agent cho mục đích "operations" thường có các đặc điểm sau:
 
@@ -385,9 +360,7 @@ Nếu không quản lý context tốt → Agent:
 * **hỏi lại thông tin đã có**
 * hoặc **tạo ra phản hồi rời rạc, không theo ngữ cảnh**
 
----
-
-## 🔧 Những kỹ thuật context engineering cụ thể nên dùng trong agent vận hành
+🔧 Những kỹ thuật context engineering cụ thể nên dùng trong agent vận hành
 
 | Kỹ thuật context                    | Cách áp dụng                                                                                               |
 | ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
@@ -398,11 +371,11 @@ Nếu không quản lý context tốt → Agent:
 | **Role-based Context Partitioning** | Nếu agent tương tác nhiều vai trò (user, supervisor, IT, HR), thì phân vùng riêng từng loại context        |
 | **Context Decay / Pruning**         | Xóa bớt các thông tin không còn liên quan trong các phiên mới                                              |
 
----
-
-## 🧪 Ví dụ thực tế: Agent hỗ trợ vận hành trong công ty logistics
-
+🧪 Ví dụ thực tế: 
+```
+Agent hỗ trợ vận hành trong công ty logistics
 Giả sử AI agent giúp đội điều phối vận chuyển:
+```
 
 * **Khi điều phối xe hàng**: agent phải nhớ các order gần đây, lịch xe chạy, driver đang làm việc → dùng **context window + retrieval**
 * **Khi có sự cố (ví dụ: xe hỏng)**: cần truy xuất **SOP về xử lý sự cố**, gọi đúng người → dùng **context tagging + role-aware retrieval**
