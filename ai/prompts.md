@@ -91,12 +91,7 @@ Less context = Greater quality, more speed, lower spend
 
 📉 **Vấn đề thường gặp**:
 
-* Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → khiến AI **giảm độ chính xác**, **tăng chi phí**, và **giảm tốc độ**.
-
-* **Dữ liệu thực tế (847+ audit)**:
-
-  * Prompt 47,000 tokens → **chỉ 23% chính xác ❌**
-  * Prompt 1,200 tokens → **91% chính xác ✅**
+* Phần lớn các nhóm **nhồi nhét quá nhiều context** vào prompt → khiến AI **giảm độ chính xác**, **tăng chi phí**, và **giảm tốc độ**
 
 🧩 Cách tối ưu context:
 
