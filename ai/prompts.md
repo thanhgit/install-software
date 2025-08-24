@@ -387,15 +387,19 @@ Giả sử AI agent giúp đội điều phối vận chuyển:
 1: DSPy Signatures giúp LLM định nghĩa function có cấu trúc 
 <img width="980" height="446" alt="image" src="https://github.com/user-attachments/assets/f023949d-106c-4885-b562-ca164f8106b2" />
 ```python
+# Task
 class ExtractEvents(dspy.Signature):
     """Extract all events, if any, from the email provided."""
-    subject = dspy. InputField()
+    # input
+    subject = dspy.InputField()
     thread = dspy.InputField()
-    attachments: dict [str, dspy. Image] = dspy. InputField()
-    
-    desc="mapping of attachment names to images"
-    events: List [Event] = dspy. OutputField()
-    action_items: dict[str, Literal ["P0", "P1", "P2"]] = dspy.OutputField(
+    attachments: dict [str, dspy.Image] = dspy.InputField(
+        desc="mapping of attachment names to images"
+    )
+
+    # output
+    events: List[Event] = dspy.OutputField()
+    action_items: dict[str, Literal["P0", "P1", "P2"]] = dspy.OutputField(
         desc="map TODOs to estimated priority levels based on context"
     )
 ```
