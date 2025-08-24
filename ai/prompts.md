@@ -446,16 +446,38 @@ extractor = dspy. Refine(ExtractEvents, N=3, reward_fn=self_check, threshold=Tru
 
 điều chỉnh các prompt của hệ thống AI hoặc thậm chí là trọng số (weights) của LLM
 
+handles evolving the plumbing, scaling, learning, and layers below your app.
+
+Xử lý việc phát triển hệ thốngplumbing, scaling, learning  và các layer bên dưới ứng dụng để tập trung vào CE 
+* `Flow` ~ system design & tools
+* `Specs` ~ ngôn ngữ tự nhiên có cấu trúc
+* `Evals` ~ data & metrics
+  
+- #### Dùng MIPR0v2
 ```python
 extractor.set_lm(llama_1b) # configure the extractor to a tiny LM
 
 # Create a simple judge with a larger LLM to assess the accuracy of extractions
 judge = dspy.ChainOfThought("subject, thread, predicted_events -> accurate: bool")
+# dùng gpt4.1 để đánh giá như một thước đo
 judge.set_lm(gpt41)
 
 # Optimize the extractor for using the tiny LM
 optimizer = dspy.MIPR0v2(metric=judge)
 optimized_extractor = optimizer.compile(extractor, trainset=email_threads[:100])
+```
+
+- #### Dùng GRPO finetuning
+```python
+qwen1b = dspy.LM(
+    model="openai/arbor:Qwen/Qwen3-1.7B",
+    provider=dspy.ArborProvider()
+)
+
+dspy.configure(lm=qwen1b)
+# tối ưu hiệu suất theo metric
+compiler = dspy.GRPO(metric=judge, num_samples_per_input=8)
+extractor_with_RL = compiler.compile(extractor, trainset=trainset[:100])
 ```
 
 
