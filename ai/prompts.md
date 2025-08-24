@@ -404,6 +404,25 @@ class ExtractEvents(dspy.Signature):
     )
 ```
 
+Signatures đại diện cho các mối quan tâm về:
+* Chiến lược suy luận (CoT? Agents? Reflection?)
+* Learning (Instructions? Examples? RL?)
+* LM “plumbing” concerns ám chỉ phần "hạ tầng nền tảng"
+  * Những quy trình, kết nối, logic,
+  * Cấu hình chạy phía sau để hệ thống hoạt động tốt
+
+#### LM “plumbing” concerns
+
+Là những vấn đề kỹ thuật phát sinh trong quá trình thiết kế, triển khai hoặc vận hành LM
+
+| Vấn đề (ẩn dụ từ “plumbing”)        | Ý nghĩa trong context engineering                                                                          |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| **Tắc nghẽn (clogged drains)**      | Dữ liệu vào bị nghẽn, xử lý chậm hoặc lỗi pipeline                                                         |
+| **Rò rỉ (leaky pipes)**             | Lộ thông tin, rò rỉ dữ liệu trong quá trình xử lý                                                          |
+| **Áp lực yếu (low water pressure)** | Mô hình phản hồi chậm, thiếu hiệu suất hoặc tài nguyên không đủ                                            |
+| **Lỗi lắp đặt (poor installation)** | Hệ thống tích hợp sai, cấu hình không chuẩn                                                                |
+| **Nguy cơ sinh học (biohazards)**   | Tiếp xúc với dữ liệu độc hại hoặc không an toàn (ví dụ: dữ liệu chứa thông tin nhạy cảm, gây lệch mô hình) |
+
 
 
 
