@@ -6,6 +6,18 @@
 * Ưu tiên đoạn quan trọng khi trả lời
   ”
 
+
+
+LLM không "hiểu" JSON theo nghĩa truyền thống mà theo xác suất chuỗi (token-level pattern):
+
+* Nó học được rằng trong `{ "key": "value" }` → `"key"` thường mô tả loại thông tin gì.
+* Nó học được rằng `"relevance_score": 0.91` → nghĩa là mức độ liên quan.
+* Nó học pattern như:
+
+  * `"title": "..."`, `"source": "..."`, `"confidence": ...`, `"answer": "..."`
+
+➡️ Những pattern này **rất phổ biến** trong tập huấn luyện (internet, API docs, open datasets...), nên LLM **hiểu ngữ nghĩa ngầm** của từng trường.
+
 ### ✅ **1. Gắn điểm số trực tiếp vào từng đoạn (score-based annotation)**
 
 Bạn hiển thị điểm tương đồng vào trước mỗi đoạn, ví dụ như sau:
