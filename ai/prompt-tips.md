@@ -128,5 +128,69 @@ Instructions:
 * Muốn **giải thích lý do** chọn tài liệu (LLM có thể trích dẫn nguồn + score)
 * Muốn **cho LLM tự ra quyết định thông minh hơn**
 
+## Dùng ontology để chỉ dẫn prompt
+
+1. **Tăng độ chính xác và minh bạch**
+
+* LLM hiểu được **ngữ cảnh metadata** đi kèm (ví dụ: nguồn, độ tin cậy, loại tài liệu, thời gian, mức độ liên quan)
+* Giúp LLM **phân biệt được đâu là thông tin quan trọng, đâu là tham khảo**
+=> `tránh lẫn lộn thông tin hoặc "nhảy cóc" trong câu trả lời`
+
+2. **Dễ mở rộng và tùy biến**
+
+* Ontology/schema riêng cho từng cá nhân hoặc tổ chức giúp hệ thống hiểu:
+
+  * Tài liệu nào thuộc nhóm nào
+  * Cách ưu tiên nguồn dữ liệu
+  * Luật/điều kiện sử dụng nguồn (ví dụ, không lấy dữ liệu cũ hơn 1 năm, hay chỉ dùng dữ liệu đã được xác thực)
+
+3. **Khả năng tương tác tốt hơn với dữ liệu phức tạp**
+
+* Khi dữ liệu RAG đa dạng (văn bản, bảng số liệu, biểu đồ, dữ liệu kỹ thuật...)
+* Việc data có cấu trúc và ontology => LLM phân tích và tổng hợp hiệu quả hơn
+
+```json
+{
+  "query": "Tại sao indexing quan trọng trong RAG?",
+  "documents": [
+    {
+      "id": "doc_1",
+      "content": "Indexing là quá trình chuyển đổi dữ liệu thành vector...",
+      "metadata": {
+        "source": "faq.txt",
+        "relevance": 0.92,
+        "date": "2023-05-10",
+        "type": "definition"
+      }
+    },
+    {
+      "id": "doc_2",
+      "content": "Embedding giúp tăng độ chính xác truy xuất...",
+      "metadata": {
+        "source": "blog.md",
+        "relevance": 0.87,
+        "date": "2024-01-15",
+        "type": "explanation"
+      }
+    }
+  ],
+  "ontology": {
+    "type": {
+      "definition": "Định nghĩa cơ bản",
+      "explanation": "Giải thích chi tiết",
+      "example": "Ví dụ minh họa"
+    },
+    "source_priority": ["faq.txt", "blog.md"]
+  }
+}
+```
+
+* **Dùng prompt hướng dẫn LLM** cách sử dụng ontology, ví dụ:
+
+  > "Ưu tiên câu trả lời dựa trên các tài liệu có loại 'definition' trước, nguồn 'faq.txt' trước, và điểm relevance trên 0.85."
+
+* **Dễ dàng cập nhật ontology hoặc metadata** khi dữ liệu nguồn thay đổi mà không cần thay đổi kiến trúc model.
+
+* **Cải thiện khả năng giải thích (explainability)**: LLM có thể trích dẫn rõ ràng nguồn, loại tài liệu dựa trên metadata.
 
 
