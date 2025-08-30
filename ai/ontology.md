@@ -451,4 +451,23 @@ Dù các kết quả ban đầu rất hứa hẹn, nhóm thừa nhận rằng h�
 > **"Công nghệ chỉ là một phần – điều làm nên khác biệt là con người đứng sau nó."**
 > Nhóm kỹ sư và nhà khoa học dữ liệu chính là lực lượng nòng cốt biến Retail Graph thành hiện thực.
 
-### Inner loop so với Outerloop của kỹ thuật ngữ cảnh
+### Inner loop so với Outer loop của context engineering
+
+| **Vòng lặp**   | **Thành phần / Câu hỏi**                                            | **Nội dung**                                                                                                                         |
+| -------------- | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| **Inner Loop** | Bổ sung bối cảnh                                                    | Mô hình hiện tại nên nhìn thấy gì?                                                                                                   |
+|                | Truy xuất                                                           | Tìm những tài liệu, ký ức, hướng dẫn, dấu vết nào trong quá khứ?                                                                     |
+|                | Định dạng                                                           | Cấu trúc lời nhắc như thế nào (ví dụ: thông báo hệ thống, vài cảnh quay, lược đồ)?                                                   |
+|                | Sắp xếp                                                             | Điều phối quy trình làm việc toàn cục nào? Việc nào làm trước? Việc nào bị cắt bớt?                                                  |
+|                | Gọi công cụ                                                         | Cung cấp những công cụ nào? Hướng tới công cụ phù hợp như thế nào?                                                                   |
+|                | Phạm vi bộ nhớ                                                      | "Trong khung" của lịch sử người dùng là gì?                                                                                          |
+| **Outer Loop** | Đánh giá, Học tập và Cải thiện                                      | Làm thế nào để cải thiện những gì mô hình nhìn thấy theo thời gian?                                                                  |
+|                | Đánh giá                                                            | Làm sao để đo lường liệu lựa chọn bối cảnh có giúp ích hay gây hại?                                                                  |
+|                | Thu thập dữ liệu                                                    | Lưu giữ những dấu vết nào từ các tương tác trực tiếp?                                                                                |
+|                |                                                                     | Có ghi lại toàn bộ lời nhắc + nguồn đã truy xuất + kết quả người dùng không?                                                         |
+|                |                                                                     | Có xây dựng tập dữ liệu gồm các ví dụ tương phản không?                                                                              |
+|                | Học hỏi từ việc sử dụng                                             | Có chắt lọc các dấu vết ngữ cảnh thành công thành phương pháp truy xuất mới, ví dụ ít cảnh mới, bộ điều hợp mới, hay tinh chỉnh mới? |
+|                |                                                                     | Có sắp xếp lại kinh nghiệm trong quá khứ không?                                                                                      |
+|                | Xử lý trôi dạt                                                      | Khi mô hình thay đổi, có kiểm tra đường ống ngữ cảnh cũ với hành vi mới không?                                                       |
+|                | Phản hồi của con người trong vòng lặp                               | Có thu thập phán đoán, chấm điểm theo sở thích, nắm bắt những thất bại ngữ cảnh mà chỉ con người mới phát hiện?                      |
+
