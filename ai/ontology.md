@@ -451,3 +451,4 @@ Dù các kết quả ban đầu rất hứa hẹn, nhóm thừa nhận rằng h�
 > **"Công nghệ chỉ là một phần – điều làm nên khác biệt là con người đứng sau nó."**
 > Nhóm kỹ sư và nhà khoa học dữ liệu chính là lực lượng nòng cốt biến Retail Graph thành hiện thực.
 
+### Inner loop so với Outerloop của kỹ thuật ngữ cảnh
