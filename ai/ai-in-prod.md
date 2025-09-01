@@ -188,4 +188,39 @@ Dẫn đến:
 | **Hạn chế tự động tải và thực thi**      | Không tự động tải hoặc thực thi nội dung từ nguồn không xác định (ví dụ: markdown image, URL). Trước khi truy cập nội dung ngoài, hệ thống phải thông báo rõ cho người dùng và xin xác nhận. |
 | **LLM kiểm tra LLM**                     | Dùng một LLM thứ hai để **giải thích lệnh hệ thống** trước khi thực thi – giúp phát hiện hành vi nguy hiểm tiềm ẩn, tăng tính minh bạch và kiểm tra.                                         |
 
+---
+### 🔒 **Sandboxing trong LLM Systems**
+
+Sandboxing là một biện pháp bảo mật **cốt lõi** trong hệ thống LLM nhằm:
+
+* **Ngăn chặn tương tác ngoài ý muốn** giữa các thành phần hoặc với hệ thống bên ngoài.
+* **Cô lập dữ liệu và hành vi** của từng phiên làm việc và từng người dùng.
+* **Hạn chế rủi ro leo thang đặc quyền** hoặc khai thác lỗ hổng để chiếm toàn quyền hệ thống.
+
+Bởi cách vận hành:
+* **Không có sự cách ly → không có bảo mật**
+* Khi mọi hành vi có thể được kích hoạt qua dữ liệu đầu vào => sandboxing là **yêu cầu bắt buộc**
+* Việc **cách ly phiên làm việc, bộ nhớ, và môi trường triển khai** là nền tảng để chống lại các hành vi bất thường như Prompt Injection, data leakage, hay privilege escalation
+
+⚠️ **Các rủi ro điển hình**
+
+| **Tình huống**                              | **Nguy cơ**                                                                                                                              |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **Vòng lặp vô hạn do mô-đun lỗi**           | Một module mới khiến LLM liên tục tự gọi lại chính nó, gây treo hệ thống.                                                                |
+| **Payload độc hại thực thi trong hệ thống** | Prompt từ website độc hoặc từ agent bị nhiễm có thể khiến hệ thống thực thi mã độc, mở cửa hậu hoặc rò rỉ dữ liệu.                       |
+| **Thiếu cách ly phiên (session)**           | Người dùng tải file ở phiên trước, nhưng vẫn thấy được ở phiên sau → Lỗ hổng bảo mật nghiêm trọng, đặc biệt trong môi trường dùng chung. |
+| **Memory chia sẻ giữa phiên làm việc**      | Prompt Injection có thể trở thành “mã độc định cư” trong bộ nhớ của hệ thống nếu được lưu lại và dùng lại ở phiên sau.                   |
+
+**Biện pháp giảm thiểu**
+
+| **Biện pháp**                          | **Mục tiêu & Ý nghĩa**                                                                                                            |
+| -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| **Memory Management (Quản lý bộ nhớ)** | Cách ly dữ liệu giữa các phiên & người dùng, không lưu dữ liệu trừ khi cần thiết. Dọn sạch bộ nhớ sau mỗi phiên.                  |
+| **Emergency Shutdown**                 | Nếu phát hiện tấn công nguy hiểm, tắt ngay hệ thống hoặc module liên quan, đảm bảo có backup để phục hồi.                         |
+| **System Isolation**                   | Hạn chế LLM truy cập Internet hoặc công cụ không đáng tin. Không để người dùng click vào link do LLM sinh ra mà chưa kiểm tra.    |
+| **Session Management**                 | Tách biệt mỗi phiên làm việc bằng phiên suy luận riêng (inference session), chỉ chia sẻ thông tin thực sự cần thiết.              |
+| **Context Window Sanitization**        | Không để thông tin nhạy cảm trong context window, đặc biệt nếu LLM có truy cập Internet hoặc xử lý hình ảnh.                      |
+| **Environment Segregation**            | Phân biệt rõ môi trường **phát triển**, **kiểm thử** và **sản xuất** để hạn chế xử lý dữ liệu thật trong môi trường chưa an toàn. |
+| **Network Segmentation**               | Chia nhỏ mạng nội bộ để giảm thiểu hậu quả nếu một phần bị tấn công.                                                              |
+
 
