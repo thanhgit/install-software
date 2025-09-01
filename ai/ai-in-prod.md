@@ -71,17 +71,27 @@ Cụ thể, `Indirect Prompt Injection`
 * kẻ tấn công giấu lệnh trong dữ liệu đầu vào mà người dùng không biết
 * => `dẫn đến rò rỉ dữ liệu, quyết định sai, hoặc hành vi trái phép của hệ thống`
 
-Các nguyên tắc bảo mật
-* Về tính sẵn sàng, bảo mật và toàn vẹn
-* => zero trust ~ `không nên tin tưởng hoàn toàn vào đầu ra của model`
+Các nguyên tắc bảo mật:
+* Về tính sẵn sàng, bảo mật và toàn vẹn như:
+  * Phân tích log, giám sát thiết bị
+  * Quản lý danh tính, kiểm soát truy cập, chứng thực đa yếu tố (MFA),
+  * Phân đoạn vi mô, mã hóa, và giám sát liên tục
+  * ...
+* => zero trust ~ `không nên tin tưởng hoàn toàn vào đầu ra của model` => `triển khai generative AI an toàn`
 
 Zero Trust, dựa trên ba nguyên tắc cốt lõi:
 * Xác thực và phân quyền liên tục
 * Nguyên tắc quyền tối thiểu
 * `Không tin tưởng mặc định` – luôn giả định có rủi ro từ bên trong lẫn bên ngoài hệ thống
 
+Rủi ro đặc thù của AI, như:
+* Bảo vệ trọng số mô hình, data huấn luyện, và tham số hệ thống => `tránh bị truy cập trái phép`
+* Giám sát data đầu vào, đầu ra và pipeline huấn luyện => `để phát hiện hoạt động bất thường`
+* Chống lại các hình thức tấn công như Evasion, Poisoning, và Privacy Attacks
 
+<img width="779" height="913" alt="image" src="https://github.com/user-attachments/assets/cc33ab56-4e99-4bad-aaa8-c01ac388333d" />
 
+#### Hệ thống đề xuất
 
 
 
