@@ -62,10 +62,23 @@ Nếu thiết kế không đúng sẽ dẫn đến:
 
 #### Rủi ro bảo mật từ LLM 
 
+Ba loại tấn công phổ biến:
 * Evasion Attacks
 * Poisoning Attacks
 * Privacy Attacks
 
+Cụ thể, `Indirect Prompt Injection`
+* kẻ tấn công giấu lệnh trong dữ liệu đầu vào mà người dùng không biết
+* => `dẫn đến rò rỉ dữ liệu, quyết định sai, hoặc hành vi trái phép của hệ thống`
+
+Các nguyên tắc bảo mật
+* Về tính sẵn sàng, bảo mật và toàn vẹn
+* => zero trust ~ `không nên tin tưởng hoàn toàn vào đầu ra của model`
+
+Zero Trust, dựa trên ba nguyên tắc cốt lõi:
+* Xác thực và phân quyền liên tục
+* Nguyên tắc quyền tối thiểu
+* `Không tin tưởng mặc định` – luôn giả định có rủi ro từ bên trong lẫn bên ngoài hệ thống
 
 
 
