@@ -58,9 +58,9 @@ Nếu thiết kế không đúng sẽ dẫn đến:
 
 | **MẪU**                  | **KHI SỬ DỤNG**                                                                                                                                                           | **CÁC TRƯỜNG HỢP SỬ DỤNG / VÍ DỤ**                                                         |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| **Chuỗi xác định** <br>DeterministicChain       | - Luồng nhiệm vụ cố định, có thể lặp lại  <br> - Cần có khả năng kiểm toán cao <br> - Độ trễ thấp và đầu ra có thể dự đoán được <br> - Logic hiếm khi thay đổi            | - Bot câu hỏi thường gặp <br> - Tuân thủ quy trình công việc <br> - RAG pipeline cơ bản   |
+| **Chuỗi xác định** <br>DeterministicChain       | - Luồng nhiệm vụ cố định, có thể lặp lại  <br> - Cần có khả năng kiểm toán cao <br> - Độ trễ thấp và đầu ra có thể dự đoán được <br> - Logic hiếm khi thay đổi <br> - Giúp kiểm soát chặt chẽ hành vi AI          | - Bot câu hỏi thường gặp <br> - Tuân thủ quy trình công việc <br> - RAG pipeline cơ bản   |
 | **Hệ thống đại lý đơn** <br>Single-Agent System  | - Các truy vấn khác nhau trong một domain duy nhất <br> - Cần lý giải hoặc thử lại <br> - Tìm kiếm sự linh hoạt mà không phức tạp <br> - Độ tinh tế vừa phải                | - Trợ lý bộ phận trợ giúp <br> - Công cụ AI nội bộ <br> - Công cụ điền biểu mẫu thông minh |
-| **Hệ thống đa tác nhân** <br>Multi-Agent System | - Bao gồm các business domain đa dạng <br> - Logic/context chuyên biệt cho mỗi task <br> - Cần kiến trúc mô-đun, có thể mở rộng <br> - Phân chia vai trò rõ ràng | - Nền tảng Enterprise AI <br> - AI copilots <br> - AI-powered CRMs     |
+| **Hệ thống đa tác nhân** <br>Multi-Agent System | - Bao gồm các business domain đa dạng <br> - Logic/context chuyên biệt cho mỗi task <br> - Cần kiến trúc mô-đun, có thể mở rộng <br> - Phân chia vai trò rõ ràng <br> - Phù hợp cho các doanh nghiệp lớn cần giải quyết nhiều nhiệm vụ song song, với các agent chuyên biệt | - Nền tảng Enterprise AI <br> - AI copilots <br> - AI-powered CRMs     |
 
 
 
