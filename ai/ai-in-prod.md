@@ -1,7 +1,6 @@
 # AI trong môi trường production
 
 <img width="1190" height="482" alt="image" src="https://github.com/user-attachments/assets/72692768-0fc8-45e1-9756-0c81008321e4" />
-
 #### Tool calling
 `Yêu cầu`:
 * 100-1000x more concurrent executions
@@ -21,7 +20,6 @@
 * Cô lập các tool không ổn định để ngăn ngừa lỗi lan truyền
 
 <img width="852" height="508" alt="image" src="https://github.com/user-attachments/assets/a2e1247e-5fc4-41ba-90b8-d55a9055c812" />
-
 #### Memory ~ cân bằng giữa speed, cost, and accuracy:
 
 Short-term context (active conversation history)
@@ -39,6 +37,7 @@ Enterprise knowledge (product specs, compliance rules)
   * -> Auto-expire old data and enforce access controls
   * -> this keeps systems lean and audit-ready
 
+<img width="1392" height="825" alt="image" src="https://github.com/user-attachments/assets/f9f5b732-5e08-41f7-a1d4-f9631264e98c" />
 #### Decision Making
 
 `Yêu cầu`:
