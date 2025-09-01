@@ -223,4 +223,45 @@ Bởi cách vận hành:
 | **Environment Segregation**            | Phân biệt rõ môi trường **phát triển**, **kiểm thử** và **sản xuất** để hạn chế xử lý dữ liệu thật trong môi trường chưa an toàn. |
 | **Network Segmentation**               | Chia nhỏ mạng nội bộ để giảm thiểu hậu quả nếu một phần bị tấn công.                                                              |
 
+---
+### 📊 **Giám sát, Báo cáo & Kiểm soát trong LLM Systems**
+
+Đảm bảo hệ thống LLM vận hành:
+
+* **An toàn**
+* **Đáng tin cậy**
+* **Tuân thủ quy định**
+  bằng cách **quan sát liên tục**, **phát hiện rủi ro sớm**, và **đáp ứng sự cố tự động hoặc có kiểm soát**
+
+Vì:
+* **Bạn không thể bảo vệ thứ bạn không quan sát**
+* => cần có khả năng **“nhìn thấy chính mình” đang bị khai thác**
+* => `phản ứng một cách nhanh chóng, minh bạch, có kiểm soát`
+
+Việc lạm dụng hệ thống, dù là **vô tình hay có chủ đích**, có thể dẫn đến:
+
+* Hỏng dữ liệu
+* Tăng chi phí vận hành
+* Tổn thất uy tín và pháp lý
+* => **giám sát không chỉ là một tính năng, mà là một phần thiết yếu của kiến trúc bảo mật Zero Trust**
+
+⚠️ **Các rủi ro điển hình**
+
+| **Tình huống**                               | **Nguy cơ**                                                                                            |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Lạm dụng chatbot ngoài mục đích thiết kế** | Ví dụ: dùng chatbot của chính quyền để dịch văn bản hoặc tạo email spam cá nhân hóa hàng loạt.         |
+| **Tự triệu hồi liên tục (self-invocation)**  | Gây lãng phí tài nguyên tính toán, làm chậm hệ thống hoặc gây sập.                                     |
+| **Lạm dụng token bởi người dùng/mã độc**     | Người dùng hoặc bot khai thác giới hạn token để gây quá tải hoặc làm tăng chi phí vận hành bất thường. |
+
+✅ **Biện pháp giảm thiểu & kiểm soát**
+
+| **Biện pháp**                              | **Ý nghĩa và mục tiêu**                                                                                                                                                |
+| ------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Threat Detection Mechanisms**            | Phát hiện sớm các hành vi bất thường (dịch vụ bị lạm dụng, sử dụng API quá mức, brute-force) bằng giám sát hành vi đầu cuối, theo dõi tiêu thụ tài nguyên CPU/GPU/API. |
+| **Automated Responses**                    | Thiết lập phản ứng tự động cho các mối đe dọa đã biết để tăng tốc độ xử lý sự cố, giảm can thiệp thủ công.                                                             |
+| **Token Limits**                           | Giới hạn số token mà mỗi người dùng hoặc thiết bị có thể sử dụng để tránh lạm dụng và đảm bảo hệ thống ổn định.                                                        |
+| **Logging & Analytics**                    | Lưu trữ nhật ký tương tác chi tiết để phục vụ audit, điều tra sự cố, và phát triển năng lực threat intelligence.                                                       |
+| **Regular Testing**                        | Tự động kiểm tra thường xuyên để phát hiện lỗ hổng và đảm bảo hệ thống vẫn tuân thủ các chính sách bảo mật.                                                            |
+| **Real-Time Monitoring & Prompt Blocking** | Giám sát yêu cầu của chatbot theo thời gian thực. Nếu có prompt đáng ngờ, chặn ngay lập tức. Hỗ trợ kiểm soát hiệu suất và ngăn chặn prompt injection/phá hoại.        |
+
 
