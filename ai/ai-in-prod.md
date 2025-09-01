@@ -113,7 +113,7 @@ LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn 
 * Mỗi nguyên tắc bảo mật được trình bày theo cấu trúc: mô tả tổng quan → kịch bản rủi ro → biện pháp giảm thiểu đề xuất
 
 ---
-### Authentication & Authorization trong LLM Systems**
+### Authentication & Authorization trong LLM Systems
 
 * **Xác thực (Authentication)** và **phân quyền (Authorization)** là **nền tảng bảo mật** trong hệ thống LLM
 * => đảm bảo **chỉ những người dùng và tác nhân hợp lệ mới có quyền truy cập** và thực thi các hành động tương ứng
@@ -152,6 +152,40 @@ LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn 
 | **Hạn chế tính tự động không cần thiết**                        | Với tác vụ đơn giản, dùng workflow hoặc mã hóa trực tiếp thay vì dùng agent phức tạp.                                |
 | **Kiến trúc đa tenant (Multi-Tenant)**                          | Phân chia người dùng, agent và dữ liệu theo độ nhạy cảm, kết hợp các tầng xác thực phù hợp.                          |
 
+---
+### **Input & Output Restrictions trong LLM Systems**
 
+Các vấn đề trong data flow:
+
+* **Prompt Injection**
+* **Dữ liệu đầu vào bất thường hoặc nguy hại**
+* **Hành vi không lường trước của model khi tương tác với công cụ bên ngoài**
+
+Dẫn đến:
+* **Không chỉ người dùng mà cả dữ liệu cũng có thể là "tác nhân độc hại"**
+* Việc kiểm soát chặt chẽ mọi dữ liệu vào-ra trong hệ thống LLM là một phần không thể thiếu của kiến trúc bảo mật hiện đại
+* Đặc biệt khi hệ thống có tích hợp công cụ bên ngoài (plug-ins, RAG, API), thì **luồng dữ liệu trở thành điểm tấn công nhạy cảm nhất**
+
+⚠️ **Rủi ro bảo mật điển hình**
+
+1. **Prompt Injection qua mô tả công cụ (Model Context Protocol - MCP):**
+   Một mô tả công cụ độc hại khiến LLM làm lộ dữ liệu nhạy cảm khi sử dụng công cụ bên ngoài không được kiểm soát chặt chẽ.
+
+2. **Tấn công qua hình ảnh có chứa prompt ẩn:**
+   Markdown chứa hình ảnh được tự động tải về và xử lý (OCR), có thể giấu các chỉ dẫn nguy hiểm như `"Ignore all previous instructions..."`.
+
+3. **Lạm dụng markdown để rò rỉ dữ liệu:**
+   Markdown chèn link hình ảnh đến server của attacker, lợi dụng tính năng prerendering để trích xuất và gửi dữ liệu nhạy cảm mà không cần sự đồng thuận của người dùng.
+
+✅ **Các biện pháp phòng ngừa chính**
+
+| **Biện pháp**                            | **Ý nghĩa sâu sắc**                                                                                                                                                                          |
+| ---------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Gateway kiểm soát đầu vào**            | Thiết lập "cổng kiểm tra" giữa LLM và các thành phần khác, kết hợp kiểm tra cú pháp, từ khóa, độ dài đầu vào và thuật toán học máy để phát hiện prompt lạ.                                   |
+| **Tag phân loại nguồn dữ liệu**          | Gắn nhãn nguồn đầu vào để phân biệt nội dung đáng tin cậy và không đáng tin cậy, từ đó bỏ qua chỉ dẫn nguy hiểm từ nguồn bên ngoài.                                                          |
+| **Trust Algorithm (Thuật toán tin cậy)** | Tính điểm tin cậy cho mỗi yêu cầu dựa trên ngữ cảnh (người dùng, thiết bị, lịch sử truy cập...), rồi đưa ra quyết định xử lý tùy theo ngưỡng xác định.                                       |
+| **Kiểm soát đầu ra (Output Control)**    | Áp dụng guardrails và xác thực kết quả trước khi hiển thị hoặc thực thi. Các hành động cần được mô tả có thể xác minh, kết hợp với **Human-in-the-Loop** trong các trường hợp quan trọng.    |
+| **Hạn chế tự động tải và thực thi**      | Không tự động tải hoặc thực thi nội dung từ nguồn không xác định (ví dụ: markdown image, URL). Trước khi truy cập nội dung ngoài, hệ thống phải thông báo rõ cho người dùng và xin xác nhận. |
+| **LLM kiểm tra LLM**                     | Dùng một LLM thứ hai để **giải thích lệnh hệ thống** trước khi thực thi – giúp phát hiện hành vi nguy hiểm tiềm ẩn, tăng tính minh bạch và kiểm tra.                                         |
 
 
