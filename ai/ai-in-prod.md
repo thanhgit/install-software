@@ -155,7 +155,7 @@ LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn 
 ---
 ### **Input & Output Restrictions trong LLM Systems**
 
-Các vấn đề trong data flow:
+**Luồng dữ liệu trở thành điểm tấn công nhạy cảm nhất** bởi:
 
 * **Prompt Injection**
 * **Dữ liệu đầu vào bất thường hoặc nguy hại**
@@ -163,13 +163,13 @@ Các vấn đề trong data flow:
 
 Dẫn đến:
 * **Không chỉ người dùng mà cả dữ liệu cũng có thể là "tác nhân độc hại"**
-* Việc kiểm soát chặt chẽ mọi dữ liệu vào-ra trong hệ thống LLM là một phần không thể thiếu của kiến trúc bảo mật hiện đại
-* Đặc biệt khi hệ thống có tích hợp công cụ bên ngoài (plug-ins, RAG, API), thì **luồng dữ liệu trở thành điểm tấn công nhạy cảm nhất**
+* => kiểm soát chặt chẽ mọi data vào-ra 
+* Đặc biệt các công cụ bên ngoài (plug-ins, RAG, API, ...)
 
 ⚠️ **Rủi ro bảo mật điển hình**
 
-1. **Prompt Injection qua mô tả công cụ (Model Context Protocol - MCP):**
-   Một mô tả công cụ độc hại khiến LLM làm lộ dữ liệu nhạy cảm khi sử dụng công cụ bên ngoài không được kiểm soát chặt chẽ.
+1. **Prompt Injection qua mô tả công cụ như MCP, API, ...:**
+   Một mô tả công cụ độc hại khiến LLM làm lộ dữ liệu nhạy cảm khi sử dụng công cụ bên ngoài không được kiểm soát chặt chẽ
 
 2. **Tấn công qua hình ảnh có chứa prompt ẩn:**
    Markdown chứa hình ảnh được tự động tải về và xử lý (OCR), có thể giấu các chỉ dẫn nguy hiểm như `"Ignore all previous instructions..."`.
