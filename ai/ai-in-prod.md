@@ -264,4 +264,31 @@ Việc lạm dụng hệ thống, dù là **vô tình hay có chủ đích**, c�
 | **Regular Testing**                        | Tự động kiểm tra thường xuyên để phát hiện lỗ hổng và đảm bảo hệ thống vẫn tuân thủ các chính sách bảo mật.                                                            |
 | **Real-Time Monitoring & Prompt Blocking** | Giám sát yêu cầu của chatbot theo thời gian thực. Nếu có prompt đáng ngờ, chặn ngay lập tức. Hỗ trợ kiểm soát hiệu suất và ngăn chặn prompt injection/phá hoại.        |
 
+---
+### 🧠 **Threat Intelligence trong hệ thống LLM**
 
+**Threat Intelligence (Tình báo mối đe dọa)** là xương sống hỗ trợ cho:
+
+* **Giám sát (Monitoring)**
+* **Báo cáo (Reporting)**
+* **Kiểm soát (Controlling)**
+* => **dự đoán, phát hiện sớm**, và **chủ động ứng phó** với các mối đe dọa mạng **mới nổi hoặc đang hoạt động**
+
+> **Tình báo an ninh không chỉ là phòng vệ – mà là một năng lực tấn công chủ động để đón đầu rủi ro**
+
+⚠️ **Các mối nguy cụ thể**
+
+| **Tình huống**                                     | **Rủi ro**                                                                                                                                                |
+| -------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Không theo dõi Prompt Injection techniques mới** | Dễ bị khai thác bởi các kỹ thuật mới, tinh vi hơn. Bộ lọc đầu vào trở nên lỗi thời, làm tăng nguy cơ rò rỉ dữ liệu hoặc bị chiếm quyền điều khiển.        |
+| **Tấn công chuỗi cung ứng**                        | Thành phần/phụ thuộc bên ngoài của hệ thống (ví dụ: API, plugin) bị nhiễm mã độc. Nếu không có threat intelligence, hệ thống khó phát hiện và cô lập sớm. |
+
+✅ **Biện pháp ứng phó (Mitigations)**
+
+| **Giải pháp**                                   | **Ý nghĩa**                                                                                                                                                                                                         |
+| ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Intelligence**                                | Nhận diện các mẫu tấn công từ dữ liệu lịch sử, phát hiện đầu vào bất thường bằng việc so sánh với các TTPs (tactics, techniques, procedures) của hacker.                                                            |
+| **Access Controls tích hợp nguồn tin tình báo** | Tự động chặn hoặc cảnh báo khi gặp IP, tác nhân hoặc API độc hại. Giảm thời gian phản hồi.                                                                                                                          |
+| **Red Teaming / Regular Audits**                | Thực hiện tấn công mô phỏng (red-teaming) để kiểm tra khả năng phòng vệ trước các phương pháp tấn công mới, đặc biệt là với các thành phần AI cụ thể như LLM.                                                       |
+| **Dynamic Analysis**                            | Kết nối với cộng đồng bảo mật để nhận cập nhật mối đe dọa liên quan đến LLM (ví dụ: Prompt Injection zero-day, jailbreak mới). Nguồn có thể là NIST, OWASP, các tổ chức CERT, blog của nhà nghiên cứu an ninh mạng. |
+| **Restructuring**                               | Nếu một thành phần bị phát hiện là đã bị khai thác, phải loại bỏ ngay và tái cấu trúc hệ thống để tránh tái nhiễm.                                                                                                  |
