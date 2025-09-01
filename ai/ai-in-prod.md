@@ -52,9 +52,7 @@ Nếu thiết kế không đúng sẽ dẫn đến:
 * Bottlenecks (slow API calls blocking decisions)
 * Compliance risks (violating regulations due to missing guardrails
 
-
 #### Agentic patterns
-
 
 | **MẪU**                  | **KHI SỬ DỤNG**                                                                                                                                                           | **CÁC TRƯỜNG HỢP SỬ DỤNG / VÍ DỤ**                                                         |
 | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -62,7 +60,11 @@ Nếu thiết kế không đúng sẽ dẫn đến:
 | **Hệ thống đại lý đơn** <br>Single-Agent System  | - Các truy vấn khác nhau trong một domain duy nhất <br> - Cần lý giải hoặc thử lại <br> - Tìm kiếm sự linh hoạt mà không phức tạp <br> - Độ tinh tế vừa phải                | - Trợ lý bộ phận trợ giúp <br> - Công cụ AI nội bộ <br> - Công cụ điền biểu mẫu thông minh |
 | **Hệ thống đa tác nhân** <br>Multi-Agent System | - Bao gồm các business domain đa dạng <br> - Logic/context chuyên biệt cho mỗi task <br> - Cần kiến trúc mô-đun, có thể mở rộng <br> - Phân chia vai trò rõ ràng <br> - Phù hợp cho các doanh nghiệp lớn cần giải quyết nhiều nhiệm vụ song song, với các agent chuyên biệt | - Nền tảng Enterprise AI <br> - AI copilots <br> - AI-powered CRMs     |
 
+#### Rủi ro bảo mật từ LLM 
 
+* Evasion Attacks
+* Poisoning Attacks
+* Privacy Attacks
 
 
 
