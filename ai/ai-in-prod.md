@@ -1,6 +1,7 @@
 # AI trong môi trường production
 
 <img width="1190" height="482" alt="image" src="https://github.com/user-attachments/assets/72692768-0fc8-45e1-9756-0c81008321e4" />
+
 #### Tool calling
 `Yêu cầu`:
 * 100-1000x more concurrent executions
@@ -20,6 +21,7 @@
 * Cô lập các tool không ổn định để ngăn ngừa lỗi lan truyền
 
 <img width="852" height="508" alt="image" src="https://github.com/user-attachments/assets/a2e1247e-5fc4-41ba-90b8-d55a9055c812" />
+
 #### Memory ~ cân bằng giữa speed, cost, and accuracy:
 
 Short-term context (active conversation history)
@@ -38,6 +40,7 @@ Enterprise knowledge (product specs, compliance rules)
   * -> this keeps systems lean and audit-ready
 
 <img width="1392" height="825" alt="image" src="https://github.com/user-attachments/assets/f9f5b732-5e08-41f7-a1d4-f9631264e98c" />
+
 #### Decision Making
 
 `Yêu cầu`:
@@ -49,6 +52,15 @@ Nếu thiết kế không đúng sẽ dẫn đến:
 * Bottlenecks (slow API calls blocking decisions)
 * Compliance risks (violating regulations due to missing guardrails
 
+
+#### Agentic patterns
+
+
+| **MẪU**                  | **KHI SỬ DỤNG**                                                                                                                                                           | **CÁC TRƯỜNG HỢP SỬ DỤNG / VÍ DỤ**                                                         |
+| ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| **Chuỗi xác định**       | - Luồng nhiệm vụ cố định, có thể lặp lại  <br> - Cần có khả năng kiểm toán cao <br> - Độ trễ thấp và đầu ra có thể dự đoán được <br> - Logic hiếm khi thay đổi            | - Bot câu hỏi thường gặp <br> - Tuân thủ quy trình công việc <br> - Đường ống RAG cơ bản   |
+| **Hệ thống đại lý đơn**  | - Các truy vấn khác nhau trong một miền duy nhất <br> - Cần lý giải hoặc thử lại <br> - Tìm kiếm sự linh hoạt mà không phức tạp <br> - Độ tinh tế vừa phải                | - Trợ lý bộ phận trợ giúp <br> - Công cụ AI nội bộ <br> - Công cụ điền biểu mẫu thông minh |
+| **Hệ thống đa tác nhân** | - Bao gồm các lĩnh vực kinh doanh đa dạng <br> - Logic/bối cảnh chuyên biệt cho mỗi nhiệm vụ <br> - Cần kiến trúc mô-đun, có thể mở rộng <br> - Phân chia vai trò rõ ràng | - Nền tảng Enterprise AI <br> - Gửi tới các phi công phụ <br> - CRM được hỗ trợ bởi AI     |
 
 
 
