@@ -112,7 +112,45 @@ LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn 
 
 * Mỗi nguyên tắc bảo mật được trình bày theo cấu trúc: mô tả tổng quan → kịch bản rủi ro → biện pháp giảm thiểu đề xuất
 
+---
+### Authentication & Authorization trong LLM Systems**
 
+* **Xác thực (Authentication)** và **phân quyền (Authorization)** là **nền tảng bảo mật** trong hệ thống LLM
+* => đảm bảo **chỉ những người dùng và tác nhân hợp lệ mới có quyền truy cập** và thực thi các hành động tương ứng
+* Mỗi tương tác – giữa người dùng, agent, LLM và các thành phần hệ thống – **phải được xác minh và cấp quyền rõ ràng**, với thời gian tin cậy giới hạn.
+
+> **Không nên tin tưởng mặc định bất kỳ tác nhân nào trong hệ thống LLM**
+> 
+> Mọi truy cập, tương tác và hành động đều cần được kiểm soát, xác thực, và giới hạn theo ngữ cảnh và vai trò
+>
+> Việc bảo mật thành công hệ thống LLM không chỉ là kỹ thuật, mà còn là thiết kế nguyên tắc và quy trình vận hành đúng đắn.
+
+
+⚠️ **Các rủi ro bảo mật điển hình**
+
+1. **Truy cập ngoài phạm vi nhiệm vụ:**
+   LLM kết nối RAG có thể bị khai thác bởi người dùng tạo prompt truy vấn vượt ngoài phạm vi được phép nếu không có cơ chế phân quyền chặt chẽ.
+
+2. **Leo thang đặc quyền:**
+   Các chức năng mở rộng có thể cho phép người dùng thao tác dữ liệu vượt quá quyền hạn ban đầu, dẫn đến rủi ro Prompt Injection và sửa đổi trái phép.
+
+3. **Không thu hồi quyền tạm thời:**
+   Nếu quyền admin không được thu hồi sau khi hoàn tất nhiệm vụ, người dùng có thể tiếp tục truy cập và thay đổi hệ thống ngoài phạm vi cho phép.
+
+✅ **Chiến lược giảm thiểu rủi ro**
+
+| **Biện pháp**                                                   | **Ý nghĩa chính**                                                                                                    |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **MFA (Xác thực đa yếu tố)**                                    | Tăng độ tin cậy bằng cách yêu cầu nhiều yếu tố để xác minh người dùng và agent.                                      |
+| **Không sử dụng LLM để xác thực**                               | Tránh để LLM thực hiện chức năng xác thực, vì chúng không được thiết kế cho việc này.                                |
+| **Nguyên tắc quyền tối thiểu (Least Privilege)**                | Chỉ cấp đúng và đủ quyền cho từng vai trò; mọi hành động cần nằm trong ngữ cảnh bảo mật của người dùng khởi tạo.     |
+| **Kiểm soát truy cập động (Dynamic Access Control)**            | Xem xét các yếu tố như thời gian, vị trí, hành vi để phát hiện truy cập bất thường.                                  |
+| **Phân quyền theo thuộc tính (Attribute-based Access Control)** | Quyền truy cập phụ thuộc vào các thuộc tính như vai trò, thời gian, loại tài nguyên... và phải được rà soát định kỳ. |
+| **Giới hạn plug-in**                                            | Ngăn plugin truy cập lịch sử hội thoại trừ khi thực sự cần thiết.                                                    |
+| **Giám sát liên tục**                                           | Theo dõi hoạt động hệ thống, phát hiện hành vi bất thường, hỗ trợ kiểm tra và truy vết.                              |
+| **Lưu trữ & ghi log**                                           | Ghi lại mọi tương tác giữa các thành phần để dễ dàng kiểm soát và kiểm toán.                                         |
+| **Hạn chế tính tự động không cần thiết**                        | Với tác vụ đơn giản, dùng workflow hoặc mã hóa trực tiếp thay vì dùng agent phức tạp.                                |
+| **Kiến trúc đa tenant (Multi-Tenant)**                          | Phân chia người dùng, agent và dữ liệu theo độ nhạy cảm, kết hợp các tầng xác thực phù hợp.                          |
 
 
 
