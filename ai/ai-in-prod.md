@@ -92,6 +92,10 @@ Rủi ro đặc thù của AI, như:
 <img width="779" height="913" alt="image" src="https://github.com/user-attachments/assets/cc33ab56-4e99-4bad-aaa8-c01ac388333d" />
 
 #### Thiết kế hệ thống đề xuất
+* Không nên tin tưởng tuyệt đối vào các hệ thống LLM
+* Kkhông khuyến khích vận hành hoàn toàn tự động mà không có giám sát của con người
+* Bởi `giám sát và kiểm tra bởi con người` + `giới hạn rõ ràng quyền tự động` => `đảm bảo tính minh bạch và kiểm soát.`
+
 LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn mô hình nền đến cấu trúc hệ thống triển khai
 
 * **Model card** là tài liệu đi kèm với nhiều LLM
