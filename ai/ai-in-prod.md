@@ -38,3 +38,27 @@ Enterprise knowledge (product specs, compliance rules)
   * `Governance Controls`
   * -> Auto-expire old data and enforce access controls
   * -> this keeps systems lean and audit-ready
+
+#### Decision Making
+
+`Yêu cầu`:
+* AI agent phải ra quyết định nhanh và đáng tin cậy trong môi trường prod
+* Cân bằng logic, business rules và cập nhật tri thức (realtime-data)
+
+Nếu thiết kế không đúng sẽ dẫn đến:
+* Inconsistent outputs (e.g., approving invalid transactions)
+* Bottlenecks (slow API calls blocking decisions)
+* Compliance risks (violating regulations due to missing guardrails
+
+
+
+
+
+
+
+
+
+
+
+
+
