@@ -91,7 +91,22 @@ Rủi ro đặc thù của AI, như:
 
 <img width="779" height="913" alt="image" src="https://github.com/user-attachments/assets/cc33ab56-4e99-4bad-aaa8-c01ac388333d" />
 
-#### Hệ thống đề xuất
+#### Thiết kế hệ thống đề xuất
+LLM an toàn cần tuân thủ các nguyên tắc bảo mật từ khâu chọn mô hình nền đến cấu trúc hệ thống triển khai
+
+* **Model card** là tài liệu đi kèm với nhiều LLM
+ * mô tả thông tin về chức năng, dữ liệu huấn luyện, tuân thủ pháp lý và đánh giá rủi ro (bao gồm Prompt Injection)
+ * `Việc chọn mô hình nền phù hợp` là bước quan trọng vì lỗi trong huấn luyện (dữ liệu độc hại, thiên lệch...) có thể gây rò rỉ dữ liệu và hành vi không an toàn
+
+* `Đánh giá và chuẩn bị dữ liệu huấn luyện kỹ lưỡng` là cần thiết nhưng khó thực hiện do khối lượng lớn và dữ liệu thường không công khai
+
+* Hệ thống hoạt động cần có giám sát liên tục
+ * Với cơ chế **kiểm soát truy cập, authN, authZ**
+ * Các yếu tố kỹ thuật khác như PKI, logging, IAM...
+  
+* Cân bằng giữa giảm thiểu rủi ro từ **Poisoning, Evasion và Privacy Attacks** và đảm bảo tính khả dụng và dễ sử dụng trong việc áp dụng **Nguyên tắc Zero Trust**
+
+* Mỗi nguyên tắc bảo mật được trình bày theo cấu trúc: mô tả tổng quan → kịch bản rủi ro → biện pháp giảm thiểu đề xuất
 
 
 
