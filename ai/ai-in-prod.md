@@ -291,4 +291,38 @@ Việc lạm dụng hệ thống, dù là **vô tình hay có chủ đích**, c�
 | **Access Controls tích hợp nguồn tin tình báo** | Tự động chặn hoặc cảnh báo khi gặp IP, tác nhân hoặc API độc hại. Giảm thời gian phản hồi.                                                                                                                          |
 | **Red Teaming / Regular Audits**                | Thực hiện tấn công mô phỏng (red-teaming) để kiểm tra khả năng phòng vệ trước các phương pháp tấn công mới, đặc biệt là với các thành phần AI cụ thể như LLM.                                                       |
 | **Dynamic Analysis**                            | Kết nối với cộng đồng bảo mật để nhận cập nhật mối đe dọa liên quan đến LLM (ví dụ: Prompt Injection zero-day, jailbreak mới). Nguồn có thể là NIST, OWASP, các tổ chức CERT, blog của nhà nghiên cứu an ninh mạng. |
-| **Restructuring**                               | Nếu một thành phần bị phát hiện là đã bị khai thác, phải loại bỏ ngay và tái cấu trúc hệ thống để tránh tái nhiễm.                                                                                                  |
+| **Restructuring**                               | Nếu một thành phần bị phát hiện là đã bị khai thác, phải loại bỏ ngay và tái cấu trúc hệ thống để tránh tái nhiễm.                            
+---
+
+### 🧠 **Awareness (Nhận thức an ninh) trong hệ thống LLM**
+
+**Awareness (Nhận thức về an ninh)** là nền tảng không thể thiếu trong chiến lược bảo mật toàn diện, nhằm:
+
+* Nâng cao hiểu biết về rủi ro, lỗ hổng và cách ứng phó
+* Đảm bảo các bên liên quan (stakeholders) **hiểu rõ** cách AI hoạt động, đặc biệt là các rủi ro **phi kỹ thuật**
+* Kết nối con người – công nghệ qua **Human-in-the-Loop**
+* Tạo điều kiện triển khai hiệu quả **Zero Trust** trên toàn bộ vòng đời của hệ thống
+
+> **Nhận thức không phải là một sự kiện, mà là một quá trình liên tục**
+>
+> Các mối đe dọa có thể đến từ Prompt Injection, social engineering, hay thậm chí là hành vi vô tình của developer
+>
+> => **ý thức bảo mật chính là tuyến phòng thủ đầu tiên**
+
+
+⚠️ **Các rủi ro điển hình**
+
+| **Tình huống**                                                              | **Hậu quả**                                                                                                                                   |
+| --------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Developer vô tình lưu dữ liệu nhạy cảm trong system prompt**              | Có thể bị khai thác qua Prompt Injection – người dùng độc hại dò được lệnh ẩn hoặc dữ liệu nội bộ (Rehberger, 2025).                          |
+| **Người dùng nhấp vào link chứa mã độc hoặc dữ liệu ẩn (Invisible Tokens)** | Dẫn tới rò rỉ thông tin, kiểm soát từ xa hoặc lừa đảo, thường do thiếu cảnh giác hoặc không được đào tạo nhận biết nguy cơ (Rehberger, 2025). |
+
+✅ **Biện pháp nâng cao nhận thức & giảm thiểu rủi ro**
+
+| **Hành động**                            | **Tác dụng**                                                                                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Thực hành & Kiểm tra (Red Teaming)**   | Mô phỏng tấn công để tăng khả năng phản ứng và đánh giá độ hiểu biết thực tế của nhân sự. Giúp cập nhật quy trình cho phù hợp với mối đe dọa mới. |
+| **Tổ chức Case Studies**                 | Trình bày các vụ tấn công thật (ví dụ: tấn công qua link) giúp người dùng hiểu rõ hậu quả và học hỏi từ thực tế.                                  |
+| **Thông điệp ngắn gọn, rõ ràng**         | Ví dụ: *“Đừng bao giờ tin tưởng AI một cách tuyệt đối.”* → tạo tư duy phản biện thay vì ngây thơ phụ thuộc AI.                                    |
+| **Chiến dịch truyền thông về rủi ro**    | Gửi bản tin, cảnh báo, nội dung ngắn về các lỗ hổng mới, hành vi nghi ngờ → đảm bảo chủ đề luôn hiện diện trong tâm trí người dùng.               |
+| **Tăng tính minh bạch (Explainability)** | Cố gắng giải thích cách AI đưa ra quyết định để người dùng hiểu và đặt câu hỏi. Từ đó, phát hiện hành vi bất thường hoặc không hợp lý.            |
