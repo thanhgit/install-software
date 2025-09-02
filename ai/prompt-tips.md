@@ -193,4 +193,97 @@ Instructions:
 
 * **Cải thiện khả năng giải thích (explainability)**: LLM có thể trích dẫn rõ ràng nguồn, loại tài liệu dựa trên metadata.
 
+### Cách kết hợp embedding và KG trong **hệ thống RAG**
+
+> **Câu hỏi người dùng:** *"Làm sao để giảm chi phí đi lại hàng tháng?"*
+
+#### ❌ **Chỉ dùng Embedding (Retrieval truyền thống)**
+
+Kết quả tìm được:
+
+* “10 mẹo tiết kiệm xăng khi lái xe”
+* “Giảm tiêu hao nhiên liệu bằng cách bảo dưỡng xe định kỳ”
+* “So sánh các loại lốp tiết kiệm nhiên liệu”
+
+⚠️ Vấn đề:
+
+Toàn bộ đều là **giống ngữ nghĩa với từ khóa “chi phí đi lại” = tiết kiệm xăng**, nhưng không mở rộng ra các cách khác như:
+
+* Dùng xe đạp
+* Đi chung xe (carpool)
+* Sử dụng phương tiện công cộng
+* Làm việc từ xa
+* Chọn nơi ở gần chỗ làm
+
+👉 Những cái này **liên quan chặt chẽ đến việc giảm chi phí**, nhưng không hiện ra vì **embedding không thấy “giống”** về mặt vector.
+
+#### ✅ **Kết hợp Knowledge Graph để mở rộng sự liên quan**
+
+### 🔧 Setup Knowledge Graph (KG)
+
+Giả sử bạn có 1 KG như sau:
+
+```
+"chi phí đi lại" 
+   ├── liên quan đến → "phương tiện di chuyển"
+   │     ├── bao gồm → "xe máy", "ô tô", "xe buýt", "xe đạp", "carpool"
+   ├── bị ảnh hưởng bởi → "giá xăng", "quãng đường", "tần suất di chuyển"
+   ├── có thể giảm bằng → "làm việc từ xa", "chọn nhà gần chỗ làm", "thời gian linh hoạt"
+```
+
+| Bước | Mô tả                                                  |
+| ---- | ------------------------------------------------------ |
+| 1    | Nhận câu hỏi từ người dùng                             |
+| 2    | Trích xuất thực thể chính từ câu hỏi                   |
+| 3    | Tra KG để tìm các thực thể, chủ đề liên quan           |
+| 4    | Tạo truy vấn mở rộng từ các chủ đề này                 |
+| 5    | Encode tất cả truy vấn (gốc + mở rộng) thành embedding |
+| 6    | Truy vấn vector DB để lấy đoạn văn                     |
+| 7    | Rerank kết quả dựa trên độ gần trong KG (nếu có thể)   |
+| 8    | Đưa top-k kết quả vào LLM để trả lời                   |
+
+🔍 Bước 1: **Trích xuất thực thể từ câu hỏi**
+
+* Thực thể chính: `"chi phí đi lại"`
+
+🔄 Bước 2: **Tìm các thực thể liên quan trong KG**
+
+* "giảm chi phí đi lại" → có liên quan đến:
+
+  * "phương tiện công cộng"
+  * "carpool"
+  * "làm việc từ xa"
+  * "xe đạp"
+  * "chuyển chỗ ở gần hơn"
+
+👉 Đây là những ý tưởng **không giống về mặt từ vựng**, nhưng **liên quan mạnh** theo KG
+
+🔁 Bước 3: **Tạo truy vấn mở rộng (expanded queries)**
+
+Thay vì chỉ dùng 1 embedding từ câu gốc, bạn tạo thêm các truy vấn như:
+
+* “Lợi ích của việc đi làm bằng xe buýt”
+* “Giảm chi phí đi lại bằng cách làm việc từ xa”
+* “Đi xe đạp thay vì đi xe máy”
+* “Đi chung xe với đồng nghiệp”
+* “Chọn nhà gần chỗ làm có giúp tiết kiệm không?”
+
+→ Encode các truy vấn này thành embedding → truy vấn thêm vào database → **lấy được dữ liệu mới có liên quan hơn**.
+
+🎯 Bước 4: **Rerank hoặc chọn top-n**
+
+Lấy các kết quả từ truy vấn mở rộng + truy vấn gốc → rerank dựa trên:
+
+* **Embedding similarity**
+* **Liên kết quan hệ trong KG** (nếu có thể xác định thực thể trong đoạn văn và tính độ gần)
+
+#### 📦 Kết quả sau khi kết hợp KG
+
+Bạn có thể lấy được các đoạn văn như:
+
+1. “Sử dụng xe đạp thay vì ô tô giúp giảm chi phí xăng và chi phí bảo dưỡng đáng kể mỗi tháng.”
+2. “Theo nghiên cứu, làm việc từ xa 2 ngày/tuần giúp giảm đến 40% chi phí đi lại.”
+3. “Ở gần nơi làm việc có thể giúp tiết kiệm chi phí di chuyển và thời gian mỗi ngày.”
+
+👉 Những đoạn này không tương đồng hoàn toàn với câu hỏi, nhưng lại **trực tiếp trả lời vấn đề người dùng đang quan tâm** → **chất lượng đầu vào cho LLM tốt hơn nhiều.**
 
