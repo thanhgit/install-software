@@ -292,21 +292,6 @@ Bạn có thể lấy được các đoạn văn như:
 * Khi indexing, chỉ embedding raw text không đủ
 * => cần phải khai thác entity, relation, enrich thông tin, rồi mới embedding
 
----
-
-## ✅ Vấn đề: Embedding đoạn văn bản **chưa đủ ngữ nghĩa**
-
-Trong hệ thống RAG thông thường:
-
-* Text → Chunk → Embedding → Index
-  → **Không biết đoạn đó nói về thực thể nào**, mối quan hệ nào, nên khả năng match theo ngữ nghĩa sâu bị hạn chế.
-
----
-
-## ✅ Giải pháp: **Làm giàu (Enrich)** trước khi embedding
-
-### 🧩 Cần làm gì trong quá trình indexing:
-
 | Bước                           | Nội dung                                     | Lý do                                      |
 | ------------------------------ | -------------------------------------------- | ------------------------------------------ |
 | 1. Entity Extraction (NER/NEL) | Trích xuất các thực thể trong đoạn           | Giúp hiểu đoạn đề cập đến ai/cái gì        |
@@ -315,19 +300,13 @@ Trong hệ thống RAG thông thường:
 | 4. Summary hoặc Rewriting      | Tóm tắt lại đoạn văn với tri thức đã enrich  | Giúp embedding nắm bắt đủ ngữ nghĩa        |
 | 5. Embedding enriched content  | Embedding đoạn đã làm giàu                   | Tăng khả năng tương đồng ngữ nghĩa thực sự |
 
----
-
-## 🔧 Minh họa quy trình enrich khi indexing:
-
-Giả sử bạn có đoạn văn gốc:
+#### 🔧 Minh họa quy trình enrich khi indexing:
 
 ```text
 Công ty ABC áp dụng chiến lược ESG từ năm 2021 để cải thiện hình ảnh doanh nghiệp và thu hút đầu tư nước ngoài.
 ```
 
----
-
-### 1. ✳️ Entity & Relation Extraction:
+1. ✳️ Entity & Relation Extraction:
 
 * Entities: `Công ty ABC`, `ESG`, `đầu tư nước ngoài`
 * Relations (triples):
@@ -336,28 +315,22 @@ Công ty ABC áp dụng chiến lược ESG từ năm 2021 để cải thiện h
   * `(ESG, dẫn đến, cải thiện hình ảnh)`
   * `(ESG, giúp, thu hút đầu tư nước ngoài)`
 
----
-
-### 2. ✳️ KG Enrichment (truy ngược KG):
+2. ✳️ KG Enrichment (truy ngược KG):
 
 Từ "ESG", truy được:
 
 * ESG liên quan tới: `môi trường`, `quản trị`, `xã hội`
 * Quan hệ: `thu hút vốn`, `tăng uy tín`, `giảm rủi ro`
 
----
+3. ✳️ Làm giàu nội dung => `Tái tạo đoạn hoặc thêm metadata`:
 
-### 3. ✳️ Làm giàu nội dung:
-
-Tái tạo đoạn hoặc thêm metadata:
-
-#### 🅰️ Cách 1: Viết lại đoạn enriched (dùng để embedding)
+* 🅰️ Cách 1: Viết lại đoạn enriched (dùng để embedding)
 
 ```text
 Công ty ABC triển khai chiến lược ESG từ năm 2021. ESG là viết tắt của Môi trường, Xã hội và Quản trị. Việc áp dụng ESG giúp doanh nghiệp cải thiện hình ảnh, tăng uy tín và thu hút đầu tư nước ngoài.
 ```
 
-#### 🅱️ Cách 2: Giữ đoạn gốc + metadata
+* 🅱️ Cách 2: Giữ đoạn gốc + metadata
 
 ```json
 {
@@ -376,17 +349,13 @@ Công ty ABC triển khai chiến lược ESG từ năm 2021. ESG là viết t�
 
 > → Sau đó bạn có thể **embedding phần text đã enrich**, hoặc embedding **full JSON dưới dạng văn bản natural language** (được LLM hiểu tốt).
 
----
+✅ Kết quả **tăng độ liên quan khi truy xuất** do:
 
-## ✅ Tại sao làm vậy sẽ **tăng độ liên quan khi truy xuất**?
+1. **Embedding có tri thức ngữ nghĩa sâu hơn** → tăng similarity với query dù từ ngữ khác biệt
+2. **Thực thể và quan hệ rõ ràng** → giúp matching theo concept, không chỉ từ khóa
+3. **Thông tin tóm gọn, không dư thừa** → dễ lọc ra nội dung chính xác hơn trong retrieval
 
-1. **Embedding có tri thức ngữ nghĩa sâu hơn** → tăng similarity với query dù từ ngữ khác biệt.
-2. **Thực thể và quan hệ rõ ràng** → giúp matching theo concept, không chỉ từ khóa.
-3. **Thông tin tóm gọn, không dư thừa** → dễ lọc ra nội dung chính xác hơn trong retrieval.
-
----
-
-## 🔁 Khi kết hợp với Query Expansion từ KG
+🔁 Khi kết hợp với Query Expansion từ KG
 
 Khi truy vấn có entity như "ESG", bạn cũng:
 
@@ -397,9 +366,7 @@ Khi truy vấn có entity như "ESG", bạn cũng:
   * "Ảnh hưởng ESG đến đầu tư nước ngoài"
 * Dễ match hơn với đoạn đã enrich ở trên → tăng recall và precision.
 
----
-
-## 🚀 Công nghệ bạn có thể dùng
+🚀 Công nghệ bạn có thể dùng
 
 | Mục tiêu                  | Gợi ý công cụ                                                 |
 | ------------------------- | ------------------------------------------------------------- |
@@ -409,45 +376,22 @@ Khi truy vấn có entity như "ESG", bạn cũng:
 | Embedding enriched text   | BGE, GTE, E5, or domain-specific encoder                      |
 | Index                     | FAISS, Weaviate, Qdrant                                       |
 
----
-
-## 📌 Tóm tắt
-
-**Vâng**, bạn cần enrich đoạn **trước khi embedding**, bằng cách:
-
-* Trích xuất thực thể và quan hệ
-* Truy ngược KG để làm giàu
-* Tóm tắt hoặc tái viết nội dung chứa tri thức
-* Sau đó mới đưa vào embedding
-
-→ Đây là **cách tiếp cận chuẩn**, giúp tăng **semantic retrieval** đáng kể, đặc biệt trong hệ thống RAG có yêu cầu chính xác cao (như luật, tài chính, y tế,... )
-
-
 ### ✅ **Tận dụng sự kết hợp giữa `metadata`, `chunk` và `embedding vector` 
 
-* để làm giàu ngữ cảnh (context enrichment)** — tức là **sử dụng metadata không chỉ để lọc mà để tăng cường semantic retrieval và generation.**
-
-## 🧠 Tư duy cốt lõi:
-
-Trong các hệ thống RAG:
+* để làm giàu ngữ cảnh (context enrichment)**
+* => **sử dụng metadata không chỉ để lọc mà để tăng cường semantic RAG**
+* **Metadata không chỉ để lọc — nó chính là ngữ cảnh cấu trúc, là "knowledge-lite graph" lồng trong dữ liệu**
 
 * Dữ liệu được lưu dưới dạng:
   ✅ `chunk_text` (nội dung chính)
   ✅ `embedding` (biểu diễn vector)
   ✅ `metadata`: các thuộc tính như title, date, entities, relations, tags, sources, etc.
 
-### → Thay vì chỉ dùng `embedding` để tìm, hoặc `metadata` để lọc cứng, ta có thể:
+→ Thay vì chỉ dùng `embedding` để tìm, hoặc `metadata` để lọc cứng, ta có thể:
 
-> **KẾT HỢP cả 3** để:
+#### ✅ Ba cấp độ kết hợp metadata + embedding + chunk
 
-* Truy xuất kết quả sâu hơn và ngữ nghĩa hơn
-* Làm giàu context đầu vào cho LLM để sinh đầu ra chính xác hơn
-
----
-
-## ✅ Ba cấp độ kết hợp metadata + embedding + chunk
-
-### 🔹 1. **Metadata làm ngữ cảnh phụ cho LLM**
+1. **Metadata làm ngữ cảnh phụ cho LLM**
 
 * Truy xuất `chunk` + lấy metadata liên quan (entities, tags, relations)
 * Đưa vào prompt theo dạng có cấu trúc (e.g. YAML, bảng, đoạn text tóm tắt)
@@ -468,11 +412,7 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 
 → **LLM hiểu tốt hơn** vì có bối cảnh rõ, thay vì chỉ đọc plain text.
 
----
-
-### 🔹 2. **Metadata dùng để tăng chất lượng embedding & truy xuất**
-
-#### ✳️ Cách làm:
+2. **Metadata dùng để tăng chất lượng embedding & truy xuất**
 
 * Kết hợp metadata vào embedding text lúc indexing:
 
@@ -484,11 +424,7 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 
 → **Embedding vector giờ mang ngữ nghĩa của metadata** → cosine similarity sẽ phản ánh ý định tốt hơn.
 
----
-
-### 🔹 3. **Metadata làm bộ lọc ngữ nghĩa mềm (semantic filter)**
-
-#### ✳️ Cách dùng:
+3. **Metadata làm bộ lọc ngữ nghĩa mềm (semantic filter)**
 
 * Khi user query → trích xuất `entities`, `topics`, `relations`
 * So sánh các thành phần này với metadata trong vector store
@@ -496,43 +432,8 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 
 > Ví dụ: Nếu user hỏi "Chính sách thuế cho FDI ở miền Bắc", thì metadata có `"region": "Bắc"` và `"entity": "FDI"` được ưu tiên.
 
----
 
-## 🏗️ Kiến trúc kết hợp metadata trong RAG
-
-```text
-       [Query]
-          ↓
-  → Entity & relation extraction
-          ↓
-  → Embedding + Metadata match (hybrid)
-          ↓
-     [Retrieve top-K chunks]
-          ↓
-  → Extract metadata (entities, source, relations)
-          ↓
-    [Prompt enrichment: metadata + chunk]
-          ↓
-          LLM
-```
-
----
-
-## 📦 Lưu trữ metadata trong vector store
-
-Các vector database như:
-
-| Vector DB    | Metadata hỗ trợ             | Query kết hợp                  |
-| ------------ | --------------------------- | ------------------------------ |
-| **FAISS**    | Có (nhưng hơi thủ công)     | Dùng custom filter ngoài       |
-| **Qdrant**   | Tốt (JSON metadata)         | Hỗ trợ filter theo field       |
-| **Weaviate** | Rất mạnh (Graph + metadata) | Có thể dùng GraphQL + semantic |
-| **Pinecone** | Hỗ trợ tốt                  | Dễ filter theo metadata        |
-| **Milvus**   | Có hỗ trợ                   | Nhưng config phức tạp hơn      |
-
----
-
-## 🧠 Mở rộng nâng cao
+🧠 Mở rộng nâng cao
 
 | Chiến lược                     | Lợi ích                              |
 | ------------------------------ | ------------------------------------ |
@@ -541,19 +442,3 @@ Các vector database như:
 | Prompt injection metadata      | Giúp LLM reasoning đúng hơn          |
 | Filter + re-rank bằng metadata | Precision cao hơn trong RAG          |
 
----
-
-## ✅ Kết luận
-
-Vâng, **kết hợp metadata + chunk + embedding vector** không chỉ là "có thể", mà là **cần thiết** nếu bạn muốn xây dựng một hệ thống RAG có độ chính xác và tính ngữ nghĩa cao.
-
-**Metadata không chỉ để lọc — nó chính là ngữ cảnh cấu trúc, là "knowledge-lite graph" lồng trong dữ liệu.**
-
----
-
-Nếu bạn muốn, mình có thể hỗ trợ:
-
-* Mẫu schema lưu metadata hiệu quả
-* Cách embed metadata + chunk chung để tăng chất lượng vector
-* Gợi ý prompt sử dụng metadata
-* Kết hợp vector store với KG như Neo4j / Weaviate
