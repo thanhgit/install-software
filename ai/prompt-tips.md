@@ -420,4 +420,140 @@ Khi truy vấn có entity như "ESG", bạn cũng:
 * Tóm tắt hoặc tái viết nội dung chứa tri thức
 * Sau đó mới đưa vào embedding
 
-→ Đây là **cách tiếp cận chuẩn**, giúp tăng **semantic retrieval** đáng kể, đặc biệt trong hệ thống RAG có yêu cầu chính xác cao (như luật, tài chính, y tế, v.v.).
+→ Đây là **cách tiếp cận chuẩn**, giúp tăng **semantic retrieval** đáng kể, đặc biệt trong hệ thống RAG có yêu cầu chính xác cao (như luật, tài chính, y tế,... )
+
+
+### ✅ **Tận dụng sự kết hợp giữa `metadata`, `chunk` và `embedding vector` 
+
+* để làm giàu ngữ cảnh (context enrichment)** — tức là **sử dụng metadata không chỉ để lọc mà để tăng cường semantic retrieval và generation.**
+
+## 🧠 Tư duy cốt lõi:
+
+Trong các hệ thống RAG:
+
+* Dữ liệu được lưu dưới dạng:
+  ✅ `chunk_text` (nội dung chính)
+  ✅ `embedding` (biểu diễn vector)
+  ✅ `metadata`: các thuộc tính như title, date, entities, relations, tags, sources, etc.
+
+### → Thay vì chỉ dùng `embedding` để tìm, hoặc `metadata` để lọc cứng, ta có thể:
+
+> **KẾT HỢP cả 3** để:
+
+* Truy xuất kết quả sâu hơn và ngữ nghĩa hơn
+* Làm giàu context đầu vào cho LLM để sinh đầu ra chính xác hơn
+
+---
+
+## ✅ Ba cấp độ kết hợp metadata + embedding + chunk
+
+### 🔹 1. **Metadata làm ngữ cảnh phụ cho LLM**
+
+* Truy xuất `chunk` + lấy metadata liên quan (entities, tags, relations)
+* Đưa vào prompt theo dạng có cấu trúc (e.g. YAML, bảng, đoạn text tóm tắt)
+
+**Ví dụ prompt:**
+
+```yaml
+Document: Chính sách ưu đãi thuế cho doanh nghiệp FDI
+
+Entities: ["FDI", "thuế thu nhập doanh nghiệp", "ưu đãi đầu tư"]
+Relations:
+ - FDI → áp dụng → ưu đãi thuế
+ - Chính phủ → quy định → miễn giảm thuế cho FDI
+
+Content:
+Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
+```
+
+→ **LLM hiểu tốt hơn** vì có bối cảnh rõ, thay vì chỉ đọc plain text.
+
+---
+
+### 🔹 2. **Metadata dùng để tăng chất lượng embedding & truy xuất**
+
+#### ✳️ Cách làm:
+
+* Kết hợp metadata vào embedding text lúc indexing:
+
+  * Thay vì chỉ embedding `chunk_text`, bạn có thể embedding:
+
+    ```text
+    [Entity: FDI] [Relation: áp dụng ưu đãi thuế] Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
+    ```
+
+→ **Embedding vector giờ mang ngữ nghĩa của metadata** → cosine similarity sẽ phản ánh ý định tốt hơn.
+
+---
+
+### 🔹 3. **Metadata làm bộ lọc ngữ nghĩa mềm (semantic filter)**
+
+#### ✳️ Cách dùng:
+
+* Khi user query → trích xuất `entities`, `topics`, `relations`
+* So sánh các thành phần này với metadata trong vector store
+* Lọc / tăng trọng số cho các chunk có metadata tương đồng
+
+> Ví dụ: Nếu user hỏi "Chính sách thuế cho FDI ở miền Bắc", thì metadata có `"region": "Bắc"` và `"entity": "FDI"` được ưu tiên.
+
+---
+
+## 🏗️ Kiến trúc kết hợp metadata trong RAG
+
+```text
+       [Query]
+          ↓
+  → Entity & relation extraction
+          ↓
+  → Embedding + Metadata match (hybrid)
+          ↓
+     [Retrieve top-K chunks]
+          ↓
+  → Extract metadata (entities, source, relations)
+          ↓
+    [Prompt enrichment: metadata + chunk]
+          ↓
+          LLM
+```
+
+---
+
+## 📦 Lưu trữ metadata trong vector store
+
+Các vector database như:
+
+| Vector DB    | Metadata hỗ trợ             | Query kết hợp                  |
+| ------------ | --------------------------- | ------------------------------ |
+| **FAISS**    | Có (nhưng hơi thủ công)     | Dùng custom filter ngoài       |
+| **Qdrant**   | Tốt (JSON metadata)         | Hỗ trợ filter theo field       |
+| **Weaviate** | Rất mạnh (Graph + metadata) | Có thể dùng GraphQL + semantic |
+| **Pinecone** | Hỗ trợ tốt                  | Dễ filter theo metadata        |
+| **Milvus**   | Có hỗ trợ                   | Nhưng config phức tạp hơn      |
+
+---
+
+## 🧠 Mở rộng nâng cao
+
+| Chiến lược                     | Lợi ích                              |
+| ------------------------------ | ------------------------------------ |
+| Enrich metadata từ KG          | Kết nối giữa chunk và tri thức ngoài |
+| Embedding context + metadata   | Semantic retrieval chính xác hơn     |
+| Prompt injection metadata      | Giúp LLM reasoning đúng hơn          |
+| Filter + re-rank bằng metadata | Precision cao hơn trong RAG          |
+
+---
+
+## ✅ Kết luận
+
+Vâng, **kết hợp metadata + chunk + embedding vector** không chỉ là "có thể", mà là **cần thiết** nếu bạn muốn xây dựng một hệ thống RAG có độ chính xác và tính ngữ nghĩa cao.
+
+**Metadata không chỉ để lọc — nó chính là ngữ cảnh cấu trúc, là "knowledge-lite graph" lồng trong dữ liệu.**
+
+---
+
+Nếu bạn muốn, mình có thể hỗ trợ:
+
+* Mẫu schema lưu metadata hiệu quả
+* Cách embed metadata + chunk chung để tăng chất lượng vector
+* Gợi ý prompt sử dụng metadata
+* Kết hợp vector store với KG như Neo4j / Weaviate
