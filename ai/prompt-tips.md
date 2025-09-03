@@ -440,14 +440,3 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 | Embedding context + metadata   | Semantic retrieval chính xác hơn     |
 | Prompt injection metadata      | Giúp LLM reasoning đúng hơn          |
 | Filter + re-rank bằng metadata | Precision cao hơn trong RAG          |
-
-### **Hệ thống hóa quá trình giả định lỗi**
-
-Mục tiêu: **không loại bỏ giả định** mà **làm cho chúng minh bạch, có thể kiểm chứng và truy vết được**:
-
-1. **Mã hóa bằng Ontology (OWL):** Xác định nguyên nhân và mối quan hệ giữa chúng
-2. **Xếp hạng theo xác suất:** Gán điểm tin cậy dựa vào chất lượng dữ liệu và lịch sử
-3. **Kiểm tra bằng SHACL:** Đánh dấu các giả định có độ tin cậy thấp để chuyên gia xem xét
-4. **Truy vết bằng Knowledge Graph:** Mỗi giả định phải liên kết rõ ràng với bằng chứng và quy tắc suy luận tương ứng
-
-> **"Giả định là giả thuyết; Knowledge Graph chính là phương pháp khoa học để kiểm chứng nó"**
