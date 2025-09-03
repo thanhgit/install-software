@@ -287,3 +287,137 @@ Bạn có thể lấy được các đoạn văn như:
 
 👉 Những đoạn này không tương đồng hoàn toàn với câu hỏi, nhưng lại **trực tiếp trả lời vấn đề người dùng đang quan tâm** → **chất lượng đầu vào cho LLM tốt hơn nhiều.**
 
+#### Tích hợp **Knowledge Graph (KG)** với **RAG* 
+
+* Khi indexing, chỉ embedding raw text không đủ
+* => cần phải khai thác entity, relation, enrich thông tin, rồi mới embedding
+
+---
+
+## ✅ Vấn đề: Embedding đoạn văn bản **chưa đủ ngữ nghĩa**
+
+Trong hệ thống RAG thông thường:
+
+* Text → Chunk → Embedding → Index
+  → **Không biết đoạn đó nói về thực thể nào**, mối quan hệ nào, nên khả năng match theo ngữ nghĩa sâu bị hạn chế.
+
+---
+
+## ✅ Giải pháp: **Làm giàu (Enrich)** trước khi embedding
+
+### 🧩 Cần làm gì trong quá trình indexing:
+
+| Bước                           | Nội dung                                     | Lý do                                      |
+| ------------------------------ | -------------------------------------------- | ------------------------------------------ |
+| 1. Entity Extraction (NER/NEL) | Trích xuất các thực thể trong đoạn           | Giúp hiểu đoạn đề cập đến ai/cái gì        |
+| 2. Relation Extraction         | Trích xuất các quan hệ giữa thực thể         | Bổ sung ngữ cảnh logic                     |
+| 3. KG Enrichment               | Truy ngược KG để lấy các khái niệm liên quan | Làm giàu tri thức                          |
+| 4. Summary hoặc Rewriting      | Tóm tắt lại đoạn văn với tri thức đã enrich  | Giúp embedding nắm bắt đủ ngữ nghĩa        |
+| 5. Embedding enriched content  | Embedding đoạn đã làm giàu                   | Tăng khả năng tương đồng ngữ nghĩa thực sự |
+
+---
+
+## 🔧 Minh họa quy trình enrich khi indexing:
+
+Giả sử bạn có đoạn văn gốc:
+
+```text
+Công ty ABC áp dụng chiến lược ESG từ năm 2021 để cải thiện hình ảnh doanh nghiệp và thu hút đầu tư nước ngoài.
+```
+
+---
+
+### 1. ✳️ Entity & Relation Extraction:
+
+* Entities: `Công ty ABC`, `ESG`, `đầu tư nước ngoài`
+* Relations (triples):
+
+  * `(Công ty ABC, áp dụng, ESG)`
+  * `(ESG, dẫn đến, cải thiện hình ảnh)`
+  * `(ESG, giúp, thu hút đầu tư nước ngoài)`
+
+---
+
+### 2. ✳️ KG Enrichment (truy ngược KG):
+
+Từ "ESG", truy được:
+
+* ESG liên quan tới: `môi trường`, `quản trị`, `xã hội`
+* Quan hệ: `thu hút vốn`, `tăng uy tín`, `giảm rủi ro`
+
+---
+
+### 3. ✳️ Làm giàu nội dung:
+
+Tái tạo đoạn hoặc thêm metadata:
+
+#### 🅰️ Cách 1: Viết lại đoạn enriched (dùng để embedding)
+
+```text
+Công ty ABC triển khai chiến lược ESG từ năm 2021. ESG là viết tắt của Môi trường, Xã hội và Quản trị. Việc áp dụng ESG giúp doanh nghiệp cải thiện hình ảnh, tăng uy tín và thu hút đầu tư nước ngoài.
+```
+
+#### 🅱️ Cách 2: Giữ đoạn gốc + metadata
+
+```json
+{
+  "chunk_text": "Công ty ABC áp dụng chiến lược ESG từ năm 2021...",
+  "entities": ["Công ty ABC", "ESG", "đầu tư nước ngoài"],
+  "relations": [
+    {"subject": "Công ty ABC", "predicate": "áp dụng", "object": "ESG"},
+    {"subject": "ESG", "predicate": "giúp", "object": "thu hút đầu tư"}
+  ],
+  "kg_context": [
+    "ESG liên quan đến quản trị doanh nghiệp và môi trường",
+    "ESG giúp tăng uy tín và giảm rủi ro đầu tư"
+  ]
+}
+```
+
+> → Sau đó bạn có thể **embedding phần text đã enrich**, hoặc embedding **full JSON dưới dạng văn bản natural language** (được LLM hiểu tốt).
+
+---
+
+## ✅ Tại sao làm vậy sẽ **tăng độ liên quan khi truy xuất**?
+
+1. **Embedding có tri thức ngữ nghĩa sâu hơn** → tăng similarity với query dù từ ngữ khác biệt.
+2. **Thực thể và quan hệ rõ ràng** → giúp matching theo concept, không chỉ từ khóa.
+3. **Thông tin tóm gọn, không dư thừa** → dễ lọc ra nội dung chính xác hơn trong retrieval.
+
+---
+
+## 🔁 Khi kết hợp với Query Expansion từ KG
+
+Khi truy vấn có entity như "ESG", bạn cũng:
+
+* Truy ngược KG để lấy khái niệm liên quan.
+* Sinh thêm các query như:
+
+  * "Lợi ích của quản trị ESG"
+  * "Ảnh hưởng ESG đến đầu tư nước ngoài"
+* Dễ match hơn với đoạn đã enrich ở trên → tăng recall và precision.
+
+---
+
+## 🚀 Công nghệ bạn có thể dùng
+
+| Mục tiêu                  | Gợi ý công cụ                                                 |
+| ------------------------- | ------------------------------------------------------------- |
+| NER + Relation Extraction | spaCy, HuggingFace Transformers, Trankit (tiếng Việt), OpenIE |
+| KG Enrichment             | Wikidata, ConceptNet, hoặc KG riêng                           |
+| Summary + Rewrite         | Prompt GPT-4 / LLaMA / Claude                                 |
+| Embedding enriched text   | BGE, GTE, E5, or domain-specific encoder                      |
+| Index                     | FAISS, Weaviate, Qdrant                                       |
+
+---
+
+## 📌 Tóm tắt
+
+**Vâng**, bạn cần enrich đoạn **trước khi embedding**, bằng cách:
+
+* Trích xuất thực thể và quan hệ
+* Truy ngược KG để làm giàu
+* Tóm tắt hoặc tái viết nội dung chứa tri thức
+* Sau đó mới đưa vào embedding
+
+→ Đây là **cách tiếp cận chuẩn**, giúp tăng **semantic retrieval** đáng kể, đặc biệt trong hệ thống RAG có yêu cầu chính xác cao (như luật, tài chính, y tế, v.v.).
