@@ -75,3 +75,74 @@
   * **Tối ưu số lần gọi database**, nhờ học cách truy vấn hiệu quả hơn.
 * Cộng thêm việc **decoding suy đoán (speculative decoding)** hoạt động tốt hơn với mô hình nhỏ → giảm trễ đáng kể, phù hợp cho ứng dụng thời gian thực (ví dụ: voice assistant, chatbot).
 
+#### 🚧 Việc huấn luyện AI agent bằng RL hiện tại 
+* Nhờ tiến bộ về dữ liệu công khai, LLM judge và công cụ sinh dữ liệu
+* => việc huấn luyện RL agent **gần như có thể tiếp cận với giá GPU phù hợp**
+
+* Với dự án ART·E:
+
+  * **Chi phí GPU**: \~\$80
+  * **Thời gian kỹ thuật**: \~1 tuần (với kỹ sư có kinh nghiệm RL/ML)
+* Xu hướng: **Chi phí và thời gian giảm nhanh**, ROI tăng lên → huấn luyện mô hình chuyên biệt ngày càng khả thi với cá nhân, startup.
+
+### 🧱 Hai thách thức lớn nhất khi huấn luyện RL agent
+
+#### 1. **Tạo môi trường huấn luyện giống thực tế**
+
+* Nếu môi trường không phản ánh thực tế, agent sẽ **học sai** và không hoạt động đúng khi triển khai.
+
+Giải pháp trong ART·E:
+
+* Không thể xin email thật từ người dùng.
+* Dùng **dataset công khai từ vụ Enron** (500.000 email) để tạo inbox đa dạng, sát với môi trường thật.
+* → Gợi nhớ rằng dữ liệu công khai (dù từ scandal) có thể đóng vai trò quan trọng trong nghiên cứu AI — nhưng cũng cảnh báo về đạo đức và quyền riêng tư.
+
+#### 2. **Thiết kế hàm phần thưởng đúng (reward function)**
+
+* Hàm reward đánh giá agent đúng/sai, nhưng thường khó xác định và kiểm chứng.
+
+Giải pháp trong ART·E:
+
+1. **Tạo bộ dữ liệu "vàng"**:
+
+   * Lấy 20 email / batch.
+   * Dùng **Gemini 2.5 Pro** để:
+
+     * Sinh câu hỏi thực tế từ nội dung email.
+     * Tạo **câu trả lời đúng** tương ứng.
+   * Lọc ra các câu hỏi thực sự hợp lý.
+   * Thu được hàng ngàn cặp **question–answer chuẩn**.
+
+2. **Tự động hóa đánh giá bằng LLM**:
+
+   * Khi agent trả lời, một LLM sẽ **so sánh với "golden answer"** để quyết định đúng/sai.
+   * Biến một bài toán RL khó thành bài toán **so khớp đơn giản và xác thực được**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
