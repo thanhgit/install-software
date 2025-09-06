@@ -1,7 +1,10 @@
 # Làm cho AI Agent trở nên đáng tin cậy hơn nhờ Reinforcement Learning (RL)
 
-* Trước khi dùng RL để huấn luyện AI Agent, hãy chắc chắn rằng bạn đã đạt hiệu suất tối đa với mô hình prompt-based
+* Hãy chắc chắn rằng bạn đã đạt hiệu suất tối đa với mô hình prompt-based
+* Chỉ khi đã tối ưu prompt hết mức và thực sự cần nâng cao accuracy, tiết kiệm chi phí, giảm độ trễ
+* Sau đó cân nhắc dùng RL để huấn luyện AI Agent => RL sẽ thực sự là “game changer” cho AI Agent
 * => `là nền tảng để xây dựng hệ thống agent hiệu quả và đáng tin cậy`
+
 
 **1. Tầm quan trọng của AI Agent**
 
@@ -33,4 +36,48 @@
 * Đội ngũ ART·E **ban đầu không dùng RL**, mà tối ưu mô hình bằng prompt để đạt hiệu quả cao nhất trước.
 * Chỉ sau đó mới cân nhắc đến RL nếu cần tối ưu thêm.
 
+Dưới đây là bản **tóm tắt** phần nội dung bạn đưa ra, về lý do không nên vội dùng Reinforcement Learning (RL) và hiệu quả thực tế từ dự án ART·E:
+
+---
+
+## ⚠️ Vì sao không nên nhảy ngay vào RL? – 3 lý do chính (Theo Kyle Corbitt)
+
+1. **Cần kiểm tra kỹ môi trường trước khi huấn luyện RL**
+
+   * Phải đảm bảo các **tool hoạt động đúng**, truy cập dữ liệu hợp lệ.
+   * Nhiều lỗi phát sinh từ phần tích hợp ban đầu – nếu debug trong giai đoạn RL sẽ **mất thời gian, khó tìm lỗi hơn**.
+
+2. **Prompt tốt có thể đã đủ dùng**
+
+   * Có nhiều trường hợp chỉ cần tối ưu prompt là đã đạt yêu cầu.
+   * Tránh được quy trình RL phức tạp và tốn kém nếu không cần thiết.
+
+3. **Niềm vui khi RL thực sự vượt prompt**
+
+   * Nếu bạn thử mọi cách với prompt mà không đạt, rồi dùng RL và **vượt cả mô hình frontier (như o3, o4)** → cảm giác "chiến thắng" rõ ràng và xứng đáng với công sức đầu tư.
+
+### 📈 Khi nào nên dùng RL? (Dữ liệu thực tế từ dự án ART·E)
+1. **Độ chính xác (Accuracy)**
+
+* Dùng mô hình nhỏ (Qwen 2.5 - 14B) huấn luyện bằng RL, accuracy tăng từ:
+
+  * **90% (prompt-based o3)** → **96% (RL-based)**
+* Điều này nghĩa là **60% lỗi của o3 đã được khắc phục** bằng RL — cực kỳ quan trọng cho trải nghiệm người dùng.
+
+2. **Chi phí (Cost)**
+
+* Giá cho 1000 lượt tìm kiếm email:
+
+  * o3: \~\$55
+  * o4-mini: \~\$8
+  * RL-trained Qwen: **\~\$0.8** (!)
+* → **Rẻ hơn 70 lần** so với o3, và **10 lần** so với o4-mini → cực kỳ đáng giá cho bài toán sản phẩm quy mô lớn.
+
+3. **Độ trễ (Latency)**
+
+* RL giúp mô hình:
+
+  * Dùng **mô hình nhỏ hơn** nhưng hiệu quả cao.
+  * **Tối ưu số lần gọi database**, nhờ học cách truy vấn hiệu quả hơn.
+* Cộng thêm việc **decoding suy đoán (speculative decoding)** hoạt động tốt hơn với mô hình nhỏ → giảm trễ đáng kể, phù hợp cho ứng dụng thời gian thực (ví dụ: voice assistant, chatbot).
 
