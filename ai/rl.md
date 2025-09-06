@@ -5,7 +5,6 @@
 * Sau đó cân nhắc dùng RL để huấn luyện AI Agent => RL sẽ thực sự là “game changer” cho AI Agent
 * => `là nền tảng để xây dựng hệ thống agent hiệu quả và đáng tin cậy`
 
-
 **1. Tầm quan trọng của AI Agent**
 
 * AI agents đang trở thành trụ cột trong tự động hóa và hệ thống tự trị.
@@ -36,12 +35,7 @@
 * Đội ngũ ART·E **ban đầu không dùng RL**, mà tối ưu mô hình bằng prompt để đạt hiệu quả cao nhất trước.
 * Chỉ sau đó mới cân nhắc đến RL nếu cần tối ưu thêm.
 
-Dưới đây là bản **tóm tắt** phần nội dung bạn đưa ra, về lý do không nên vội dùng Reinforcement Learning (RL) và hiệu quả thực tế từ dự án ART·E:
-
----
-
-## ⚠️ Vì sao không nên nhảy ngay vào RL? – 3 lý do chính (Theo Kyle Corbitt)
-
+#### ⚠️ Cân nhăc trước khi traning với RL
 1. **Cần kiểm tra kỹ môi trường trước khi huấn luyện RL**
 
    * Phải đảm bảo các **tool hoạt động đúng**, truy cập dữ liệu hợp lệ.
@@ -56,7 +50,7 @@ Dưới đây là bản **tóm tắt** phần nội dung bạn đưa ra, về l�
 
    * Nếu bạn thử mọi cách với prompt mà không đạt, rồi dùng RL và **vượt cả mô hình frontier (như o3, o4)** → cảm giác "chiến thắng" rõ ràng và xứng đáng với công sức đầu tư.
 
-### 📈 Khi nào nên dùng RL? (Dữ liệu thực tế từ dự án ART·E)
+#### 📈 Khi nào nên dùng RL? (Dữ liệu thực tế từ dự án ART·E)
 1. **Độ chính xác (Accuracy)**
 
 * Dùng mô hình nhỏ (Qwen 2.5 - 14B) huấn luyện bằng RL, accuracy tăng từ:
