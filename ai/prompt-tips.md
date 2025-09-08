@@ -445,6 +445,7 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 ```json
 {
   "question": "Tác động của trí tuệ nhân tạo đến thị trường lao động là gì?",
+  "role": "Bạn là một trợ lý cho sinh viên. Dựa trên dữ liệu JSON sau, hãy sinh một câu trả lời ngắn gọn, rõ ràng và dễ hiểu theo ngôn ngữ, giọng điệu và phong cách yêu cầu"
   "facts": [
     "AI đang tái định hình thị trường lao động toàn cầu bằng cách tự động hóa và tạo ra nghề nghiệp mới.",
     "Trí tuệ nhân tạo thay thế các công việc lặp lại và có tính quy trình cao, đặc biệt trong sản xuất, logistics, và dịch vụ khách hàng.",
