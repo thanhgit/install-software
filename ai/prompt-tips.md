@@ -440,3 +440,29 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
 | Embedding context + metadata   | Semantic retrieval chính xác hơn     |
 | Prompt injection metadata      | Giúp LLM reasoning đúng hơn          |
 | Filter + re-rank bằng metadata | Precision cao hơn trong RAG          |
+
+#### Context engineering
+```json
+{
+  "question": "Tác động của trí tuệ nhân tạo đến thị trường lao động là gì?",
+  "facts": [
+    "AI đang tái định hình thị trường lao động toàn cầu bằng cách tự động hóa và tạo ra nghề nghiệp mới.",
+    "Trí tuệ nhân tạo thay thế các công việc lặp lại và có tính quy trình cao, đặc biệt trong sản xuất, logistics, và dịch vụ khách hàng.",
+    "AI cũng tạo ra nhu cầu lớn trong các lĩnh vực như khoa học dữ liệu, kỹ thuật phần mềm, và an ninh mạng.",
+    "Kỹ năng mềm như sáng tạo, tư duy phản biện và giao tiếp ngày càng quan trọng.",
+    "AI có thể thay thế tới 30% công việc hiện tại vào năm 2030 (theo McKinsey).",
+    "Khoảng 97 triệu việc làm mới có thể được tạo ra nhờ công nghệ AI (theo WEF 2023).",
+    "Ngành giáo dục và đào tạo lại kỹ năng đang trở nên quan trọng để thích ứng với AI.",
+    "Người lao động cần cập nhật kỹ năng liên quan đến công nghệ.",
+    "Các tổ chức nên đầu tư vào đào tạo và phát triển nhân lực phù hợp với thời đại AI."
+  ],
+  "audience_output": "sinh viên",
+  "language_output": "tiếng Việt",
+  "tone_output": "chuyên nghiệp",
+  "style_output": "gạch đầu dòng",
+  "source_input": "nội bộ",
+  "length_limit_output": "nhỏ hơn 100 từ",
+  "confidence_level_output": "cao",
+  "output_format": "json"
+}
+```
