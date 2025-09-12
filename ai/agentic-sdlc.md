@@ -85,13 +85,14 @@ Với 5 nguyên tắc cốt lõi: công bằng, an toàn, khả năng giải th�
 ```
 
 ---
-Một số dự án **mã nguồn mở (open-source)** nổi bật ngoài `NVIDIA-AI-Blueprints/data-flywheel` có hỗ trợ **liên tục cải thiện AI agents** hoặc cung cấp khả năng theo dõi, huấn luyện và điều chỉnh agent theo thời gian:
+### Một số dự án **mã nguồn mở (open-source)** nổi bật ngoài `NVIDIA-AI-Blueprints/data-flywheel`
+* có hỗ trợ **liên tục cải thiện AI agents** hoặc cung cấp khả năng theo dõi, huấn luyện và điều chỉnh agent theo thời gian
 
-## 1. AgentNeo
+#### 1. AgentNeo
 
 Một framework đang được phát triển, tập trung vào việc **giám sát, đánh giá và tối ưu hóa hệ thống AI agent**. Theo chia sẻ trên Reddit:
 
-> “A framework for monitoring, evaluating, and optimizing agentic AI systems.” ([Reddit][1])
+> “A framework for monitoring, evaluating, and optimizing agentic AI systems.”
 
 AgentNeo hỗ trợ:
 
@@ -100,24 +101,18 @@ AgentNeo hỗ trợ:
 * Tối ưu hiệu suất, caching, xác định điểm nghẽn.
 * Đánh giá cạnh tranh qua “Agent Arena”.
 
----
-
-## 2. Avalanche
+#### 2. Avalanche
 
 Thư viện mã nguồn mở dành cho **continual learning** — học liên tục từ các luồng dữ liệu thay đổi, rất phù hợp cho các hệ thống AI cần cải thiện theo thời gian. ([arXiv][2])
 
----
-
-## 3. Agents (AIWaves)
+#### 3. Agents (AIWaves)
 
 Một thư viện hỗ trợ xây dựng ngôn ngữ agent tự động với các tính năng như:
 
 * Lên kế hoạch (planning), bộ nhớ (memory), sử dụng công cụ (tool usage), tương tác đa-agent, kiểm soát biểu tượng chi tiết.
 * Hữu ích cho việc phát triển agent tự động hóa và có thể mở rộng. ([arXiv][3], [Reddit][4])
 
----
-
-## 4. Frameworks hỗ trợ đa-agent và workflow nâng cao
+#### 4. Frameworks hỗ trợ đa-agent và workflow nâng cao
 
 Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và quản lý hệ thống agent hiệu quả:
 
@@ -125,9 +120,7 @@ Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và qu�
 * **MetaGPT**: Thiết lập hệ thống agent theo vai trò như trong các nhóm phát triển phần mềm—Product Manager, QA, Developer, v.v. ([DEV Community][6])
 * **OpenAGI**: Nền tảng AGI mã nguồn mở kết hợp nhiều mô hình chuyên biệt với học tăng cường từ phản hồi tác vụ (RLTF). ([Medium][7])
 
----
-
-## 5. Các công cụ hỗ trợ xây dựng và triển khai agent
+#### 5. Các công cụ hỗ trợ xây dựng và triển khai agent
 
 * **LangChain**: Framework phổ biến để xây dựng workflow cho AI agents, đặc biệt với sự hỗ trợ trong quan sát và đánh giá. ([puppyagent.com][8], [Wikipedia][9])
 * **CrewAI**: Xây dựng hệ thống multi-agent team với vai trò rõ ràng, dễ mở rộng và sử dụng trong doanh nghiệp. ([NAITIVE AI Consutling Agency Blog][10], [AI Software Agent][11])
@@ -136,7 +129,6 @@ Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và qu�
 * **Flowise AI**: Công cụ kéo-thả (no-code) để xây dựng agent dựa trên LangChain. ([Reddit][14])
 * **Haystack**: Hỗ trợ Retrieval-Augmented Generation (RAG) cho các agent xử lý truy vấn tìm kiếm thông minh. ([Reddit][14])
 
----
 
 ## Tóm tắt so sánh nhanh:
 
@@ -147,3 +139,47 @@ Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và qu�
 | **Agents (AIWaves)**                                 | Agent với planning, memory, tool usage và multi-agent control |
 | **AutoGen / MetaGPT / OpenAGI**                      | Workflow agent phức tạp, vai trò rõ ràng, học từ phản hồi     |
 | **LangChain, CrewAI, AutoGPT, Flowise, Haystack...** | Hỗ trợ xây dựng, quan sát, multi-agent, cải tiến liên tục     |
+
+---
+### Hầu hết các thất bại của doanh nghiệp AI đều bắt đầu từ: "Xây dựng những thứ không khác biệt"
+* Nghe có vể tiết kiệm chi phái
+* Nhưng `Đó không phải là chiến lược`
+* => `Đó là tự phá hoại dự án`
+
+Dữ liệu cho thấy : `Tất cả các dự án đều thành công gấp 2-3 lần khi doanh nghiệp mua những thứ cần thiết hoặc hợp tác cùng phát triển`
+
+Tổ chức cần cam kết toàn bộ vòng đời: 
+* Hosting (lưu trữ)
+* Updates lifecyle (cập nhật bản vá)
+* Model evaluation (đánh giá mô hình)
+* Prompt ops
+* Compliance (tuân thủ)
+* Retraining (đào tạo lại khi có dữ liệu mới)
+
+#### Sau đây là cách chơi thông minh hơn:
+1. Buy the infrastructure.
+2. Partner on the orchestration.
+3. Build only what differentiates you.
+
+Mọi thứ khác?
+* Có giải pháp đã làm tốt hơn, nhanh hơn => mua hoặc tái sử dụng
+* Vì `bạn sẽ không được trả tiền cho việc cải tiến stack đã có` => Bạn sẽ bị loại khi GenAI pilot của bạn chết trong quá trình mua sắm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
