@@ -75,7 +75,7 @@ answer = llm.generate_answer(query, context=retrieved_docs)
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
 
 Có thêm thêm vào mối quan hệ của từng câu vào metadata:
-* Mỗi quan hệ nhân quả
+* Mối quan hệ nhân quả
 ```
 You are an expert in natural language understanding. Your task is to extract causal relationships between phrases or events in the following paragraph.
 
@@ -103,7 +103,70 @@ Respond in JSON format:
   ]
 }
 ```
+* Tìm entity cùng chung tham chiếu, có thể tiền xử lý bằng spacy
+```python
+import spacy
 
+# Load English model
+nlp = spacy.load("en_core_web_sm")
+
+def mark_noun_chunks(text):
+    doc = nlp(text)
+    chunks = list(doc.noun_chunks)
+    
+    # Biến để lưu kết quả đánh dấu
+    marked_text = ""
+    last_end = 0
+    
+    for chunk in chunks:
+        # Thêm phần văn bản trước chunk
+        marked_text += text[last_end:chunk.start_char]
+        # Bọc chunk trong ngoặc vuông
+        marked_text += "[" + text[chunk.start_char:chunk.end_char] + "]"
+        last_end = chunk.end_char
+    
+    # Thêm phần còn lại của văn bản
+    marked_text += text[last_end:]
+    return marked_text
+
+# Ví dụ
+text = "John started a new project last week. He worked on it every evening. Yesterday, his manager asked about the project's progress."
+
+result = mark_noun_chunks(text)
+print(result)
+```
+```
+You are an NLP assistant performing coreference resolution.
+
+For the given paragraph, identify all entities that are mentioned multiple times (including pronouns and possessives).
+
+For each entity, provide:
+- "entity": the canonical entity name (preferably the clearest noun phrase).
+- "mentions": all phrases referring to the entity, including possessive forms (e.g., "project's").
+- "sentence_indices": list of sentence indices corresponding one-to-one with each mention.
+
+Text:
+[John] started [a new project] last week. [He] worked on [it] every evening. Yesterday, [his manager] asked about [the project's progress].
+
+Respond in the following JSON format:
+```json
+{
+  "coreferences": [
+    {
+      "entity": "...",
+      "mentions": ["...", "...", "..."],
+      "sentence_indices": [..., ..., ...]
+    },
+    {
+      "entity": "...",
+      "mentions": ["...", "..."],
+      "sentence_indices": [..., ...]
+    },
+    ...
+  ]
+}
+```
+```
 
 Cách `tools` trong metadata có thể giúp:
 * **Định danh công cụ phù hợp** cho từng chunk hoặc chủ đề, ví dụ:
