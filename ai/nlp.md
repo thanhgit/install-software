@@ -187,20 +187,7 @@ Q: Những yêu cầu quan trọng nhất để được cấp visa là gì?
 
 #### 4. **Prompt Template Structuring (Cấu trúc hóa Prompt)**
 
-👉 **Mục tiêu**: Đưa knowledge vào cấu trúc rõ ràng, giúp LLM suy luận tốt hơn.
-
-Ví dụ dạng prompt thô:
-
-```
-Context:
-<chunk1>
-<chunk2>
-<chunk3>
-
-Question: Tóm tắt nội dung chính?
-```
-
-Sau NLP xử lý:
+👉 **Mục tiêu**: Đưa knowledge vào cấu trúc rõ ràng, giúp LLM suy luận tốt hơn
 
 ```
 Relevant Facts:
@@ -212,7 +199,7 @@ Instruction: Dựa trên các thông tin trên, hãy trả lời câu hỏi sau:
 Q: Tóm tắt nội dung chính?
 ```
 
-→ LLM xử lý tốt hơn vì thông tin **có thứ tự, rõ ngữ nghĩa**, dễ xử lý logic.
+→ LLM xử lý tốt hơn vì thông tin **có thứ tự, rõ ngữ nghĩa**, dễ xử lý logic
 
 #### 5. **Chunk Paraphrasing or Compression**
 
@@ -239,5 +226,66 @@ Q: Tóm tắt nội dung chính?
 Ví dụ: Nếu 2 chunks cùng nói về “điều kiện xin visa”, thì gộp chúng và phân loại theo chủ đề
 
 → Kết quả prompt dễ xử lý hơn vì ít "nhảy chủ đề".
+
+---
+### Dùng NLP để cải thiện RAG bởi **Metadata Enhancement** và **Context Enrichment**
+
+* Dùng thư viện như **spaCy, spacy-llm** cho các task NLP
+* Dùng NLP để **tiền xử lý (preprocessing)** chunks
+* Lưu metadata & enriched version của mỗi chunk song song (hoặc làm multi-field trong embedding)
+
+
+#### 🧩 1. NLP hỗ trợ **Metadata Enhancement**
+
+🎯 Mục tiêu: Tăng cường thông tin mô tả cho mỗi chunk văn bản
+
+| NLP Task                               | Mục đích                           | Ví dụ                                |
+| -------------------------------------- | ---------------------------------- | ------------------------------------ |
+| 🧾 **Named Entity Recognition (NER)**  | Trích xuất thực thể                | Người, địa điểm, công ty, bệnh lý... |
+| 🧠 **Topic Classification**            | Xác định chủ đề chunk              | `finance`, `legal`, `healthcare`...  |
+| 📅 **Date Extraction & Normalization** | Gắn thời gian, chuẩn hóa định dạng | “Tháng 9 năm ngoái” → `2024-09`      |
+| 📚 **Document Classification**         | Gán loại tài liệu                  | Hợp đồng, báo cáo, email...          |
+| 👤 **Author Attribution (nếu có)**     | Gán tác giả dựa trên văn phong     | Phân biệt các người viết             |
+| 📐 **Readability Assessment**          | Tính điểm khó–dễ đọc               | Dùng để chọn chunk phù hợp với user  |
+
+```json
+{
+  "text": "...",
+  "metadata": {
+    "topic": "oncology",
+    "entities": ["melanoma", "BRAF mutation"],
+    "created_at": "2023-06-12",
+    "readability_score": 61.2
+  }
+}
+```
+
+👉 Giúp hệ thống **filter, rerank, hoặc boost** kết quả tốt hơn khi truy xuất
+
+#### 🧩 2. NLP hỗ trợ **Context Enrichment**
+
+🎯 Mục tiêu: Làm giàu nội dung văn bản để LLM dễ hiểu và trả lời chính xác hơn
+
+| NLP Task                              | Mục đích                                   | Ví dụ                                            |
+| ------------------------------------- | ------------------------------------------ | ------------------------------------------------ |
+| 📚 **Abbreviation Expansion**         | Mở rộng từ viết tắt                        | “COPD” → “Chronic Obstructive Pulmonary Disease” |
+| 🔗 **Coreference Resolution**         | Thay đại từ bằng thực thể                  | “ông ấy” → “bác sĩ Trí”                          |
+| 🧠 **Concept Linking (Wikification)** | Gắn link hoặc định nghĩa                   | “quantum tunneling” → link đến Wikipedia         |
+| 📖 **Summarization**                  | Tạo bản tóm tắt chunk                      | Giúp LLM xử lý nhanh hơn                         |
+| 🔄 **Paraphrasing**                   | Viết lại chunk theo phong cách dễ hiểu hơn | Hữu ích với tài liệu khó đọc                     |
+| ⚙ **Information Extraction (IE)**     | Tách insight từ chunk                      | Ví dụ: thuốc điều trị, tác dụng phụ, chỉ định... |
+| 🧾 **Relation Extraction**            | Nối các khái niệm có quan hệ               | Bệnh → Triệu chứng → Điều trị                    |
+
+> ✅ **Kết quả**: Các chunk được làm giàu để **giao tiếp tốt hơn với LLM**:
+
+```text
+Original:
+"The patient has COPD. He was treated with a beta-agonist."
+
+Enriched:
+"The patient has Chronic Obstructive Pulmonary Disease (COPD). The patient was treated with a beta-agonist, a type of medication used to relax muscles of the airways."
+```
+
+👉 LLM **hiểu rõ hơn**, sinh nội dung **mạch lạc và đúng đích hơn**, đặc biệt khi dùng trong QA hoặc tóm tắt.
 
 
