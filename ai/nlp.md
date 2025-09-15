@@ -73,7 +73,8 @@ answer = llm.generate_answer(query, context=retrieved_docs)
 * Gắn thêm **intent whitelist**: chỉ forward các intent được phép truy vào RAG
 * Gắn **retrieval filters theo entity**: ví dụ: nếu entity là `product: X`, chỉ truy trong knowledge base về X
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
-* Thêm score liên quan đến topic
+
+Tính độ liên quan đến topic
 ```python
 from sentence_transformers import SentenceTransformer, util
 
@@ -86,7 +87,7 @@ topic_embedding = model.encode("finance")
 score = util.cos_sim(chunk_embedding, topic_embedding)
 ```
 
-Tính `noise_score` cho từng topic
+Tính độ "vô dụng" về mặt semantic cho topic đó (functional noise)
 ```python
 def compute_topic_noise(chunk_text, topic, topic_embedding_dict):
     # 1. Semantic similarity (relevance)
