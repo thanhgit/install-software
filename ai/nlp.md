@@ -45,12 +45,8 @@ User input → Rasa NLU → { intent, entities, metadata }
 * Bổ sung metadata tùy chỉnh
 * Kết nối được với downstream RAG pipeline qua REST API, Python service hoặc custom action
 
-📦 Ví dụ cụ thể
-
-Người dùng hỏi “Làm sao để cập nhật phần mềm trên thiết bị X?”
-
+📦 Ví dụ cụ thể: ask: “Làm sao để cập nhật phần mềm trên thiết bị X?”
 1. **Rasa NLU xử lý đầu vào**:
-
 ```json
 {
   "intent": { "name": "ask_software_update", "confidence": 0.97 },
@@ -73,29 +69,22 @@ retrieved_docs = retriever.search(query)
 answer = llm.generate_answer(query, context=retrieved_docs)
 ```
 
-🛠 Cách tích hợp trong thực tế
-
-| Thành phần                  | Vai trò                                                                                                        |
-| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| **Rasa NLU**                | Phân tích input → sinh intent, entity, metadata                                                                |
-| **FastAPI / Flask service** | Nhận output từ Rasa, format lại query cho RAG                                                                  |
-| **RAG pipeline**            | Kết hợp retriever (FAISS, Chroma, Weaviate, Elasticsearch, v.v.) + LLM (OpenAI, Ollama, Mistral, Claude, etc.) |
-| **Frontend / chatbot UI**   | Giao diện gửi câu hỏi, nhận câu trả lời                                                                        |
-
- 📌 Ưu điểm của việc dùng Rasa trước RAG
-
-| Lợi ích                                   | Mô tả                                                                                     |
-| ----------------------------------------- | ----------------------------------------------------------------------------------------- |
-| 🎯 **Tăng độ chính xác cho truy vấn RAG** | Truy vấn có thể dùng intent/entity để tạo prompt rõ ràng, ngữ cảnh hẹp hơn                |
-| ⚙️ **Tiền xử lý chuyên biệt**             | Gắn metadata như ngôn ngữ, loại câu hỏi, urgency để điều chỉnh độ ưu tiên / filter        |
-| 🧩 **Dễ kiểm soát logic / fallback**      | Nếu không tìm thấy intent → fallback → hỏi lại user, không gửi câu hỏi sai vào RAG        |
-| 🛡 **Bảo mật + kiểm soát output**         | Chặn hoặc redirect những intent không được phép gửi vào RAG (ví dụ: hỏi thông tin nội bộ) |
-
-🧪 Gợi ý mở rộng
-
+🧪 Gợi ý tắng cường metadata
 * Gắn thêm **intent whitelist**: chỉ forward các intent được phép truy vào RAG
 * Gắn **retrieval filters theo entity**: ví dụ: nếu entity là `product: X`, chỉ truy trong knowledge base về X
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
+* Thêm score liên quan đến topic
+```python
+from sentence_transformers import SentenceTransformer, util
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
+chunk_embedding = model.encode(chunk_text)
+
+# topic gồm ["oncology", "neurology", "finance", "law"] → score từng label
+topic_embedding = model.encode("finance")
+
+score = util.cos_sim(chunk_embedding, topic_embedding)
+```
 
 ---
 ### **NLP giúp cấu trúc lại prompt** => **LLM dễ hiểu và trả lời chính xác**
