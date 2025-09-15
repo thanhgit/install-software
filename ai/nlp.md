@@ -86,6 +86,30 @@ topic_embedding = model.encode("finance")
 score = util.cos_sim(chunk_embedding, topic_embedding)
 ```
 
+Tính `noise_score` cho từng topic
+```python
+def compute_topic_noise(chunk_text, topic, topic_embedding_dict):
+    # 1. Semantic similarity (relevance)
+    chunk_embedding = embed(chunk_text)
+    relevance = cosine_similarity(chunk_embedding, topic_embedding_dict[topic])
+    
+    # 2. Heuristic noise detection (optional)
+    has_html = detect_html_noise(chunk_text)
+    is_too_short = len(chunk_text.split()) < 10
+    filler_words = detect_filler_content(chunk_text)
+    
+    technical_noise = 0.0
+    if has_html or is_too_short or filler_words:
+        technical_noise = 0.6  # or a heuristic value
+    
+    # 3. Semantic noise = 1 - relevance
+    semantic_noise = 1.0 - relevance
+    
+    # 4. Final noise = weighted combination
+    final_noise = 0.7 * semantic_noise + 0.3 * technical_noise
+    return final_noise
+```
+
 ---
 ### **NLP giúp cấu trúc lại prompt** => **LLM dễ hiểu và trả lời chính xác**
 
