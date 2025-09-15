@@ -74,6 +74,18 @@ answer = llm.generate_answer(query, context=retrieved_docs)
 * Gắn **retrieval filters theo entity**: ví dụ: nếu entity là `product: X`, chỉ truy trong knowledge base về X
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
 
+Cách `tools` trong metadata có thể giúp:
+* **Định danh công cụ phù hợp** cho từng chunk hoặc chủ đề, ví dụ:
+  * `tools: ["web_search", "fact_check", "knowledge_base"]`
+* **Kích hoạt tự động** khi hệ thống nhận thấy thông tin trong chunk không đủ hoặc cần xác minh
+* **Tối ưu workflow**, giảm tải việc gọi API thừa, chỉ gọi công cụ khi cần thiết
+* **Tăng độ chính xác** bằng việc verify facts qua nhiều nguồn bên ngoài
+* Cách thức thêm tools:
+  * Con người sẽ định nghĩa khung, rule hoặc huấn luyện dữ liệu cho mô hình NLP
+  * Hệ thống tự động gán trường tools và con người kiểm tra, tinh chỉnh định kỳ
+  * Ban đầu con người gán thủ công cho một tập mẫu => huấn luyện mô hình tự động gán
+  * Sau khi tập dữ liệu đủ lớn => hệ thống tự động hóa giúp mở rộng quy mô và giảm chi phí vận hành
+
 Tính độ liên quan đến topic
 ```python
 from sentence_transformers import SentenceTransformer, util
