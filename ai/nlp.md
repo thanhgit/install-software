@@ -2,13 +2,13 @@
 ```
 a task => LLM -
 - text classification
-- question answering
-- zero-shot classification
-- translation
-- summarization
-- feature extraction
+- Trả lời câu hỏi (question answering)
+- Phân loại không cần huấn luyện trước (zero-shot classification)
+- Dịch thuật (translation)
+- Tóm tắt văn bản (text summarization)
+- feature extraction như nhận dạng thực thể (NER), ...
 - text generation
-- fill-mask
+- Điền từ thiếu (fill-mask)
 - sentence similarity -> result
 ```
 
