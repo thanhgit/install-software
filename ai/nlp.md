@@ -112,7 +112,18 @@ def compute_topic_noise(chunk_text, topic, topic_embedding_dict):
 ```
 
 Một số nhiểu kĩ thuật cần chú ý:
-
+```python
+# Trọng số này có thể tùy biến theo domain của bạn.
+noise_score = (
+    0.4 * semantic_noise +
+    0.15 * redundancy_noise +
+    0.15 * structural_noise +
+    0.1 * formatting_noise +
+    0.1 * decorative_noise +
+    0.05 * temporal_noise +
+    0.05 * readability_noise
+)
+```
 | Loại nhiễu          | Đặc trưng                      | Cách tính thủ công / NLP               |
 | ------------------- | ------------------------------ | -------------------------------------- |
 | `semantic_noise` <br> Thông tin không liên quan tới chủ đề hiện tại    | Relevance thấp so với topic    | Cosine similarity giữa chunk & topic   |
