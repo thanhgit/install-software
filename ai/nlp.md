@@ -11,6 +11,8 @@ a task => LLM -
 - fill-mask
 - sentence similarity -> result
 ```
+* `User prompt` - security -> `LLM` - safty -> `LLM response`
+
 
 #### AutoIntent 
 * is an open source tool for automatic configuration of text classification pipelines, with specialized support for intent prediction.
