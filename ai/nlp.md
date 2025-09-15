@@ -93,10 +93,12 @@ Respond in JSON format:
     {
       "cause": "...",
       "effect": "...",
+      "sentence_indices": [..., ...]
     },
     {
       "cause": "...",
       "effect": "...",
+      "sentence_indices": [..., ...]
     }
   ]
 }
