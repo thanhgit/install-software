@@ -111,6 +111,18 @@ def compute_topic_noise(chunk_text, topic, topic_embedding_dict):
     return final_noise
 ```
 
+Một số nhiểu kĩ thuật cần chú ý:
+
+| Loại nhiễu          | Đặc trưng                      | Cách tính thủ công / NLP               |
+| ------------------- | ------------------------------ | -------------------------------------- |
+| `semantic_noise` <br> Thông tin không liên quan tới chủ đề hiện tại    | Relevance thấp so với topic    | Cosine similarity giữa chunk & topic   |
+| `redundancy_noise` <br> Thông tin lặp lại / dư thừa  | Câu lặp, ý trùng, filler       | Detect n-gram repeat / regex / entropy |
+| `structural_noise` <br> Kết cấu văn bản kém / ngắt đoạn bất hợp lý | Gãy câu, lỗi ngữ pháp          | spaCy sentence boundary + POS          |
+| `formatting_noise` <br> Markup / format lỗi  | Tag lỗi, mã Markdown, HTML     | Regex, BeautifulSoup                   |
+| `decorative_noise` <br> Thông tin "trang trí" không chứa tri thức  | Trang trí, header/footer       | Regex pattern match                    |
+| `temporal_noise` <br> Thông tin outdated hoặc không xác định thời gian    | Thiếu thời gian / outdated     | Regex + date checker                   |
+| `readability_noise` <br> Độ khó ngôn ngữ (Readability quá thấp hoặc cao) | Câu khó hiểu hoặc quá đơn giản | `textstat` hoặc Flesch score           |
+
 ---
 ### **NLP giúp cấu trúc lại prompt** => **LLM dễ hiểu và trả lời chính xác**
 
