@@ -11,7 +11,10 @@ a task => LLM -
 - fill-mask
 - sentence similarity -> result
 ```
-* `User prompt` - security -> `LLM` - safty -> `LLM response`
+
+`User prompt` - security -> `LLM` - safty -> `LLM response`
+* `Security` đãm bảo những ai có thẩm quyền mới mởi có data tương ứng, prompt đáng tin cậy mới được xử lý
+* `Safty` đãm bảo AI hoạt động có trách nhiệm và đạo đức, tập trung vào việc giảm thiểu nội dung độc hại đến user hoặc hệ thống kết nối khác
 
 
 #### AutoIntent 
