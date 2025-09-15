@@ -98,7 +98,7 @@ answer = llm.generate_answer(query, context=retrieved_docs)
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
 
 ---
-### **NLP có thể giúp gì để cấu trúc lại prompt** đầu vào sao cho **LLM dễ hiểu và trả lời chính xác?**
+### **NLP giúp cấu trúc lại prompt** => **LLM dễ hiểu và trả lời chính xác**
 
 > NLP không chỉ giúp *tăng độ chính xác* mà còn *tối ưu hóa chi phí* và *nâng cao tính tin cậy* trong hệ thống RAG
 
@@ -120,6 +120,12 @@ query → retriever → re_ranker → summarizer → structured_prompt → LLM
 | Paraphrasing                | Rút gọn nhưng giữ nghĩa     | Pegasus, T5                |
 | Entity grounding            | Tăng độ tin cậy             | Citation tagging           |
 | Semantic grouping           | Gom nội dung theo chủ đề    | Topic modeling, NER        |
+
+Việc gom nhóm (clustering) tài liệu + tóm tắt theo cụm (chunk summarization) + sắp xếp có logic (thematic ordering):
+
+* ➡️ Tăng khả năng hiểu nội dung và suy luận theo mạch cho LLM
+* ➡️ Giảm độ phân mảnh ngữ nghĩa của prompt
+* ➡️ Tập trung LLM vào các chủ đề cốt lõi, thay vì xử lý 10 đoạn rời rạc không liên quan
 
 #### 1. **Chunk Ranking / Filtering**
 
