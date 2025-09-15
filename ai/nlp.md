@@ -123,9 +123,37 @@ query → retriever → re_ranker → summarizer → structured_prompt → LLM
 
 Việc gom nhóm (clustering) tài liệu + tóm tắt theo cụm (chunk summarization) + sắp xếp có logic (thematic ordering):
 
-* ➡️ Tăng khả năng hiểu nội dung và suy luận theo mạch cho LLM
-* ➡️ Giảm độ phân mảnh ngữ nghĩa của prompt
+* ➡️ Tăng khả năng hiểu nội dung và suy luận theo mạch cho LLM vì `không cần “xâu chuỗi” các đoạn rời rạc`
+* ➡️ Giảm độ phân mảnh ngữ nghĩa của prompt vì `prompt đã có trình tự, dễ xử lý hơn về mặt reasoning` => `Tăng trọng số ngữ nghĩa`
 * ➡️ Tập trung LLM vào các chủ đề cốt lõi, thay vì xử lý 10 đoạn rời rạc không liên quan
+
+**Tạo "ngữ cảnh đa tầng" (hierarchical context)** vì LLM xử lý theo tầng:
+
+* Tóm tắt nhóm → hiểu chủ đề chung
+* Chi tiết trong nhóm → tìm thông tin hỗ trợ
+* Tổng hợp theo truy vấn
+
+```text
+Context (Semantic Clusters):
+----------------------------
+[Cluster 1: Về điều kiện pháp lý]
+- Tóm tắt: Người nộp đơn cần có hợp đồng lao động hợp pháp và đủ điều kiện lưu trú.
+- Chi tiết:
+  + Chunk 1.1
+  + Chunk 1.2
+
+[Cluster 2: Về tài chính]
+- Tóm tắt: Ứng viên cần chứng minh đủ khả năng tài chính trong 6 tháng gần nhất.
+- Chi tiết:
+  + Chunk 2.1
+  + Chunk 2.2
+
+...
+
+Instruction:
+- Dựa trên các thông tin trong các cụm trên, hãy trả lời câu hỏi sau:
+Q: Những yêu cầu quan trọng nhất để được cấp visa là gì?
+```
 
 #### 1. **Chunk Ranking / Filtering**
 
