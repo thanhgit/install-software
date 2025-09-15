@@ -1,4 +1,16 @@
 # NLP 
+```
+a task => LLM -
+- text classification
+- question answering
+- zero-shot classification
+- translation
+- summarization
+- feature extraction
+- text generation
+- fill-mask
+- sentence similarity -> result
+```
 
 #### AutoIntent 
 * is an open source tool for automatic configuration of text classification pipelines, with specialized support for intent prediction.
