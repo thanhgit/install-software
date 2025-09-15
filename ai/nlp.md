@@ -74,6 +74,35 @@ answer = llm.generate_answer(query, context=retrieved_docs)
 * Gắn **retrieval filters theo entity**: ví dụ: nếu entity là `product: X`, chỉ truy trong knowledge base về X
 * Thêm **metadata enrichment**: ví dụ: xác định `tone`, `sentiment`, `urgency`, `topic`, `department`, v.v.
 
+Có thêm thêm vào mối quan hệ của từng câu vào metadata:
+* Mỗi quan hệ nhân quả
+```
+You are an expert in natural language understanding. Your task is to extract causal relationships between phrases or events in the following paragraph.
+
+Each relationship should include:
+- cause (phrase)
+- effect (phrase)
+- sentence indices (1-based)
+
+Text:
+John forgot to set his alarm last night. As a result, he missed the bus and arrived late at work. His manager was not happy about it.
+
+Respond in JSON format:
+{
+  "causal_relationships": [
+    {
+      "cause": "...",
+      "effect": "...",
+    },
+    {
+      "cause": "...",
+      "effect": "...",
+    }
+  ]
+}
+```
+
+
 Cách `tools` trong metadata có thể giúp:
 * **Định danh công cụ phù hợp** cho từng chunk hoặc chủ đề, ví dụ:
   * `tools: ["web_search", "fact_check", "knowledge_base"]`
