@@ -1,14 +1,17 @@
 # AI agentic
 
-- #### `Decision-making` and `planning` are critical capabilities for intelligent agents to achieve their goals eﬀectively
-- #### Agents need to analyze various possible scenarios, evaluate outcomes, and select the action(s) that will lead to the most desirable outcome based on their preferences and constraints
-- #### understanding the need for `controls and guardrails` on autonomous agents and using control barrier functions
-- #### `Self-governance` implies that the system can make its own decisions, set its own goals, and regulate its behavior based on its internal rules, models, and decision-making algorithms
-- #### `Self-organization` : the ability to organize and structure its own internal processes, resources, and behavior without external intervention
-- #### `Self-regulation` : the capability to monitor and adjust its own actions and outputs based on feedback from the environment or internal states, to ensure it operates within desired parameters or constrainvts
-- #### `Self-adaptation` : the ability to modify its behavior, strategies, or decision-making processes in response to changes in the environment or its own internal conditions, to achieve its goals more eﬀectively
-- #### `Self-optimization` : the ability to continuously improve its performance, eﬃciency, or decision-making capabilities through learning, experience, or evolutionary processes
-- #### `Self-determination` : the ability to set its own objectives, priorities, and courses of action based on its internal decision-making processes, without being entirely controlled by external forces
+![](./media/agentic-ai.gif)
+
+* **Ra quyết định và lập kế hoạch**: phân tích nhiều kịch bản, đánh giá kết quả và chọn hành động tốt nhất dựa trên các ưu tiên và giới hạn được đặt ra
+* **Tự quản lý và kiểm soát**:
+    * **Tự quản lý (Self-governance)**: tự đưa ra quyết định, đặt mục tiêu và điều chỉnh hành vi của mình dựa trên các quy tắc nội bộ
+    * **Tự điều chỉnh (Self-regulation)**: theo dõi và tự điều chỉnh hành động để đảm bảo hoạt động trong các giới hạn mong muốn, dựa trên phản hồi từ môi trường hoặc trạng thái bên trong
+    * **Tự tổ chức (Self-organization)**: Khả năng tự sắp xếp và cấu trúc các quy trình, tài nguyên nội bộ mà không cần sự can thiệp từ bên ngoài.
+    * **Tự thích nghi (Self-adaptation)**: Khả năng thay đổi hành vi và chiến lược để phản ứng với những thay đổi của môi trường.
+    * **Tự tối ưu hóa (Self-optimization)**: Khả năng liên tục cải thiện hiệu suất, hiệu quả thông qua quá trình học hỏi và kinh nghiệm.
+    * **Tự quyết (Self-determination)**: Khả năng tự đặt ra mục tiêu và ưu tiên hành động mà không bị kiểm soát hoàn toàn bởi các yếu tố bên ngoài.
+
+* Giám sát và giới hạn (controls and guardrails) đảm bảo AI agent hoạt động an toàn và hiệu quả, tránh những hành vi không mong muốn
 
 ![image](https://github.com/user-attachments/assets/5f758396-da1c-47c1-8029-310c740c8175)
 
