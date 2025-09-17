@@ -1,6 +1,7 @@
 # AI agent life cycle
-- #### How agents go from input to action, autonomously.
-- #### Design principle: `"dữ liệu phân tán, thông tin phân phối, tri trức tập trung, hành động nhất quán"`
+```
+dữ liệu phân tán, thông tin phân phối, tri trức tập trung, hành động nhất quán
+```
 
 ![](./media/ai-agent-lifecycle.jpeg)
 
@@ -79,26 +80,26 @@
 - #### Focuses on system reliability, observability, compliance, and cost optimization. Provides governance frameworks and oversight tools.
 
 #### `Learning layer` ~ Data Centralized – Dữ liệu tập trung là nền tảng
-- #### Dữ liệu được thu thập chuẩn hóa
-- #### Được quy về một hạ tầng chung
+- #### Dữ liệu được thu thập chuẩn hóa trong một hạ tầng chung
 - #### Được làm sạch, phân loại, và gắn quyền truy cập
-- #### Càng tập trung bao nhiêu, thì mô hình AI càng dễ huấn luyện và kiểm soát bấy nhiêu.
+- #### `Càng tập trung bao nhiêu => AI càng dễ huấn luyện và kiểm soát bấy nhiêu`
 
 #### `Build layer` ~ Nơi huấn luyện, triển khai, và duy trì AI
-- #### `Infrastructure for AI – Hạ tầng AI`: Máy chủ, GPU, bộ nhớ, nền tảng điện toán – chính là nơi “AI được nuôi dưỡng”.
-- #### `AI Platform – Nền tảng AI`: Một lớp trừu tượng hóa hạ tầng, nơi các đội ngũ kỹ thuật thao tác để tạo mô hình, fine-tune, quản lý vòng đời AI (AI lifecycle management).
-- #### `Built AI vs Blended AI`: Built AI là AI do doanh nghiệp tự huấn luyện, kiểm soát toàn bộ.
-- #### `Blended AI` là sự kết hợp AI nội bộ với AI từ bên ngoài (như GPT, Claude), tận dụng sức mạnh mô hình lớn mà không cần xây từ đầu.
+- #### `Infra for AI – Hạ tầng AI`: Máy chủ, GPU, ... – chính là nơi “AI được nuôi dưỡng”.
+- #### `AI Platform – Nền tảng AI`: IDP giúp thao tác để tạo mô hình, fine-tune, quản lý vòng đời AI (AI lifecycle management)
+- #### `Built AI`: là AI do doanh nghiệp tự huấn luyện, kiểm soát toàn bộ
+- #### `Blended AI` là sự kết hợp AI nội bộ với AI providers (như GPT, Claude) => tận dụng sức mạnh từ nhiều nguồn
 
 #### `Trust Layer`: Nơi quản trị niềm tin, rủi ro và bảo mật
-- #### AI không thể triển khai nếu không có Trust -  niềm tin. Đây là điểm mà rất nhiều doanh nghiệp bỏ qua.
-- #### `Tech-driven`: Có bộ khung kiểm soát rõ ràng:
+* `AI không thể triển khai nếu không có Trust - niềm tin`
+- #### `Tech-driven`: Có framework để kiểm soát rõ ràng:
     - #### Quản lý rủi ro   
     - #### Giám sát bảo mật
     - #### Đánh giá đạo đức AI
+
 - #### `Human-governed`: Do con người điều phối, với 3 thành phần chính:
-    - #### `Central AI Committee`: Nhóm điều phối toàn chiến lược AI.
-    - #### `Communities of Practice`: Các nhóm chuyên môn AI theo chức năng (VD: AI trong tài chính, AI trong vận hành).
+    - #### `Central AI Committee`: Nhóm điều phối toàn chiến lược AI
+    - #### `Communities of Practice`: Các nhóm chuyên môn AI theo chức năng (VD: AI trong tài chính, AI trong vận hành)
     - #### `Back Office & Front Office`: Phân quyền rõ AI dùng cho nội bộ hay tiếp xúc người dùng
 
 #### `Run layer`: Giai đoạn triển khai AI đi vào thực chiến
@@ -108,4 +109,11 @@
 
 #### `Adaption layer` ~ “Data everywhere and every kind” – Dữ liệu phân tán khắp nơi
 - #### `Đây là thế giới thực`: dữ liệu đang văng vãi ở mọi nơi – trên cloud, trong file Excel, trong hệ thống CRM cũ kỹ. Nhưng thay vì cố gắng kiểm soát tất cả, chúng ta cần cách quản trị phân tán và thiết kế mô hình AI đủ thông minh để hoạt động tốt với môi trường dữ liệu hỗn hợp.
-- #### `Triển khai AI không phải là mua công cụ`, mà là xây một chiếc bánh sandwich hoàn chỉnh: nếu thiếu một lớp, mọi thứ có thể sụp đổ.
+- #### `Triển khai AI không phải là mua công cụ`, mà là xây một chiếc bánh sandwich hoàn chỉnh: nếu thiếu một lớp, mọi thứ có thể sụp đổ
+
+#### AI agent lifecycle effort
+<img width="1047" height="445" alt="image" src="https://github.com/user-attachments/assets/2f9f1a6d-4efe-401b-af64-93c13c9ae7d5" />
+
+Gôm 2 phase:
+* "Cool Demo" Phase
+* "Actual Value" Phase
