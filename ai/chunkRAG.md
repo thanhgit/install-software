@@ -143,11 +143,12 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 
 * KG dùng tập hợp triplets (head entity, relation, tail entity) có liên quan đến nhau => tìm các chunks liên quan đến câu trả lời
 * **kết hợp tốt giữa truy xuất ngữ nghĩa và cấu trúc logic của tri thức** => sử dụng knowledge graphs để tổ chức và mở rộng thông tin sau khi seed chunks
+* Cụ thể, **liên kết giữa các (chunks)** và các **entity/triples trong KG** => hiểu được các **mối quan hệ cấp độ sự kiện (fact-level)** giữa các chunk
 
 Quy trình tổng quan:
 1. **Xác định quan hệ giữa các đoạn (chunks)** ở cấp độ sự kiện/thực thể (fact-level)
-2. **Mở rộng chunk** từ các đoạn truy xuất ban đầu bằng cách dẫn dắt theo cấu trúc đồ thị tri thức
-3. **Tổ chức lại các đoạn thông tin** theo KG để tạo ra ngữ cảnh mạch lạc và đầy đủ hơn
+2. **Mở rộng chunk** từ các chunk truy xuất ban đầu (seed chunks) bằng cách dẫn dắt theo cấu trúc đồ thị tri thức
+3. **Tổ chức lại các đoạn thông tin** theo KG => `tạo ra ngữ cảnh mạch lạc và đầy đủ hơn`
 
 #### **Các bước chính của phương pháp:**
 
@@ -167,7 +168,33 @@ Quy trình tổng quan:
    * **Lọc thông tin:** Loại bỏ các đoạn không liên quan trong đồ thị mở rộng
    * **Sắp xếp chunk:** Tổ chức các đoạn thành các **đoạn văn mạch lạc**, sử dụng cấu trúc KG làm khung sườn → `đảm bảo ngữ cảnh đầu vào cho LLM rõ ràng và hợp lý hơn`
 
+####  KG-enhanced Chunk Retrieval
+```
+Target Text: <target text>
+Triplets:
+```
+Ví dụ, Prompt for Triplet Extraction
+```prompt
+Instruction:
+Extract informative triplets directly from the text following the examples.
+Do not add any extra words, line breaks, or spaces.
 
+Example 1:
+Text: Scott Derrickson (born July 16, 1966) is an American director, screenwriter and producer.
+Triplets:
+<Scott Derrickson, born in, 1966>,
+<Scott Derrickson, nationality, America>,
+<Scott Derrickson, occupation, director>,
+<Scott Derrickson, occupation, screenwriter>,
+<Scott Derrickson, occupation, producer>
 
-
-
+Example 2:
+Text: A Kiss for Corliss is a 1949 American comedy film
+directed by Richard Wallace and written by Howard Dimsdale.
+Triplets:
+<A Kiss for Corliss, year, 1949>,
+<A Kiss for Corliss, country, America>,
+<A Kiss for Corliss, genre, comedy film>,
+<A Kiss for Corliss, director, Richard Wallace>,
+<A Kiss for Corliss, writer, Howard Dimsdale>
+```
