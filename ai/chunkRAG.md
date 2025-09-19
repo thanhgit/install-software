@@ -1,10 +1,12 @@
 # Chunk RAG
-* cho phép lọc thông tin không liên quan **ở cấp độ đoạn**, thay vì toàn văn bản
-* => tăng độ chính xác và giảm sai sót 
+* cho phép lọc thông tin không liên quan **ở cấp độ chunk**, thay vì toàn văn bản
+* => tăng độ chính xác và giảm sai sót
 * Cụ thể, hệ thống này phân tích từng đoạn nhỏ trong tài liệu được truy xuất
   * sử dụng LLM để xác định mức độ liên quan của từng chunk với truy vấn người dùng
   * Những đoạn không liên quan hoặc chỉ liên quan lỏng lẻo => loại bỏ **trước khi**
-* Phù hợp với các tác vụ yêu cầu độ chính xác cao như suy luận nhiều bước (multi-hop reasoning) và kiểm tra sự thật (fact-checking)
+* Phù hợp với các tác vụ quan trọng
+  * `Têu cầu độ chính xác cao như suy luận nhiều bước (multi-hop reasoning) và kiểm tra sự thật (fact-checking)`
+  * Trong domain chuyên sâu, khi chất lượng dữ liệu tốt, khi có tài nguyên tính toán dư dả
   
 <img width="995" height="1128" alt="image" src="https://github.com/user-attachments/assets/32381021-d6c1-4e26-94c3-7b528acd3636" />
 Phương pháp luận:
@@ -131,4 +133,7 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 * **Chi phí tính toán cao:**
   * Sử dụng **đa tầng đánh giá bằng LLM và Critic LLM** => chi phí tính toán tăng cao, đặc biệt với **tập dữ liệu lớn** hoặc real-time 
 
-
+* **Tương thích với loại dữ liệu, tài liệu dài, context liên kết**
+  * tài liệu dạng có cấu trúc (PDF với bảng, hình ảnh, tiêu đề…) cần xử lý đặc biệt
+   
+* `TreeRAG` với chunking phân cấp để bảo toàn cấu trúc hierarchies giữa các knowledge points: phù hợp hơn với tài liệu dài
