@@ -1,4 +1,4 @@
-# Chunk RAG
+# Chunk RAG and Mixture-of-Chunkers (MoC)
 * cho phép lọc thông tin không liên quan **ở cấp độ chunk**, thay vì toàn văn bản
 * => tăng độ chính xác và giảm sai sót
 * Cụ thể, hệ thống này phân tích từng đoạn nhỏ trong tài liệu được truy xuất
@@ -198,3 +198,16 @@ Triplets:
 <A Kiss for Corliss, director, Richard Wallace>,
 <A Kiss for Corliss, writer, Howard Dimsdale>
 ```
+
+---
+### Mixture-of-Chunkers (MoC)
+* Đánh giá chất lượng chunking mới gồm hai chỉ số:
+  * **Boundary Clarity** (độ rõ ràng biên đoạn)
+  * **Chunk Stickiness** (độ gắn kết của đoạn).
+  * => nhấn mạnh sự cần thiết phải tích hợp các mô hình ngôn ngữ lớn (LLMs) vào quá trình chunking
+* Đánh đổi giữa hiệu quả tính toán và độ chính xác chunking khi dùng LLM
+ 
+#### **MoC** là một framework nhận biết độ chi tiết (granularity-aware) với ba giai đoạn xử lý
+* MoC hướng đến việc tạo ra một danh sách các biểu thức chính quy để trích xuất các đoạn văn bản một cách cấu trúc từ văn bản gốc
+
+
