@@ -200,7 +200,7 @@ Triplets:
 ```
 
 ---
-### Mixture-of-Chunkers (MoC)
+### Mixture-of-Chunkers (MoC) [link](https://arxiv.org/pdf/2503.09600)
 * Đánh giá chất lượng chunking mới gồm hai chỉ số:
   * **Boundary Clarity** (độ rõ ràng biên đoạn)
   * **Chunk Stickiness** (độ gắn kết của đoạn).
