@@ -5,6 +5,8 @@
   * sử dụng LLM để xác định mức độ liên quan của từng chunk với truy vấn người dùng
   * Những đoạn không liên quan hoặc chỉ liên quan lỏng lẻo => loại bỏ **trước khi**
 * Phù hợp với các tác vụ yêu cầu độ chính xác cao như suy luận nhiều bước (multi-hop reasoning) và kiểm tra sự thật (fact-checking)
+  
+<img width="995" height="1128" alt="image" src="https://github.com/user-attachments/assets/32381021-d6c1-4e26-94c3-7b528acd3636" />
 
 1. **Loại bỏ dư thừa bằng Cosine Similarity:**
 
