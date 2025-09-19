@@ -123,3 +123,12 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 * **LLM đánh giá:**
   Có một LLM mạnh để  đánh giá riêng sẽ đối chiếu giữa câu trả lời và đáp án chuẩn => đánh dấu là **đúng hoặc sai**, phục vụ cho việc đo hiệu suất hệ thống
 
+#### **Hạn chế của chunkRAG**
+* **Phụ thuộc vào chunking và embedding:**
+  * Hiệu quả của hệ thống phụ thuộc lớn vào chất lượng **phân đoạn ngữ nghĩa** và **embedding** dùng để đánh giá mức độ liên quan
+  * => `Chunking sai có thể đưa thông tin không phù hợp`
+
+* **Chi phí tính toán cao:**
+  * Sử dụng **đa tầng đánh giá bằng LLM và Critic LLM** => chi phí tính toán tăng cao, đặc biệt với **tập dữ liệu lớn** hoặc real-time 
+
+
