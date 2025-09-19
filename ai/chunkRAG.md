@@ -143,6 +143,10 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 
 * KG dùng tập hợp triplets (head entity, relation, tail entity) có liên quan đến nhau => tìm các chunks liên quan đến câu trả lời
 
+1. **Xác định quan hệ giữa các đoạn (chunks)** ở cấp độ sự kiện/thực thể (fact-level)
+2. **Mở rộng chunk** từ các đoạn truy xuất ban đầu bằng cách dẫn dắt theo cấu trúc đồ thị tri thức
+3. **Tổ chức lại các đoạn thông tin** theo KG để tạo ra ngữ cảnh mạch lạc và đầy đủ hơn
+
 
 
 
