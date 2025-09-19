@@ -7,7 +7,7 @@
 * Phù hợp với các tác vụ yêu cầu độ chính xác cao như suy luận nhiều bước (multi-hop reasoning) và kiểm tra sự thật (fact-checking)
   
 <img width="995" height="1128" alt="image" src="https://github.com/user-attachments/assets/32381021-d6c1-4e26-94c3-7b528acd3636" />
-
+Phương pháp luận:
 1. **Loại bỏ dư thừa bằng Cosine Similarity:**
 
    * so sánh và loại bỏ các đoạn trùng lặp hoặc quá giống nhau trong tài liệu được truy xuất
@@ -28,3 +28,71 @@
    * Truy xuất theo yêu cầu và tự phản ánh (self-reflection)
    * Cụ thể, LLM sử dụng các “reflection tokens” để tự đánh giá và chỉnh sửa kết quả tạo ra
    * => giúp giảm thông tin dư thừa và cải thiện tính chính xác của nội dung
+
+---
+### Semantic Chunking & Filtering Pipeline)**
+* Sử NLP đến LLM => nhằm đảm bảo chỉ retrieval những đoạn thông tin **thật sự liên quan và chính xác**
+
+#### **1. Phân đoạn ngữ nghĩa (Semantic Chunking)**
+
+Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt chẽ:
+
+* **Tách câu (Sentence Tokenization):**
+  Tài liệu được chia thành từng câu bằng hàm `sent_tokenize` của NLTK để xử lý chi tiết hơn
+
+* **Tạo vector ngữ nghĩa (Sentence Embeddings):**
+  Mỗi câu được mã hóa thành vector ngữ nghĩa bằng mô hình `text-embedding-3-small` của OpenAI
+
+* **Tính độ tương đồng (Similarity Calculation):**
+  * Tính cosine similarity giữa các câu liên tiếp để đánh giá mức độ liên quan
+  * Nếu độ cosine similarity < (ví dụ 0.7) => chủ đề có thể đã thay đổi
+
+* **Xác định ranh giới đoạn (Chunk Boundary Identification):**
+  Dựa vào cosine similarity  thấp => hệ thống xác định ranh giới các chunk
+
+* **Tạo các đoạn (Chunk Creation):**
+  Các câu được gom nhóm thành chunk => `đảm bảo mỗi đoạn không quá dài (ví dụ 500 ký tự) để duy trì sự mạch lạc và dễ xử lý`
+
+#### **2. Tạo Vector Store Creation**
+
+* **Embedding Chunks:** Mỗi chunk được embedding thành vector 
+
+* **Lưu trữ vào vector store** để thực hiện tìm kiếm theo độ tương đồng sau này
+
+* **Khởi tạo bộ truy xuất (Retriever Initialization):** để so sánh vector truy vấn với các vector chunk => trả về những chunk phù hợp nhất
+
+#### **3. Viết lại truy vấn** bằng LLM (LLM-Based Rewriting)
+  Như GPT-4o-mini với hướng dẫn rõ ràng để giữ nguyên ý nghĩa nhưng tối ưu hóa cho việc tìm kiếm
+
+#### **4. Lọc sơ bộ ban đầu**
+
+Để giảm tải tính toán:
+
+* **Loại bỏ trùng lặp (Remove Redundant Chunks):**
+  Các đoạn giống nhau được loại bỏ bằng TF-IDF và cosine similarity.
+
+* **Sắp xếp theo độ liên quan (Semantic Similarity Sorting):**
+  Các đoạn còn lại được sắp xếp theo mức độ giống với truy vấn để ưu tiên xử lý.
+
+#### **5. Đánh giá mức độ liên quan bằng LLM nâng cao (Advanced LLM-Based Relevance Scoring)**
+
+* **Điểm số ban đầu (Initial LLM Scoring):**
+  LLM gán điểm mức độ liên quan dựa trên một prompt cố định
+
+* **Tự phản ánh (Self-Reflection):**
+  LLM tự xem xét và điều chỉnh lại điểm nếu nhận thấy có sai sót
+
+* **Đánh giá độc lập (Critic LLM Scoring):**
+  Một LLM khác hoạt động như “giám khảo” đánh giá lại từng đoạn để xác minh kết quả
+
+* **Tính điểm cuối cùng (Final Score Calculation):**
+  Điểm trung bình của ba bước trên được sử dụng để tăng độ tin cậy
+
+#### **6. Xác định ngưỡng động (Dynamic Threshold Determination)**
+
+* **Đề xuất ngưỡng bằng LLM:**
+  LLM phân tích phân phối điểm số và đề xuất ngưỡng phù hợp.
+
+* **Áp dụng ngưỡng:**
+  Các đoạn có điểm số cao hơn ngưỡng được giữ lại để dùng trong quá trình tạo câu trả lời cuối cùng.
+
