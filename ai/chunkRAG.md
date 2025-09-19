@@ -207,7 +207,52 @@ Triplets:
   * => nhấn mạnh sự cần thiết phải tích hợp các mô hình ngôn ngữ lớn (LLMs) vào quá trình chunking
 * Đánh đổi giữa hiệu quả tính toán và độ chính xác chunking khi dùng LLM
  
-#### **MoC** là một framework nhận biết độ chi tiết (granularity-aware) với ba giai đoạn xử lý
+#### **MoC**
+* Là một framework nhận biết độ chi tiết (granularity-aware) với ba giai đoạn xử lý
 * MoC hướng đến việc tạo ra một danh sách các biểu thức chính quy để trích xuất các đoạn văn bản một cách cấu trúc từ văn bản gốc
+* Dùng 2 chỉ số: **Boundary Clarity** và **Chunk Stickiness** để phân tích nguyên nhân điều gì `khiến chunking dựa trên ngữ nghĩa hoạt động chưa tốt trong một số trường hợp` =>  `cần thiết phải sử dụng LLM trong quá trình chunking`
+
+Định tuyến nhận biết đa cấp độ chi tiết (multi-granularity-aware router), các meta-chunker chuyên biệt, và thuật toán hậu xử lý
+* Cụ thể, cơ chế này áp dụng chiến lược chia để trị, phân chia không gian độ chi tiết liên tục thành nhiều miền con liền kề, mỗi miền tương ứng với một chunker nhẹ và chuyên biệt
+* => Bộ định tuyến sẽ chọn động chunker phù hợp nhất dựa trên đoạn văn bản đầu vào hiện tạiDu
+
+Dùng SLM nhờ kích hoạt thưa thớt (sparse activation)
+* đạt được sự cân bằng tối ưu giữa độ chính xác và hiệu quả cho hệ thống chunking.
+* Chú ý: meta-chunker tạo ra toàn bộ từng đoạn văn mà hướng dẫn nó tạo ra một danh sách các biểu thức chính quy dùng để trích xuất các đoạn văn bản từ văn bản gốc
+* áp dụng thuật toán hiệu chỉnh dựa trên khoảng cách chỉnh sửa (edit distance) để so sánh và sửa lỗi các quy tắc chunking được tạo ra với văn bản gốc => giảm hallucination từ meta-chunker
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
