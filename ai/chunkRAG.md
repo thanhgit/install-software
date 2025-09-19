@@ -30,8 +30,10 @@ Phương pháp luận:
    * => giúp giảm thông tin dư thừa và cải thiện tính chính xác của nội dung
 
 ---
-### Semantic Chunking & Filtering Pipeline)**
+### **Semantic Chunking & Filtering Pipeline)**
 * Sử NLP đến LLM => nhằm đảm bảo chỉ retrieval những đoạn thông tin **thật sự liên quan và chính xác**
+* Kết hợp cả truy xuất BM25 và truy xuất ngữ nghĩa, sau đó reranking các chunk bằng LLM mạnh để chọn lọc thông tin quan trọng
+* => LLM tạo câu trả lời ngắn gọn và chính xác, dựa hoàn toàn vào thông tin đã được xác minh
 
 #### **1. Phân đoạn ngữ nghĩa (Semantic Chunking)**
 
@@ -95,4 +97,29 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 
 * **Áp dụng ngưỡng:**
   Các đoạn có điểm số cao hơn ngưỡng được giữ lại để dùng trong quá trình tạo câu trả lời cuối cùng.
+
+#### **7. Hybrid Retrieval and Re-Ranking**
+
+* **BM25 Retriever:**
+  để tìm kiếm theo từ khóa với trọng số (ví dụ 0.5) nhằm tăng độ bao phủ của thông tin
+
+* **Xếp hạng lại đoạn (Re-ranking Chunks):**
+  * Dùng **‘rerank-english-v3.0’ của Cohere** để làm model reranking các chunk dựa trên mức độ liên quan
+  * => giải quyết vấn đề **“Lost in the middle”** — hiện tượng các đoạn quan trọng bị lọt vào giữa và bị LLM bỏ qua
+
+#### **8. Tạo câu trả lời (Answer Generation)**
+
+* **Biên soạn ngữ cảnh (Context Compilation):**
+  Các chunk đã được lọc và sắp xếp => context engineering 
+
+* **Sinh câu trả lời với LLM (Answer Generation with LLM):**
+  Lưu ý, prompt cần đảm bảo rằng nội dung chỉ dựa trên thông tin đã cung cấp, **không "bịa" thêm**
+
+#### **9. Đánh giá hệ thống (Evaluation)**
+
+* **Đo lường độ chính xác:**
+  Câu trả lời do LLM sinh ra sẽ được so sánh với **đáp án chuẩn (ground truth)** xét đến **độ chính xác tuyệt đối** và **tính đúng về mặt ngữ nghĩa**
+
+* **LLM đánh giá:**
+  Có một LLM mạnh để  đánh giá riêng sẽ đối chiếu giữa câu trả lời và đáp án chuẩn => đánh dấu là **đúng hoặc sai**, phục vụ cho việc đo hiệu suất hệ thống
 
