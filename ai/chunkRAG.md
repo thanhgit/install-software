@@ -135,5 +135,15 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 
 * **Tương thích với loại dữ liệu, tài liệu dài, context liên kết**
   * tài liệu dạng có cấu trúc (PDF với bảng, hình ảnh, tiêu đề…) cần xử lý đặc biệt
-   
-* `TreeRAG` với chunking phân cấp để bảo toàn cấu trúc hierarchies giữa các knowledge points: phù hợp hơn với tài liệu dài
+
+#### `TreeRAG` với chunking phân cấp để bảo toàn cấu trúc hierarchies giữa các knowledge points: phù hợp hơn với tài liệu dài
+
+#### *KG²RAG* sử dụng knowledge graphs để tổ chức và mở rộng thông tin sau khi seed chunks được tìm
+<img width="1497" height="1077" alt="image" src="https://github.com/user-attachments/assets/3fb03b39-6d29-43cb-b134-fcfb8cfe8551" />
+
+
+
+
+
+
+
