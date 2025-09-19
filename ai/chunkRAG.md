@@ -141,6 +141,7 @@ Chia nhỏ tài liệu thành các đoạn có liên kết ngữ nghĩa chặt c
 #### *KG²RAG* sử dụng knowledge graphs để tổ chức và mở rộng thông tin sau khi seed chunks được tìm
 <img width="1497" height="1077" alt="image" src="https://github.com/user-attachments/assets/3fb03b39-6d29-43cb-b134-fcfb8cfe8551" />
 
+* KG dùng tập hợp triplets (head entity, relation, tail entity) có liên quan đến nhau => tìm các chunks liên quan đến câu trả lời
 
 
 
