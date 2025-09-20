@@ -210,7 +210,13 @@ FlowRL:
 
    * Điều chỉnh lại các mẫu dữ liệu để phù hợp với chính sách hiện tại
 
-
+**FlowRL** là một phương pháp huấn luyện mô hình AI mới, giúp học tốt hơn với dữ liệu suy luận dài và đa dạng.
+* Nó giải quyết 2 vấn đề lớn: **đạo hàm phát nổ** (Exploding Gradients) và **không khớp dữ liệu huấn luyện** (Sampling Mismatch), bằng cách:
+* Thay đổi cách tính phần thưởng => chuẩn hóa phần thưởng theo nhóm để giúp mô hình học ổn định hơn
+* Chuẩn hóa độ dài chuỗi => chia log xác suất cho độ dài chuỗi
+* Dùng trọng số để học từ dữ liệu cũ ~ học từ dữ liệu cũ (off-policy) bằng cách gán trọng số cho từng sampling:
+  * Trọng số này được "detach" để tránh mô hình thay đổi quá nhanh (policy drift).
+  * Dùng thêm kỹ thuật "clipping" từ PPO để ổn định quá trình học
 
 
 
