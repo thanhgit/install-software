@@ -1,8 +1,7 @@
-# Làm cho AI Agent trở nên đáng tin cậy hơn nhờ Reinforcement Learning (RL)
+# Làm cho AI Agent trở nên đáng tin cậy hơn nhờ Reinforcement Learning
 
-* Hãy chắc chắn rằng bạn đã đạt hiệu suất tối đa với mô hình prompt-based
-* Chỉ khi đã tối ưu prompt hết mức và thực sự cần nâng cao accuracy, tiết kiệm chi phí, giảm độ trễ
-* Sau đó cân nhắc dùng RL để huấn luyện AI Agent => RL sẽ thực sự là “game changer” cho AI Agent
+* Hãy chắc chắn rằng bạn đã đạt hiệu suất tối đa với `prompt-based`, cụ thể là context engineering
+* Khi đã tối ưu prompt hết mức và thực sự cần nâng cao accuracy, tiết kiệm chi phí, giảm độ trễ => dùng RL để huấn luyện AI Agent
 * => `là nền tảng để xây dựng hệ thống agent hiệu quả và đáng tin cậy`
 
 **1. Tầm quan trọng của AI Agent**
@@ -16,7 +15,7 @@
 
 **2. Bài học từ Kyle Corbitt tại AI Engineer World's Fair**
 
-* Nhấn mạnh cách làm cho agent **đáng tin cậy hơn bằng Reinforcement Learning (RL)**.
+* Nhấn mạnh cách làm cho agent **đáng tin cậy hơn bằng RL**
 * Đưa ra chiến lược vượt qua các khó khăn trong quá trình huấn luyện agent.
 
 **3. Case study: Dự án ART·E của OpenPipe**
