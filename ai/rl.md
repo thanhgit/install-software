@@ -4,35 +4,35 @@
 * Khi đã tối ưu prompt hết mức và thực sự cần nâng cao accuracy, tiết kiệm chi phí, giảm độ trễ => dùng RL để huấn luyện AI Agent
 * => `là nền tảng để xây dựng hệ thống agent hiệu quả và đáng tin cậy`
 
-**1. Tầm quan trọng của AI Agent**
+**Phân tích tầm quan trọng của AI Agent**
 
 * AI agents đang trở thành trụ cột trong tự động hóa và hệ thống tự trị.
 * Việc xây dựng agent đáng tin cậy là **thách thức kỹ thuật lớn**, nhưng cực kỳ quan trọng vì:
 
-  * Trợ lý email sai → mất niềm tin người dùng.
-  * Phân tích tài chính sai → thiệt hại nghiêm trọng.
-  * Hệ thống chậm → giảm năng suất.
+  * Trợ lý email sai → `mất niềm tin người dùng`
+  * Phân tích tài chính sai → `thiệt hại nghiêm trọng`
+  * Hệ thống chậm → `giảm năng suất`
+* Ví dụ: "Khi nào Shari chuyển đến Portland?" → Agent tìm trong email và trả lời chính xác bằng cách dùng 2 tools: search_mail và read_mail
 
-**2. Bài học từ Kyle Corbitt tại AI Engineer World's Fair**
+---
+#### **KL divergence** (**Kullback–Leibler divergence**) 
+* là một **khái niệm trong xác suất và học máy**, dùng để **đo sự khác nhau giữa hai phân phối xác suất**
+* giúp mô hình học cách **bắt chước phân phối đúng** để suy luận tốt hơn
 
-* Nhấn mạnh cách làm cho agent **đáng tin cậy hơn bằng RL**
-* Đưa ra chiến lược vượt qua các khó khăn trong quá trình huấn luyện agent.
 
-**3. Case study: Dự án ART·E của OpenPipe**
+**Hiểu đơn giản:**
+* “Nếu tôi dùng phân phối A để mô tả dữ liệu thực tế đang theo phân phối B, tôi sẽ **mất bao nhiêu thông tin**?”
 
-* Là một **trợ lý email dùng ngôn ngữ tự nhiên** để trả lời câu hỏi.
-* Agent dùng 2 công cụ chính:
+📦 Ví dụ đơn giản:
+* **Phân phối A (mô hình dự đoán):**
+  70% ăn phở, 30% ăn bánh mì
 
-  * **Search Tool** – tìm email chứa từ khóa.
-  * **Read Email Tool** – đọc nội dung để đưa ra câu trả lời.
-* Ví dụ: "Khi nào Shari chuyển đến Portland?" → Agent tìm trong email và trả lời chính xác.
+* **Phân phối B (thực tế):**
+  50% ăn phở, 50% ăn bánh mì
 
-**4. Bài học then chốt:**
-
-> "Đừng bắt đầu bằng Reinforcement Learning!"
-
-* Đội ngũ ART·E **ban đầu không dùng RL**, mà tối ưu mô hình bằng prompt để đạt hiệu quả cao nhất trước.
-* Chỉ sau đó mới cân nhắc đến RL nếu cần tối ưu thêm.
+=> **KL divergence** đo độ lệch giữa A và B
+* Nếu A = B, thì KL divergence = 0 → mô hình khớp hoàn toàn với thực tế.
+* Càng lệch nhau, giá trị KL divergence càng lớn → mô hình **dự đoán sai nhiều**
 
 #### ⚠️ Cân nhăc trước khi traning với RL
 1. **Cần kiểm tra kỹ môi trường trước khi huấn luyện RL**
