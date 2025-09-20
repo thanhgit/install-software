@@ -218,6 +218,47 @@ FlowRL:
   * Trọng số này được "detach" để tránh mô hình thay đổi quá nhanh (policy drift).
   * Dùng thêm kỹ thuật "clipping" từ PPO để ổn định quá trình học
 
+Diversity Evaluation Prompt:
+```prompt
+System: You are evaluating the DIVERSITY of solution approaches for a mathematics competition
+problem. Focus on detecting even SUBTLE differences in methodology that indicate different problemsolving strategies.
+
+PROBLEM:
+{problem}
+16 SOLUTION ATTEMPTS:
+{formatted_responses}
+
+EVALUATION CRITERIA - Rate diversity from 1 to 5:
+Score 1 - Minimal Diversity:
+• 14+ responses use essentially identical approaches
+• Same mathematical setup, same variable choices, same solution path
+• Only trivial differences (arithmetic, notation, wording)
+• Indicates very low exploration/diversity in the generation process
+Score 2 - Low Diversity:
+• 11-13 responses use the same main approach
+• 1-2 alternative approaches appear but are rare
+• Minor variations within the dominant method (different substitutions, orderings)
+• Some exploration but heavily biased toward one strategy
+Score 3 - Moderate Diversity:
+• 7-10 responses use the most common approach
+• 2-3 distinct alternative approaches present
+• Noticeable variation in problem setup or mathematical techniques
+• Balanced mix showing reasonable explorati
+Score 4 - High Diversity:
+• 4-6 responses use the most common approach
+• 3-4 distinct solution strategies well-represented
+• Multiple mathematical techniques and problem framings
+• Strong evidence of diverse exploration strategies
+Score 5 - Maximum Diversity:
+• No single approach dominates (≤3 responses use same method)
+• 4+ distinctly different solution strategies
+• Wide variety of mathematical techniques and creative approaches
+• Excellent exploration and generation diversity
+
+IMPORTANT: Focusing on the DIVERSITY of the attempted approaches. Return ONLY a number from 1
+to 5.
+```
+
 
 
 
