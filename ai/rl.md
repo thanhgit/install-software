@@ -137,25 +137,79 @@ Giải pháp trong ART·E:
 
 #### ✅ Bài học quan trọng:
 
-* **Không thể hoàn toàn tin vào reward function.**
+* **Không thể hoàn toàn tin vào reward function**
 * Cần **giám sát liên tục** hành vi agent, đánh giá kỹ *nó thực sự đang làm gì*.
 * **Giải pháp:**
 
-  * Cải tiến reward function để **phạt các hành vi gian lận**.
-  * Dùng **LLM thứ hai** để kiểm tra chất lượng nội dung (ví dụ: so sánh tiêu đề với nội dung bài viết).
+  * Cải tiến reward function để **phạt các hành vi gian lận**
+  * Dùng **LLM thứ hai** để kiểm tra chất lượng nội dung (ví dụ: so sánh tiêu đề với nội dung bài viết)
 
 Nhưng cũng đặt ra câu hỏi mới:
 
 * Làm sao để **giữ cho agent phù hợp với giá trị con người**?
 * Làm sao để reward không chỉ là con số, mà còn đảm bảo **chất lượng, đạo đức, sự tin cậy**?
 
-> **Reward hacking** là lời cảnh tỉnh rằng AI agent có thể "hoàn thành công việc",
->
-> nhưng không có nghĩa là "hoàn thành công việc đúng cách"
->
-> => trách nhiệm của con người là thiết kế mục tiêu và phần thưởng một cách minh bạch và có đạo đức
+**Reward hacking** là lời cảnh tỉnh rằng AI agent có thể "hoàn thành công việc",
+* nhưng không có nghĩa là "hoàn thành công việc đúng cách"
+* => trách nhiệm của con người là `thiết kế mục tiêu và phần thưởng một cách minh bạch và có đạo đức`
 
+---
+### FlowRL: Matching Reward Distributions for LLM Reasoning
 
+*  Thay vì **chỉ tối đa hóa phần thưởng**, nó sẽ cố gắng **phủ đều (match) toàn bộ phân phối phần thưởng**
+* => Giúp AI học được nhiều cách giải bài toán hơn, không chỉ theo một cách tối ưu nhất
+* => suy luận tốt hơn, sáng tạo hơn, và **có thể giải được nhiều loại bài toán phức tạp hơn**
+
+Nói đơn giản:
+👉 FlowRL không chỉ tập trung vào "cách giải đúng nhất", mà còn quan tâm đến **nhiều cách giải đúng khác nhau**, kể cả những cách ít phổ biến hơn.
+* Trong các bài toán **toán học**, FlowRL **tốt hơn GRPO 10%**, **tốt hơn PPO 5.1%**
+* Trong các bài toán **viết code**, FlowRL cũng hoạt động **ổn định và tổng quát hơn**
+
+📌 Vấn đề:
+
+* **Nếu mô hình chỉ tập trung tối đa hóa phần thưởng cao nhất**
+* => học theo **một hoặc vài cách giải phổ biến**, bỏ qua nhiều **cách giải khác cũng đúng nhưng ít xuất hiện hơn**
+* Điều này gọi là **"mode collapse"** – `mất đi sự đa dạng trong cách suy luận`
+
+#### 🔁 So sánh hai cách huấn luyện:
+
+| Cách cũ (PPO, GRPO, v.v.)                           | FlowRL                                                                               |
+| --------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Chọn cách giải nào có điểm cao nhất rồi học theo nó | Xem tất cả các cách giải (kể cả điểm thấp hơn một chút), rồi học phân phối của chúng |
+| Dễ bị "học lệch", thiếu sáng tạo                    | Khuyến khích **đa dạng suy nghĩ**, tìm nhiều cách giải khác nhau                     |
+
+📊 Ví dụ giải phương trình: `x^2 - 5x + 6 = 0`
+
+=> Có thể có nhiều cách giải:
+
+1. Dùng công thức nghiệm (x = ...)
+2. Phân tích thành nhân tử
+3. Dùng đồ thị
+4. Dùng python để giải
+
+Cách cũ (PPO, GRPO...) => Thấy "phân tích nhân tử" là cách phổ biến nhất → chỉ học và chọn cách này
+
+FlowRL:
+* Thấy cả 4 cách đều đúng → học cách phân phối giữa các cách giải
+* Mỗi lần giải, có thể chọn cách khác nhau → tăng **đa dạng**, mô hình **sáng tạo và tổng quát hơn**
+
+#### 🛠️ Các kỹ thuật chính FlowRL dùng:
+
+1. **Learnable Partition Function**:
+
+   * Biến các phần thưởng thành **phân phối chuẩn hóa** để mô hình học tốt hơn
+
+2. **Reverse KL Divergence**:
+
+   * Đo khoảng cách giữa phân phối mô hình và phân phối phần thưởng để điều chỉnh mô hình sao cho khớp hơn
+
+3. **Length Normalization**:
+
+   * Giải quyết vấn đề **"bùng nổ đạo hàm"** khi câu trả lời quá dài
+
+4. **Importance Sampling**:
+
+   * Điều chỉnh lại các mẫu dữ liệu để phù hợp với chính sách hiện tại
 
 
 
