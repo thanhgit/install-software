@@ -5,36 +5,41 @@ dữ liệu phân tán, thông tin phân phối, tri trức tập trung, hành �
 
 ![](./media/ai-agent-lifecycle.jpeg)
 
-#### 1. Input Received
-- #### A user prompt or trigger starts it all. The agent identifies what needs to be done.
+#### 🚀 **Quy trình 10 bước hoạt động của AI agent:**
+* **có nhận thức – có hành động – có học hỏi**
+* => giúp AI agent ngày càng trở nên **linh hoạt, thông minh và tự chủ hơn**
 
-#### 2. Intent Recognition
-- #### LLMs like GPT-4 or Claude analyze the input to extract user intent or goal.
+1. **Nhận đầu vào**
+    → Nhận lệnh từ người dùng hoặc sự kiện kích hoạt.
 
-#### 3. Context & Memory Retrieval
-- #### The agent pulls from short-term, long-term, and external memory before taking any action.
+2. **Xác định mục đích (Intent)**
+    → Dùng LLM để hiểu mục tiêu của người dùng.
 
-#### 4. Task Planning
-- #### Breaks down the task into steps, resolves dependencies using reasoning frameworks like ReAct or Tree of Thought.
+3. **Truy xuất ngữ cảnh & bộ nhớ**
+    → Lấy thông tin từ bộ nhớ ngắn hạn, dài hạn hoặc nguồn ngoài.
 
-#### 5. Tool Selection
-- #### Chooses the best tool for the job - API call, database query, or external service.
+4. **Lập kế hoạch nhiệm vụ**
+    → Phân tích, chia nhỏ nhiệm vụ, xác định thứ tự thực hiện (ReAct, Tree of Thought…).
 
-#### 6. Action Execution
-- #### Executes the task through the selected tools and handles fallbacks if something fails.
+5. **Chọn công cụ phù hợp**
+    → Lựa chọn API, truy vấn DB hoặc dịch vụ ngoài để thực thi.
 
-#### 7. Output Validation
-- #### Validates output for usefulness, safety, and hallucination with tools like Guardrails and LangSmith.
+6. **Thực thi hành động**
+    → Thực hiện nhiệm vụ và xử lý lỗi nếu có.
 
-#### 8. Memory Update
-- #### Updates memory to keep continuity and support future decision-making.
+7. **Xác thực đầu ra**
+    → Đánh giá tính đúng đắn, an toàn, tránh sai lệch/hallucination.
 
-#### 9. Feedback Loop (Optional)
-- #### Evaluates its own performance - adjusts output or retries if quality is off.
+8. **Cập nhật bộ nhớ**
+    → Lưu kết quả để dùng cho các lần sau, giữ mạch logic.
 
-#### 10. Autonomous Next Steps
-- #### Decides what to do next: follow up, ask questions, or run another workflow.
+9. **Phản hồi nội bộ (tùy chọn)**
+    → Tự đánh giá và cải thiện nếu chất lượng chưa đạt.
 
+10. **Tự quyết định bước tiếp theo**
+     → Có thể tiếp tục, đặt câu hỏi mới hoặc khởi động tác vụ khác.
+    
+---
 ### 𝗔𝗴𝗲𝗻𝘁𝗶𝗰 𝗔𝗜 𝗟𝗶𝗳𝗲𝗰𝘆𝗰𝗹𝗲: 5 𝗦𝘁𝗮𝗴𝗲𝘀 𝗬𝗼𝘂 𝗖𝗮𝗻’𝘁 𝗜𝗴𝗻𝗼𝗿𝗲
 
 ### 1. `𝗦𝗰𝗼𝗽𝗲`: 𝗗𝗲𝗳𝗶𝗻𝗲 𝗬𝗼𝘂𝗿 𝗨𝘀𝗲-𝗖𝗮𝘀𝗲 𝘄𝗶𝘁𝗵 𝗥𝗢𝗜
