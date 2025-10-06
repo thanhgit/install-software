@@ -179,13 +179,19 @@ Cụ thể là:
 * **Metadata là nền tảng của data context**
 * Thêm các yếu tố mang tính **ngữ nghĩa** và **kinh doanh** => giúp AI, con người, và hệ thống hiểu và sử dụng dữ liệu **đúng cách, đúng mục đích**
 
+* `Data context = metadata + lineage + semantic meaning + ownership + policies + purpose`
+* => xây dựng từ raw data → sạch → chuẩn hóa → gắn nghĩa kinh doanh
+
+Ví dụ thực tế:
+* Business glossary thường được gắn vào Gold Layer, vì đây là nơi dữ liệu phục vụ báo cáo và ra quyết định
+* Lineage và ownership có thể xuất hiện từ Bronze Layer, nhưng đầy đủ và rõ ràng nhất ở Silver/Gold
+
 **Metadata** là một phần cốt lõi của **data context**. Nó mô tả dữ liệu như:
   * Tên cột, kiểu dữ liệu
   * Nguồn dữ liệu
   * Tần suất cập nhật
   * Mối quan hệ giữa các table 
 => **hiểu cấu trúc và định dạng của dữ liệu** => xây dựng **data context**
-
 
 Các yếu tố bổ sung của **data context** gồm:
 | Thành phần                  | Mô tả                                                                                                                           |
