@@ -174,6 +174,39 @@ Cụ thể là:
 * ✅ **Tăng tốc độ chấp nhận**: Người dùng tin tưởng AI khi dữ liệu có định nghĩa rõ ràng
 * ✅ **Đồng bộ liên phòng ban**: Các bộ phận dùng chung “ngôn ngữ dữ liệu”
 
+---
+### **Data context bao gồm metadata**
+* **Metadata là nền tảng của data context**
+* Thêm các yếu tố mang tính **ngữ nghĩa** và **kinh doanh** => giúp AI, con người, và hệ thống hiểu và sử dụng dữ liệu **đúng cách, đúng mục đích**
+
+**Metadata** là một phần cốt lõi của **data context**. Nó mô tả dữ liệu như:
+  * Tên cột, kiểu dữ liệu
+  * Nguồn dữ liệu
+  * Tần suất cập nhật
+  * Mối quan hệ giữa các table 
+=> **hiểu cấu trúc và định dạng của dữ liệu** => xây dựng **data context**
+
+
+Các yếu tố bổ sung của **data context** gồm:
+| Thành phần                  | Mô tả                                                                                                                           |
+| --------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Semantics**               | Dữ liệu thực sự có ý nghĩa gì trong ngữ cảnh kinh doanh <br>ví dụ: "revenue" ở phòng Tài chính có thể khác với "revenue" ở Sales |
+| **Lineage**                 | Dữ liệu đến từ đâu, đã được xử lý như thế nào                                                                                  |
+| **Ownership & Stewardship** | Ai chịu trách nhiệm về tập dữ liệu này? <br>Ai có quyền sửa đổi?                                                                    |
+| **Policies & Guardrails**   | Dữ liệu này có bị ràng buộc bởi quy định pháp lý nào không (GDPR, HIPAA...)?                                                    |
+| **Purpose & Usage**         | Dữ liệu được dùng cho mục đích gì? <br>Có phù hợp để dùng cho AI, phân tích, báo cáo...?                                            |
+
+🔁 Ví dụ về column tên là `customer_value`.
+* **Metadata** cho biết:
+  * Kiểu dữ liệu: `float`
+  * Nguồn: từ hệ thống CRM
+  * Cập nhật hàng ngày
+
+* **Data context** cho biết thêm:
+  * `customer_value` là tổng chi tiêu của khách hàng trong 12 tháng qua, tính theo USD
+  * Chỉ áp dụng cho khách hàng đã hoạt động > 3 tháng
+  * Dữ liệu này do bộ phận Marketing sở hữu
+  * Không nên dùng để phân tích hành vi khách hàng trong thời gian thực
 
 
 
