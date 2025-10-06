@@ -15,6 +15,44 @@ Cụ thể là:
 3. **Hype => Trust**
    * Doanh nghiệp không cần thêm công cụ mới, mà cần một nền tảng hợp nhất mọi thứ—quan sát, lineage, hợp đồng, governance => xây dựng **niềm tin dữ liệu**
 
+---
+### Data context trong kỷ nguyên AI
+* giúp AI hoạt động đúng, đáng tin cậy và mang lại giá trị thật cho doanh nghiệp
+
+#### Ví dụ vê **câu Chuyện của 2 Doanh Nghiệp**
+**Enterprise A** – *Nhanh nhưng thiếu chuẩn bị*
+* Triển khai AI (LLM) nhanh chóng, kết nối với toàn bộ dữ liệu và tài liệu
+* Ban đầu chatbot hoạt động tốt, nhưng sau đó xuất hiện nhiều vấn đề:
+  * Các thuật ngữ (glossary) bị hiểu sai do khác biệt giữa các phòng ban
+  * Dữ liệu nhạy cảm bị rò rỉ vào hội thoại
+  * LLM bị "ảo tưởng" khi trả lời do thiếu định nghĩa rõ ràng về thuật ngữ, ngữ cảnh đi kèm
+* => gây mất niềm tin, gặp vấn đề tuân thủ, và bị giảm tốc độ triển khai AI
+
+**Enterprise B** – *Chậm mà chắc*
+* Trước tiên, xây dựng **ngữ cảnh dữ liệu** kỹ lưỡng:
+  * Tạo từ điển thuật ngữ chung (shared glossary)
+  * Xây dựng lineage để truy xuất nguồn gốc dữ liệu.
+  * Thiết lập các quy tắc governance và bảo mật.
+  * Phân rõ trách nhiệm sở hữu dữ liệu.
+* Khi AI được triển khai => **đối tác ra quyết định** vì `hiểu đúng ngôn ngữ và chính sách của doanh nghiệp`
+  → Kết quả: Người dùng tin tưởng, AI được áp dụng rộng rãi, mang lại ROI rõ ràng.
+
+> ✅ **Khác biệt nằm ở việc doanh nghiệp có chuẩn bị đầy đủ **ngữ cảnh dữ liệu** hay không**
+
+**Vì Sao data context Quan Trọng Trong Kỷ Nguyên AI**
+* AI không "hiểu" dữ liệu như con người, mà chỉ phát hiện mẫu (pattern).
+* **Ngữ cảnh dữ liệu** giúp kết nối raw data với **lý luận kinh doanh**
+* ❌ **Not context**: AI đưa ra kết quả thiếu nhất quán hoặc nguy hiểm
+* ✅ **Have context**: Doanh nghiệp xây dựng được hệ thống AI **đáng tin cậy, minh bạch và hiệu quả**, phù hợp với mục tiêu kinh doanh
+
+**Các yếu tố tạo nên ngữ cảnh dữ liệu hiệu quả:**
+1. **Metadata & Semantics** => Hiểu đúng ý nghĩa của các cột, chỉ số, trường dữ liệu
+2. **Lineage & Provenance** => Biết dữ liệu đến từ đâu và đã được biến đổi như thế nào
+3. **Ownership & Stewardship** => Có người chịu trách nhiệm về mỗi tập dữ liệu
+4. **Purpose & Usage** => Biết dữ liệu được tạo ra để làm gì và nên được dùng thế nào
+5. **Policies & Guardrails** => Đảm bảo tuân thủ pháp lý, bảo mật và đạo đức
+
+---
 #### **Các thực hành best practíce Hiệu Quả**
 * => giúp xây dựng hệ thống dữ liệu hiệu quả, linh hoạt và gắn liền với giá trị kinh doanh.
 1. **Thiết kế hệ thống theo dõi nguồn gốc dữ liệu (lineage) ngay từ đầu**
@@ -56,9 +94,6 @@ Cụ thể là:
 10. **Xây dựng hệ thống linh hoạt và chỉ ổn định**
 * Thiết kế mô-đun, tách rời lưu trữ và xử lý, tránh phụ thuộc vào nhà cung cấp.
 * Mục tiêu là dễ thích nghi, không phải bất biến.
-
----
-Dưới đây là bản tóm tắt nội dung **“Mistakes You’ll Regret”** – 10 sai lầm phổ biến trong lĩnh vực data engineering mà bạn sẽ hối tiếc nếu mắc phải:
 
 ---
 #### **10 Sai Lầm Cần Tránh Trong Data Engineering**
