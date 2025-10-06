@@ -208,6 +208,18 @@ Các yếu tố bổ sung của **data context** gồm:
   * Dữ liệu này do bộ phận Marketing sở hữu
   * Không nên dùng để phân tích hành vi khách hàng trong thời gian thực
 
+---
+### **“Data context trong kiến trúc Medallion”**
+
+* **Data context là lớp logic bao phủ kiến trúc Medallion**, không phải là một tầng riêng
+* => **tích lũy và sâu dần** từ Bronze → Silver → Gold.
+* Đặc biệt, ở **Gold Layer**, **data context là chìa khóa để AI, phân tích và các phòng ban hiểu và tin tưởng dữ liệu**
+
+| **Layer**  | **Vai trò của Data Context**               | **Loại thông tin context**                                                                                                                                     |
+| ---------- | ------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Bronze** | Gắn các thông tin kỹ thuật ban đầu         | - Metadata kỹ thuật (schema, source system, timestamp)<br>- Lineage cơ bản (hệ thống gốc nào gửi đến)<br>- Ownership kỹ thuật                                  |
+| **Silver** | Bắt đầu đưa vào ngữ cảnh kinh doanh cơ bản | - Định nghĩa lại một số cột theo ngữ cảnh<br>- Gắn với business domain<br>- Bắt đầu phân loại dữ liệu (sensitive, PII...)                                      |
+| **Gold**   | **Data context phát huy đầy đủ nhất**      | - Gắn business definitions, KPI<br>- Business glossary<br>- Policies (quy định, kiểm soát truy cập)<br>- Data usage purpose<br>- Full lineage & accountability |
 
 
 
