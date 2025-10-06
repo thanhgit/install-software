@@ -1,4 +1,19 @@
 # Data engineering
+* là về **tạo ra dữ liệu đáng tin cậy**, không chỉ vận hành hiệu quả
+  * Tin vào độ chính xác số liệu.
+  * Tin vào tính công bằng của mô hình.
+  * Tin vào khả năng tuân thủ.
+  * Tin rằng các nhóm có thể phát triển nhanh mà không rơi vào hỗn loạn.
+
+Cụ thể là:
+1. **Pipeline => Data Product**
+   * Xem dữ liệu như một sản phẩm, với người sở hữu, SLA (cam kết chất lượng), và quản lý vòng đời rõ ràng
+
+2. **Governance => Context**
+   * Mục tiêu không chỉ là kiểm soát dữ liệu, mà còn cung cấp ngữ cảnh để con người và AI có thể hiểu và tin tưởng dữ liệu
+
+3. **Hype => Trust**
+   * Doanh nghiệp không cần thêm công cụ mới, mà cần một nền tảng hợp nhất mọi thứ—quan sát, lineage, hợp đồng, governance => xây dựng **niềm tin dữ liệu**
 
 #### **Các thực hành best practíce Hiệu Quả**
 * => giúp xây dựng hệ thống dữ liệu hiệu quả, linh hoạt và gắn liền với giá trị kinh doanh.
