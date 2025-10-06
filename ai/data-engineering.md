@@ -1,7 +1,7 @@
 # Data engineering
 
 #### **Các thực hành best practíce Hiệu Quả**
-
+* => giúp xây dựng hệ thống dữ liệu hiệu quả, linh hoạt và gắn liền với giá trị kinh doanh.
 1. **Thiết kế hệ thống theo dõi nguồn gốc dữ liệu (lineage) ngay từ đầu**
    * Tự động ghi lại quá trình biến đổi dữ liệu bằng công cụ và metadata.
    * Giúp tăng năng suất và giảm thời gian xử lý sự cố.
@@ -43,5 +43,49 @@
 * Mục tiêu là dễ thích nghi, không phải bất biến.
 
 ---
+Dưới đây là bản tóm tắt nội dung **“Mistakes You’ll Regret”** – 10 sai lầm phổ biến trong lĩnh vực data engineering mà bạn sẽ hối tiếc nếu mắc phải:
 
-Tóm lại, bài viết đề xuất 10 nguyên tắc thực tế giúp xây dựng hệ thống dữ liệu hiệu quả, linh hoạt và gắn liền với giá trị kinh doanh.
+---
+#### **10 Sai Lầm Cần Tránh Trong Data Engineering**
+* => những sai lầm chiến lược và văn hóa mà các kỹ sư dữ liệu dễ mắc phải
+* Do họ thưởng chỉ tập trung vào công nghệ mà **bỏ quên con người, mục tiêu và giá trị thực sự của dữ liệu**
+
+1. **Chạy theo công cụ chỉ vì trào lưu**
+   * Mỗi năm lại có “công cụ đột phá” mới => vội phá bỏ hệ thống hiện tại => `hệ thống dễ vỡ`
+   * => Tập trung vào nền tảng: **mô hình dữ liệu, hợp đồng dữ liệu, và quản trị**
+
+2. **Xem nhẹ chất lượng dữ liệu**
+   * => **Hãy kiểm tra chất lượng dữ liệu từ đầu**: null, đối soát, phát hiện bất thường
+   * Vì khi vấn đề xuất hiện quá muộn => `việc sửa chữa sẽ rất khó khăn và tốn kém`
+
+3. **Coi quản trị dữ liệu là thủ tục rườm rà**
+   * Thực tế, Governance là bối cảnh (ai sở hữu, ai truy cập, dữ liệu có ý nghĩa gì)
+   * Cần tích hợp governance vào quy trình làm việc hằng ngày > tạo ra chính sách phức tạp khó áp dụng
+
+4. **Thiết kế kiến trúc quá phức tạp**
+   * Kiến trúc càng nhiều lớp => `càng nhiều điểm hỏng`
+   * => Ưu tiên sự đơn giản, đặc biệt trong giai đoạn đầu
+
+5. **Xây dựng hệ thống mà không có sự đồng thuận từ các bên liên quan**
+   * `Không nên giả định yêu cầu—hãy xác nhận chúng`
+   * => Làm việc chặt chẽ với PM, analyst và lãnh đạo trước khi hiện thực như viết spec, code, ... 
+
+6. **Lãng quên yếu tố con người**
+   * => tăng cường chia sẻ Kiến thức => phá bỏ “silo”.
+   * Đào tạo, hỗ trợ và xây dựng văn hóa hợp tác là rất quan trọng
+
+7. **Nghĩ rằng AI sẽ "giải cứu" dữ liệu lỗi**
+   * `AI tốt = dữ liệu đầu vào có cấu trúc + đáng tin cậy`
+   * Dữ liệu sai hoặc thiếu lineage => AI “ảo tưởng” một cách nguy hiểm
+
+8. **Trì hoãn việc tự động hóa**
+   * Cụ thể, quy trình thủ công không thể mở rộng
+   * => cần tự động hóa kiểm tra lỗi, thay đổi schema, và xử lý dữ liệu là điều bắt buộc
+
+9. **Bỏ qua kỹ năng mềm**
+   * Khả năng giao tiếp, giải thích kỹ thuật cho người không chuyên là rất quan trọng
+   * => `Kết nối kỹ thuật với kết quả kinh doanh` thông qua kể chuyện và trình bày rõ ràng
+
+10. **Quên mục tiêu lớn hơn**
+* Dữ liệu không chỉ để xây pipeline, `mà để hỗ trợ ra quyết định và đổi mới`
+* => Luôn tự hỏi: “Dữ liệu này có ý nghĩa gì với tổ chức?”
