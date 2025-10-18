@@ -1,6 +1,6 @@
 # LLM manager
-- #### A powerful system that blends AI and human oversight in LangChain workflows, ensuring supervised automation for critical business decisions.
-- #### AI agents aren’t just models, `they’re data-driven systems`
+- #### Một hệ thống mạnh mẽ = **AI** + `sự giám sát của con người trong quy trình làm việc` => tự động hóa có giám sát cho các quyết định kinh doanh quan trọng
+- #### Các AI agent là `các hệ thống dựa trên dữ liệu`
 
 
 ![image](https://github.com/user-attachments/assets/bb40f4e0-bf18-45f5-a3f9-fc824f9f1a08)
