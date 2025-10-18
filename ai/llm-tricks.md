@@ -88,7 +88,7 @@
 #### CAG
 * Ưu tiên **preload** và **caching** để cung cấp ngữ cảnh nhanh chóng với:
   * **Cache trong bộ nhớ (in-memory caching)**
-  * **Ngữ cảnh mở rộng (extended context)** trực tiếp trong prompt
+  * **Ngữ cảnh mở rộng (extended context)** trực tiếp trong prompt (không thông qua RAG)
 * Tối ưu cho dữ liệu tĩnh hoặc bán tĩnh
 
 Ví dụ về CAG:
@@ -147,7 +147,7 @@ print(hybrid_query("What are the key AI advancements in 2024?"))
 
 ![image](https://github.com/user-attachments/assets/c3ac037d-4559-46ea-80d7-47e51329c5b8)
 ### ReAct agent
-- #### Đây là sự kết hợp tinh tế giữa 2 yếu tố: `Reasoning` (Khả năng suy luận của các mô hình LLM) và `Action` (Thực hiện các hành động tương tác với môi trường bên ngoài nhằm hoàn thành một tác vụ cụ thể) => ` kết hợp hài hoà giữa việc suy nghĩ và hành động`
+- #### `Reasoning` (Khả năng suy luận của các mô hình LLM) + `Action` (Thực hiện các hành động tương tác với môi trường bên ngoài nhằm hoàn thành một tác vụ cụ thể)
 - #### `Lợi ích`: giải quyết chính xác hơn và khả năng tự sửa chữa những lỗi sai từ các hành động trước đó.
 - #### `Cấu trúc`:
   - #### `Thought`: Suy nghĩ diễn giải dựa trên thông tin đầu vào và ngữ cảnh
@@ -155,13 +155,12 @@ print(hybrid_query("What are the key AI advancements in 2024?"))
   - #### `Observation`: Quan sát hay kết quả của hành động trước đó (thường là kết quả của việc sử dụng tools)
 
 #### `Reasoning` 
-- #### Dùng Chain-of-Thought (CoT) giúp chúng thực hiện việc reasoning và giải quyết các vấn đề phức tạp bằng cách chia nhỏ yêu cầu đầu vào thành nhiều bước tư duy logic => cho phép mô hình lên kế hoạch và giải quyết từng phần của nhiệm vụ một cách tuần tự
+- #### Dùng Chain-of-Thought (CoT) => reasoning và giải quyết các vấn đề phức tạp bằng cách chia nhỏ thành nhiều bước logic => LLM lên kế hoạch và giải quyết từng phần một cách tuần tự
 - #### CoT = `Chia nhỏ vấn đề` + `Tư duy tuần tự`
-- #### Ví du:
 ```text
 Một cửa hàng bán một sản phẩm với giá 100 đô la. Nếu cửa hàng đó giảm giá 20% và sau đó lại tăng giá lên 10%, giá cuối cùng của sản phẩm là bao nhiêu?
 ```
-- #### Giải quyết
+=> CoT
 ```text
 Bước 1 - Tính giá sau khi giảm 20%: Nếu giá ban đầu là 100 đô la và cửa hàng giảm giá 20%, ta tính giá sau khi giảm: 
     100×(1−0.2)=80 đô la.
@@ -172,13 +171,11 @@ Bước 2 - Tính giá sau khi tăng 10%: Sau khi giảm, giá sản phẩm là 
 Kết luận: Giá cuối cùng của sản phẩm sau khi giảm và tăng giá là: 88 đô la
 ```
 
-#### `Tools`
-- #### tương tác với môi trường bên ngoài và thu thập thông tin
-- #### có thể là API, CLI, python, ...
+#### `Tools` để tương tác và thu thập thông tin
+- #### để tương tác và thu thập thông tin như API, CLI, python, ...
 
 #### `ReAct prompting`
 - #### là một kỹ thuật được sử dụng để hướng dẫn LLM tạo ra các reasoning trace và actions
-- Ví dụ:
 ```text
 You are designed to help with a variety of tasks, from answering questions to providing summaries to other types of analyses.
 
