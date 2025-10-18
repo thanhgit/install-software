@@ -1,6 +1,24 @@
 # LLM tricks
 * **RAG:** Hoạt động hiệu quả với **dữ liệu động**, thường xuyên thay đổi, nhấn mạnh vào **tính cập nhật và chính xác ngữ cảnh**.
 * **CAG:** Phù hợp hơn với **dữ liệu tĩnh**, ưu tiên **độ trễ thấp** và **đơn giản** trong triển khai.
+* **Encoder-Only**
+   * Understanding && Analysis
+   * Ứng dụng trong Sentiment Analysis, NER, text classification, Question Answering
+   * BERT, RoBERTа, DistilBERT, ALBERT
+   * Strengths: Excellent understanding tasks, rich contextualembeddings.
+   * Weaknesses: Not designed for textgeneration
+* **Decoder-Only**
+   * Generation & Creation
+   * Ứng dụng như chatbots, Text Generation, Code Writing, Story Completion
+   * GPT-*, LLaMA
+   * Strengths: Superior text generation, versatile applications.
+   * Weaknesses: Can only see past context, not future.
+* **Encoder-Decoder**
+  * Transformation && Mapping
+  * Ứng dụng trong Language Translation, Text Summarization, Text2SQL, Question Answering
+  * T5, BART, Original Transformer, Pegasus
+  * Strengths: Ideal for transformation tasks, handles different input/output formats.
+  * Weaknesses: More complex, higher computational cost.
 
 **Chiến lược: “AI-first, GUI fallback”**
 * Kết hợp **AI (tự động + ngôn ngữ tự nhiên)** với **GUI (giao diện trực quan)** => đạt hiệu quả và kiểm soát tối ưu
