@@ -1,17 +1,19 @@
 # LLM tricks
-- #### RAG thrives on dynamic datasets that evolve, while CAG excels at static datasets where latency and simplicity are priorities.
-- #### Prompts are the heart of an agent’s function
+* **RAG:** Hoạt động hiệu quả với **dữ liệu động**, thường xuyên thay đổi, nhấn mạnh vào **tính cập nhật và chính xác ngữ cảnh**.
+* **CAG:** Phù hợp hơn với **dữ liệu tĩnh**, ưu tiên **độ trễ thấp** và **đơn giản** trong triển khai.
 
-### Some principles
-- #### Kết hợp sức mạnh của AI (automation + natural language) với khả năng kiểm soát trực quan của GUI.
-- #### Chiến lược `"AI-first, GUI fallback"`
-    - #### Tích hợp AI vào GUI (ví dụ chatbot trong ArgoCD UI hoặc Slackbot)
-    - #### Agent làm facilitator: gợi ý thao tác, người dùng click xác nhận trong GUI
-    - #### Tự động redirect sang GUI khi tác vụ phức tạp:
-        ```“Tác vụ này liên quan tới 5 apps khác nhau – bạn muốn mở GUI để xem toàn cảnh không?”```
-- #### `AI agent rất mạnh` ở tác vụ lặp lại, truy vấn thông tin, xử lý sự cố nhẹ
-- #### `GUI vẫn là nơi lý tưởng` cho tác vụ trực quan, phân tích sâu và kiểm soát rủi ro
-
+**Chiến lược: “AI-first, GUI fallback”**
+* Kết hợp **AI (tự động + ngôn ngữ tự nhiên)** với **GUI (giao diện trực quan)** => đạt hiệu quả và kiểm soát tối ưu
+* **AI là tuyến đầu:**
+  → Gợi ý, tự động hóa thao tác đơn giản, hỗ trợ ra quyết định
+* **GUI là chốt chặn:**
+  → Dùng khi cần xác nhận, hiển thị toàn cảnh hoặc xử lý tình huống phức tạp
+* **Ví dụ thực tế:**
+  * Chatbot tích hợp trong ArgoCD UI hoặc Slackbot.
+  * Agent đề xuất thao tác → người dùng click xác nhận trong GUI.
+  * Với tác vụ phức tạp:
+    > *“Tác vụ này liên quan tới 5 apps khác nhau – bạn muốn mở GUI để xem toàn cảnh không?”*
+  
 ### ✅ Khi nào dùng AI Agent là tối ưu
 #### 1. Tác vụ lặp đi lặp lại / tốn thời gian
 - #### Triển khai lại ứng dụng
@@ -80,7 +82,6 @@
 | 🔍 Đo hiệu quả        | Theo dõi tác vụ AI thực hiện: tỉ lệ thành công, thời gian xử lý, phản hồi người dùng |
 | 🛡 Kiểm soát rõ quyền | Phân biệt tác vụ read-only vs write, xác thực mạnh với tác vụ nguy hiểm              |
 | 🤝 Kết hợp con người  | AI nên đóng vai trò hỗ trợ, không thay thế 100% thao tác quyết định                  |
-
 
 #### CAG
 - #### CAG transforms the way data interacts with LLMs by prioritizing preloading and caching mechanisms
