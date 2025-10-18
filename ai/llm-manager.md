@@ -1,6 +1,11 @@
 # LLM manager
 - #### Một hệ thống mạnh mẽ = **AI** + `sự giám sát của con người trong quy trình làm việc` => tự động hóa có giám sát cho các quyết định kinh doanh quan trọng
-- #### Các AI agent là `các hệ thống vận hành dựa trên dữ liệu`
+- #### Các AI agent là `các hệ thống vận hành dựa trên dữ liệu`, cụ thể như sau:
+  * Cá nhân hóa
+  * Suy luận nhanh
+  * Trí nhớ có ngữ cảnh
+  * Hành động theo dữ liệu thời gian thực
+  * Khả năng học hỏi từ quá khứ
 
 ![image](https://github.com/user-attachments/assets/bb40f4e0-bf18-45f5-a3f9-fc824f9f1a08)
 
@@ -32,17 +37,20 @@
   * Giảm khoảng 30% “ảo tưởng” (hallucination)
 
 ![image](https://github.com/user-attachments/assets/0033204b-284d-49d1-aeae-c1221eff33dc)
-#### 4. 𝗧𝗼𝗼𝗹 𝗢𝗿𝗰𝗵𝗲𝘀𝘁𝗿𝗮𝘁𝗼𝗿:
-- #### Consumes Real-Time Inventory / Pricing Feed as a Data Asset which gives it up-to-the-second info to make the right move, right now.
-- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
-- #### • Sub-second updates on stock, pricing, analytics 
-- #### • Exactly-once delivery: no duplicate actions 
-- #### • Prevents double-selling: even on high-demand days
+#### 4. **Tool Orchestrator** – *Hành động đúng lúc với dữ liệu thời gian thực*
+* **Dữ liệu sử dụng:** Feed tồn kho và giá cả theo thời gian thực
+* **Tác dụng:** Giúp AI ra quyết định chính xác ngay lập tức
+* **Tính chất nổi bật:**
+  * Cập nhật dưới 1 giây
+  * Giao hàng chính xác 1 lần (exactly-once)
+  * Ngăn chặn bán trùng hoặc lỗi do cập nhật chậm
 
-#### 5. 𝗔𝗰𝘁𝗶𝗼𝗻 / 𝗢𝘂𝘁𝗽𝘂𝘁:
-- #### Consumes Immutable Interaction Logs as a Data Asset. Once the AI responds, the data journey isn’t over. Every answer becomes input for future learning.
-- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
-- #### • Versioned, auditable: nothing lost, nothing overwritten 
-- #### • Streaming inserts: logs everything in real-time 
-- #### • Feeds RAG tuning: improves answers daily
+#### 5. **Action / Output** – *Học hỏi từ mỗi phản hồi đã đưa ra*
+* **Dữ liệu sử dụng:** Interaction logs không thể thay đổi
+* **Tác dụng:** Mỗi phản hồi được lưu lại để cải thiện AI
+* **Tính chất nổi bật:**
+
+  * Có version, audit rõ ràng
+  * Ghi log theo luồng thời gian thực
+  * Dữ liệu đầu vào cho việc tinh chỉnh RAG
 
