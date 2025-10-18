@@ -26,9 +26,11 @@
 - #### `Lợi thế:` nhanh, không cần nhớ cú pháp, giảm thao tác
 
 #### 2. Natural language queries
-- #### "App này đang dùng version nào?"
-- #### "So sánh cấu hình trong Git với cluster"
-- #### "Ứng dụng nào đang trong trạng thái degraded?"
+```
+* App này đang dùng version nào?
+* So sánh cấu hình trong Git với cluster
+* Ứng dụng nào đang trong trạng thái degraded?
+```
 - #### `Lợi thế:` thân thiện với người mới, tăng khả năng tra cứu tức thì
 
 #### 3. 🧠 Phân tích tổng hợp từ nhiều thành phần (Insight Extraction)
@@ -52,15 +54,7 @@
 
 #### 3. Phân tích sâu nhưng mang tính đặc thù, không lặp lại (AI chưa học được pattern)
 
-### 🧩 Gợi ý chiến lược phát triển agent:
-| Mức độ sử dụng AI             | Loại tác vụ          | Giao diện gợi ý               |
-| ----------------------------- | -------------------- | ----------------------------- |
-| Tác vụ đơn giản               | CLI/Slack/GitHub Bot | Agent thực hiện trực tiếp     |
-| Truy vấn trạng thái           | Chat/Web Agent       | Gợi ý kèm dữ liệu             |
-| Phân tích sự cố/phân tích log | Web + AI             | Tổng hợp insight              |
-| Thao tác rủi ro cao           | GUI (Web/ArgoCD UI)  | AI chỉ gợi ý, không thực hiện |
-
-### ✅ Vì sao AI agent phù hợp nhất với tác vụ “read”:
+✅ AI agent phù hợp nhất với tác vụ “read” vì:
 | Ưu điểm                                             | Giải thích                                                                |
 | --------------------------------------------------- | ------------------------------------------------------------------------- |
 | 🧠 **Hiểu yêu cầu tự nhiên**                        | Không cần nhớ lệnh CLI dài, chỉ cần nói: “App `payment` có sync chưa?”    |
@@ -69,14 +63,14 @@
 | 🛡 **An toàn**                                      | Read-only không làm thay đổi hệ thống, tránh rủi ro sản xuất              |
 | 🧾 **Giải thích & định nghĩa lại thuật ngữ DevOps** | Giúp người không chuyên (hoặc mới vào team) hiểu trạng thái dễ dàng hơn   |
 
-#### ✨ Gợi ý mở rộng: biến AI thành “observability co-pilot”
+✨ => biến AI thành “observability co-pilot”
 | Khả năng mở rộng        | Gợi ý                                                                                     |
 | ----------------------- | ----------------------------------------------------------------------------------------- |
 | Tự động cảnh báo        | "Phát hiện app `backend` chậm bất thường, bạn muốn xem log không?"                        |
 | Tóm tắt trạng thái ngày | "Hôm nay có 2 app lỗi, 1 lần rollback, cluster stable"                                    |
 | Chatbot trực quan       | Hiển thị trạng thái hệ thống dưới dạng bảng, biểu đồ đơn giản (trong Slack, Web UI, v.v.) |
 
-#### ✅ Cách khắc phục: Thiết kế AI agent có chiến lược
+✅ Cách thiết kế AI agent có chiến lược
 | Nguyên tắc            | Hành động                                                                            |
 | --------------------- | ------------------------------------------------------------------------------------ |
 | 🎯 Rõ mục tiêu        | AI dùng để làm gì? Tăng tốc tác vụ nào? Tiết kiệm cho ai?                            |
