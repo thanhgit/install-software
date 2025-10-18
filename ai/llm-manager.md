@@ -1,33 +1,35 @@
 # LLM manager
 - #### Một hệ thống mạnh mẽ = **AI** + `sự giám sát của con người trong quy trình làm việc` => tự động hóa có giám sát cho các quyết định kinh doanh quan trọng
-- #### Các AI agent là `các hệ thống dựa trên dữ liệu`
-
+- #### Các AI agent là `các hệ thống vận hành dựa trên dữ liệu`
 
 ![image](https://github.com/user-attachments/assets/bb40f4e0-bf18-45f5-a3f9-fc824f9f1a08)
 
 ### 5 key data assets that power the smartest AI agents 2
 ![image](https://github.com/user-attachments/assets/a95f1f8a-1f97-4057-891d-3d69d37f6a78)
 
-#### 1. 𝗣𝗿𝗼𝗺𝗽𝘁 𝗠𝗮𝗻𝗮𝗴𝗲𝗿:
-- #### Consumes User-Profile API as a Data Asset which gives the AI real-time context about who it's talking to preferences, behavior, and recent actions without exposing personal data.
-- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
-- #### • GDPR-safe - respects privacy
-- #### • Under 250 ms latency
-- #### • Drives hyper-personal prompts: no generic responses
+#### 1. **Prompt Manager** – *Cá nhân hóa theo thời gian thực*
+* **Dữ liệu sử dụng:** API hồ sơ người dùng
+* **Tác dụng:** Giúp AI hiểu ngữ cảnh người dùng mà vẫn bảo mật
+* **Tính chất nổi bật:**
+  * Tuân thủ GDPR
+  * Độ trễ < 250ms
+  * Tạo prompt cá nhân hóa sâu, tránh trả lời chung chung
 
-#### 2. 𝗟𝗟𝗠 𝗥𝗲𝗮𝘀𝗼𝗻𝗶𝗻𝗴:
-- #### Consumes Low-Latency Model endpoint as a Data Asset which processes the prompt and generates a response and ensures that “thinking” happens fast, even at scale.
-- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
-- #### • Under 300 ms P99 latency: even during peak loads 
-- #### • Edge-cached and replicated: close to users 
-- #### • Scalable: never slows down
+#### 2. **LLM Reasoning** – *Xử lý phản hồi nhanh và quy mô lớn*
+* **Dữ liệu sử dụng:** Endpoint mô hình suy luận độ trễ thấp
+* **Tác dụng:** Tăng tốc quá trình “suy nghĩ” của AI
+* **Tính chất nổi bật:**
+  * Độ trễ P99 < 300ms, kể cả khi tải cao
+  * Caching tại biên, gần người dùng
+  * Khả năng mở rộng cao, không bị nghẽn
 
- #### 3. 𝗖𝗼𝗻𝘁𝗲𝘅𝘁 𝗮𝗻𝗱 𝗠𝗲𝗺𝗼𝗿𝘆:
-- #### Consumes Vector DB / Knowledge Graph as a Data Asset which helps it to remember, reason, and retrieve accurate facts on demand.
-- #### 𝗗𝗮𝘁𝗮 𝗔𝘀𝘀𝗲𝘁 𝗣𝗿𝗼𝗽𝗲𝗿𝘁𝗶𝗲𝘀:
-- #### • Under 50 ms ANN search: finds relevant facts instantly 
-- #### • Embeddings and domain data: understands meaning, not just words 
-- #### • Around 30% fewer hallucinations: answers backed by real knowledge
+#### 3. **Context and Memory** – *Nhớ và hiểu đúng ngữ cảnh*
+* **Dữ liệu sử dụng:** Vector DB / Knowledge Graph
+* **Tác dụng:** Cải thiện độ chính xác, giảm sai lệch
+* **Tính chất nổi bật:**
+  * Tìm kiếm gần đúng (ANN) < 50ms
+  * Dựa trên embeddings và dữ liệu chuyên ngành
+  * Giảm khoảng 30% “ảo tưởng” (hallucination)
 
 ![image](https://github.com/user-attachments/assets/0033204b-284d-49d1-aeae-c1221eff33dc)
 #### 4. 𝗧𝗼𝗼𝗹 𝗢𝗿𝗰𝗵𝗲𝘀𝘁𝗿𝗮𝘁𝗼𝗿:
