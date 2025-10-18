@@ -86,49 +86,34 @@
 | 🤝 Kết hợp con người  | AI nên đóng vai trò hỗ trợ, không thay thế 100% thao tác quyết định                  |
 
 #### CAG
-- #### CAG transforms the way data interacts with LLMs by prioritizing preloading and caching mechanisms
-- #### minimizes reliance on external infrastructure, using in-memory caching and extended context utilization.
-- #### Example for CAG
+* Ưu tiên **preload** và **caching** để cung cấp ngữ cảnh nhanh chóng với:
+  * **Cache trong bộ nhớ (in-memory caching)**
+  * **Ngữ cảnh mở rộng (extended context)** trực tiếp trong prompt
+* Tối ưu cho dữ liệu tĩnh hoặc bán tĩnh
+
+Ví dụ về CAG:
 ```python
-import openai
+knowledge_base = "The Eiffel Tower is located in Paris, France.  It was completed in 1889 and stands 1,083 feet tall."
 
-# Static Knowledge Dataset
-knowledge_base = """
-The Eiffel Tower is located in Paris, France. 
-It was completed in 1889 and stands 1,083 feet tall.
-"""
-
-# Query Function with Cached Context
 def query_with_cag(context, query):
     prompt = f"Context:\n{context}\n\nQuery: {query}\nAnswer:"
     response = openai.ChatCompletion.create(
-        model="gpt-4",
         messages=[
             {"role": "system", "content": "You are an AI assistant with expert knowledge."},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=50,
-        temperature=0.2
     )
     return response['choices'][0]['message']['content'].strip()
 
-# Sample Query
 print(query_with_cag(knowledge_base, "When was the Eiffel Tower completed?"))
 ```
-- #### Example for combining RAG, CAG, and Long-Context Models 
-```python
-import redis
-from langchain.chains import RetrievalQA
-from langchain.vectorstores import FAISS
-from langchain.embeddings import OpenAIEmbeddings
-from langchain.llms import OpenAI
 
+Ví dụ kết hợp RAG + CAG + Long-Context Models 
+```python
 # Initialize Redis Cache
 cache = redis.StrictRedis(host="localhost", port=6379, db=0)
-
 # Load LLM
 llm = OpenAI(model_name="gpt-4-turbo")
-
 # Load FAISS Retriever for RAG
 retriever = FAISS.load_local("faiss_index", OpenAIEmbeddings()).as_retriever()
 rag_chain = RetrievalQA(llm=llm, retriever=retriever)
@@ -153,8 +138,7 @@ def hybrid_query(query):
     cache.set(query_hash, response, ex=3600)
     return response
 
-query = "What are the key AI advancements in 2024?"
-print(hybrid_query(query))
+print(hybrid_query("What are the key AI advancements in 2024?"))
 ```
 
 ![image](https://github.com/user-attachments/assets/9db120ff-0a0b-45ad-a95c-55bf90e2aeea)
