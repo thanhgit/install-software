@@ -4,6 +4,8 @@
 
 **Chiến lược: “AI-first, GUI fallback”**
 * Kết hợp **AI (tự động + ngôn ngữ tự nhiên)** với **GUI (giao diện trực quan)** => đạt hiệu quả và kiểm soát tối ưu
+    * **AI agent** nên hỗ trợ chủ động bằng các `read` operations
+    * **GUI** vẫn là nơi quyết định cuối cùng** khi tác vụ cần độ chính xác, trực quan và kiểm soát cao
 * **AI là tuyến đầu:**
   → Gợi ý, tự động hóa thao tác đơn giản, hỗ trợ ra quyết định
 * **GUI là chốt chặn:**
