@@ -52,6 +52,7 @@ conversation = [
   },
 ]
 
+# use_tqdm=True ~ hiển thị thanh tiến trình (progress bar) cho quá trình sinh text.
 outputs = llm.chat(conversation, sampling_params=sampling_params, use_tqdm=False)
 ```
 
