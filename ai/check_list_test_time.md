@@ -76,9 +76,22 @@ model_quantized_path = dynamic_quantizer.quantize(save_dir=onnx_path, quantizati
  * Kết thúc profiling bằng `sess.end_profiling()` để lấy tên file JSON chứa dữ liệu profiling.
 ```python
 from onnxruntime import InferenceSession, SessionOptions
+from sklearn.linear_model import LinearRegression
+from skl2onnx import to_onnx
+
+# train model
+clr = LinearRegression()
+clr.fit(X_train, y_train)
+
+# convert model to onnx format
+model_def = to_onnx(clr, X_train)
+
 so = SessionOptions()
 so.enable_profiling = True
 sess = InferenceSession(model_def.SerializeToString(), so)
+
+sess.run(None, {'X': X_test})
+prof = sess.end_profiling()
 ```
 
 
