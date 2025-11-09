@@ -15,3 +15,11 @@ from optimum.onnxruntime import ORTModelForSequenceClassification
 model_id = 'bert-base-uncased'
 model = ORTModelForSequenceClassification.from_pretrained(model_id, from_transformers=True)
 ```
+* ONNX Runtime quantization API to dynamically quantize our converted model
+```python
+from onnxruntime.quantization import quantize_dynamic, QuantType
+
+onnx_path = 'bert_uncased_model.onnx'
+onnx_quantized_path = 'bert_uncased_quantized_model.onnx'
+quantized_model = quantize_dynamic(onnx_path, onnx_quantized_path, weight_type=QuantType.QInt8)
+```
