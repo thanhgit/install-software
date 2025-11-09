@@ -13,18 +13,16 @@ pip install vllm
 * Run server
 ```python
 import torch
-from vllm import LLM
+from vllm import LLM, SamplingParams
 
 model_id = "openai-community/gpt2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-vllm_model = LLM(model_id, device=device)
-
+# dtype=torch.half
+vllm_model = LLM(model_id, device=device, dtype=torch.half)
 ```
-* Serving
+* Serving with params
 ```python
-from vllm import SamplingParams
-
 # Configure (temperature, top_p, top_k, ...) with SamplingParams
 sampling_params = SamplingParams(temperature=0.1, top_p=0.95)
 
@@ -32,6 +30,29 @@ prompt = "Once upon a time in a land far away"
 output = vllm_model.generate(prompt)
 
 print(output[0].outputs[0].text)
+```
+* Serving with conversation
+```python
+conversation = [
+  {
+    "role": "system",
+    "content": "You are a helpful assistant"
+  },
+  {
+    "role": "user",
+    "content": "Hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! How can I assist you today?"
+  },
+  {
+    "role": "user",
+    "content": "Write an essay about the Monte Carlo Tree Search algorit
+  },
+]
+
+outputs = llm.chat(conversation, sampling_params=sampling_params, use_tqdm=False)
 ```
 
 #### Convert scikit-learn model to ONNX format
