@@ -69,11 +69,45 @@ model_quantized_path = dynamic_quantizer.quantize(save_dir=onnx_path, quantizati
  * Khi chạy inference, một file JSON được tạo ra, chứa dữ liệu về threading, latency của từng operator, v.v.
  * Có thể dùng dữ liệu này để phân tích hiệu năng và tìm điểm cải thiện.
 
-3. **Ví dụ cụ thể**:
-   * Tạo một mô hình linear regression với ONNX (sử dụng `MatMul` và `Add`).
-   * Tạo session inference (`InferenceSession`) trên CPU.
-   * Chạy inference với dữ liệu ngẫu nhiên.
-   * Kết thúc profiling bằng `sess.end_profiling()` để lấy tên file JSON chứa dữ liệu profiling.
+**Ví dụ cụ thể**:
+ * Tạo một mô hình linear regression với ONNX (sử dụng `MatMul` và `Add`).
+ * Tạo session inference (`InferenceSession`) trên CPU.
+ * Chạy inference với dữ liệu ngẫu nhiên.
+ * Kết thúc profiling bằng `sess.end_profiling()` để lấy tên file JSON chứa dữ liệu profiling.
+```python
+from onnxruntime import InferenceSession, SessionOptions
+so = SessionOptions()
+so.enable_profiling = True
+sess = InferenceSession(model_def.SerializeToString(), so)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
