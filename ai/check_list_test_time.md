@@ -1,4 +1,4 @@
-# Check list
+# Check list trong test-time
 
 #### Verify if the NVIDIA GPU you are using supports
 ```python
@@ -23,7 +23,7 @@ onnx_path = 'bert_uncased_model.onnx'
 onnx_quantized_path = 'bert_uncased_quantized_model.onnx'
 quantized_model = quantize_dynamic(onnx_path, onnx_quantized_path, weight_type=QuantType.QInt8)
 ```
-* Download the fine-tuned model in fp32 precision
+* Download the fine-tuned model in fp32 precision cho ONNX format
 ```python
 from optimum.onnxruntime import ORTModelForSequenceClassification
 from transformers import AutoTokenizer
@@ -53,6 +53,21 @@ dynamic_quantizer = ORTQuantizer.from_pretrained(model)
 dqconfig = AutoQuantizationConfig.avx512_vnni(is_static=False, per_channel=False)
 model_quantized_path = dynamic_quantizer.quantize(save_dir=onnx_path, quantization_config=dqconfig)
 ```
+
+#### **Tối ưu hiệu năng mô hình ONNX** 
+* Sử dụng **profiling runtime** để đo lường hiệu suất như latency, throughput, và memory usage
+* => có thể cần điều chỉnh cấu hình runtime hoặc áp dụng các kỹ thuật tối ưu hóa cho từng mô hình, từng thiết bị.
+
+**ONNX Runtime Profiling**:
+ * Cho phép bật profiling trong phiên inference (`sess_options.enable_profiling = True`).
+ * Khi chạy inference, một file JSON được tạo ra, chứa dữ liệu về threading, latency của từng operator, v.v.
+ * Có thể dùng dữ liệu này để phân tích hiệu năng và tìm điểm cải thiện.
+
+3. **Ví dụ cụ thể**:
+   * Tạo một mô hình linear regression với ONNX (sử dụng `MatMul` và `Add`).
+   * Tạo session inference (`InferenceSession`) trên CPU.
+   * Chạy inference với dữ liệu ngẫu nhiên.
+   * Kết thúc profiling bằng `sess.end_profiling()` để lấy tên file JSON chứa dữ liệu profiling.
 
 
 
