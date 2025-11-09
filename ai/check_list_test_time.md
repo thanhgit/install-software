@@ -18,7 +18,7 @@ from vllm import LLM, SamplingParams
 model_id = "openai-community/gpt2"
 device = "cuda" if torch.cuda.is_available() else "cpu"
 
-# dtype=torch.half
+# dtype=torch.half ~ chỉ định kiểu dữ liệu của tensor khi load mô hình, cụ thể là half-precision floating point (FP16).
 vllm_model = LLM(model_id, device=device, dtype=torch.half)
 ```
 * Serving with params
