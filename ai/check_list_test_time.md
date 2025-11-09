@@ -21,6 +21,25 @@ model = hf_hub_download(repo_id, filename=filename)
 ```bash
 pip install vllm
 ```
+* Run API server với CLI
+```bash
+vllm serve microsoft/Phi-3-mini-4k-instruct --dtype float16 --api-key token
+```
+```python
+from openai import OpenAI
+
+client = OpenAI(
+  base_url="http://localhost:8000/v1",
+  api_key="token-abc123",
+)
+
+completion = client.chat.completions.create(
+  model="microsoft/Phi-3-mini-4k-instruct",
+  messages=[
+    {"role": "user", "content": "Hello!"}
+  ]
+)
+```
 * Run server
 ```python
 import torch
