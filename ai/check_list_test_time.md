@@ -6,6 +6,17 @@ import torch
 torch.cuda.is_bf16_supported()
 ```
 
+#### Download HF model
+```python
+from huggingface_hub import hf_hub_download
+
+repo_id = "microsoft/Phi-3-mini-4k-instruct-gguf"
+filename = "Phi-3-mini-4k-instruct-q4.gguf"
+tokenizer = "microsoft/Phi-3-mini-4k-instruct"
+
+model = hf_hub_download(repo_id, filename=filename)
+```
+
 #### Run vLLM
 ```bash
 pip install vllm
@@ -24,7 +35,7 @@ vllm_model = LLM(model_id, device=device, dtype=torch.half)
 * Serving with params
 ```python
 # Configure (temperature, top_p, top_k, ...) with SamplingParams
-sampling_params = SamplingParams(temperature=0.1, top_p=0.95)
+sampling_params = SamplingParams(temperature=0.1, top_p=0.95, max_tokens=128)
 
 prompt = "Once upon a time in a land far away"
 output = vllm_model.generate(prompt)
