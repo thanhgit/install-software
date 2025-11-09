@@ -6,6 +6,34 @@ import torch
 torch.cuda.is_bf16_supported()
 ```
 
+#### Run vLLM
+```bash
+pip install vllm
+```
+* Run server
+```python
+import torch
+from vllm import LLM
+
+model_id = "openai-community/gpt2"
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
+vllm_model = LLM(model_id, device=device)
+
+```
+* Serving
+```python
+from vllm import SamplingParams
+
+# Configure (temperature, top_p, top_k, ...) with SamplingParams
+sampling_params = SamplingParams(temperature=0.1, top_p=0.95)
+
+prompt = "Once upon a time in a land far away"
+output = vllm_model.generate(prompt)
+
+print(output[0].outputs[0].text)
+```
+
 #### Convert scikit-learn model to ONNX format
 * https://github.com/onnx/sklearn-onnx
 ```bash
