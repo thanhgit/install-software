@@ -93,13 +93,20 @@ sess = InferenceSession(model_def.SerializeToString(), so)
 sess.run(None, {'X': X_test})
 prof = sess.end_profiling()
 ```
+* View profiling data with [mlprodict](https://github.com/sdpython/mlprodict/)
+```python
+from mlprodict.onnxrt.ops_whole.session import OnnxWholeSession
+import json
 
+with open(prof, "r") as f:
+js = json.load(f)
 
-
-
-
-
-
+df = pd.DataFrame(OnnxWholeSession.process_profiling(js))
+```
+* Thay thế
+```
+pip install ydata-profiling
+```
 
 
 
