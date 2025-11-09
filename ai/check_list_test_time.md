@@ -44,7 +44,15 @@ from transformers import pipeline
 vanilla_clf = pipeline("text-classification", model=model, tokenizer=tokenizer)
 vanilla_clf("Could you assist me in checking my card validity?")
 ```
+* To quantize the model in 8-bit precision
+```python
+from optimum.onnxruntime import ORTQuantizer
+from optimum.onnxruntime.configuration import AutoQuantizationConfig
 
+dynamic_quantizer = ORTQuantizer.from_pretrained(model)
+dqconfig = AutoQuantizationConfig.avx512_vnni(is_static=False, per_channel=False)
+model_quantized_path = dynamic_quantizer.quantize(save_dir=onnx_path, quantization_config=dqconfig)
+```
 
 
 
