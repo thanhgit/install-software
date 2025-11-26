@@ -4,6 +4,15 @@
 - #### Tutorial: https://ollama.com/blog/tool-support
 - #### [Link](https://ollama.com/search?c=tools)
 
+#### Check Nvidia container
+```bash
+docker info | grep -i runtime
+```
+```
+ Runtimes: io.containerd.runc.v2 nvidia runc
+ Default Runtime: nvidia
+```
+
 #### Configuration
 - #### Change OLLAMA_ORIGINS => allow requests from all
 ```bash
