@@ -13,6 +13,11 @@ docker info | grep -i runtime
  Default Runtime: nvidia
 ```
 
+#### Check enable GPU in python
+```bash
+python3 -c "import torch; print(torch.cuda.is_available())"
+```
+
 #### Configuration
 - #### Change OLLAMA_ORIGINS => allow requests from all
 ```bash
