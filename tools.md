@@ -31,3 +31,6 @@ console.log(imgs_arr.toString())
 * [Wait4X](https://github.com/wait4x/wait4x)
 * To allows you to wait for a port or a service to enter the requested state, with a customizable timeout and interval time.
 
+### SecScanMCP
+* https://github.com/zakariaf/SecScanMCP
+* 12+ analyzers, 117 YARA rules, ML-powered threat detection, dual scoring system. Detects prompt injection, tool poisoning and more
