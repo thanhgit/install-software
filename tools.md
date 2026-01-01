@@ -1,6 +1,6 @@
 # Common tools
 ```bash
-docker stop ui-template-de | /bin/tru
+docker stop ui-template-de | /bin/true
 
 docker run --rm -i --name ui-template-de \
 		-p 127.0.0.1:9999:9999 \
