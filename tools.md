@@ -1,10 +1,12 @@
 # Common tools
 ```bash
+docker stop ui-template-de | /bin/tru
+
 docker run --rm -i --name ui-template-de \
 		-p 127.0.0.1:9999:9999 \
 		-p 127.0.0.1:8501:8501 \
 		-e UTIL4DEV_SUBNET=172.17.0.0/16 \
-		docker.io/thanhdocker/ui-template-de:1.0.2
+		docker.io/thanhdocker/ui-template-de:1.0.4
 ```
 
 ### [A tool for writing better scripts](https://github.com/google/zx)
