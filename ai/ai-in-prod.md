@@ -4,6 +4,15 @@
 * AI agent audit được: Signal → Hypothesis → Evidence → Action → Risk
 * Rule loại bỏ phương án nguy hiểm
 ```yaml
+timestamp: 2026-01-08T10:00:00Z
+query: Why did pod X restart 3 times?
+retrieved_evidence:
+  pod_logs:
+    exit_code: 137
+  metrics:
+    memory_spike: 950Mi
+  deployment_history:
+    version: v1.2
 signals:
   - pod_restart_rate: high
   - cpu_usage: normal
@@ -25,6 +34,7 @@ recommended_actions:
 risk_assessment:
   impact: low
   rollback_possible: yes
+human_feedback: approved
 ```
 <img width="1190" height="482" alt="image" src="https://github.com/user-attachments/assets/72692768-0fc8-45e1-9756-0c81008321e4" />
 
