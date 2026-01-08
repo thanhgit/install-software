@@ -1,5 +1,30 @@
 # AI trong môi trường production
 
+#### Structured Reasoning
+* AI agent audit được: Signal → Hypothesis → Evidence → Action → Risk
+```yaml
+signals:
+  - pod_restart_rate: high
+  - cpu_usage: normal
+  - memory_usage: spiking
+hypotheses:
+  - OOMKill
+  - memory leak
+  - bad deploy
+evaluation:
+  OOMKill:
+    evidence: pod events + exit code 137
+    confidence: 0.8
+  bad deploy:
+    evidence: rollout_time mismatch
+    confidence: 0.2
+recommended_actions:
+  - increase memory limit
+  - restart pod
+risk_assessment:
+  impact: low
+  rollback_possible: yes
+```
 <img width="1190" height="482" alt="image" src="https://github.com/user-attachments/assets/72692768-0fc8-45e1-9756-0c81008321e4" />
 
 #### Tool calling
