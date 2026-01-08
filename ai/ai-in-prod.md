@@ -2,6 +2,7 @@
 
 #### Structured Reasoning
 * AI agent audit được: Signal → Hypothesis → Evidence → Action → Risk
+* Rule loại bỏ phương án nguy hiểm
 ```yaml
 signals:
   - pod_restart_rate: high
