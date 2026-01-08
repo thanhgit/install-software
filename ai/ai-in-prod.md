@@ -3,6 +3,7 @@
 #### Structured Reasoning
 * AI agent audit được: Signal → Hypothesis → Evidence → Action → Risk
 * Rule loại bỏ phương án nguy hiểm
+* `How to use`: query / context → retrieved evidence → reasoning trace → recommended action → outcome → confidence / feedback
 ```yaml
 timestamp: 2026-01-08T10:00:00Z
 query: Why did pod X restart 3 times?
