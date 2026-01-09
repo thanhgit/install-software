@@ -104,3 +104,7 @@ optimum-cli export onnx \
 2. **GPU deployment:** export O4 → FP16 → memory giảm 50%, inference nhanh.
 3. **Trade-off:** O2/O3 là graph optimization (speed), O4 là FP16 (memory + speed), INT8 post-quantization là tối ưu CPU.
 
+* Tăng tốc độ:
+```bash
+pip install accelerate
+```
