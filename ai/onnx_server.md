@@ -1,6 +1,11 @@
 # Dùng ONNX format
 
 #### Dùng transformers-cli để convert đến ONNX
+* Install
+```bash
+pip install transformers
+```
+* How to use
 ```bash
 transformers-cli convert --model_name gpt2 --framework pt --opset 17 onnx/gpt2.onnx
 ```
