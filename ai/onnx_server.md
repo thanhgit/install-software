@@ -49,3 +49,27 @@ torch.onnx.export(
 )
 
 ```
+
+### Dùng `ONNX-Sim` để tối ưu thêm
+* File ONNX nhỏ hơn, chạy nhanh hơn, output không đổi về mặt giá trị
+* Install
+```bash
+pip install onnx-simplifier
+```
+* How to use
+```python
+import onnx
+from onnxsim import simplify
+
+# Load file ONNX đã export
+model_path = "vietnamese_error_correction.onnx"
+onnx_model = onnx.load(model_path)
+
+# Simplify model
+model_simplified, check = simplify(onnx_model)
+assert check, "Simplified ONNX model failed validation"
+
+# Lưu file đã tối ưu
+onnx.save(model_simplified, "vietnamese_error_correction_simplified.onnx")
+print("ONNX model đã được simplify thành công!")
+```
