@@ -90,3 +90,17 @@ print("ONNX model đã được simplify thành công!")
 ```bash
 python -m onnxsim input_model.onnx output_model.onnx
 ```
+
+### LLM đến onnx
+```bash
+optimum-cli export onnx \
+    --model HuggingFaceTB/SmolLM2-1.7B-Instruct \
+    SmolLM2-1.7B-Instruct \
+    --task text-generation \
+    --optimize O2
+```
+
+1. **CPU deployment:** export O2/O3 → optional dynamic INT8 quantization với ONNX Runtime.
+2. **GPU deployment:** export O4 → FP16 → memory giảm 50%, inference nhanh.
+3. **Trade-off:** O2/O3 là graph optimization (speed), O4 là FP16 (memory + speed), INT8 post-quantization là tối ưu CPU.
+
