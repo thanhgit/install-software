@@ -14,10 +14,14 @@ optimum-cli export onnx --task text2text-generation --model . onnx
 optimum-cli export onnx \
     --model . \
     onnx \
-    --quantization dynamic
+    --optimize 04
 ```
-* --quantization dynamic → quantization int8 động, nhanh + nhẹ **(chỉ tối ưu cho CPU)**, Cụ thể: giảm 70% memory, tốc độ tăng 2–4×, accuracy giảm rất nhẹ 0-2%
-*  --quantization fp16 : **(tăng tốc GPU)**, giảm 50% memory, tăng tốc inference, accuracy gần như giữ nguyên
+| Level  | Mô tả                                                    | Output ONNX     | Notes                                                                |
+| ------ | -------------------------------------------------------- | --------------- | -------------------------------------------------------------------- |
+| **O1** | Basic general optimizations                              | Float32         | Loại bỏ node thừa, constant folding                                  |
+| **O2** | Basic + extended general + transformers-specific fusions | Float32         | Tối ưu graph transformer, fuse attention, layernorm, etc.            |
+| **O3** | O2 + GELU approximation                                  | Float32         | GELU tính xấp xỉ → tăng tốc GPU/CPU nhẹ, accuracy gần như giữ nguyên |
+| **O4** | O3 + Mixed precision (FP16)                              | FP16 (GPU-only) | Memory giảm ~50%, inference GPU nhanh hơn, phải dùng `--device cuda` |
 
 #### Tối ưu sâu hơn với `torch.onnx.export`
 ```python
