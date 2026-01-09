@@ -109,3 +109,43 @@ optimum-cli export onnx \
 ```bash
 pip install accelerate
 ```
+* Chạy LLM ONNX
+```python
+
+from optimum.onnxruntime import ORTModelForCausalLM
+from transformers import AutoTokenizer
+
+onnx_folder = "./" 
+
+# 1. Tải Tokenizer và cấu hình Pad Token
+tokenizer = AutoTokenizer.from_pretrained(onnx_folder)
+if tokenizer.pad_token is None:
+    tokenizer.pad_token = tokenizer.eos_token
+
+# 2. Tải mô hình
+model = ORTModelForCausalLM.from_pretrained(onnx_folder, provider="CPUExecutionProvider")
+
+# 3. Chuẩn bị dữ liệu đầu vào
+messages = [{"role": "user", "content": "Chào bạn, bạn là ai?"}]
+inputs = tokenizer.apply_chat_template(
+    messages, 
+    add_generation_prompt=True, 
+    return_tensors="pt",
+    return_dict=True # Trả về dictionary chứa cả input_ids và attention_mask
+)
+
+# 4. Truyền đầy đủ input_ids và attention_mask vào generate
+output = model.generate(
+    inputs["input_ids"],
+    attention_mask=inputs["attention_mask"], # Truyền mask để tránh lỗi
+    max_new_tokens=200,
+    pad_token_id=tokenizer.pad_token_id,     # Xác định rõ id của pad token
+    do_sample=True,
+    temperature=0.7,
+    use_cache=False # due to not force using cache in optimum-cli
+)
+
+# 5. Giải mã
+response = tokenizer.decode(output[0], skip_special_tokens=True)
+print(response)
+```
