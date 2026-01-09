@@ -1,13 +1,13 @@
 # Dùng ONNX format
 
-#### Dùng transformers-cli để convert đến ONNX
+#### Dùng `optimum-cli` để convert đến ONNX
 * Install
 ```bash
-pip install transformers
+python -m pip install optimum
 ```
 * How to use
 ```bash
-transformers-cli convert --model_name gpt2 --framework pt --opset 17 onnx/gpt2.onnx
+optimum-cli export onnx --task text2text-generation --model . onnx/yammdd-vn-err-corr
 ```
 
 #### Tối ưu sâu hơn với `torch.onnx.export`
