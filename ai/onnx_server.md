@@ -92,11 +92,12 @@ python -m onnxsim input_model.onnx output_model.onnx
 ```
 
 ### LLM đến onnx
+* --task causal-lm-with-past => dùng KV-CACHE
 ```bash
 optimum-cli export onnx \
     --model HuggingFaceTB/SmolLM2-1.7B-Instruct \
     SmolLM2-1.7B-Instruct \
-    --task text-generation \
+    --task causal-lm-with-past \
     --optimize O2
 ```
 
