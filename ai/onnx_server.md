@@ -7,7 +7,7 @@ python -m pip install optimum
 ```
 * How to use
 ```bash
-optimum-cli export onnx --task text2text-generation --model . onnx/yammdd-vn-err-corr
+optimum-cli export onnx --task text2text-generation --model . onnx
 ```
 
 #### Tối ưu sâu hơn với `torch.onnx.export`
