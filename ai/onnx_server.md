@@ -9,6 +9,15 @@ python -m pip install optimum
 ```bash
 optimum-cli export onnx --task text2text-generation --model . onnx
 ```
+* export + quantize
+```bash
+optimum-cli export onnx \
+    --model . \
+    onnx \
+    --quantization dynamic
+```
+* --quantization dynamic → quantization int8 động, nhanh + nhẹ **(chỉ tối ưu cho CPU)**
+*  --quantization fp16 : **(tăng tốc GPU)**
 
 #### Tối ưu sâu hơn với `torch.onnx.export`
 ```python
