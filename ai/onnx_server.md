@@ -16,8 +16,8 @@ optimum-cli export onnx \
     onnx \
     --quantization dynamic
 ```
-* --quantization dynamic → quantization int8 động, nhanh + nhẹ **(chỉ tối ưu cho CPU)**
-*  --quantization fp16 : **(tăng tốc GPU)**
+* --quantization dynamic → quantization int8 động, nhanh + nhẹ **(chỉ tối ưu cho CPU)**, Cụ thể: giảm 70% memory, tốc độ tăng 2–4×, accuracy giảm rất nhẹ 0-2%
+*  --quantization fp16 : **(tăng tốc GPU)**, giảm 50% memory, tăng tốc inference, accuracy gần như giữ nguyên
 
 #### Tối ưu sâu hơn với `torch.onnx.export`
 ```python
