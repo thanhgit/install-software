@@ -1,6 +1,6 @@
 # Dùng ONNX format
 
-#### Dùng `optimum-cli` để convert đến ONNX
+#### Dùng `optimum-cli` để convert đến ONNX (khuyên dùng)
 * Install
 ```bash
 python -m pip install optimum
