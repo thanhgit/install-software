@@ -73,3 +73,7 @@ assert check, "Simplified ONNX model failed validation"
 onnx.save(model_simplified, "vietnamese_error_correction_simplified.onnx")
 print("ONNX model đã được simplify thành công!")
 ```
+* Dùng CLI
+```bash
+python -m onnxsim input_model.onnx output_model.onnx
+```
