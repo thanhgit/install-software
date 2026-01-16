@@ -173,8 +173,12 @@ Mọi thứ khác?
 * **Threads = discovery**
 
 Tất cả xoay quanh **1 narrative**:
-> *“Tôi build AI agent sống được trong doanh nghiệp thật”*
+> Tôi build AI agent trong môi trường doanh nghiệp thật – từ code → deploy → vận hành → support
 
+**📌 Bạn là:**
+* **AI agent practitioner**
+* Người *chịu trách nhiệm đến kết quả cuối cùng*
+  
 #### Workflow tối ưu:
 1. Deploy agent cho khách
 2. Ghi lại:
@@ -262,6 +266,35 @@ Threads **không phải kênh bán hàng**, mà là:
 * Nâng cấp thành post LinkedIn
 * Viết sâu hơn trên Substack
 
+### 4 content pillar cần TẬP TRUNG
+
+#### Pillar 1 – **Business Reality of AI Agent** (xương sống)
+* Vì sao agent fail trong doanh nghiệp
+* Vì sao demo chạy nhưng production chết
+* Vì sao khách “muốn AI” nhưng không deploy được
+
+🎯 Mục tiêu: **Authority + trust**
+
+#### Pillar 2 – **Case / Build / Deploy thật**
+* “Agent này xử lý task gì?”
+* “Tôi deploy thế nào cho team 20 người?”
+* “Issue phát sinh sau 2 tuần là gì?”
+
+🎯 Mục tiêu: **Sales + credibility**
+
+#### Pillar 3 – **Reframing cho decision maker**
+* AI agent ≠ tiết kiệm chi phí
+* Agent là layer tổ chức mới
+* Scale bằng agent ≠ scale bằng người
+
+🎯 Mục tiêu: **Thu hút đúng buyer**
+
+#### Pillar 4 – **Solo founder behind-the-scenes**
+* Trade-off khi làm một mình
+* Vì sao không nhận dự án này
+* Bài học support khách lúc 2h sáng 😄
+
+🎯 Mục tiêu: **Human + long-term audience**
 
 
 
