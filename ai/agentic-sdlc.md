@@ -142,11 +142,11 @@ Một số nền tảng mã nguồn mở phổ biến giúp xây dựng và qu�
 
 ---
 ### Hầu hết các thất bại của doanh nghiệp AI đều bắt đầu từ: "Xây dựng những thứ không khác biệt"
-* Nghe có vể tiết kiệm chi phái
-* Nhưng `Đó không phải là chiến lược`
+* Nghe có vể tiết kiệm chi phí nhưng `Đó không phải là chiến lược`
 * => `Đó là tự phá hoại dự án`
 
-Dữ liệu cho thấy : `Tất cả các dự án đều thành công gấp 2-3 lần khi doanh nghiệp mua những thứ cần thiết hoặc hợp tác cùng phát triển`
+Dữ liệu cho thấy : 
+> Tất cả các dự án đều thành công gấp 2-3 lần khi doanh nghiệp mua những thứ cần thiết hoặc hợp tác cùng phát triển
 
 Tổ chức cần cam kết toàn bộ vòng đời: 
 * Hosting (lưu trữ)
@@ -162,12 +162,105 @@ Tổ chức cần cam kết toàn bộ vòng đời:
 3. Build only what differentiates you.
 
 Mọi thứ khác?
-* Có giải pháp đã làm tốt hơn, nhanh hơn => mua hoặc tái sử dụng
+* Có giải pháp đã làm tốt hơn, nhanh hơn => `mua hoặc tái sử dụng`
 * Vì `bạn sẽ không được trả tiền cho việc cải tiến stack đã có` => Bạn sẽ bị loại khi GenAI pilot của bạn chết trong quá trình mua sắm
 
+---
+### Truyền thông mạng xã hội
+* **LinkedIn = doanh thu**
+* **Substack = trust dài hạn**
+* **FB group = lead ấm**
+* **Threads = discovery**
 
+Tất cả xoay quanh **1 narrative**:
+> *“Tôi build AI agent sống được trong doanh nghiệp thật”*
 
+#### Workflow tối ưu:
+1. Deploy agent cho khách
+2. Ghi lại:
+   * Vấn đề
+   * Quyết định
+   * Kết quả
+  
+3. Biến thành:
+   * LinkedIn post (insight / case)
+   * Substack (deep dive)
+   * Facebook comment / mini post
+   * 3–5 Threads one-liner
 
+### Chiến lược theo từng nền tảng (rất quan trọng)
+#### LinkedIn – **Kênh kiếm tiền chính**
+🎯 Vai trò: **Inbound sales + positioning**
+
+Nội dung NÊN làm:
+* Case study (text + video demo)
+* Insight từ trải nghiệm thật
+* Reframing cho CEO / Ops / Sales
+
+Nội dung KHÔNG nên:
+* Tutorial code chi tiết
+* Post quá technical
+* Share trend AI chung chung
+
+📌 Tần suất lý tưởng:
+* 2–4 post / tuần
+* 1 post / tuần có “sales intent”
+
+👉 CTA: Comment-based CTA / DM sau khi có tương tác
+
+#### Substack – **Deep trust & long-term asset**
+🎯 Vai trò: **Nuôi buyer nghiêm túc**
+
+Substack là nơi:
+* Bạn nói những thứ **không tiện nói trên LinkedIn**
+* Buyer đọc trước khi ra quyết định
+
+Nội dung phù hợp:
+* Breakdown 1 case từ A → Z
+* Vì sao bạn chọn giải pháp X thay vì Y
+* Architecture ở mức *concept*, không phải code
+
+📌 Format rất mạnh:
+* “Why this agent works in production”
+* “What I’d do differently if I rebuilt it”
+
+📌 Tần suất:
+* 1 bài / tuần hoặc 2 tuần
+* Chất lượng > số lượng
+
+👉 LinkedIn → kéo về Substack
+
+#### Facebook Group – **Lead ấm & validation**
+
+🎯 Vai trò: **Community + demand sensing**
+
+Cách dùng hiệu quả:
+* Không spam bán hàng
+* Trả lời câu hỏi thật kỹ
+* Share mini case, không share link ngoài nhiều
+
+📌 Nội dung mạnh:
+* “Một lỗi agent mà mình gặp tuần này”
+* “Khách hỏi mình câu này – mọi người nghĩ sao?”
+
+👉 Sau đó:
+* Người phù hợp sẽ tự inbox
+
+#### Threads – **Discovery + raw thinking**
+
+🎯 Vai trò: **Khám phá audience mới**
+Threads **không phải kênh bán hàng**, mà là:
+* Testing idea
+* One-liner insight
+* Thought fragment
+
+📌 Ví dụ:
+* “AI agent fail không phải vì model, mà vì org design”
+* “Một agent không có owner = agent chết”
+
+👉 Nếu post nào viral:
+* Nâng cấp thành post LinkedIn
+* Viết sâu hơn trên Substack
 
 
 
