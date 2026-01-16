@@ -296,7 +296,17 @@ Threads **không phải kênh bán hàng**, mà là:
 
 🎯 Mục tiêu: **Human + long-term audience**
 
+#### 80% nội dung = 4 pillar
+* Đây là “giọng nói chính” của bạn
+* Thu hút đúng buyer
+* Xây trust
 
+### 20% nội dung = linh hoạt
+* Chia sẻ cá nhân
+* Opinion nóng
+* Trend (chọn lọc)
+
+📌 Nhưng vẫn **không phá định vị**
 
 
 
