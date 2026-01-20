@@ -1,5 +1,5 @@
 # 🎯 Mô hình đề xuất – gọi tạm là: “Cảnh báo + Giám sát mềm”
-* Dân chủ để tránh sai lầm quá rõ ràng
+* Dân chủ để phản biện nhằm sàng lọc, tránh sai lầm quá rõ ràng
 * Tập thể để mở rộng trí tuệ ~ nhiều phương án thay thế, sáng kiến
 * Lãnh đạo để dám chịu rủi ro cho những việc khó
 * Thưởng để khuyến khích quyết định khó
