@@ -1,9 +1,9 @@
 # 🎯 Mô hình đề xuất – gọi tạm là: “Cảnh báo + Giám sát mềm”
-* Dân chủ để tránh sai lầm ngu;
-* Tập thể để mở rộng trí tuệ;
-* Lãnh đạo để dám chịu rủi ro;
-* Thưởng để khuyến khích quyết định khó;
-* Phạt để trừng gian dối, không trừng dám làm.
+* Dân chủ để tránh sai lầm quá rõ ràng
+* Tập thể để mở rộng trí tuệ ~ nhiều phương án thay thế, sáng kiến
+* Lãnh đạo để dám chịu rủi ro cho những việc khó
+* Thưởng để khuyến khích quyết định khó
+* Phạt để trừng gian dối, không trừng dám làm
 
 #### 🔁 Quy trình vận hành:
 - #### 1. Phát hiện điểm ách tắc (real-time):
