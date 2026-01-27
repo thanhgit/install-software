@@ -43,3 +43,20 @@ console.log(imgs_arr.toString())
 ### SecScanMCP
 * https://github.com/zakariaf/SecScanMCP
 * 12+ analyzers, 117 YARA rules, ML-powered threat detection, dual scoring system. Detects prompt injection, tool poisoning and more
+
+#### Dọn rác docker
+```bash
+docker run -d \
+  --name prunemate \
+  -p 7676:8080 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v ~/prunemate/logs:/var/log \
+  -v ~/prunemate/config:/config \
+  -e PRUNEMATE_TZ=Asia/Ho_Chi_Minh \
+  -e PRUNEMATE_TIME_24H=true \
+  --restart unless-stopped \
+  anoniemerd/prunemate:latest
+```
+
+
+
