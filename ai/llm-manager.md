@@ -105,7 +105,7 @@ P(action | state) > 0.9
 | Heuristic     | Đúng phần lớn | Rule + fallback AI  |
 | Exploratory   | Mơ hồ         | Context engineering |
 
-AI agent tiến hóa thành workflow engine
+AI agent tiến hóa thành workflow engine:
 ```
 Data Context
    ↓ (diễn giải có kiểm soát)
@@ -114,14 +114,22 @@ Context State <-> [Context Builder]
 Decision Hypothesis
    ↓ (xác nhận bằng log / outcome)
 [Decision Layer]
-   ├─ Rule Engine với Hard rules (exploitation)
-   ├─ Soft heuristics
+   ├─ Rule Engine ~ IF đúng → BẮT BUỘC làm
+   ├─ Soft heuristics ~ IF đúng → RẤT NÊN làm (trừ khi có lý do tốt hơn) => cho phép chọn theo context
    └─ AI Reasoner với AI agent (exploration / fallback)
    ↓
 Workflow Step
    ↓
 [Outcome Logger]
    ↺ (feedback loop)
+```
+
+Soft heuristic:
+```
+IF user_intent == "how-to"
+  AND user_expertise == "beginner"
+THEN
+  prefer step-by-step explanation
 ```
 
 Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
@@ -172,8 +180,8 @@ Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
   * 83% trường hợp có:
     * user_intent = lookup and data_confidence > 0.75 and tool_latency < 2s
     * Quan sát → agent luôn gọi tool A
-  * 👉 Đây là pattern ổn định
-
+    * 👉 Đây là pattern ổn định
+  * Khoảng 60–80% trường hợp xảy ra => soft heuristics
 * Chuyển pattern thành rule:
   ```
   IF user_intent == "lookup"
