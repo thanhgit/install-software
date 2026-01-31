@@ -127,26 +127,39 @@ Workflow Step
 Hard rules: 
 * rõ ràng, audit được
 * Trách nhiệm xuất hiện khi tính bất định biến mất
+* Owner có quyền: đề xuất sửa / xóa
+* Owner được thưởng–phạt theo impact
+* SLA-based, không đòi 100%
 ```
 Type: Hard rule
 Owner: John (Head of Ops) => cá nhân chịu trách nhiệm
 Change process: Approval required
 Failure impact: High
+Rule SLA:
+- Success rate ≥ 97%
+- Cost ≤ X
+- Incident ≤ Y / tháng
 ```
 
 Soft heuristic:
-```
-IF user_intent == "how-to"
-  AND user_expertise == "beginner"
-THEN
-  prefer step-by-step explanation
-```
+* Được phép sai trong “budget chịu đựng”
+* Không gán trách nhiệm cá nhân => “lộ diện người dám làm”
+* Người làm tốt → được promote làm owner hard rule
 ```
 Type: Soft heuristic
 Owner: Policy Working Group / System => team chịu trách nhiệm
 Status: Experimental / Provisional
 Review cycle: Monthly
 Override allowed: Yes (logged)
+Heuristic error budget:
+- Failure rate ≤ 20%
+- Không gây P0 / P1 incident
+- Cost spike ≤ Z
+Logic:
+  IF user_intent == "how-to"
+    AND user_expertise == "beginner"
+  THEN
+    prefer step-by-step explanation
 ```
 
 Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
