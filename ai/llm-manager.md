@@ -108,7 +108,15 @@ Workflow Step
     * 83% trường hợp có:
       * user_intent = lookup and data_confidence > 0.75 and tool_latency < 2s
       * Quan sát → agent luôn gọi tool A
-  * 👉 Đây là pattern ổn định 
+    * 👉 Đây là pattern ổn định
+
+  * Chuyển pattern thành rule:
+    ```
+    IF user_intent == "lookup"
+      AND data_confidence > 0.75
+      AND tool_latency < 2s
+    THEN call_tool_A
+    ```
 
 
 
