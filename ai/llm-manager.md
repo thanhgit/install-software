@@ -79,6 +79,13 @@ Workflow Step
    ↺ (feedback loop)
 ```
 
+Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
+1. Nếu cùng context state, agent có luôn ra cùng quyết định không?
+2. Có mô tả được quyết định bằng IF–THEN không dùng từ mơ hồ?
+3. Có log chứng minh rule đó đúng trong >X% case?
+4. Có fallback khi rule fail?
+5. Người khác đọc rule có hiểu mà không cần hiểu prompt gốc?
+
 #### Chuẩn hóa Context: biến “ngữ cảnh mơ hồ” thành “state có cấu trúc”
 * 👉 Context = tập hợp state
   ```json
