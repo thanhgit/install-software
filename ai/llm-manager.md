@@ -67,7 +67,21 @@ Deterministic Rule
 Workflow Step
 ```
 
-
+#### Chuẩn hóa Context: biến “ngữ cảnh mơ hồ” thành “state có cấu trúc”
+* 👉 Context = tập hợp state
+```json
+{
+  "input_data": {...},
+  "historical_memory": {...},
+  "user_intent": "X",
+  "constraints": ["time", "policy", "cost"],
+  "confidence_level": 0.82
+}
+```
+* Context phải có điều kiện rõ ràng như:
+  * user_intent = hỏi thông tin
+  * data_confidence > 0.8
+  * tool_available = true
 
 
 
