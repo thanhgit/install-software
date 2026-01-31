@@ -55,6 +55,9 @@
 
 ---
 ### AI agent ↔ Workflow
+* AI agent giỏi tìm đường
+* Workflow giỏi đi con đường đã biết
+
 Workflow chính là policy đã hội tụ (converged policy)
 | RL           | AI system của bạn                              |
 | ------------ | ---------------------------------------------- |
