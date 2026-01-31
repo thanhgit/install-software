@@ -78,14 +78,26 @@ Workflow Step
   "confidence_level": 0.82
 }
 ```
-* Context phải có điều kiện rõ ràng như:
-  * user_intent = hỏi thông tin
+
+* Context phải có điều kiện rõ ràng ~ có thể kiểm tra logic:
+  * user_intent = ask_info (hỏi thông tin)
   * data_confidence > 0.8
   * tool_available = true
 
-
-
-
+* Log để suy ngược được logic
+  * Làm căn cứ để chuẩn hóa thành workflow 
+```json
+{
+  "context_state": {...},
+  "reasoning_trace": [ // ~ logic quan sát được
+    "X được suy ra từ Y",
+    "Điều kiện A thỏa mãn"
+  ],
+  "decision": "call_tool_A",
+  "confidence": 0.87,
+  "outcome": "success"
+}
+```
 
 
 
