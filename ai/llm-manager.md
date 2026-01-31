@@ -124,12 +124,29 @@ Workflow Step
    ↺ (feedback loop)
 ```
 
+Hard rules: 
+* rõ ràng, audit được
+* Trách nhiệm xuất hiện khi tính bất định biến mất
+```
+Type: Hard rule
+Owner: John (Head of Ops) => cá nhân chịu trách nhiệm
+Change process: Approval required
+Failure impact: High
+```
+
 Soft heuristic:
 ```
 IF user_intent == "how-to"
   AND user_expertise == "beginner"
 THEN
   prefer step-by-step explanation
+```
+```
+Type: Soft heuristic
+Owner: Policy Working Group / System => team chịu trách nhiệm
+Status: Experimental / Provisional
+Review cycle: Monthly
+Override allowed: Yes (logged)
 ```
 
 Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
