@@ -98,6 +98,10 @@ Workflow Step
   "outcome": "success"
 }
 ```
+  * Người đề xuất chuẩn hóa cần trả lời được 3 câu hỏi:
+    * Vì sao agent làm thế?
+    * Trong điều kiện nào thì agent luôn làm vậy?
+    * Nếu bỏ AI đi, rule nào thay thế được?
 
 
 
