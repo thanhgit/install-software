@@ -104,6 +104,11 @@ Workflow Step
     * Nếu bỏ AI đi, rule nào thay thế được?
 
 * Từ suy đoán → xác định: kỹ thuật “Rule Extraction”
+  * Gom nhóm decision theo context:
+    * 83% trường hợp có:
+      * user_intent = lookup and data_confidence > 0.75 and tool_latency < 2s
+      * Quan sát → agent luôn gọi tool A
+  * 👉 Đây là pattern ổn định 
 
 
 
