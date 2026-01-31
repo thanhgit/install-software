@@ -54,17 +54,29 @@
   * Dữ liệu đầu vào cho việc tinh chỉnh RAG
 
 ---
-### Tư duy khung: từ Context → Decision → Rule
+### Tư duy khung: Context → Decision → Rule
+| Tầng          | Đặc điểm      | Xử lý               |
+| ------------- | ------------- | ------------------- |
+| Deterministic | Luôn đúng     | Workflow cứng       |
+| Heuristic     | Đúng phần lớn | Rule + fallback AI  |
+| Exploratory   | Mơ hồ         | Context engineering |
+
+AI agent tiến hóa thành workflow engine
 ```
 Data Context
    ↓ (diễn giải có kiểm soát)
-Context State
+Context State <-> [Context Builder]
    ↓ (suy đoán có căn cứ)
 Decision Hypothesis
    ↓ (xác nhận bằng log / outcome)
-Deterministic Rule
+[Decision Layer]
+   ├─ Rule Engine (từ log đã cứng hóa)
+   └─ AI Reasoner (fallback / edge case)
    ↓
 Workflow Step
+   ↓
+[Outcome Logger]
+   ↺ (feedback loop)
 ```
 
 #### Chuẩn hóa Context: biến “ngữ cảnh mơ hồ” thành “state có cấu trúc”
@@ -84,39 +96,40 @@ Workflow Step
   * data_confidence > 0.8
   * tool_available = true
 
-* Log để suy ngược được logic
-  * Làm căn cứ để chuẩn hóa thành workflow 
-    ```json
-    {
-      "context_state": {...},
-      "reasoning_trace": [ // ~ logic quan sát được
-        "X được suy ra từ Y",
-        "Điều kiện A thỏa mãn"
-      ],
-      "decision": "call_tool_A",
-      "confidence": 0.87,
-      "outcome": "success"
-    }
-    ```
-  * Người đề xuất chuẩn hóa cần trả lời được 3 câu hỏi:
-    * Vì sao agent làm thế?
-    * Trong điều kiện nào thì agent luôn làm vậy?
-    * Nếu bỏ AI đi, rule nào thay thế được?
+#### Log để suy ngược được logic
+* Làm căn cứ để chuẩn hóa thành workflow 
+  ```json
+  {
+    "context_state": {...},
+    "reasoning_trace": [ // ~ logic quan sát được
+      "X được suy ra từ Y",
+      "Điều kiện A thỏa mãn"
+    ],
+    "decision": "call_tool_A",
+    "confidence": 0.87,
+    "outcome": "success"
+  }
+  ```
+* Người đề xuất chuẩn hóa cần trả lời được 3 câu hỏi:
+  * Vì sao agent làm thế?
+  * Trong điều kiện nào thì agent luôn làm vậy?
+  * Nếu bỏ AI đi, rule nào thay thế được?
 
-* Từ suy đoán → xác định: kỹ thuật “Rule Extraction”
-  * Gom nhóm decision theo context:
-    * 83% trường hợp có:
-      * user_intent = lookup and data_confidence > 0.75 and tool_latency < 2s
-      * Quan sát → agent luôn gọi tool A
-    * 👉 Đây là pattern ổn định
+#### Từ suy đoán → xác định: kỹ thuật “Rule Extraction”
+* Gom nhóm decision theo context:
+  * 83% trường hợp có:
+    * user_intent = lookup and data_confidence > 0.75 and tool_latency < 2s
+    * Quan sát → agent luôn gọi tool A
+  * 👉 Đây là pattern ổn định
 
-  * Chuyển pattern thành rule:
-    ```
-    IF user_intent == "lookup"
-      AND data_confidence > 0.75
-      AND tool_latency < 2s
-    THEN call_tool_A
-    ```
+* Chuyển pattern thành rule:
+  ```
+  IF user_intent == "lookup"
+    AND data_confidence > 0.75
+    AND tool_latency < 2s
+  THEN call_tool_A
+  ```
+  * => workflow bắt đầu hình thành
 
 
 
