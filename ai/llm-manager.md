@@ -151,6 +151,8 @@ Owner: Policy Working Group / System => team chịu trách nhiệm
 Status: Experimental / Provisional
 Review cycle: Monthly
 Override allowed: Yes (logged)
+PIC_RULE: Nguyen Van A
+PIC_REVIEW_LOG: Nguyen Van B
 Heuristic error budget:
 - Failure rate ≤ 20%
 - Không gây P0 / P1 incident
@@ -161,6 +163,18 @@ Logic:
   THEN
     prefer step-by-step explanation
 ```
+
+Review định kỳ:
+* Với dashboard thống kê:
+  * AI agent đúng / sai
+  * Workflow đúng / sai
+* Review heuristic (nhẹ, nhanh)
+  * Xem: cái nào dùng nhiều / cái nào bị override nhiều
+  * Quyết định: giữ / bỏ / promote
+  * Theo delta cải thiện, không theo “đúng/sai tuyệt đối” ~ `Reward ∝ (metric_after − metric_before)`
+* Review hard rule (ít hơn, nghiêm túc)
+  * Xem: SLA / blast radius / drift
+  * Quyết định: điều chỉnh / split rule / retire
 
 Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
 1. Nếu cùng context state, agent có luôn ra cùng quyết định không?
