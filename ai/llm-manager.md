@@ -69,15 +69,15 @@ Workflow Step
 
 #### Chuẩn hóa Context: biến “ngữ cảnh mơ hồ” thành “state có cấu trúc”
 * 👉 Context = tập hợp state
-```json
-{
-  "input_data": {...},
-  "historical_memory": {...},
-  "user_intent": "X",
-  "constraints": ["time", "policy", "cost"],
-  "confidence_level": 0.82
-}
-```
+  ```json
+  {
+    "input_data": {...},
+    "historical_memory": {...},
+    "user_intent": "X",
+    "constraints": ["time", "policy", "cost"],
+    "confidence_level": 0.82
+  }
+  ```
 
 * Context phải có điều kiện rõ ràng ~ có thể kiểm tra logic:
   * user_intent = ask_info (hỏi thông tin)
@@ -86,23 +86,24 @@ Workflow Step
 
 * Log để suy ngược được logic
   * Làm căn cứ để chuẩn hóa thành workflow 
-```json
-{
-  "context_state": {...},
-  "reasoning_trace": [ // ~ logic quan sát được
-    "X được suy ra từ Y",
-    "Điều kiện A thỏa mãn"
-  ],
-  "decision": "call_tool_A",
-  "confidence": 0.87,
-  "outcome": "success"
-}
-```
+    ```json
+    {
+      "context_state": {...},
+      "reasoning_trace": [ // ~ logic quan sát được
+        "X được suy ra từ Y",
+        "Điều kiện A thỏa mãn"
+      ],
+      "decision": "call_tool_A",
+      "confidence": 0.87,
+      "outcome": "success"
+    }
+    ```
   * Người đề xuất chuẩn hóa cần trả lời được 3 câu hỏi:
     * Vì sao agent làm thế?
     * Trong điều kiện nào thì agent luôn làm vậy?
     * Nếu bỏ AI đi, rule nào thay thế được?
 
+* Từ suy đoán → xác định: kỹ thuật “Rule Extraction”
 
 
 
