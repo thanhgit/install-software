@@ -54,6 +54,47 @@
   * Dữ liệu đầu vào cho việc tinh chỉnh RAG
 
 ---
+### AI agent ↔ Workflow
+Workflow chính là policy đã hội tụ (converged policy)
+| RL           | AI system của bạn                              |
+| ------------ | ---------------------------------------------- |
+| Environment  | Data / user / hệ thống                         |
+| State (S)    | Context state đã chuẩn hóa                     |
+| Action (A)   | Tool call / response / decision                |
+| Reward (R)   | Outcome (success, cost, latency, user signal…) |
+| Policy π     | Logic quyết định                               |
+| Exploration  | AI agent reasoning                             |
+| Exploitation | Workflow / rule engine                         |
+
+Trong AI agent (LLM):
+* Exploration là semantic exploration
+* Dựa trên: prior knowledge / reasoning / latent pattern
+
+Chu trình chuyển đổi:
+```
+Exploration phase (AI agent)
+   ↓
+Log (state, decision, outcome)
+   ↓
+Policy distillation
+   ↓
+Exploitation phase (workflow)
+   ↓
+Exception / drift detected
+   ↓
+Quay lại exploration
+```
+
+Điều kiện policy hội tụ:
+```
+P(action | state) > 0.9
+  AND variance(action | state) < ε
+  AND reward ổn định trong N samples
+```
+* Đơn giản là, cùng state → cùng action ≥ 80–90%
+* outcome không xấu đi
+
+---
 ### Tư duy khung: Context → Decision → Rule
 | Tầng          | Đặc điểm      | Xử lý               |
 | ------------- | ------------- | ------------------- |
