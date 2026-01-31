@@ -1,19 +1,19 @@
 # LLM manager
-- #### Một hệ thống mạnh mẽ = **AI** + `sự giám sát của con người trong quy trình làm việc` => tự động hóa có giám sát cho các quyết định kinh doanh quan trọng
+- #### Một hệ thống mạnh mẽ = **AI** + **sự giám sát của con người** trong quy trình làm việc => tự động hóa có giám sát cho các quyết định kinh doanh quan trọng
 - #### Các AI agent là `các hệ thống vận hành dựa trên dữ liệu`, cụ thể như sau:
   * Cá nhân hóa
   * Suy luận nhanh
-  * Trí nhớ có ngữ cảnh
-  * Hành động theo dữ liệu thời gian thực
+  * Trí nhớ có context
+  * Hành động theo realtime data
   * Khả năng học hỏi từ quá khứ
 
 ![image](https://github.com/user-attachments/assets/bb40f4e0-bf18-45f5-a3f9-fc824f9f1a08)
 
-### 5 key data assets that power the smartest AI agents 2
+### 5 key data assets that power the smartest AI agents
 ![image](https://github.com/user-attachments/assets/a95f1f8a-1f97-4057-891d-3d69d37f6a78)
 
 #### 1. **Prompt Manager** – *Cá nhân hóa theo thời gian thực*
-* **Dữ liệu sử dụng:** API hồ sơ người dùng
+* **Dữ liệu sử dụng:** user profile API
 * **Tác dụng:** Giúp AI hiểu ngữ cảnh người dùng mà vẫn bảo mật
 * **Tính chất nổi bật:**
   * Tuân thủ GDPR
@@ -28,7 +28,7 @@
   * Caching tại biên, gần người dùng
   * Khả năng mở rộng cao, không bị nghẽn
 
-#### 3. **Context and Memory** – *Nhớ và hiểu đúng ngữ cảnh*
+#### 3. **Context and Memory** – *Nhớ và hiểu đúng context*
 * **Dữ liệu sử dụng:** Vector DB / Knowledge Graph
 * **Tác dụng:** Cải thiện độ chính xác, giảm sai lệch
 * **Tính chất nổi bật:**
@@ -49,8 +49,55 @@
 * **Dữ liệu sử dụng:** Interaction logs không thể thay đổi
 * **Tác dụng:** Mỗi phản hồi được lưu lại để cải thiện AI
 * **Tính chất nổi bật:**
-
   * Có version, audit rõ ràng
   * Ghi log theo luồng thời gian thực
   * Dữ liệu đầu vào cho việc tinh chỉnh RAG
+
+---
+### Tư duy khung: từ Context → Decision → Rule
+```
+Data Context
+   ↓ (diễn giải có kiểm soát)
+Context State
+   ↓ (suy đoán có căn cứ)
+Decision Hypothesis
+   ↓ (xác nhận bằng log / outcome)
+Deterministic Rule
+   ↓
+Workflow Step
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
