@@ -139,6 +139,10 @@ Rule SLA:
 - Success rate ≥ 97%
 - Cost ≤ X
 - Incident ≤ Y / tháng
+Delta window = max(
+   N cycles sử dụng rule, # ≥ 1.000 lần rule được dùng
+   hoặc T ngày # ≥ 30 ngày dùng rule
+)
 ```
 
 Soft heuristic:
@@ -162,6 +166,10 @@ Logic:
     AND user_expertise == "beginner"
   THEN
     prefer step-by-step explanation
+Delta window = max(
+   N cycles sử dụng rule,
+   hoặc T ngày
+)
 ```
 
 Review định kỳ:
