@@ -114,8 +114,9 @@ Context State <-> [Context Builder]
 Decision Hypothesis
    ↓ (xác nhận bằng log / outcome)
 [Decision Layer]
-   ├─ Rule Engine (từ log đã cứng hóa)
-   └─ AI Reasoner (fallback / edge case)
+   ├─ Rule Engine với Hard rules (exploitation)
+   ├─ Soft heuristics
+   └─ AI Reasoner với AI agent (exploration / fallback)
    ↓
 Workflow Step
    ↓
