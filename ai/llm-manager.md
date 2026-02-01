@@ -510,6 +510,167 @@ Bạn bán:
 * khả năng phân bổ trách nhiệm
 * khả năng bảo vệ con người khi sự cố xảy ra
 
+---
+### Lợi thế cạnh tranh
+**Nằm ở thứ khó copy nhất: cấu trúc trách nhiệm + data tích lũy theo thời gian**
+
+1. Data trách nhiệm tích lũy theo thời gian
+2. Khả năng phát hiện khoảng trống quyết định
+3. Narrative audit bảo vệ con người
+4. Cấu trúc thưởng phạt dài hạn
+5. Psychological safety được “hạ tầng hóa”
+
+#### 1. USP số 1 (lõi): **Responsibility Graph tích lũy theo thời gian**
+Bạn bán **bản đồ trách nhiệm sống** của tổ chức.
+
+Cái bạn tích lũy:
+* ai sở hữu rule nào
+* rule sống được bao lâu
+* rule nào hay bị override
+* ai hay đề xuất cải tiến
+* decision nào gây tranh cãi hậu sự cố
+
+👉 Đây là **data không thể mua**, không thể scrape, không thể bootstrap nhanh.
+
+Competitor có model tốt hơn → **vẫn không có data này**.
+
+#### 2. USP số 2: **Decision Coverage Intelligence (DCA)**
+
+Automation khác hỏi: “Làm sao thực thi tốt hơn?”
+Bạn hỏi: “Chỗ nào *chưa có quyết định*?”
+
+AI agent của bạn phát hiện:
+* incident lặp lại nhưng mỗi lần quyết khác
+* rule override cao
+* escalation không rõ owner
+
+👉 Bạn bán **khả năng phát hiện khoảng trống trách nhiệm**.
+
+Đây là **insight layer**, không phải execution layer.
+
+---
+
+# 3. USP số 3: **Time-weighted Trust (niềm tin theo thời gian)**
+
+Rule của bạn:
+
+* không đánh giá đúng/sai tức thì
+* mà đánh giá theo **thời gian sống + tác động**
+
+Bạn đã nói điều này rất đúng:
+
+> Hard rule owner sống nhờ “thời gian”.
+
+👉 Hệ thống của bạn:
+
+* tưởng thưởng cho người làm rule **bền**
+* không khuyến khích tối ưu cục bộ
+* tạo động lực cải tiến dài hạn
+
+Đối thủ rất khó copy vì:
+
+* cần **lịch sử dài**
+* cần **cấu trúc thưởng phạt ăn khớp**
+
+---
+
+# 4. USP số 4: **Audit narrative, không chỉ audit log**
+
+Mọi tool đều có log.
+**Không tool nào có “câu chuyện trách nhiệm”.**
+
+Bạn có:
+
+* decision context
+* rule version
+* ai đồng thuận
+* tại sao chọn hướng này lúc đó
+
+👉 Khi bị hỏi:
+
+> “Tại sao lại làm vậy?”
+
+Khách hàng **không cần tự kể chuyện nữa**.
+
+---
+
+# 5. USP số 5: **Psychological Safety as Infrastructure**
+
+Cái này nghe mềm, nhưng cực khó copy.
+
+Bạn biến:
+
+* an tâm
+* không bị cô lập
+* dám làm đúng thay vì an toàn
+
+thành:
+
+* cấu trúc
+* workflow
+* artifact
+
+👉 Đối thủ rất dễ nói, **rất khó làm**.
+
+---
+
+# 6. Vì sao các tool hiện tại không làm được?
+
+| Tool        | Thiếu gì             |
+| ----------- | -------------------- |
+| Monitoring  | Không có quyết định  |
+| Runbook     | Không có owner       |
+| AIOps       | Không có trách nhiệm |
+| LLM Copilot | Không có lịch sử     |
+| Governance  | Không gắn incident   |
+
+Bạn **đứng giữa các tool này**, chỗ họ không chạm tới.
+
+---
+
+# 7. USP KHÔNG nằm ở đâu (rất quan trọng)
+
+❌ Không nằm ở:
+
+* model lớn hơn
+* tự động hơn
+* thông minh hơn
+
+Nếu bạn pitch AI:
+→ bạn thua.
+
+Nếu bạn pitch:
+
+> *“We manage decision responsibility over time.”*
+
+→ bạn **độc quyền narrative**.
+
+---
+
+# 8. Competitive moat hình thành như thế nào?
+
+Sau 6–12 tháng dùng:
+
+* bạn có lịch sử rule
+* bạn có graph trách nhiệm
+* bạn có trust score theo thời gian
+
+👉 Switching cost **rất cao**:
+
+* mất lịch sử
+* mất narrative
+* mất “lá chắn trách nhiệm”
+
+---
+
+# 9. Một câu USP rất sắc (bạn có thể dùng)
+
+> *We don’t optimize systems.
+> We protect the people who run them.*
+
+Hoặc kỹ thuật hơn:
+
+> *The only AI that remembers who decided what — and why.*
 
 
 
