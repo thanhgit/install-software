@@ -289,7 +289,14 @@ Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
 * Bám chặt mục tiêu duy nhất: giảm *lo âu trách nhiệm***
 * *Decision Contracts let teams decide once — and sleep through the consequences.*
 
-Bạn có thể coi đây là **một primitive quản trị mới**, nằm giữa *runbook*, *rule engine* và *governance*.
+Bạn có thể coi đây là **một primitive quản trị mới**, nằm giữa *runbook*, *rule engine* và *governance*
+Tối giản gồm 4 thành phần:
+```
+WHEN: điều kiện
+CAN: hành động được phép
+LIMIT: giới hạn rủi ro
+OWNER: ai chịu trách nhiệm
+```
 
 #### 1. Decision Contract là gì (định nghĩa chuẩn)
 > **Decision Contract** là một cam kết có cấu trúc rằng:
