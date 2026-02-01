@@ -462,6 +462,9 @@ Bạn bán:
   * error budget còn lại
   * mức override cho phép
 * Có vòng đời tương tự policy object như: sinh ra / được kích hoạt / bị override / bị hết hạn / bị thay thế
+* Decision Graph xây dựng dựa trên: signal / decision / owner / outcome / thời gian
+* Moat nằm ở: graph semantics / lifecycle / temporal weighting
+* LLM là: summarizer / pattern suggester / gap detector / contract draft generator
 
 ---
 ### Lợi thế cạnh tranh
