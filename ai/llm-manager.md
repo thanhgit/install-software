@@ -510,6 +510,16 @@ Bạn bán:
 * khả năng phân bổ trách nhiệm
 * khả năng bảo vệ con người khi sự cố xảy ra
 
+#### Retrieve Decision State
+* Q: “Trong state này, quyết định nào đang có hiệu lực?”
+* State + graph bao gồm:
+  * rule version
+  * owner hiện tại
+  * validity window
+  * error budget còn lại
+  * mức override cho phép
+* Có vòng đời tương tự policy object như: sinh ra / được kích hoạt / bị override / bị hết hạn / bị thay thế
+
 ---
 ### Lợi thế cạnh tranh
 **Nằm ở thứ khó copy nhất: cấu trúc trách nhiệm + data tích lũy theo thời gian**
