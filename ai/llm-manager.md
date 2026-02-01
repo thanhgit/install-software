@@ -284,6 +284,232 @@ Dấu hiệu đã “đủ căn cứ để chuẩn hóa”:
   ```
   * => workflow bắt đầu hình thành
 
+---
+### **Thiết kế “Decision Contract”
+* Bám chặt mục tiêu duy nhất: giảm *lo âu trách nhiệm***
+* *Decision Contracts let teams decide once — and sleep through the consequences.*
+
+
+Bạn có thể coi đây là **một primitive quản trị mới**, nằm giữa *runbook*, *rule engine* và *governance*.
+
+---
+
+# 1. Decision Contract là gì (định nghĩa chuẩn)
+
+> **Decision Contract** là một cam kết có cấu trúc rằng:
+> *trong một lớp tình huống đã được mô tả trước,
+> hệ thống sẽ hành động theo một quyết định đã được suy nghĩ, chấp nhận và phân bổ trách nhiệm từ trước.*
+
+🔑 Điểm mấu chốt:
+
+* Không phải code
+* Không phải prediction
+* Không phải “AI quyết”
+
+👉 Nó là **trách nhiệm được đóng băng trước khi stress xuất hiện**.
+
+---
+
+# 2. Decision Contract KHÔNG nhằm mục tiêu gì?
+
+Để tránh hiểu sai, nó **không nhằm**:
+
+* ngăn mọi sự cố
+* bao phủ 100% tình huống
+* thay con người ra quyết định
+
+👉 Nó chỉ nhằm:
+
+> *khi rơi vào vùng đã chuẩn bị,
+> không ai phải tự quyết trong hoảng loạn.*
+
+---
+
+# 3. Cấu trúc tối thiểu của một Decision Contract
+
+Một Decision Contract **bắt buộc** phải trả lời được 5 câu hỏi.
+Thiếu 1 trong 5 → không giảm lo âu trách nhiệm.
+
+---
+
+## 3.1. Situation Envelope – “Khi nào contract có hiệu lực?”
+
+Đây là **ranh giới trách nhiệm**.
+
+Ví dụ:
+
+```text
+Signals:
+- error_rate > 5% trong 3 phút
+- deployment < 15 phút trước
+- traffic spike không tương ứng marketing event
+```
+
+👉 Quan trọng:
+
+* Không cần chính xác
+* Nhưng phải **đủ rõ để biết khi nào mình đang ở trong contract**
+
+---
+
+## 3.2. Decision Statement – “Quyết định đã được chốt là gì?”
+
+Không phải action chi tiết, mà là **ý chí quyết định**.
+
+Ví dụ:
+
+```text
+Decision:
+- Ưu tiên rollback hơn là debug live
+- Chấp nhận downtime ngắn để bảo toàn data
+```
+
+👉 Đây là phần **giảm lo âu mạnh nhất**:
+
+> *“Mình không phải chọn nữa – mình chỉ làm theo.”*
+
+---
+
+## 3.3. Action Binding – “Quyết định này được thực thi thế nào?”
+
+Có thể là:
+
+* workflow
+* script
+* manual checklist
+
+Ví dụ:
+
+```text
+Action:
+- Trigger rollback workflow A
+- Block further deploys
+- Notify channel #incident-core
+```
+
+👉 Action có thể fail.
+**Contract không hứa action luôn thành công.**
+
+---
+
+## 3.4. Responsibility Map – “Ai chịu trách nhiệm cái gì?”
+
+Cực kỳ quan trọng.
+
+Ví dụ:
+
+```text
+Rule Owner: SRE Lead
+Executor: On-call engineer
+Approver: Platform team
+Escalation: CTO nếu data risk
+```
+
+👉 Khi sự cố xảy ra:
+
+* executor **không mang trách nhiệm chiến lược**
+* owner **không bị hỏi “lúc đó anh nghĩ gì?”**
+
+---
+
+## 3.5. Validity & Exit – “Contract có hiệu lực đến khi nào?”
+
+Ví dụ:
+
+```text
+Valid until:
+- rollback completed
+OR
+- metrics stable 10 minutes
+OR
+- escalated to human decision
+```
+
+👉 Điều này **ngăn contract biến thành độc tài**.
+
+---
+
+# 4. Vì sao cấu trúc này GIẢM lo âu trách nhiệm?
+
+### Trước Decision Contract
+
+> “Nếu mình làm sai thì sao?”
+
+### Sau Decision Contract
+
+> “Mình đang thực thi một quyết định đã được đồng thuận và ghi nhận.”
+
+🔑 Sự khác biệt nằm ở:
+
+* **trách nhiệm đã được phân phối**
+* **quyết định không còn cá nhân hóa**
+
+---
+
+# 5. AI agent nằm ở đâu trong Decision Contract?
+
+Không nằm ở execution.
+Không nằm ở quyết định cuối.
+
+AI agent dùng để:
+
+### 5.1. Phát hiện contract nên tồn tại
+
+* log override nhiều
+* incident lặp lại
+* tranh cãi post-mortem
+
+---
+
+### 5.2. Gợi ý Situation Envelope
+
+* tín hiệu nào thường xuất hiện cùng nhau
+* ngưỡng nào hay gây tranh luận
+
+---
+
+### 5.3. Đề xuất nâng heuristic → contract
+
+> *“Trong 80% case tương tự, team đã chọn rollback.”*
+
+👉 Nhưng **con người ký contract**, không phải AI.
+
+---
+
+# 6. Decision Contract ≠ Smart Contract (phân biệt ngắn gọn)
+
+|           | Smart Contract   | Decision Contract                 |
+| --------- | ---------------- | --------------------------------- |
+| Mục tiêu  | Không cần tin ai | Không ai phải tự quyết lúc stress |
+| Thực thi  | Bắt buộc         | Có thể thoát                      |
+| Ngữ cảnh  | Rõ, định lượng   | Mơ hồ, nhiều tín hiệu             |
+| Con người | Bị loại bỏ       | Trung tâm                         |
+
+---
+
+# 7. Decision Contract giảm lo âu ở đâu, chính xác?
+
+Nó **đóng lại 3 câu hỏi gây mất ngủ nhất**:
+
+1. *“Lúc đó mình có quyền làm vậy không?”* → Có, contract cho phép
+2. *“Mình có một mình không?”* → Không, quyết định đã được đồng thuận
+3. *“Sau này có bị hỏi ngược không?”* → Có log, có owner, có thời điểm
+
+---
+
+# 8. Decision Contract là sản phẩm gì về mặt thương mại?
+
+Không phải tool automation.
+Không phải AI assistant.
+
+👉 Nó là **infrastructure cho trách nhiệm**.
+
+Bạn bán:
+
+* khả năng đóng băng quyết định
+* khả năng phân bổ trách nhiệm
+* khả năng bảo vệ con người khi sự cố xảy ra
+
 
 
 
