@@ -54,6 +54,47 @@
   * Dữ liệu đầu vào cho việc tinh chỉnh RAG
 
 ---
+### Giảm lo âu trách nhiệm
+* AI giúp họ quyết định cái gì cần được “đóng băng”
+* AI giảm rủi ro thiếu sót trong thiết kế rule
+* AI giúp họ tự tin rằng mình đã suy nghĩ đủ
+
+👉 Lo âu trách nhiệm giảm ở bước “decision coverage”, không phải execution
+
+```
+Decision Discovery (AI agent)
+        ↓
+Decision Freezing (Rule / Contract)
+        ↓
+Deterministic Execution (Workflow)
+        ↓
+Audit & Review (Log + Metrics)
+        ↺
+```
+
+Mở rộng không gian kịch bản:
+* gợi ý case edge
+* kết nối tín hiệu yếu
+* phát hiện pattern mới
+
+→ giảm vùng “unknown unknowns”
+
+Sinh ra candidate contract
+* AI agent giúp trả lời:
+  * “Chúng ta nên có rule cho tình huống này không?”
+  * “Rule này còn thiếu điều kiện gì?”
+  * “Rule này đang bị override nhiều, vì sao?”
+ 
+👉 Nó là contract discovery engine, không phải executor.
+
+Giữ hệ sống theo thời gian
+* Hệ thống thay đổi: code / team / workload / ...
+* Rule-based thuần: bị cũ / lệch / bỏ quên
+* AI agent:
+  * phát hiện drift
+  * đề xuất cập nhật
+  * đưa heuristic lên thành rule
+
 ### AI agent ↔ Workflow
 * AI agent giỏi tìm đường
 * Workflow giỏi đi con đường đã biết
