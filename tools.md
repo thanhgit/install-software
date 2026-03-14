@@ -26,7 +26,10 @@ abctl local install --host localhost
 ```bash
 abctl local install --host localhost --insecure-cookies
 ```
-
+* Get password
+```bash
+abctl local credentials
+```
 
 ### [A tool for writing better scripts](https://github.com/google/zx)
 
