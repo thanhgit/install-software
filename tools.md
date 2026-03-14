@@ -9,6 +9,16 @@ docker run --rm -i --name ui-template-de \
 		docker.io/thanhdocker/ui-template-de:1.0.4
 ```
 
+### Đề xuất LLM model nào phù hợp với phần cứng máy hiện tại
+* Full json result
+```bash
+docker run ghcr.io/alexsjones/llmfit
+```
+* Only get LLM model name
+```bash
+docker run ghcr.io/alexsjones/llmfit recommend --use-case coding | jq '.models[].name'
+```
+
 ### Airbyte
 #### Install abctl
 ```bash
