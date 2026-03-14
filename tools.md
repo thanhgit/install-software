@@ -9,6 +9,20 @@ docker run --rm -i --name ui-template-de \
 		docker.io/thanhdocker/ui-template-de:1.0.4
 ```
 
+### Airbyte
+#### Install abctl
+```bash
+curl -LsfS https://get.airbyte.com | bash -
+```
+* Check
+```bash
+abctl --help
+```
+* Run
+```bash
+abctl local install --host localhost
+```
+
 ### [A tool for writing better scripts](https://github.com/google/zx)
 
 ### https://vi.aliexpress.com
