@@ -22,6 +22,11 @@ abctl --help
 ```bash
 abctl local install --host localhost
 ```
+* Run with --insecure-cookies
+```bash
+abctl local install --host localhost --insecure-cookies
+```
+
 
 ### [A tool for writing better scripts](https://github.com/google/zx)
 
