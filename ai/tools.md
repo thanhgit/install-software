@@ -1,5 +1,23 @@
 # Tools for AI agent
 
+#### Lib
+* https://github.com/scikit-fuzzy/scikit-fuzzy for fuzzy logic
+
+* For Hedge Algebra
+```python
+import numpy as np
+
+class HedgeAlgebra4Tuple:
+    def __init__(self, a, b, alpha, beta):
+        self.val = np.array([a, b, alpha, beta])
+    
+    def defuzzify(self):
+        # Hàm giải mờ đơn giản (ví dụ: lấy trung tâm diện tích)
+        a, b, alpha, beta = self.val
+        return (a + b) / 2 + (beta - alpha) / 4
+```
+* Optuna: tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
+
 #### MCP gateway
 ```bash
 docker run -d --name mcpgateway \
