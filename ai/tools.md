@@ -19,8 +19,84 @@ class HedgeAlgebra4Tuple:
 
 * Optuna:
     * Tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
-    * => tìm Vùng an toàn (Range) cho contextual bandit và Trọng số khởi tạo cho AHP
+    * => tìm biên độ an toàn (Range) cho contextual bandit và Trọng số khởi tạo cho AHP
 
+```python
+import optuna
+import numpy as np
+import pandas as pd
+
+# 1. GIẢ LẬP DỮ LIỆU LỊCH SỬ (Validation Set)
+# Giả sử có 1000 lượt tương tác của Persona "Sinh viên"
+# Mục tiêu: Tìm trọng số sao cho khớp với hành vi thực tế nhất
+np.random.seed(42)
+validation_data = pd.DataFrame({
+    'price_score': np.random.rand(1000),
+    'perf_score': np.random.rand(1000),
+    'design_score': np.random.rand(1000),
+    'clicked': np.random.randint(0, 2, 1000) # Nhãn thực tế
+})
+
+# 2. HÀM TÍNH TRỌNG SỐ TỪ MA TRẬN AHP (Eigenvector Method)
+def get_ahp_weights(matrix):
+    eigvals, eigvecs = np.linalg.eig(matrix)
+    max_eigval = np.argmax(eigvals)
+    weights = eigvecs[:, max_eigval].real
+    return weights / weights.sum()
+
+# 3. ĐỊNH NGHĨA HÀM MỤC TIÊU CHO OPTUNA
+def objective(trial):
+    # Optuna sẽ "thử" các giá trị so sánh cặp (thang đo 1-9 hoặc nghịch đảo 1/9)
+    # So sánh: Giá vs Cấu hình (p_vs_perf)
+    p_vs_perf = trial.suggest_float('p_vs_perf', 0.11, 9.0)
+    # So sánh: Giá vs Thiết kế (p_vs_des)
+    p_vs_des = trial.suggest_float('p_vs_des', 0.11, 9.0)
+    # So sánh: Cấu hình vs Thiết kế (perf_vs_des)
+    perf_vs_des = trial.suggest_float('perf_vs_des', 0.11, 9.0)
+
+    # Xây dựng ma trận AHP 3x3
+    matrix = np.array([
+        [1, p_vs_perf, p_vs_des],
+        [1/p_vs_perf, 1, perf_vs_des],
+        [1/p_vs_des, 1/perf_vs_des, 1]
+    ])
+
+    # Tính trọng số từ ma trận này
+    weights = get_ahp_weights(matrix)
+    
+    # Giả lập mô hình Score đơn giản: Score = W1*Price + W2*Perf + W3*Design
+    # Chúng ta muốn Score này dự đoán đúng hành vi 'clicked' nhất
+    predictions = (
+        validation_data['price_score'] * weights[0] +
+        validation_data['perf_score'] * weights[1] +
+        validation_data['design_score'] * weights[2]
+    )
+    
+    # Tính toán độ lỗi (MSE) hoặc Correlation với nhãn thực tế
+    # Ở đây dùng Correlation làm mục tiêu tối ưu (càng cao càng tốt)
+    correlation = validation_data['clicked'].corr(pd.Series(predictions))
+    
+    return correlation
+
+# 4. CHẠY OPTUNA TỐI ƯU HÓA
+study = optuna.create_study(direction='maximize')
+study.optimize(objective, n_trials=100)
+
+# 5. KẾT QUẢ
+print("--- KẾT QUẢ TỐI ƯU ---")
+best_params = study.best_params
+final_matrix = np.array([
+    [1, best_params['p_vs_perf'], best_params['p_vs_des']],
+    [1/best_params['p_vs_perf'], 1, best_params['perf_vs_des']],
+    [1/best_params['p_vs_des'], 1/best_params['perf_vs_des'], 1]
+])
+final_weights = get_ahp_weights(final_matrix)
+
+print(f"Trọng số chuẩn cho Persona này:")
+print(f" - Giá: {final_weights[0]:.2f}")
+print(f" - Cấu hình: {final_weights[1]:.2f}")
+print(f" - Thiết kế: {final_weights[2]:.2f}")
+```
 * Build persona
 ```python
 import pandas as pd
