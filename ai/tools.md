@@ -65,8 +65,24 @@ Bạn có thể làm việc khác, tôi sẽ báo ngay khi hoàn tất.
   * Xử lý tiêu chí khác đơn vị tốt (bằng chuẩn hóa).
   * Xem xét tổng thể so với ideal và anti-ideal → phù hợp với decision phức tạp.
 
+#### 3️⃣ MOORA (Multi-Objective Optimization on the basis of Ratio Analysis)
+* Chuẩn hóa dữ liệu bằng ratio method: chia giá trị mỗi lựa chọn cho căn bậc hai tổng bình phương của tiêu chí.
+* Phép cộng trừ giữa các tiêu chí maximize và minimize để tính điểm cuối cùng.
 
+* ✅ Khi nào dùng
+  * Khi cần cân bằng các tiêu chí tối đa hóa và tối thiểu hóa.
+  * Khi dữ liệu khác đơn vị, không muốn chỉ dùng Weighted Sum đơn giản.
+  * Phù hợp với decision nhanh, trực quan nhưng vẫn tính đến nhiều tiêu chí.
 
+* ✅ Ưu điểm
+  * Chuẩn hóa tự động → dễ dùng khi tiêu chí khác đơn vị.
+  * Giống WSM nhưng mạnh hơn cho trường hợp có cả maximize và minimize.
+
+| Phương pháp  | Loại decision phù hợp                                                  | Ưu điểm                               | Nhược điểm                                                       |
+| ------------ | ---------------------------------------------------------------------- | ------------------------------------- | ---------------------------------------------------------------- |
+| Weighted Sum | Lựa chọn đơn giản, ít tiêu chí, cùng đơn vị                            | Đơn giản, dễ giải thích               | Không xử lý tốt đơn vị khác nhau, khoảng cách relative           |
+| TOPSIS       | Lựa chọn nhiều tiêu chí, có maximize & minimize, cần so sánh với ideal | Tính tương đối tốt, xử lý đa tiêu chí | Cần chuẩn hóa, phức tạp hơn                                      |
+| MOORA        | Nhiều tiêu chí khác đơn vị, mix maximize & minimize                    | Chuẩn hóa tự động, cân bằng           | Ít trực quan hơn Weighted Sum, vẫn cần hiểu cách ratio hoạt động |
 
 
 
