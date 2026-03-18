@@ -19,6 +19,58 @@ class HedgeAlgebra4Tuple:
 
 * Optuna: tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
 
+* Build persona
+```python
+import pandas as pd
+import numpy as np
+import xgboost as xgb
+from pyahp import parse
+
+# 1. BƯỚC AHP: Định nghĩa ma trận so sánh cặp (từ chuyên gia/kinh doanh)
+# Giả sử tiêu chí cho Persona "Sinh viên": Giá (quan trọng hơn) > Cấu hình > Thiết kế
+ahp_model = {
+    "name": "Student Priority",
+    "method": "approximate",
+    "criteria": ["Price", "Performance", "Design"],
+    "comparisons": [
+        [1, 5, 9],    # Price vs [Price, Perf, Design]
+        [0.2, 1, 3],  # Perf vs [Price, Perf, Design]
+        [0.11, 0.33, 1] # Design vs [Price, Perf, Design]
+    ]
+}
+
+# Giả định trọng số thu được từ AHP (thực tế dùng thư viện pyahp để giải)
+# weights = [0.7, 0.2, 0.1] 
+weights = np.array([0.7, 0.2, 0.1]) 
+
+# 2. CHUẨN BỊ DATASET (Sản phẩm thô + Điểm AHP)
+data = pd.DataFrame({
+    'user_id': [101, 101, 102, 102],
+    'price_score': [0.9, 0.4, 0.8, 0.3], # Đã chuẩn hóa 0-1
+    'perf_score': [0.3, 0.8, 0.4, 0.9],
+    'design_score': [0.5, 0.9, 0.4, 0.7],
+    'historical_ctr': [0.05, 0.12, 0.02, 0.08] # Dữ liệu hành vi thực tế
+})
+
+# Tính toán "AHP_Preference_Score" - Đây là Feature Engineering thủ công
+data['ahp_score'] = (
+    data['price_score'] * weights[0] + 
+    data['perf_score'] * weights[1] + 
+    data['design_score'] * weights[2]
+)
+
+# 3. TRAIN XGBOOST
+# Input bao gồm cả dữ liệu thô (Raw) và dữ liệu chuyên gia (AHP)
+X = data[['price_score', 'perf_score', 'design_score', 'ahp_score', 'historical_ctr']]
+y = [0, 1, 0, 1] # Nhãn: Mua hay không mua
+
+model = xgb.XGBClassifier(objective='binary:logistic')
+model.fit(X, y)
+
+# Kiểm tra độ quan trọng của đặc trưng
+print(model.get_booster().get_score(importance_type='weight'))
+```
+
 #### MCP gateway
 ```bash
 docker run -d --name mcpgateway \
