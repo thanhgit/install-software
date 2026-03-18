@@ -17,7 +17,9 @@ class HedgeAlgebra4Tuple:
         return (a + b) / 2 + (beta - alpha) / 4
 ```
 
-* Optuna: tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
+* Optuna:
+    * Tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
+    * => tìm Vùng an toàn (Range) cho contextual bandit và Trọng số khởi tạo cho AHP
 
 * Build persona
 ```python
