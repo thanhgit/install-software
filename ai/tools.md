@@ -35,3 +35,41 @@ Bạn có thể làm việc khác, tôi sẽ báo ngay khi hoàn tất.
 “Đang xử lý…”
 “Gần xong…”
 ```
+
+#### 1️⃣ Weighted Sum Model (WSM)
+* Tính tổng có trọng số của tất cả tiêu chí
+* ✅ Khi nào dùng:
+  * Khi mọi tiêu chí đều có cùng đơn vị hoặc đã chuẩn hóa.
+  * Khi ưu tiên đơn giản, trực tiếp: “giá trị càng cao càng tốt” hoặc “càng thấp càng tốt” đã được chuyển đổi.
+  * Dữ liệu dạng số (quantitative).
+
+* ✅ Ưu điểm
+  * Rất đơn giản, nhanh chóng.
+  * Dễ giải thích cho người dùng.
+
+* ❌ Hạn chế
+* Không xử lý tốt tiêu chí với đơn vị khác nhau nếu chưa chuẩn hóa.
+* Không cân nhắc khoảng cách giữa lựa chọn và ideal.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
