@@ -38,6 +38,7 @@ Bạn có thể làm việc khác, tôi sẽ báo ngay khi hoàn tất.
 
 #### 1️⃣ Weighted Sum Model (WSM)
 * Tính tổng có trọng số của tất cả tiêu chí
+
 * ✅ Khi nào dùng:
   * Khi mọi tiêu chí đều có cùng đơn vị hoặc đã chuẩn hóa.
   * Khi ưu tiên đơn giản, trực tiếp: “giá trị càng cao càng tốt” hoặc “càng thấp càng tốt” đã được chuyển đổi.
@@ -48,11 +49,21 @@ Bạn có thể làm việc khác, tôi sẽ báo ngay khi hoàn tất.
   * Dễ giải thích cho người dùng.
 
 * ❌ Hạn chế
-* Không xử lý tốt tiêu chí với đơn vị khác nhau nếu chưa chuẩn hóa.
-* Không cân nhắc khoảng cách giữa lựa chọn và ideal.
+  * Không xử lý tốt tiêu chí với đơn vị khác nhau nếu chưa chuẩn hóa.
+  * Không cân nhắc khoảng cách giữa lựa chọn và ideal.
 
+#### 2️⃣ TOPSIS (Technique for Order Preference by Similarity to Ideal Solution)
+* Tính khoảng cách từ mỗi lựa chọn tới giải pháp lý tưởng (max score) và giải pháp xấu nhất (min score).
+* => Chọn lựa chọn **gần giải pháp lý tưởng nhất** và **xa giải pháp xấu nhất nhất**
+  
+* ✅ Khi nào dùng
+  * Khi bạn có nhiều tiêu chí, có cả maximize và minimize.
+  * Khi cần so sánh tương đối các lựa chọn với “ideal solution”.
+  * Dữ liệu dạng số, chuẩn hóa là bắt buộc.
 
-
+* ✅ Ưu điểm
+  * Xử lý tiêu chí khác đơn vị tốt (bằng chuẩn hóa).
+  * Xem xét tổng thể so với ideal và anti-ideal → phù hợp với decision phức tạp.
 
 
 
