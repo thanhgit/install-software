@@ -19,3 +19,19 @@ docker run -d --name mcpgateway \
   -e DATABASE_URL=sqlite:///./mcp.db \
   ghcr.io/ibm/mcp-context-forge:1.0.0-BETA-1
 ```
+
+## Design AI agent
+#### User cần “cảm giác đáng tin + có kiểm soát”
+* Start WF
+```text
+A => B => C
+Quy trình này thường mất khoảng 10 phút nếu làm thủ công.
+Tôi sẽ xử lý tự động cho bạn — thường chỉ mất vài phút.
+Bạn có thể làm việc khác, tôi sẽ báo ngay khi hoàn tất.
+```
+* In progress WF
+```
+“Đang thu thập dữ liệu…”
+“Đang xử lý…”
+“Gần xong…”
+```
