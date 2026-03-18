@@ -71,6 +71,31 @@ model.fit(X, y)
 print(model.get_booster().get_score(importance_type='weight'))
 ```
 
+* Using contextual bandit to Ràng buộc (Constraint) trong biên độ bạn cho phép, ví dụ 0.2)
+```python
+# Trọng số cứng từ AHP cho Persona "Eco-Friendly"
+ahp_weights = {'green_material': 0.6, 'price': 0.3, 'delivery_speed': 0.1}
+
+# Biên độ thay đổi tối đa (Guardrail) là 20%
+epsilon = 0.2 
+
+def get_constrained_weights(bandit_delta):
+    final_weights = {}
+    for criteria, base_w in ahp_weights.items():
+        # Lấy delta từ thuật toán Bandit (ví dụ Thompson Sampling)
+        delta = bandit_delta.get(criteria, 0)
+        
+        # Áp dụng ràng buộc: Không được vượt quá biên độ cho phép
+        clamped_delta = max(min(delta, epsilon), -epsilon)
+        
+        final_weights[criteria] = base_w + clamped_delta
+    return final_weights
+
+# Giả sử hôm nay trời mưa, khách cần giao nhanh (delivery_speed)
+# Bandit học được xu hướng này và gửi delta_delivery = +0.5
+# Hệ thống sẽ "nắn" lại thành +0.2 để không làm mất đặc trưng "Eco-Friendly" (0.6) của Persona này.
+```
+
 #### MCP gateway
 ```bash
 docker run -d --name mcpgateway \
