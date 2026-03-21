@@ -559,7 +559,7 @@ Definitions:
 
 - DYNAMIC:
   - Information that can change over time, even if not explicitly stated
-  - Laws, regulations, policies, or rules that may be updated
+  - Laws, regulations, policies, organizations, roles or rules that may be updated
   - Roles or positions that can change (e.g., CEO, president)
   - Any topic where outdated information may become incorrect
 
