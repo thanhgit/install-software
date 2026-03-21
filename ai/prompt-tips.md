@@ -496,3 +496,44 @@ Return JSON only:
 
 Question: Linux và Windows and MacOS là gì?
 ```
+
+#### LLM xác định câu hỏi cần SINGLE_HOP hay MULTI_HOP
+* **MULTI_CHUNK ≠ MULTI_HOP**
+* Nhưng: `MULTI_HOP gần như luôn cần MULTI_CHUNK`
+* Golden rule: **Có bước trung gian → MULTI_HOP**
+```prompt
+You are a reasoning complexity classifier for a retrieval system.
+
+Your task is to classify a question into one of two categories:
+
+- SINGLE_HOP: The answer can be found directly in a single document or passage, without needing to combine information.
+- MULTI_HOP: The answer requires connecting multiple pieces of information across different documents or reasoning steps.
+
+Definitions:
+- SINGLE_HOP:
+  - Direct factual questions
+  - Definitions or simple explanations
+  - Answers that can be found in one place
+
+- MULTI_HOP:
+  - Requires linking entities (e.g., person → spouse → birth year)
+  - Requires intermediate steps (find A → use A to find B)
+  - Questions involving implicit reasoning across multiple facts
+  - Questions where key information is unlikely to appear together in one chunk
+
+Guidelines:
+- If answering requires an intermediate lookup step → MULTI_HOP
+- If the question mentions multiple entities that must be resolved step-by-step → MULTI_HOP
+- Prefer MULTI_HOP if unsure
+- Do NOT assume all information is in one chunk unless it is very obvious
+
+Return JSON only:
+{
+  "decision": "SINGLE_HOP" or "MULTI_HOP"
+}
+
+Question: CEO Apple sinh năm bao nhiêu?
+```
+
+
+
