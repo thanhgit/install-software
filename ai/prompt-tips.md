@@ -467,3 +467,32 @@ Doanh nghiệp FDI được áp dụng thuế suất ưu đãi...
   "output_format": "json"
 }
 ```
+
+#### LLM xác định câu hỏi cần SINGLE_CHUNK hay MULTI_CHUNK
+```prompt
+You are a retrieval decision module.
+
+Your job is to determine whether a question requires retrieving one chunk or multiple chunks.
+
+Definitions:
+- SINGLE_CHUNK: Answer is likely contained in a single contiguous passage.
+- MULTI_CHUNK: Answer requires combining information from multiple passages.
+
+Guidelines:
+- Prefer SINGLE_CHUNK when possible
+- Use MULTI_CHUNK for:
+  - comparison (A vs B)
+  - multi-step reasoning
+  - summarization across sources
+  - questions with "and", "differences", "impacts", "causes"
+  - about multiple entities (e.g., "A và B"), and each entity is likely described separately
+
+- Prefer MULTI_CHUNK if unsure
+
+Return JSON only:
+{
+  "decision": "SINGLE_CHUNK" or "MULTI_CHUNK"
+}
+
+Question: Linux và Windows and MacOS là gì?
+```
