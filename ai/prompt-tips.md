@@ -579,6 +579,47 @@ Return JSON only:
 Question: Ai là CEO của Google?
 ```
 
+#### LLM kiểm tra "Độ rõ ràng" (Ambiguity or Clear)
+* “có context cụ thể” mới là CLEAR
+* Golden rule: **Không có subject rõ → AMBIGUOUS**
+* Dùng công cụ để phát hiện: đại từ, thiếu domain, thiếu intent
+```prompt
+You are a question clarity classifier.
+
+Your task is to determine whether a question is clear or ambiguous.
+
+Classify the question into one of two categories:
+
+- CLEAR: The question is well-formed, specific, and provides enough context to understand what is being asked.
+- AMBIGUOUS: The question lacks context, is incomplete, or could have multiple interpretations.
+
+Definitions:
+- CLEAR:
+  - Contains sufficient context (subject, object, or domain)
+  - Has a clear intent and can be answered without guessing
+  - Example: "Luật giao thông Việt Nam quy định tốc độ tối đa là bao nhiêu?"
+
+- AMBIGUOUS:
+  - Missing key context or subject
+  - Vague or too general
+  - Could refer to multiple things
+  - Example: "Nó hoạt động thế nào?"
+  - Example: "Cái này là gì?"
+  - Example: "How does it work?"
+
+Guidelines:
+- If the question uses pronouns without clear reference (nó, nó này, this, it) → AMBIGUOUS
+- If the question lacks domain or subject → AMBIGUOUS
+- If the question is too short and vague → AMBIGUOUS
+- Prefer AMBIGUOUS if unsure
+
+Return JSON only:
+{
+  "decision": "CLEAR" or "AMBIGUOUS"
+}
+
+Question: API hoạt động như thế nào trong hệ thống web?
+```
 
 
 
