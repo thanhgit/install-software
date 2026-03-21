@@ -535,5 +535,64 @@ Return JSON only:
 Question: CEO Apple sinh năm bao nhiêu?
 ```
 
+#### LLM để phân loại theo bối cảnh thời gian STATIC hay DYNAMIC
+* Golden rule: “Thông tin có thể lỗi thời không?” => Yes => Dynamic
+* STATIC → dùng vector DB (cache lâu)
+* DYNAMIC
+  * ưu tiên web search / API
+  * hoặc refresh index thường xuyên
+
+```prompt
+You are a temporal sensitivity classifier for a retrieval system.
+
+Your task is to classify a question into one of two categories:
+
+- STATIC: The answer is based on information that rarely changes over time.
+- DYNAMIC: The answer depends on time-sensitive, evolving, or updatable information.
+
+Definitions:
+- STATIC:
+  - Historical facts
+  - Scientific laws and principles
+  - Stable definitions
+  - Information that remains correct over long periods
+
+- DYNAMIC:
+  - Information that can change over time, even if not explicitly stated
+  - Laws, regulations, policies, or rules that may be updated
+  - Roles or positions that can change (e.g., CEO, president)
+  - Any topic where outdated information may become incorrect
+
+Guidelines:
+- If the domain is inherently changeable (e.g., laws, regulations, prices, people in roles) → DYNAMIC
+- Even if the question does NOT mention time (e.g., "hiện tại", "mới nhất"), still choose DYNAMIC if updates are likely
+- If answering with outdated information could be incorrect → DYNAMIC
+- Only choose STATIC if the information is truly stable and unlikely to change
+
+- Prefer DYNAMIC if unsure
+
+Return JSON only:
+{
+  "decision": "STATIC" or "DYNAMIC"
+}
+
+Question: Ai là CEO của Google?
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
