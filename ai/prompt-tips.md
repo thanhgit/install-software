@@ -693,11 +693,133 @@ Question:
 Ai là người sáng lập Microsoft và công ty này được thành lập năm nào?
 ```
 
+##### Prompt: Extract Claims (Grounded)
+```prompt
+You are a precise information extraction system.
 
+Your task:
+Extract ONLY factual claims that are directly supported by the provided context.
 
+Rules:
+- Each claim MUST be explicitly supported by a specific chunk
+- DO NOT infer or add new information
+- DO NOT merge claims unless clearly supported
+- IGNORE irrelevant chunks
+- Keep claims atomic (one fact per claim)
 
+Return JSON list:
+[
+  {
+    "claim": "...",
+    "source": "chunk_id"
+  }
+]
 
+Context:
+[Chunk 1]
+Microsoft là một công ty công nghệ đa quốc gia của Mỹ, được thành lập vào năm 1975 bởi Bill Gates và Paul Allen.
 
+[Chunk 2]
+Bill Gates là một doanh nhân và nhà từ thiện người Mỹ, nổi tiếng với vai trò đồng sáng lập Microsoft.
+
+[Chunk 3]
+Apple được thành lập vào năm 1976 bởi Steve Jobs, Steve Wozniak và Ronald Wayne.
+
+Question:
+Ai là người sáng lập Microsoft và công ty này được thành lập năm nào?
+```
+```json
+{
+  "claim": "Bill Gates và Paul Allen là người sáng lập Microsoft.",
+  "source": "Chunk 1"
+},
+{
+  "claim": "Microsoft được thành lập vào năm 1975.",
+  "source": "Chunk 1"
+}
+```
+
+#### Prompt: Verify Claims (CỰC KỲ QUAN TRỌNG)
+```prompt
+You are a strict fact-checking system.
+
+Task:
+Verify whether each claim is supported by the provided source chunk.
+
+Rules:
+- Only mark "SUPPORTED" if the claim is explicitly stated or clearly implied
+- Mark "NOT_SUPPORTED" if:
+  - the claim is missing from the chunk
+  - the claim adds extra information
+  - the claim is partially correct but not fully supported
+- Do NOT use outside knowledge
+
+Return JSON:
+[
+  {
+    "claim": "...",
+    "source": "chunk_id",
+    "verdict": "SUPPORTED" or "NOT_SUPPORTED",
+    "reason": "short explanation"
+  }
+]
+
+Input:
+{
+  "claim": "Bill Gates và Paul Allen là người sáng lập Microsoft.",
+  "source": "Chunk 1"
+},
+{
+  "claim": "Microsoft được thành lập vào năm 1975.",
+  "source": "Chunk 1"
+}
+```
+```json
+{
+  "claim": "Bill Gates và Paul Allen là người sáng lập Microsoft.",
+  "source": "Chunk 1",
+  "verdict": "SUPPORTED",
+  "reason": "The chunk explicitly states that Bill Gates and Paul Allen founded Microsoft."
+},
+{
+  "claim": "Microsoft được thành lập vào năm 1975.",
+  "source": "Chunk 1",
+  "verdict": "SUPPORTED",
+  "reason": "The chunk clearly states that Microsoft was established in 1975."
+}
+```
+
+#### Prompt: Generate Final Answer (Grounded)
+```prompt
+You are a question answering system.
+
+Use ONLY the verified claims below to answer the question.
+
+Rules:
+- DO NOT add new information
+- If information is missing, say "Không đủ thông tin"
+- Combine claims logically
+
+Question:
+Ai là người sáng lập Microsoft và công ty này được thành lập năm nào?
+
+Verified Claims:
+{
+  "claim": "Bill Gates và Paul Allen là người sáng lập Microsoft.",
+  "source": "Chunk 1",
+  "verdict": "SUPPORTED",
+  "reason": "The chunk explicitly states that Bill Gates and Paul Allen founded Microsoft."
+},
+{
+  "claim": "Microsoft được thành lập vào năm 1975.",
+  "source": "Chunk 1",
+  "verdict": "SUPPORTED",
+  "reason": "The chunk clearly states that Microsoft was established in 1975."
+}
+```
+````text
+Bill Gates và Paul Allen là người sáng lập Microsoft, và công ty này được thành lập vào năm 1975.
+```
 
 
 
