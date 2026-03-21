@@ -4,24 +4,18 @@
 
 * Không "đối xử" mọi đoạn context như nhau
 * Ưu tiên đoạn quan trọng khi trả lời
-  ”
-
-
 
 LLM không "hiểu" JSON theo nghĩa truyền thống mà theo xác suất chuỗi (token-level pattern):
-
 * Nó học được rằng trong `{ "key": "value" }` → `"key"` thường mô tả loại thông tin gì.
 * Nó học được rằng `"relevance_score": 0.91` → nghĩa là mức độ liên quan.
 * Nó học pattern như:
-
   * `"title": "..."`, `"source": "..."`, `"confidence": ...`, `"answer": "..."`
 
-➡️ Những pattern này **rất phổ biến** trong tập huấn luyện (internet, API docs, open datasets...), nên LLM **hiểu ngữ nghĩa ngầm** của từng trường.
+➡️ Những pattern này **rất phổ biến** trong tập huấn luyện (internet, API docs, open datasets...)
+=> LLM **hiểu ngữ nghĩa ngầm** của từng trường.
 
 ### ✅ **1. Gắn điểm số trực tiếp vào từng đoạn (score-based annotation)**
-
-Bạn hiển thị điểm tương đồng vào trước mỗi đoạn, ví dụ như sau:
-
+* Bạn hiển thị điểm tương đồng vào trước mỗi đoạn, ví dụ như sau:
 ```txt
 [Document 1] (Relevance Score: 0.92)
 <đoạn văn số 1>
@@ -34,15 +28,12 @@ Bạn hiển thị điểm tương đồng vào trước mỗi đoạn, ví dụ
 ```
 
 🎯 Lợi ích:
-
 * LLM sẽ *implicitly* hiểu rằng đoạn 1 > đoạn 2 > đoạn 3
 * Không cần thay đổi kiến trúc model, chỉ prompt
 
 💡 Mẹo:
-
 * Dùng **thang điểm chuẩn hóa** (0.0 – 1.0 hoặc 0–100) cho nhất quán
 * Có thể thêm mô tả như:
-
   > “Bạn nên ưu tiên các tài liệu có điểm cao hơn trong quá trình trả lời.”
 
 ### ✅ **2. Sắp xếp thứ tự context theo độ phù hợp (descending order) (Re-ranker)**
@@ -621,7 +612,35 @@ Return JSON only:
 Question: API hoạt động như thế nào trong hệ thống web?
 ```
 
+#### Cách "ép" LLM nhận diện suy luận
+```prompt
+### ROLE
+Bạn là một chuyên gia hỗ trợ khách hàng thông minh. Nhiệm vụ của bạn là trả lời câu hỏi dựa trên các đoạn văn bản (Chunks) và Metadata đi kèm. 
 
+### QUY TẮC SUY LUẬN
+1. Không chỉ tìm từ khóa giống nhau. Hãy tìm mối liên hệ LOGIC: 
+   - Nếu câu hỏi hỏi về một "Sự cố", hãy tìm Chunk có Metadata về "Điều khoản loại trừ" hoặc "Nguyên nhân".
+   - Nếu câu hỏi hỏi về "Địa điểm cụ thể", hãy ưu tiên Chunk có Metadata "Region" tương ứng.
+2. Nếu thông tin bị loại trừ trong Metadata (ví dụ: exclude: dropping), bạn phải khẳng định là KHÔNG được hỗ trợ.
+
+### DỮ LIỆU CUNG CẤP (CONTEXT)
+[Chunk 1]
+Nội dung: "Tất cả điện thoại iPhone chính hãng đều được bảo hành 12 tháng cho các lỗi từ nhà sản xuất."
+Metadata: { "product": "iPhone", "type": "policy", "scope": "global", "coverage": "manufacturer_defect" }
+
+[Chunk 2]
+Nội dung: "Tại thị trường Việt Nam (mã VN/A), chính sách bảo hành tuân thủ theo quy định của Apple Asia."
+Metadata: { "product": "iPhone", "region": "Vietnam", "link_to": "Chunk 1" }
+
+[Chunk 3]
+Nội dung: "Các hư hỏng do tác động vật lý như rơi vỡ, vào nước sẽ không được bảo hành miễn phí trừ khi người dùng có gói AppleCare+."
+Metadata: { "exclude": ["dropping", "water_damage"], "applies_to": "all_models", "solution": "AppleCare+" }
+
+### CÂU HỎI CỦA NGƯỜI DÙNG
+"Tôi mua iPhone 15 tại Việt Nam, hôm qua lỡ tay làm rơi vỡ màn hình thì có được sửa miễn phí không?"
+
+### TRẢ LỜI:
+```
 
 
 
