@@ -645,6 +645,11 @@ Metadata: { "exclude": ["dropping", "water_damage"], "applies_to": "all_models",
 #### Single prompt cho **grounding + verification logic bên trong**
 * nhanh hơn / ít tốn token hơn / dễ triển khai
 * Prompt này đang “giả lập” pipeline: extract -> filter -> verify
+* Dùng khi:
+   * latency quan trọng
+   * system chưa quá critical
+   * muốn baseline nhanh
+  
 ```prompt
 You are a highly reliable question answering system.
 
