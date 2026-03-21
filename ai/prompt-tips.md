@@ -642,7 +642,51 @@ Metadata: { "exclude": ["dropping", "water_damage"], "applies_to": "all_models",
 ### TRẢ LỜI:
 ```
 
+#### Single prompt cho **grounding + verification logic bên trong**
+* nhanh hơn / ít tốn token hơn / dễ triển khai
+* Prompt này đang “giả lập” pipeline: extract -> filter -> verify
+```prompt
+You are a highly reliable question answering system.
 
+Your task is to answer the question using ONLY the provided context.
+
+You must follow these steps internally:
+
+1. Identify relevant facts from the context
+2. Ignore irrelevant or unrelated information
+3. Ensure each fact is directly supported by the context
+4. Combine facts to answer the question
+5. Double-check that your answer is fully grounded in the context
+
+Rules:
+- DO NOT use outside knowledge
+- DO NOT include information not present in the context
+- If the answer is not fully supported, say "Không đủ thông tin"
+- Be precise and concise
+
+Additionally:
+- List the exact sentences used from context before answering
+
+Output format:
+{
+  "answer": "...",
+  "confidence": "high | medium | low",
+  "justification": "Explain which parts of the context support the answer"
+}
+
+Context:
+[Chunk 1]
+Microsoft là một công ty công nghệ đa quốc gia của Mỹ, được thành lập vào năm 1975 bởi Bill Gates và Paul Allen.
+
+[Chunk 2]
+Bill Gates là một doanh nhân và nhà từ thiện người Mỹ, nổi tiếng với vai trò đồng sáng lập Microsoft.
+
+[Chunk 3]
+Apple được thành lập vào năm 1976 bởi Steve Jobs, Steve Wozniak và Ronald Wayne.
+
+Question:
+Ai là người sáng lập Microsoft và công ty này được thành lập năm nào?
+```
 
 
 
