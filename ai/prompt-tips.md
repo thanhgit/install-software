@@ -642,13 +642,15 @@ Metadata: { "exclude": ["dropping", "water_damage"], "applies_to": "all_models",
 ### TRẢ LỜI:
 ```
 
-#### Single prompt cho **grounding + verification logic bên trong**
+### Single prompt
+* cho **grounding + verification logic bên trong**
 * nhanh hơn / ít tốn token hơn / dễ triển khai
 * Prompt này đang “giả lập” pipeline: extract -> filter -> verify
 * Dùng khi:
    * latency quan trọng
    * system chưa quá critical
    * muốn baseline nhanh
+* Cho chatbot / FAQ / không có action
   
 ```prompt
 You are a highly reliable question answering system.
@@ -693,6 +695,10 @@ Question:
 Ai là người sáng lập Microsoft và công ty này được thành lập năm nào?
 ```
 
+### Multi-prompt
+* Cho agent gọi API
+* workflow nhiều bước
+* Cần: verification / logging / audit
 ##### Prompt: Extract Claims (Grounded)
 ```prompt
 You are a precise information extraction system.
