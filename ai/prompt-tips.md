@@ -817,7 +817,7 @@ Verified Claims:
   "reason": "The chunk clearly states that Microsoft was established in 1975."
 }
 ```
-````text
+```text
 Bill Gates và Paul Allen là người sáng lập Microsoft, và công ty này được thành lập vào năm 1975.
 ```
 
