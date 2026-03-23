@@ -239,7 +239,22 @@ final_score =
    * bm25 → backup => 0.1
    * recency → tùy domain => 0.1
 
-
+* Weight phụ thuộc vào distribution của score
+   * ✅ PHẢI normalize
+   * Ví dụ:
+      ```
+      bm25_norm = bm25 / 100
+      recency = exp(-time_decay)
+      length_penalty = min(len / max_len, 1)
+      ```
+   * Hãy hỏi: “signal nào đáng tin hơn trong việc chọn chunk đúng?”
+      | Signal        | Độ tin cậy      |
+      | ------------- | --------------- |
+      | cross-encoder | ⭐⭐⭐⭐⭐           |
+      | dense         | ⭐⭐⭐⭐            |
+      | bm25          | ⭐⭐⭐             |
+      | recency       | ⭐⭐ (tuỳ domain) |
+      | length        | ⭐               |
 
 
 
