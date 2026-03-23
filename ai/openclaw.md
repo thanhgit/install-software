@@ -155,6 +155,10 @@ Chạy xuyên suốt:
 
 
 ## Debug
+#### Bot send to group
+```
+openclaw message send --channel telegram  -t <GROUP_ID> -m "Thông báo hệ thống"
+```
 #### Setup using http
 ```json
 gateway": {
