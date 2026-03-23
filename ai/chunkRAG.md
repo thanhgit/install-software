@@ -304,9 +304,15 @@ if confidence < 0.7:
       * có mâu thuẫn không
       * nguồn có đáng tin không
 
-
-
-
+* Relevance là điều kiện cần, nhưng không đủ cho confidence
+   * Relevance cao + thông tin đúng → confidence cao (lý tưởng)
+   * Relevance cao nhưng thông tin sai / outdated → confidence thấp
+      * chunk rất đúng topic
+      * nhưng là luật năm 2018 (thông tin lỗi thời)
+   * Relevance cao nhưng không đủ thông tin → confidence trung bình/thấp
+      * chunk nói đúng chủ đề
+      * nhưng thiếu số liệu cụ thể
+   * Relevance thấp → confidence luôn thấp (dù nội dung đúng, nhưng không trả lời câu hỏi)
 
 
 
