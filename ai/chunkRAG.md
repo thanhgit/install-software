@@ -256,11 +256,24 @@ final_score =
       | recency       | ⭐⭐ (tuỳ domain) |
       | length        | ⭐               |
 
+⚙️ Cách đúng để suy ra “độ tin tưởng”
+* Dùng relative signal (quan trọng nhất)
+   * confidence_gap = score_top1 - score_top2
+   * 👉 Hãy nhìn khoảng cách giữa các chunk
+* Kết hợp nhiều tín hiệu thành confidence
+   ```
+   confidence =
+     0.5 * score_top1
+   + 0.3 * (score_top1 - score_top2)
+   + 0.2 * cross_encoder_top1
+   ```
+* Coverage (cực kỳ quan trọng, hay bị bỏ qua)
+   * Dùng LLM check: “chunk này có đủ thông tin để trả lời không?”
+   * 👉 Chunk có thực sự “cover” câu hỏi không?
 
-
-
-
-
+* Consistency (giảm hallucination)
+   * nhiều chunk support cùng 1 fact → confidence cao
+   * chunk mâu thuẫn → confidence thấp
 
 
 
