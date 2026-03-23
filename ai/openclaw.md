@@ -1,5 +1,61 @@
 # Install openclaw
 
+#### Architecture
+```
+                ┌────────────────────────────┐
+                │        Chat Layer          │
+                │   (OpenClaw / Slack UI)   │
+                └────────────┬──────────────┘
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │     API Gateway Layer      │
+                │  Auth / Rate Limit / RBAC  │
+                └────────────┬──────────────┘
+                             │
+                             ▼
+                ┌────────────────────────────┐
+                │   Agent Router / Registry  │
+                │  - Agent discovery         │
+                │  - Task routing            │
+                │  - Load balancing          │
+                └────────────┬──────────────┘
+                             │
+        ┌────────────────────┼────────────────────┐
+        ▼                    ▼                    ▼
+┌───────────────┐   ┌────────────────┐   ┌────────────────┐
+│ LangGraph     │   │ LangGraph      │   │ LangGraph      │
+│ Agent A       │   │ Agent B        │   │ Agent C        │
+└──────┬────────┘   └──────┬─────────┘   └──────┬─────────┘
+       │                   │                    │
+       └──────────┬────────┴──────────┬─────────┘
+                  ▼                   ▼
+        ┌────────────────────────────────────┐
+        │        Shared Memory Layer         │
+        │  - Redis (short-term state)        │
+        │  - Vector DB (semantic memory)     │
+        │  - Postgres (long-term data)       │
+        └────────────┬───────────────────────┘
+                     │
+                     ▼
+        ┌────────────────────────────────────┐
+        │     Message Bus / Event Stream     │
+        │   (Kafka / Redis Streams / NATS)   │
+        └────────────┬───────────────────────┘
+                     │
+                     ▼
+        ┌────────────────────────────────────┐
+        │        Execution Layer             │
+        │     (n8n + Worker Services)        │
+        └────────────┬───────────────────────┘
+                     │
+                     ▼
+        ┌────────────────────────────────────┐
+        │     External Tools / Systems       │
+        │  APIs / DB / SaaS / Internal svc   │
+        └────────────────────────────────────┘
+```
+
 #### Setup using http
 ```json
 gateway": {
