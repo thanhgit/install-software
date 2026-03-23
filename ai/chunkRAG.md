@@ -292,7 +292,17 @@ if confidence < 0.7:
     return "Câu trả lời này dựa trên tài liệu X (độ phù hợp cao)"
 ```
 
+* Độ liên quan (relevance)
+   * chunk có “nói về” câu hỏi không
+   * dense search / cross-encoder đang đo
 
+* Độ tin tưởng (confidence / trust)
+   * tôi có đủ cơ sở để tin câu trả lời là đúng không
+   * Bao gồm:
+      * chunk có đúng không
+      * có đủ thông tin không
+      * có mâu thuẫn không
+      * nguồn có đáng tin không
 
 
 
