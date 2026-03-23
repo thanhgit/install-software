@@ -189,3 +189,59 @@ gateway": {
     }
   },
 ```
+#### Setup telegram bot
+```json
+"agents": {
+    list: [
+      {
+        id: "main",
+        groupChat: {
+          historyLimit: 50,
+          mentionPatterns: ["@my_bot"],
+        },
+      },
+    ],
+    "defaults": {
+      "model": {
+        "primary": "custom-127-0-0-1-11434/qwen3:1.7b"
+      },
+      "models": {
+        "custom-127-0-0-1-11434/qwen3:1.7b": {
+          "alias": "ollama"
+        }
+      },
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "<TELEGRAM_TOKEN>",
+      "groupAllowFrom": [],
+      "groups": {
+        "*": {
+          "requireMention": true,
+          "enabled": true
+        }
+      },
+      "groupPolicy": "open",
+      "streaming": "partial"
+    }
+  },
+```
