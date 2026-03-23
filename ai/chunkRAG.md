@@ -9,7 +9,8 @@
   * Trong domain chuyên sâu, khi chất lượng dữ liệu tốt, khi có tài nguyên tính toán dư dả
   
 <img width="995" height="1128" alt="image" src="https://github.com/user-attachments/assets/32381021-d6c1-4e26-94c3-7b528acd3636" />
-Phương pháp luận:
+#### Phương pháp luận:
+
 1. **Loại bỏ dư thừa bằng Cosine Similarity:**
 
    * so sánh và loại bỏ các đoạn trùng lặp hoặc quá giống nhau trong tài liệu được truy xuất
@@ -221,8 +222,22 @@ Dùng SLM nhờ kích hoạt thưa thớt (sparse activation)
 * Chú ý: meta-chunker tạo ra toàn bộ từng đoạn văn mà hướng dẫn nó tạo ra một danh sách các biểu thức chính quy dùng để trích xuất các đoạn văn bản từ văn bản gốc
 * áp dụng thuật toán hiệu chỉnh dựa trên khoảng cách chỉnh sửa (edit distance) để so sánh và sửa lỗi các quy tắc chunking được tạo ra với văn bản gốc => giảm hallucination từ meta-chunker
 
+---
+### Linear ranking function
+```bash
+final_score =
+  0.5 * cross_encoder
++ 0.2 * dense
++ 0.1 * bm25
++ 0.1 * recency
+- 0.1 * length_penalty
+```
 
-
+* Weights từ kinh nghiệm
+   * cross-encoder → cao nhất (vì mạnh nhất) => 0.6
+   * dense → bổ trợ => 0.2
+   * bm25 → backup => 0.1
+   * recency → tùy domain => 0.1
 
 
 
