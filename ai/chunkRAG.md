@@ -275,6 +275,22 @@ final_score =
    * nhiều chunk support cùng 1 fact → confidence cao
    * chunk mâu thuẫn → confidence thấp
 
+* 🚫 Khi nào nên nói “tôi không rõ”
+```python
+if score_top1 < 0.4:
+    return "Tôi không tìm thấy thông tin đáng tin cậy"
+
+if (score_top1 - score_top2) < 0.05: # ambiguity cao
+    return "Thông tin chưa đủ rõ ràng"
+
+if coverage_score < 0.5: # coverage thấp
+    return "Tôi không chắc thông tin này đủ để trả lời chính xác"
+
+if confidence < 0.7:
+    # Thông tin có thể chưa đầy đủ
+    # Có nhiều nguồn với nội dung khác nhau
+    return "Câu trả lời này dựa trên tài liệu X (độ phù hợp cao)"
+```
 
 
 
