@@ -1,5 +1,49 @@
 # Install openclaw
 
+#### Install telegram chat
+```json
+"agents": {
+    "list": [
+      {
+        "id": "main",
+        "groupChat": {
+          "mentionPatterns": [
+            "???"
+          ],
+          "historyLimit": 50
+        },
+        "tools": {
+          "deny": [
+            "apply_patch",
+            "web_search",
+            "web_fetch",
+            "browser",
+            "canvas",
+            "image",
+            "tts"
+          ]
+        }
+      }
+    ]
+  },
+"channels": {
+    "telegram": {
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "TELEGRAM_TOKEN",
+      "groups": {
+        "TELEGRAM_GROUP": {
+          "requireMention": false,
+          "enabled": true
+        }
+      },
+      "groupAllowFrom": [],
+      "groupPolicy": "open",
+      "streaming": "partial"
+    }
+  },
+```
+
 ## Flow hệ thống
 1. User chat qua OpenClaw
 2. → API Gateway xác thực
