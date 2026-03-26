@@ -1,5 +1,31 @@
 # Install openclaw
 
+#### Cronjob
+* * Cronjob at 6h30 every
+```bash
+openclaw cron add \
+  --name "Morning greeting VN" \
+  --cron "0 6 30 * *" \
+  --tz "Asia/Ho_Chi_Minh" \
+  --session isolated \
+  --message "Create a warm, friendly Vietnamese good morning greeting for a Telegram group. Keep it short, positive, and suitable for a team." \
+  --announce \
+  --channel telegram \
+  --to "-TELEGRAM_GROUP"
+```
+* Cronjob every 5 min 
+```bash
+  openclaw cron add \
+  --name "Work motivation every 5 min" \
+  --cron "*/5 * * * *" \
+  --tz "Asia/Ho_Chi_Minh" \
+  --session isolated \
+  --message "Write a short Vietnamese reminder to stay focused on work, with a motivating slogan. Keep it concise, energetic, and vary wording each time." \
+  --announce \
+  --channel telegram \
+  --to "-TELEGRAM_GROUP"
+```
+
 #### Install telegram chat
 ```json
 "agents": {
