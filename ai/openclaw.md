@@ -229,6 +229,25 @@ Chạy xuyên suốt:
 ```
 openclaw message send --channel telegram  -t <GROUP_ID> -m "Thông báo hệ thống"
 ```
+
+#### Send message with button
+```bash
+openclaw message send --channel telegram -t <GROUP_ID> -m "🔒 Exec approval required 
+												\
+Command: \`docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx\`
+" \
+--buttons '[[{"text": "✅ Allow", "callback_data": "allow_once"},{"text": "🔏 Always", "callback_data": "allow_always"} ],[ {"text": "❌ Deny", "callback_data": "deny"}]]'
+```
+
+#### Edit message
+```bash
+openclaw message edit --channel telegram  -t <GROUP_ID> --message-id <MESSAGE_ID> --message "🔒 Exec approval required 
+												                                                                                            
+Command: \`docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx\`			                                
+												                                                                                            
+✅ Trạng thái: Đã xác nhận \"Allow\" vào lúc $(TZ="Asia/Ho_Chi_Minh" date '+%Y-%m-%d %H:%M:%S')"
+
+```
 #### Setup using http
 ```json
 gateway": {
