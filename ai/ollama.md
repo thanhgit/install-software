@@ -4,6 +4,14 @@
 - #### Tutorial: https://ollama.com/blog/tool-support
 - #### [Link](https://ollama.com/search?c=tools)
 
+#### Create qwen3:1.7b with CPU mode
+```bash
+mkdir qwen3_1_7b; cd qwen3_1_7b
+echo "FROM qwen3:1.7b" > Modelfile
+echo "PARAMETER num_gpu 0" >> Modelfile
+ollama create qwen3:1.7b-cpu
+```
+
 #### Check Nvidia container
 ```bash
 docker info | grep -i runtime
