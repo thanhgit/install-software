@@ -1,4 +1,8 @@
 # Install openclaw
+#### Refs:
+* https://github.com/alvinunreal/awesome-openclaw-tips
+* https://github.com/digitalknk/openclaw-runbook
+
 
 #### Cronjob
 * * Cronjob at 6h30 every
