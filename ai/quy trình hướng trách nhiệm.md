@@ -3,6 +3,11 @@
 * **Accountability** → bottleneck + upstream + designer nếu cần
 * **Learning** → cập nhật hệ thống để giảm lỗi lặp lại
 
+Dựa trên nguyên tắc:
+* Tư duy trách nhiệm (Ai làm gì, đạt mục tiêu gì) phải có TRƯỚC
+* Phân định trách nhiệm (Từng bước cụ thể) phải làm TRONG KHI viết quy trình
+* Văn hóa trách nhiệm (Cam kết thực hiện) được hình thành SAU KHI vận hành
+
 ```mermaid
 flowchart TD
     %% Nodes
