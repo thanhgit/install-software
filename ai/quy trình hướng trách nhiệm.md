@@ -25,9 +25,9 @@ flowchart TD
     K --> B
     
     %% Notes
-    classDef success fill:#green,stroke:#155724,stroke-width:2px;
-    classDef exception fill:#red,stroke:#721c24,stroke-width:2px;
-    classDef accountability fill:#yellow,stroke:#856404,stroke-width:2px;
+    classDef success fill:green,stroke:#155724,stroke-width:2px;
+    classDef exception fill:black,stroke:#721c24,stroke-width:2px;
+    classDef accountability fill:black,stroke:#856404,stroke-width:2px;
 
     class D,E success
     class F,H,I,J exception
