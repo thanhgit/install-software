@@ -73,16 +73,61 @@ flowchart TD
 | **AI / Chatbot**             | Điều phối task, lọc request, gợi ý hành động           | - Xử lý rule-based routing <br> - Gợi ý corrective action <br> - Log, monitor exception                     |
 
 ### 🔄 2. Workflow ChatOps
+```mermaid
+flowchart TD
+    %% Nodes
+    A[Requester gửi request vào ChatOps] --> B[AI phân loại & routing request]
+    B --> C{Task type?}
+    
+    %% Junior task
+    C -->|Simple / low-risk| D[Junior Operator xử lý]
+    D --> E{Task thành công?}
+    E -->|Yes| F[AI ghi log & trigger sharing bonus cho team]
+    E -->|No| G[Exception → Senior Operator xử lý & giải trình]
+    
+    %% Senior task
+    C -->|Complex / high-risk| H[Senior Operator xử lý]
+    H --> I{Task thành công?}
+    I -->|Yes| F
+    I -->|No| J[Exception → Bottleneck / Leader giải trình & corrective action]
+    
+    %% Leader / System Designer
+    J --> K[Leader/System Designer kiểm tra, cập nhật rule/template/compliance]
+    K --> B
+    
+    %% Feedback / learning
+    F --> L[AI ghi pattern, cập nhật template / rule nếu cần]
+    L --> B
+    
+    %% Notes / styling
+    classDef success fill:green,stroke:#155724,stroke-width:2px;
+    classDef exception fill:#red,stroke:#721c24,stroke-width:2px;
+    classDef aiNode fill:blue,stroke:#004085,stroke-width:2px;
+    classDef accountability fill:#fff3cd,stroke:#856404,stroke-width:2px;
+
+    class F,L success
+    class G,J,K exception
+    class B aiNode
+```
 1. **Requester gửi request vào group chat**
 2. **AI agent**:
    * Phân loại request
-   * Gửi đến operator phù hợp (junior/senior)
+   * Gửi đến operator phù hợp (junior/senior):
+        * Simple → Junior
+        * Complex → Senior
    * *Nếu cần approval* → gửi đến bottleneck (senior hoặc leader nếu rule phức tạp)
-3. **Operator xử lý request** trong chat, AI agent ghi log mọi hành động
-4. **Bottleneck / Leader**:
-    * kiểm tra exception → giải trình → cập nhật rule/template (*nếu cần*)
+3. **Operator xử lý request** trong chat,
+    * AI agent ghi log mọi hành động
+    * Nếu thành công → AI ghi log & chia bonus cho team
+    * Nếu exception → Senior/Bottleneck giải trình
+5. **Bottleneck / Leader / System Designer**:
+    * kiểm tra exception → giải trình → cập nhật rule/template/compliance (*nếu cần*)
+    * Trả lại workflow cho AI để tiếp tục vận hành
 6. **Sharing bonus / reward**: nếu task thành công → AI thông báo chia thưởng
-7. **Learning loop**: AI theo dõi pattern, đề xuất cải tiến rule/template
+7. **Learning loop**:
+    * Ghi lại pattern
+    * Gợi ý cải tiến rule/template
+    * Giúp hệ thống thông minh hơn, giảm lỗi lặp lại
 
 ### ⚡ 3. Ưu điểm của mô hình này
 * **Throughput cao**:
