@@ -7,7 +7,8 @@ Dựa trên nguyên tắc:
 * Tư duy trách nhiệm (Ai làm gì, đạt mục tiêu gì) phải có TRƯỚC
 * Phân định trách nhiệm (Từng bước cụ thể) phải làm TRONG KHI viết quy trình
 * Văn hóa trách nhiệm (Cam kết thực hiện) được hình thành SAU KHI vận hành
-
+* Tập trung vào "Tối ưu hóa tổng thể" thay vì "Tối ưu hóa cục bộ"
+* Sử dụng ma trận RACI 
 ```mermaid
 flowchart TD
     %% Nodes
