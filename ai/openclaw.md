@@ -28,6 +28,17 @@ openclaw tui
 11 assistant:write — Show typing indicators in threads
 ```
 
+#### Subscribe slack bot events
+```
+1 app_mention — When someone @mentions the bot
+2 message.channels — Messages in public channels
+3 message.groups — Messages in private channels
+4 message.im — Direct messages
+5 message.mpim — Group DMs
+6 reaction_added — When someone reacts to a message
+7 reaction_removed — When a reaction is removed
+```
+
 #### Cronjob
 * * Cronjob at 6h30 every
 ```bash
