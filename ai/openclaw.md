@@ -3,6 +3,15 @@
 * https://github.com/alvinunreal/awesome-openclaw-tips
 * https://github.com/digitalknk/openclaw-runbook
 
+#### Test AI agent
+* One-shot
+```bash
+openclaw agent --agent main -m "What is your name"
+```
+* Terminal session
+```bash
+openclaw tui
+```
 
 #### Cronjob
 * * Cronjob at 6h30 every
