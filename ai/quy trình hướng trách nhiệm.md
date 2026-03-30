@@ -173,7 +173,35 @@ P4. **Incentive design**
 * Sharing bonus nên phản ánh cả **throughput + success rate + compliance**
 * **không chỉ success đơn thuần**
 
+---
+### Cấu trúc hành vi của chatbot
+| Layer                    | Chức năng                                             | Ví dụ                                         |
+| ------------------------ | ----------------------------------------------------- | --------------------------------------------- |
+| **Goal parsing**         | Hiểu request & mục tiêu                               | “Tăng ticket resolution lên 80% trong 24h”    |
+| **Plan & decomposition** | Chia mục tiêu thành task nhỏ, step rõ ràng            | “Check form → Approve → Notify requester”     |
+| **Action executor**      | Thực hiện task trực tiếp                              | Tạo ticket, gửi message, update hệ thống      |
+| **Exception handler**    | Xác định task không thể hoàn thành → chuyển cho human | Input thiếu, rule mâu thuẫn, permission thiếu |
+| **Learning / Feedback**  | Ghi log, cải thiện template / rule / plan             | Phát hiện pattern lỗi → cập nhật workflow     |
 
+### ⚡ 3. Nguyên tắc khi thiết kế
+1. **Structured input**
+   * Requester / operator cung cấp thông tin theo template → chatbot dễ parse & act
+
+2. **Explicit success / fail conditions**
+   * Chatbot biết task hoàn thành → trigger reward / ghi log
+   * Nếu không → raise exception tới bottleneck
+
+3. **Safety & guardrails**
+   * Mọi hành động trực tiếp cần kiểm tra quyền, rule, exception
+   * Tránh “runaway action” → con người vẫn là fallback
+
+4. **Traceability**
+   * Mọi action, exception, outcome → ghi log, attach metadata
+   * Giúp audit, giải trình, cải tiến
+
+5. **Human-in-the-loop for exceptions**
+   * Chatbot chỉ “do everything it can”, phần còn lại → con người xử lý
+   * Người không cần làm task thường xuyên, chỉ định hướng & rule
 
 
 
