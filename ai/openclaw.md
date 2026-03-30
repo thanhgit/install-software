@@ -236,9 +236,12 @@ openclaw message send --channel telegram  -t <GROUP_ID> -m "Thông báo hệ th�
 
 #### Send message with button
 ```bash
-openclaw message send --channel telegram -t <GROUP_ID> -m "🔒 Exec approval required 
-												\
-Command: \`docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx\`
+openclaw message send --channel telegram -t <GROUP_ID> -m "🔒 Exec approval required
+
+**Command:**
+\`\`\`
+docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx
+\`\`\`
 " \
 --buttons '[[{"text": "✅ Allow", "callback_data": "allow_once"},{"text": "🔏 Always", "callback_data": "allow_always"} ],[ {"text": "❌ Deny", "callback_data": "deny"}]]'
 ```
