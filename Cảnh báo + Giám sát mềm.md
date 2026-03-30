@@ -1,9 +1,9 @@
 # 🎯 Mô hình đề xuất – gọi tạm là: “Cảnh báo + Giám sát mềm”
-* Dân chủ để phản biện nhằm sàng lọc, tránh sai lầm quá rõ ràng
-* Tập thể để mở rộng trí tuệ ~ nhiều phương án thay thế, sáng kiến
-* Lãnh đạo để dám chịu rủi ro cho những việc khó
-* Thưởng để khuyến khích quyết định khó ~ Thưởng cá nhân hóa cao hơn phạt cá nhân hóa
-* Phạt để trừng gian dối, không trừng dám làm, tập trung vào:
+* **Dân chủ để phản biện** nhằm sàng lọc, tránh sai lầm quá rõ ràng
+* **Tập thể để mở rộng trí tuệ** ~ nhiều phương án thay thế, sáng kiến
+* **Lãnh đạo để dám chịu rủi ro cho những việc khó**
+* **Thưởng để khuyến khích quyết định khó** ~ Thưởng cá nhân hóa cao hơn phạt cá nhân hóa
+* **Phạt để khiến tiêu cực mất động lực**, **không nên trừng khi dám làm**, tập trung vào:
   * gian dối
   * vi phạm quy trình
   * che giấu rủi ro
