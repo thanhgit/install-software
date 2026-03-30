@@ -1,4 +1,8 @@
 # Quy trình hướng trách nhiệm
+* **Reward** → success
+* **Accountability** → bottleneck + upstream + designer nếu cần
+* **Learning** → cập nhật hệ thống để giảm lỗi lặp lại
+
 
 ```mermaid
 flowchart TD
@@ -29,3 +33,20 @@ flowchart TD
     class F,H,I,J exception
     class K accountability
 ```
+
+
+### Giải thích workflow:
+
+1. **Requester** tạo request → **Operator** xử lý
+2. **Bottleneck** kiểm soát request:
+
+   * Nếu **thành công** → tất cả nhận **sharing bonus**
+   * Nếu **exception** → bottleneck **giải trình**
+3. **Nguyên nhân exception**:
+
+   * **Input / Upstream lỗi** → bước trước bottleneck phải giải trình
+   * **Operator lỗi** → bottleneck phạt / corrective action
+   * **System design lỗi** → designer giải trình, cập nhật system
+4. **Learning / Feedback loop**:
+
+   * Rule, guideline, template được cập nhật → quay lại operator xử lý request mới
