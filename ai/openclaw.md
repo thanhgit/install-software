@@ -13,6 +13,21 @@ openclaw agent --agent main -m "What is your name"
 openclaw tui
 ```
 
+#### Slack bot permissions
+```
+1 app_mentions:read — Know when someone @mentions the bot
+2 channels:history — Read messages in public channels
+3 channels:read — See channel list and details
+4 chat:write — Post messages
+5 groups:history — Read messages in private channels
+6 groups:read — See private channel list
+7 im:history — Read direct messages
+8 im:read — See DM list
+9 im:write — Send direct messages
+10 users:read — Look up user information
+11 assistant:write — Show typing indicators in threads
+```
+
 #### Cronjob
 * * Cronjob at 6h30 every
 ```bash
