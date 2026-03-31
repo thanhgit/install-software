@@ -280,7 +280,21 @@ docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx
 " \
 --buttons '[[{"text": "✅ Allow", "callback_data": "allow_once"},{"text": "🔏 Always", "callback_data": "allow_always"} ],[ {"text": "❌ Deny", "callback_data": "deny"}]]'
 ```
-* `--message-id <TOPIC_ID>`
+* `--thread_id <TOPIC_ID>`
+* Q&a
+```bash
+openclaw message send --channel telegram -t <GROUP_ID> --thread-id <TOPIC_ID> -m "#### ❓ **What is the primary difference between standard RAG and Agentic RAG?**
+- a. Standard RAG uses vector databases, while Agentic RAG uses SQL databases.
+---
+- b. Standard RAG is a linear “retrieve-then-generate” workflow, while Agentic
+RAG is a dynamic “reason-act-observe” loop.
+---
+- c. Agentic RAG can only answer one question at a time, while standard RAG can handle multiple.
+---
+- d. Agentic RAG uses OpenAI models, whereas standard RAG uses open-source models.
+" \
+--buttons '[[{"text": "✅ Chọn A","callback_data": "choose_a"},{"text": "✅ Chọn B","callback_data": "choose_b"}],[{"text": "✅ Chọn C", "callback_data": "choose_c"},{"text": "✅ Chọn D", "callback_data": "choose_d"}]]'
+```
 
 #### Edit message
 ```bash
@@ -289,8 +303,9 @@ openclaw message edit --channel telegram  -t <GROUP_ID> --message-id <MESSAGE_ID
 Command: \`docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx\`			                                
 												                                                                                            
 ✅ Trạng thái: Đã xác nhận \"Allow\" vào lúc $(TZ="Asia/Ho_Chi_Minh" date '+%Y-%m-%d %H:%M:%S')"
-
 ```
+* `--message-id <MESSAGE_ID>`
+
 #### Setup using http
 ```json
 gateway": {
