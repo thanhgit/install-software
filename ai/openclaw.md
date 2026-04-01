@@ -281,7 +281,21 @@ docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx
 --buttons '[[{"text": "✅ Allow", "callback_data": "allow_once"},{"text": "🔏 Always", "callback_data": "allow_always"} ],[ {"text": "❌ Deny", "callback_data": "deny"}]]'
 ```
 * `--thread_id <TOPIC_ID>`
-* Q&a
+* Send with file / image
+```bash
+openclaw message send --channel telegram -t <GROUP_ID> -m "🔒 Exec approval required
+
+**Command:**
+\`\`\`
+docker compose -f /opt/app/docker-compose.yml logs --tail 50 nginx
+\`\`\`
+" \
+--buttons '[[{"text": "✅ Allow", "callback_data": "allow_once"},{"text": "🔏 Always", "callback_data": "allow_always"} ],[ {"text": "❌ Deny", "callback_data": "deny"}]]' \
+--media .openclaw/media/inbound/heatmap.png
+```
+* Lỗi LocalMediaAccessError: Local media path is not under an allowed directory
+	* Copy file đến .openclaw/media/inbound/
+* Q&A
 ```bash
 openclaw message send --channel telegram -t <GROUP_ID> --thread-id <TOPIC_ID> -m "#### ❓ **What is the primary difference between standard RAG and Agentic RAG?**
 - a. Standard RAG uses vector databases, while Agentic RAG uses SQL databases.
