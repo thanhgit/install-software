@@ -3,6 +3,21 @@
 * https://github.com/alvinunreal/awesome-openclaw-tips
 * https://github.com/digitalknk/openclaw-runbook
 
+### Openclaw Plugin/Tool
+* openclaw plugins list: Hiển thị danh sách tóm tắt các plugin/tool hiện có.
+* openclaw plugins inspect <id>: Xem chi tiết cấu hình và các khả năng cụ thể của một plugin. [1, 2] 
+
+#### Các nhóm Tool mặc định (Built-in Tools)
+* Layer 1 - Core (8 Tools):
+  * Các công cụ cơ bản như read, write, edit (quản lý file)
+  * và exec, process (chạy lệnh hệ thống)
+  * và web_search, web_fetch (truy cập web).
+* Layer 2 - Advanced (18 Tools):
+  * Bao gồm browser (điều khiển trình duyệt Chromium)
+  * và memory (ghi nhớ), và cron (lập lịch nhiệm vụ)
+* Layer 3 - Skills (53+ Skills):
+  * Đây là các kỹ năng dạy OpenClaw cách sử dụng tool cho các nền tảng cụ thể như Google Workspace, Slack, Obsidian, hoặc GitHub
+
 #### Test AI agent
 * One-shot
 ```bash
