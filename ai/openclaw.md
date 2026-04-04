@@ -12,6 +12,29 @@ openclaw agent --agent main -m "What is your name"
 ```bash
 openclaw tui
 ```
+* Send button message
+```bash
+  curl -sS http://127.0.0.1:18789/tools/invoke \
+  -H 'Authorization: Bearer <GATEWAY_TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "tool": "message",
+    "action": "send",
+    "args": {
+	  "action": "send",
+	  "channel": "telegram",
+	  "to": "<TELEGRAM_GROUP_ID>",
+	  "content": "Câu trả lời cho cầu hỏi trên có đạt kỳ vọng không?",
+	  "buttons": [
+	    [
+	      { "text": "Có", "callback_data": "yes" },
+	      { "text": "Không", "callback_data": "no" }
+	    ]
+	  ]
+    }
+  }'
+  
+```
 
 #### Slack bot permissions
 ```
