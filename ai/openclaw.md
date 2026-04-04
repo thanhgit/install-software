@@ -49,7 +49,17 @@ openclaw tui
 	  ]
     }
   }'
-  
+```
+* Test AI agent
+```bash
+curl -sS http://127.0.0.1:18789/v1/responses \
+  -H 'Authorization: Bearer <GATEWAY_TOKEN>' \
+  -H 'Content-Type: application/json' \
+  -H 'x-openclaw-agent-id: main' \
+  -d '{
+    "model": "qwen3:1.7b",
+    "input": "hi"
+  }'
 ```
 
 #### Slack bot permissions
