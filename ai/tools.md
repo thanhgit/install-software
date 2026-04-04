@@ -17,6 +17,45 @@ class HedgeAlgebra4Tuple:
         return (a + b) / 2 + (beta - alpha) / 4
 ```
 
+* Get json object from LLM output
+```python
+import json
+
+def extract_valid_json(input_str):
+    stack = []
+    start_index = None
+
+    for i, char in enumerate(input_str):
+        if char == '{' or char == '[':
+            stack.append(char)
+            if len(stack) == 1:
+                # Mark the start of a potential JSON object or array
+                start_index = i
+        elif char == '}' or char == ']':
+            if stack:
+                if (char == '}' and stack[-1] == '{') or (char == ']' and stack[-1] == '['):
+                    stack.pop()
+                if len(stack) == 0 and start_index is not None:
+                    # Attempt to parse when we find a closing brace or bracket that matches the outermost opening brace or bracket
+                    try:
+                        json_obj = json.loads(input_str[start_index:i + 1])
+                        return json_obj  # Return the first successfully parsed JSON object or array
+                    except json.JSONDecodeError:
+                        # Reset start_index if parsing fails
+                        start_index = None
+
+    # If no valid JSON found
+    return None
+
+input_string = 'Some text before JSON {"key": "value"} some text after JSON.'
+valid_json = extract_valid_json(input_string)
+
+if valid_json is not None:
+    print("Extracted JSON:", json.dumps(valid_json, indent=2))
+else:
+    print("No valid JSON found.")
+```
+
 * Optuna:
     * Tối ưu hóa tham số (Hyperparameter Tuning) bởi tìm bộ tham số 4-tuple tối ưu sao cho kết quả ra quyết định của AHP khớp với thực tế nhất
     * => tìm biên độ an toàn (Range) cho contextual bandit và Trọng số khởi tạo cho AHP
