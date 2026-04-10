@@ -24,6 +24,9 @@
   sudo ip route flush dev enp4s0
   sudo ip addr add 192.168.137.35/24 dev enp4s0
   sudo ip route add default via 192.168.137.1 dev enp4s0
+
+  # Cấu hình DNS
+  echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
   ```
 
 ### Check PGvector
