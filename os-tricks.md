@@ -5,6 +5,9 @@
   ```bash
   nmcli device
   ```
+* Setup IP mạng nội bộ cho NIC trong máy có internet
+  <img width="756" height="446" alt="image" src="https://github.com/user-attachments/assets/5f2f2d64-6519-4155-b262-a7ea97a40c0f" />
+
 * Internet machine
   ```
   # Disble firewall
