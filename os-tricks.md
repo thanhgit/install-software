@@ -19,6 +19,12 @@
   # Thiết lập NAT (Thay wlan0 nếu tên card wifi khác)
   sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
   ```
+  * (No internet) machien
+  ```
+  sudo ip route flush dev enp4s0
+  sudo ip addr add 192.168.137.35/24 dev enp4s0
+  sudo ip route add default via 192.168.137.1 dev enp4s0
+  ```
 
 ### Check PGvector
 ```
