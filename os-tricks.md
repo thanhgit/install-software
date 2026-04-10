@@ -10,19 +10,25 @@
 
 * Internet machine
   ```
+  # Xóa các quy tắc cũ nếu có
+  # sudo iptables -F
+  sudo iptables -t nat -F
+  ```
+  ```
   # Disble firewall
   sudo ufw disable
-  
+  ```
+  ```
   # Cho phép chuyển tiếp dữ liệu
   sudo sysctl -w net.ipv4.ip_forward=1
-  
-  # Xóa các quy tắc cũ để tránh kẹt
-  sudo iptables -t nat -F
-  
-  # Thiết lập NAT (Thay wlan0 nếu tên card wifi khác)
-  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
   ```
-  * (No internet) machien
+  ```  
+  # Cho phép chia sẻ mạng từ Wi-Fi (wlan0) sang LAN (enx207bd51a05bf)
+  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+  sudo iptables -A FORWARD -i wlan0 -o enx207bd51a05bf -m state --state RELATED,ESTABLISHED -j ACCEPT
+  sudo iptables -A FORWARD -i enx207bd51a05bf -o wlan0 -j ACCEPT
+  ```
+  * (No internet) machine
   ```
   sudo ip route flush dev enp4s0
   sudo ip addr add 192.168.137.35/24 dev enp4s0
@@ -30,6 +36,12 @@
 
   # Cấu hình DNS
   echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+  ```
+  ```
+  # Cấu hình iptables cho cổng PCI
+  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+  sudo iptables -A FORWARD -i wlan0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+  sudo iptables -A FORWARD -i enp3s0 -o wlan0 -j ACCEPT
   ```
 
 ### Check PGvector
