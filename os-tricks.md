@@ -1,20 +1,24 @@
 # OS tricks
 
 ### Sharing network
+* Check device up/dow
+  ```bash
+  nmcli device
+  ```
 * Internet machine
-```
-# Disble firewall
-sudo ufw disable
-
-# Cho phép chuyển tiếp dữ liệu
-sudo sysctl -w net.ipv4.ip_forward=1
-
-# Xóa các quy tắc cũ để tránh kẹt
-sudo iptables -t nat -F
-
-# Thiết lập NAT (Thay wlan0 nếu tên card wifi khác)
-sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-```
+  ```
+  # Disble firewall
+  sudo ufw disable
+  
+  # Cho phép chuyển tiếp dữ liệu
+  sudo sysctl -w net.ipv4.ip_forward=1
+  
+  # Xóa các quy tắc cũ để tránh kẹt
+  sudo iptables -t nat -F
+  
+  # Thiết lập NAT (Thay wlan0 nếu tên card wifi khác)
+  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+  ```
 
 ### Check PGvector
 ```
