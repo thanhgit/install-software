@@ -399,6 +399,14 @@ gateway": {
     }
   },
 ```
+* Error gateway
+```
+# connect failed: SECURITY ERROR: Cannot connect to "192.168.137.35" over plaintext ws://
+export OPENCLAW_ALLOW_INSECURE_PRIVATE_WS=1
+
+# systemd user services are unavailable; install/enable systemd or run the gateway under your supervisor.
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+```
 #### Setup telegram bot
 ```json
 "agents": {
