@@ -28,6 +28,10 @@
 9. Retrieval:
    > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
+#### Dùng konclude
+* https://github.com/konclude/Konclude
+
+
 #### Dùng HermiT (buit-in in owlready2)
 * HermiT sẽ kiểm tra mâu thuẫn
     ```python
