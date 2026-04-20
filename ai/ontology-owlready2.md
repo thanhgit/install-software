@@ -29,7 +29,24 @@
    > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
 #### Dùng Pellet reasoning
-* Dùng đúng java version
+* Cấu hình jenv
+    ```bash
+    echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bashrc
+    echo 'eval "$(jenv init -)"' >> ~/.bashrc
+    source ~/.bashrc
+    ```
+* List jvm
+    ```bash
+    update-java-alternatives --list
+    ```
+* Add jvm
+    ```bash
+    jenv add /usr/lib/jvm/java-1.11.0-openjdk-amd64
+    ```
+* Dùng đúng java version bởi jenv
+    ```bash
+    jenv local 25.0.2
+    ```
 * Using
     ```python
     from owlready2 import *
