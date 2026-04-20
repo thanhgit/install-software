@@ -117,6 +117,23 @@
 pip install EMMOntoPy
 ```    
 
+### Dùng 2 onto trong một world để reasoning
+```python
+from owlready2 import *
+
+# 1. Tạo một World mới (đóng vai trò là "vũ trụ" chung)
+my_world = World()
+
+# 2. Load các ontology vào World này tại runtime
+product_onto = my_world.get_ontology("http://test.org").load()
+user_onto = my_world.get_ontology("http://test.org").load()
+
+# Giờ đây product_onto và user_onto đã nằm chung một World
+# Bạn có thể chạy reasoner chung cho cả hai:
+sync_reasoner_pellet(my_world)
+```
+
+
 
 
 
