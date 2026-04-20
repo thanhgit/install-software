@@ -133,6 +133,17 @@ user_onto = my_world.get_ontology("http://test.org").load()
 sync_reasoner_pellet(my_world)
 ```
 
+#### Tạo sử phụ thuộc giữa 2 onto
+```python
+with user_onto:
+    # user_onto sẽ coi product_onto là một phần phụ thuộc của nó
+    user_onto.imported_ontologies.append(product_onto)
+
+# Lúc này, chỉ cần load user_onto là product_onto sẽ tự động được kéo vào chung 1 World
+````
+
+
+
 
 
 
