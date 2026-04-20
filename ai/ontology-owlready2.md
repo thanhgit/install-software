@@ -35,6 +35,7 @@
 * Docker: https://github.com/stain/jena-docker
     * Config database: https://github.com/SemanticComputing/fuseki-docker
     * Config built-in authN: https://github.com/andybywire/jena-fuseki-inf
+    * Config geosparql: https://github.com/Matdata-eu/apache-jena-fuseki-geosparql
 
 #### Dùng konclude resoner
 * https://github.com/konclude/Konclude
