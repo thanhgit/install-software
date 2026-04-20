@@ -78,7 +78,9 @@ sync_reasoner(infer_property_values = True)
     
     result = crs.query('SELECT ?a ?b ?c WHERE {?a ?b ?c}')
     ```
-    
+
+#### Dùng toolkit
+* https://emmo-repo.github.io/EMMOntoPy/stable/
     
 
 
