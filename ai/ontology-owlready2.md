@@ -28,9 +28,13 @@
 9. Retrieval:
    > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
-#### Dùng konclude
-* https://github.com/konclude/Konclude
+#### Jena Fuseki onto server
+* https://github.com/apache/jena
+<img width="577" height="349" alt="image" src="https://github.com/user-attachments/assets/b5c25a53-d0b5-44b2-949f-e37156630664" />
 
+
+#### Dùng konclude resoner
+* https://github.com/konclude/Konclude
 
 #### Dùng HermiT (buit-in in owlready2)
 * HermiT sẽ kiểm tra mâu thuẫn
