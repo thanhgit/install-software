@@ -28,6 +28,11 @@
 9. Retrieval:
    > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
+#### Dùng HermiT (buit-in in owlready2)
+```python
+sync_reasoner(infer_property_values = True) 
+```
+
 #### Dùng Pellet reasoning
 * Cấu hình jenv
     ```bash
@@ -56,7 +61,7 @@
         sync_reasoner_pellet(infer_property_values = True, infer_data_property_values = True)
     ```
 
-### Dùng FaCT++ reasoning
+#### Dùng FaCT++ reasoning
 * https://github.com/tilde-lab/pyfactxx
     ```bash
     pip install pyfactxx
