@@ -33,6 +33,8 @@
     <img width="577" height="349" alt="image" src="https://github.com/user-attachments/assets/b5c25a53-d0b5-44b2-949f-e37156630664" />
 
 * Docker: https://github.com/stain/jena-docker
+    * Config database: https://github.com/SemanticComputing/fuseki-docker
+    * Config built-in authN: https://github.com/andybywire/jena-fuseki-inf
 
 #### Dùng konclude resoner
 * https://github.com/konclude/Konclude
