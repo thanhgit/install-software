@@ -43,7 +43,13 @@
     * Tự động điền thuộc tính:
          > Nếu bạn có luật "Người sống ở Hà Nội thì có quốc tịch Việt Nam", Reasoner sẽ tự thêm thuộc tính hasNationality = Vietnam cho các cá thể đó
     * Cảnh báo:
-         > Việc này tiêu tốn rất nhiều tài nguyên (RAM/CPU) nếu Ontology của bạn có hàng ngàn cá thể.
+         > Việc này tiêu tốn rất nhiều tài nguyên (RAM/CPU) nếu Ontology của bạn có hàng ngàn cá thể
+         >
+* Sau khi chạy `sync_reasoner`
+    > Kết quả suy luận được lưu vào một "Inference graph" (đồ thị suy luận)
+    
+    > Truy cập `.is_a` để xem class mới được suy luận hoặc kiểm tra các thuộc tính mà không gán thủ công
+
 
 
 #### Dùng Pellet reasoning
