@@ -16,17 +16,17 @@
     > * Khi bạn có hàng triệu entity cần phân loại vào cây thư mục (Taxonomy) để lưu vào VectorDB hoặc graphDB
     > * Tốc độ của FaCT++ (C++) là lợi thế tuyệt đối để kịp tiến độ indexing
 
-## Chiến lược kết hợp cho RAG:
-
-   1. Thiết kế: Dùng Protégé + HermiT để vẽ và check lỗi logic của Ontology.
-   2. Lập trình: Dùng Owlready2/EMMOntoPy để load ontology đó vào Python.
-   3. Indexing: Chạy FaCT++ để phân loại nhanh các thực thể vào Class.
-   4. Enrichment: Chạy Pellet để kích hoạt các Rules (Luật) tạo ra các Triple (bộ ba dữ liệu) mới.
-   5. Retrieval: LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên.
-
-Bạn có cần một đoạn Code mẫu kết hợp EMMOntoPy và FaCT++ để thử nghiệm khâu Indexing nhanh không?
-
-
+### Chiến lược kết hợp cho RAG:
+1. Thiết kế:
+    > Dùng Protégé + HermiT để vẽ và check lỗi logic của Ontology
+3. Lập trình:
+   > Dùng Owlready2/EMMOntoPy để load ontology đó vào Python
+5. Indexing:
+   > Chạy FaCT++ để phân loại nhanh các thực thể vào Class.
+7. Enrichment:
+   > Chạy Pellet để kích hoạt các Rules (Luật) tạo ra các Triple mới
+9. Retrieval:
+   > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
 #### Dùng Pellet reasoning
 * Dùng đúng java version
