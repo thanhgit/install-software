@@ -142,6 +142,25 @@ with user_onto:
 # Lúc này, chỉ cần load user_onto là product_onto sẽ tự động được kéo vào chung 1 World
 ````
 
+#### Giải phóng onto khỏi RAM
+```python
+laptop.destroy_entity() # Xóa 1 instance
+
+# Hoặc xóa toàn bộ instance của một class
+for i in onto.Product.instances():
+    i.destroy_entity()
+
+# Giải phóng my_world = World()
+my_world.close() # Đóng kết nối database
+del my_world     # Xóa đối tượng world khỏi Python RAM
+
+import gc
+gc.collect()
+print(f"Garbage collector: collected {collected_count} objects.")
+```
+
+
+
 
 
 
