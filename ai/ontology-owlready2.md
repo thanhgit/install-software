@@ -29,9 +29,16 @@
    > LLM truy vấn vào kho dữ liệu đã được "tối ưu hóa" bởi các bước trên
 
 #### Dùng HermiT (buit-in in owlready2)
-```python
-sync_reasoner(infer_property_values = True) 
-```
+* HermiT sẽ kiểm tra mâu thuẫn
+    ```python
+    try:
+        with onto:
+            sync_reasoner(infer_property_values=True)
+        print("Ontology nhất quán!")
+    except OwlReadyInconsistentOntologyError:
+        print("Lỗi: Ontology mất tính nhất quán!")
+    
+    ```
 
 #### Dùng Pellet reasoning
 * Cấu hình jenv
