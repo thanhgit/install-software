@@ -1,6 +1,8 @@
 # Dùng ontology trong owlready2
 
 #### Dùng Pellet reasoning
+* Dùng đúng java version
+* Using
     ```python
     from owlready2 import *
     onto = get_ontology("http://test.org")
