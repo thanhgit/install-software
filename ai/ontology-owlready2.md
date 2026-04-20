@@ -81,7 +81,9 @@ sync_reasoner(infer_property_values = True)
 
 #### Dùng toolkit
 * https://emmo-repo.github.io/EMMOntoPy/stable/
-    
+```
+pip install EMMOntoPy
+```    
 
 
 
