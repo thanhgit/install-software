@@ -39,6 +39,7 @@
 
 #### Dùng konclude resoner
 * https://github.com/konclude/Konclude
+* Lựa chọn "Performance" cho dữ liệu khổng lồ > hàng triệu triples 
 
 #### Dùng HermiT (buit-in in owlready2)
 * HermiT sẽ kiểm tra mâu thuẫn
