@@ -39,6 +39,12 @@
         print("Lỗi: Ontology mất tính nhất quán!")
     
     ```
+* `infer_property_values=True` giúp:
+    * Tự động điền thuộc tính:
+         > Nếu bạn có luật "Người sống ở Hà Nội thì có quốc tịch Việt Nam", Reasoner sẽ tự thêm thuộc tính hasNationality = Vietnam cho các cá thể đó
+    * Cảnh báo:
+         > Việc này tiêu tốn rất nhiều tài nguyên (RAM/CPU) nếu Ontology của bạn có hàng ngàn cá thể.
+
 
 #### Dùng Pellet reasoning
 * Cấu hình jenv
