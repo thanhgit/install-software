@@ -41,6 +41,7 @@ openclaw tui
 	  "to": "<TELEGRAM_GROUP_ID>",
       "thread_id": <TELEGRAM_TOPIC_ID>,
 	  "content": "Câu trả lời cho cầu hỏi trên có đạt kỳ vọng không?",
+      "media": ".openclaw/media/inbound/demo.png",
 	  "buttons": [
 	    [
 	      { "text": "Có", "callback_data": "yes" },
