@@ -17,7 +17,11 @@
    ```bash
    tmux source-file ~/.tmux.conf
    ```
-   
+* Set history
+   ```bash
+   set -g history-limit 100000
+   ```
+      
 
 ## [Install chef](./iac/install-chef.md)
 
