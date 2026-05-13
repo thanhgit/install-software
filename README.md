@@ -5,6 +5,14 @@
    ```bash
    tmux show-options -g prefix
    ```
+* Set prfix
+   ```bash
+   cat << EOF > ~/.tmux.conf
+   unbind C-b
+   set-option -g prefix C-a
+   bind-key C-a send-prefix
+   EOF
+   ```
 
 ## [Install chef](./iac/install-chef.md)
 
