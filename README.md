@@ -1,5 +1,11 @@
 # Install software
 
+#### How to use tmux
+* Get prefix
+   ```bash
+   tmux show-options -g prefix
+   ```
+
 ## [Install chef](./iac/install-chef.md)
 
 ## [Install puppet](./iac/install-puppet.md)
