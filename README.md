@@ -21,7 +21,11 @@
    ```bash
    set -g history-limit 100000
    ```
-      
+* List pane
+   ```bash
+   tmux list-panes -a -F '#S:#I.#P #{pane_id}'
+   ```
+
 
 ## [Install chef](./iac/install-chef.md)
 
