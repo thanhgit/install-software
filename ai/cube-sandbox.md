@@ -34,3 +34,20 @@
     --expose-port 49983 \
     --probe 49999
   ```
+  ```bash
+  cubemastercli tpl create-from-image \
+    --image cube-sandbox/sandbox-code:1.0.0 \
+    --writable-layer-size 1G \
+    --expose-port 49999 \
+    --expose-port 49983 \
+    --probe 49999
+  ```
+
+* Create cert
+```bash
+sudo apt update
+sudo apt install -y chromium-browser libnss3-tools
+
+mkdir -p ~/.pki/nssdb
+certutil -N -d sql:$HOME/.pki/nssdb
+```
