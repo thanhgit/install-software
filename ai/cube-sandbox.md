@@ -55,3 +55,30 @@
   mkdir -p ~/.pki/nssdb
   certutil -N -d sql:$HOME/.pki/nssdb
   ```
+
+### Fix:
+* Error sandbox
+  * List all image
+    ```bash
+    cd /usr/local/services/cubetoolbox/cubebox_os_image/
+    ```
+  * Copy file .ext4 -> .vm
+  * Tạo file version với content là: `v1`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
