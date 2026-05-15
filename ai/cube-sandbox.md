@@ -65,6 +65,12 @@
   * Copy file .ext4 -> .vm
   * Tạo file version với content là: `v1`
 
+* Clean up `ip a`
+```bash
+for i in $(ip -o link show | awk -F': ' '{print $2}' | grep z192); do
+  sudo ip link delete $i
+done
+```
 
 
 
