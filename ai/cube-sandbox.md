@@ -21,5 +21,7 @@
   ```
 * Script íntall
   ```bash
+  sudo su root
+  
   curl -sL https://cnb.cool/CubeSandbox/CubeSandbox/-/git/raw/master/deploy/one-click/online-install.sh | MIRROR=cn bash
   ```
