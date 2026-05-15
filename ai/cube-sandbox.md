@@ -15,3 +15,7 @@
   ```bash
   sudo blkid
   ```
+* Update `/etc/fstabl`
+  ```text
+  UUID=abc123 /data/cubelet xfs defaults,pquota 0 0
+  ```
