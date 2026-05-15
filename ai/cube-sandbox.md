@@ -28,6 +28,7 @@
 * Create VM template
   ```bash
   cubemastercli tpl create-from-image \
+    --template-id code-sandbox- \
     --image cube-sandbox-int.tencentcloudcr.com/cube-sandbox/sandbox-code:latest \
     --writable-layer-size 1G \
     --expose-port 49999 \
