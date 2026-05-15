@@ -38,29 +38,29 @@
     ```
 
 * (No internet) machine
-  ```
-  # Cấu hình ip route
-  sudo ip route flush dev enp4s0
-  sudo ip addr add 192.168.137.35/24 dev enp4s0
-  sudo ip route add default via 192.168.137.1 dev enp4s0
-  ```
-  ```
-  # Cấu hình DNS
-  echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
-  ```
-  ```
-  # Cấu hình iptables cho cổng PCI
-  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-  sudo iptables -A FORWARD -i wlan0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
-  sudo iptables -A FORWARD -i enp3s0 -o wlan0 -j ACCEPT
-  ```
-  * Cấu hình tự động
-  ```bash
-  LOCAL_LAN_NIC=enp3s0
-  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-  sudo iptables -A FORWARD -i wlan0 -o $LOCAL_LAN_NIC -m state --state RELATED,ESTABLISHED -j ACCEPT
-  sudo iptables -A FORWARD -i $LOCAL_LAN_NIC -o wlan0 -j ACCEPT
-  ```
+  * Cấu hình ip route
+    ```bash
+    sudo ip route flush dev enp4s0
+    sudo ip addr add 192.168.137.35/24 dev enp4s0
+    sudo ip route add default via 192.168.137.1 dev enp4s0
+    ```
+  * Cấu hình DNS
+    ```bash
+    echo "nameserver 8.8.8.8" | sudo tee /etc/resolv.conf
+    ```
+  * Cấu hình iptables cho cổng PCI
+    ```bash
+    sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+    sudo iptables -A FORWARD -i wlan0 -o enp3s0 -m state --state RELATED,ESTABLISHED -j ACCEPT
+    sudo iptables -A FORWARD -i enp3s0 -o wlan0 -j ACCEPT
+    ```
+    * Cấu hình tự động
+      ```bash
+      LOCAL_LAN_NIC=enp3s0
+      sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+      sudo iptables -A FORWARD -i wlan0 -o $LOCAL_LAN_NIC -m state --state RELATED,ESTABLISHED -j ACCEPT
+      sudo iptables -A FORWARD -i $LOCAL_LAN_NIC -o wlan0 -j ACCEPT
+      ```
 
 ### Check PGvector
 ```
