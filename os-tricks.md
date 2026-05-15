@@ -28,6 +28,16 @@
   sudo iptables -A FORWARD -i wlan0 -o enx207bd51a05bf -m state --state RELATED,ESTABLISHED -j ACCEPT
   sudo iptables -A FORWARD -i enx207bd51a05bf -o wlan0 -j ACCEPT
   ```
+  * Cấu hình tự động
+    ```
+    WIFI_NIC=wlp18s0
+    LAN_NIC=enx207bd51a05bf
+    echo $WIFI_NIC
+    echo $LAN_NIC
+    sudo iptables -t nat -A POSTROUTING -o $WIFI_NIC -j MASQUERADE
+    sudo iptables -A FORWARD -i $WIFI_NIC -o $LAN_NIC -m state --state RELATED,ESTABLISHED -j ACCEPT
+    sudo iptables -A FORWARD -i $LAN_NIC -o $WIFI_NIC -j ACCEPT
+    ```
 
 * (No internet) machine
   ```
