@@ -15,7 +15,11 @@
   ```bash
   sudo blkid
   ```
-* Update `/etc/fstabl`
+* Update `/etc/fstab`
   ```text
   UUID=abc123 /data/cubelet xfs defaults,pquota 0 0
+  ```
+* Script íntall
+  ```bash
+  curl -sL https://cnb.cool/CubeSandbox/CubeSandbox/-/git/raw/master/deploy/one-click/online-install.sh | MIRROR=cn bash
   ```
