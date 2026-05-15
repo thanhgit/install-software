@@ -42,12 +42,16 @@
     --expose-port 49983 \
     --probe 49999
   ```
+* Check job id
+  ```bash
+  cubemastercli tpl watch --job-id ...
+  ```
 
 * Create cert
-```bash
-sudo apt update
-sudo apt install -y chromium-browser libnss3-tools
-
-mkdir -p ~/.pki/nssdb
-certutil -N -d sql:$HOME/.pki/nssdb
-```
+  ```bash
+  sudo apt update
+  sudo apt install -y chromium-browser libnss3-tools
+  
+  mkdir -p ~/.pki/nssdb
+  certutil -N -d sql:$HOME/.pki/nssdb
+  ```
