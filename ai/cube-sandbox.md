@@ -11,3 +11,7 @@
   ```bash
   df -T /data/cubelet
   ```
+* Get UUID
+  ```bash
+  sudo blkid
+  ```
