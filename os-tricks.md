@@ -9,33 +9,34 @@
   <img width="756" height="446" alt="image" src="https://github.com/user-attachments/assets/5f2f2d64-6519-4155-b262-a7ea97a40c0f" />
 
 * Internet machine
-  ```
-  # Xóa các quy tắc cũ nếu có
-  # sudo iptables -F
-  sudo iptables -t nat -F
-  ```
-  ```
-  # Disble firewall
-  sudo ufw disable
-  ```
-  ```
-  # Cho phép chuyển tiếp dữ liệu
-  sudo sysctl -w net.ipv4.ip_forward=1
-  ```
-  ```  
-  # Cho phép chia sẻ mạng từ Wi-Fi (wlan0) sang LAN (enx207bd51a05bf)
-  sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-  sudo iptables -A FORWARD -i wlan0 -o enx207bd51a05bf -m state --state RELATED,ESTABLISHED -j ACCEPT
-  sudo iptables -A FORWARD -i enx207bd51a05bf -o wlan0 -j ACCEPT
-  ```
-  * Cấu hình tự động
+  * Xóa các quy tắc cũ nếu có
+    ```bash
+    # sudo iptables -F
+    sudo iptables -t nat -F
     ```
-    WIFI_NIC=wlp18s0
-    LAN_NIC=enx207bd51a05bf
-    sudo iptables -t nat -A POSTROUTING -o $WIFI_NIC -j MASQUERADE
-    sudo iptables -A FORWARD -i $WIFI_NIC -o $LAN_NIC -m state --state RELATED,ESTABLISHED -j ACCEPT
-    sudo iptables -A FORWARD -i $LAN_NIC -o $WIFI_NIC -j ACCEPT
+  * Disble firewall
+    ```bash
+    sudo ufw disable
     ```
+  * Cho phép chuyển tiếp dữ liệu
+    ```bash
+    sudo sysctl -w net.ipv4.ip_forward=1
+    ```
+  
+  * Cho phép chia sẻ mạng từ Wi-Fi (wlan0) sang LAN (enx207bd51a05bf)
+    ```bash
+    sudo iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+    sudo iptables -A FORWARD -i wlan0 -o enx207bd51a05bf -m state --state RELATED,ESTABLISHED -j ACCEPT
+    sudo iptables -A FORWARD -i enx207bd51a05bf -o wlan0 -j ACCEPT
+    ```
+    * Cấu hình tự động
+      ```
+      WIFI_NIC=wlp18s0
+      LAN_NIC=enx207bd51a05bf
+      sudo iptables -t nat -A POSTROUTING -o $WIFI_NIC -j MASQUERADE
+      sudo iptables -A FORWARD -i $WIFI_NIC -o $LAN_NIC -m state --state RELATED,ESTABLISHED -j ACCEPT
+      sudo iptables -A FORWARD -i $LAN_NIC -o $WIFI_NIC -j ACCEPT
+      ```
 
 * (No internet) machine
   * Cấu hình ip route
