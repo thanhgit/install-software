@@ -28,7 +28,8 @@
   sudo iptables -A FORWARD -i wlan0 -o enx207bd51a05bf -m state --state RELATED,ESTABLISHED -j ACCEPT
   sudo iptables -A FORWARD -i enx207bd51a05bf -o wlan0 -j ACCEPT
   ```
-  * (No internet) machine
+
+* (No internet) machine
   ```
   sudo ip route flush dev enp4s0
   sudo ip addr add 192.168.137.35/24 dev enp4s0
