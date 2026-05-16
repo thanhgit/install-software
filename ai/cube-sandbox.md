@@ -59,11 +59,16 @@
   * Tạo file version với content là: `v1`
 
 * Clean up `ip a`
-```bash
-for i in $(ip -o link show | awk -F': ' '{print $2}' | grep z192); do
-  sudo ip link delete $i
-done
-```
+  ```bash
+  for i in $(ip -o link show | awk -F': ' '{print $2}' | grep z192); do
+    sudo ip link delete $i
+  done
+  ```
+* Clean up `data`
+  ```bash
+  docker volume rm support_cube-sandbox-mysql-data
+  docker volume rm support_cube-sandbox-redis-data
+  ```
 
 
 
