@@ -48,6 +48,10 @@
   mkdir -p ~/.pki/nssdb
   certutil -N -d sql:$HOME/.pki/nssdb
   ```
+* Check log
+  ```bash
+  tail -f /var/log/cube-sandbox-one-click/*.log
+  ```
 
 ### Fix:
 * Error sandbox
