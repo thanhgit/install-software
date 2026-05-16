@@ -53,6 +53,11 @@
   tail -f /var/log/cube-sandbox-one-click/*.log
   ```
 
+* Access VM
+  ```bash
+  sudo cubecli exec 27a61da9bdb5 bash
+  ```
+
 ### Fix:
 * Error sandbox
   * List all image
