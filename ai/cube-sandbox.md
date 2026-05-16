@@ -66,6 +66,17 @@
     ```
   * Copy file .ext4 -> .vm
   * Tạo file version với content là: `v1`
+ 
+* Error DNS => change /etc/resolv.conf
+  ```text
+  nameserver 127.0.0.53
+  options edns0 trust-ad
+  search .
+  ```
+  to
+  ```
+  nameserver 169.254.254.53
+  ```
 
 * Clean up `ip a`
   ```bash
