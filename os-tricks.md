@@ -41,7 +41,7 @@
 * (No internet) machine
   * Cấu hình ip route
     ```bash
-    # cận thận trước khi dùng
+    # Cận trọng trước khi dùng
     #sudo ip route flush dev enp4s0
     #sudo ip addr add 192.168.137.35/24 dev enp4s0
     #sudo ip route add default via 192.168.137.1 dev enp4s0
