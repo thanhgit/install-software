@@ -4,6 +4,10 @@
 - #### Tutorial: https://ollama.com/blog/tool-support
 - #### [Link](https://ollama.com/search?c=tools)
 
+#### OLLAMA_NUM_PARALLEL=1
+> Ollama sẽ xử lý từng yêu cầu một theo thứ tự. Khi đang trả lời câu hỏi cho người này,
+> nó sẽ xếp hàng (queue) yêu cầu của người khác và xử lý xong yêu cầu đầu tiên mới tiếp tục xử lý yêu cầu tiếp theo
+
 #### Create qwen3:1.7b with CPU mode
 ```bash
 mkdir qwen3_1_7b; cd qwen3_1_7b
