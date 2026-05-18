@@ -8,6 +8,15 @@
 > Ollama sẽ xử lý từng yêu cầu một theo thứ tự. Khi đang trả lời câu hỏi cho người này,
 > nó sẽ xếp hàng (queue) yêu cầu của người khác và xử lý xong yêu cầu đầu tiên mới tiếp tục xử lý yêu cầu tiếp theo
 
+#### OLLAMA_NUM_THREADS=4
+> Giới hạn số core chạy
+> Vì Ollama mặc định số thread CPU là dùng tất cả core, có thể gây throttling do nhiệt
+
+#### --context 2048
+> Ollama mặc định context ~2048–4096 token
+> Giảm xuống 1024–2048 token → nhanh hơn
+
+ollama run llama3.1:8b-q4
 #### Create qwen3:1.7b with CPU mode
 ```bash
 mkdir qwen3_1_7b; cd qwen3_1_7b
