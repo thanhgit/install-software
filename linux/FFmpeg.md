@@ -11,7 +11,7 @@ sudo apt install ffmpeg
 
 #### Display banner by alias
 ```bash
-alias ffmpeg=ffmpeg -hide_banner
-alias ffplay=ffplay -hide_banner -autoexit
-alias ffprobe=ffprobe -hide_banner
+alias ffmpeg="ffmpeg -hide_banner"
+alias ffplay="ffplay -hide_banner -autoexit"
+alias ffprobe="ffprobe -hide_banner"
 ```
