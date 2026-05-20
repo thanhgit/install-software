@@ -31,7 +31,7 @@ alias ffplay="ffplay -hide_banner -autoexit"
 alias ffprobe="ffprobe -hide_banner"
 ```
 
-#### Components
+#### Components of FFmpeg
 <img width="963" height="619" alt="image" src="https://github.com/user-attachments/assets/bfdaab61-7356-4e02-9dc7-955db56e73c7" />
 
 * Codecs:
@@ -44,6 +44,14 @@ alias ffprobe="ffprobe -hide_banner"
   > is a software component that can read a multimedia input file so that a decoder can work on it
 * Muxers
   > writes data to a multimedia output file after it has been processed by an encoder
+
+<img width="905" height="483" alt="image" src="https://github.com/user-attachments/assets/5fbd9e2b-2cd0-4641-bf91-0141d9ee2bfc" />
+
+* Container:
+  * có thể có nhiều Stream:
+    > stream có thể là audio, video, subtitles, or a file attachment (font files)
+    > Ví dụ : audio stream hoặc video stream
+  * metadata: như IDv3 tags (such as title, album, and artist)
 
 #### Convert an uncompressed (chưa nén) audio from a microphone recording to a lossy compressed (nén mất dữ liệu) audio format
 ```bash
