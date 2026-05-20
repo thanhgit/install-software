@@ -1,5 +1,8 @@
 # FFmpeg for Multimedia-Processing 
 * ffprobe
+  > find out useful information about an audio or video file
+  ffprobe tada.wav
+  
 * ffplay
 * ffmpeg.
 
