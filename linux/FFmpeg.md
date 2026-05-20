@@ -36,3 +36,10 @@ alias ffprobe="ffprobe -hide_banner"
 * Encoders: writing the content
 * Decoders: read the written content
 
+#### Convert an uncompressed (chưa nén) audio from a microphone recording to a lossy compressed (nén mất dữ liệu) audio format
+```bash
+ffmpeg -i uncompressed-stereo.wav \
+       -c:a libmp3lame -b:a 128k -ac 2 -ar 44100 \
+       compressed.mp3
+````
+
