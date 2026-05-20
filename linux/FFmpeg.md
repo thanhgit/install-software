@@ -1,7 +1,9 @@
 # FFmpeg for Multimedia-Processing 
 * ffprobe
-  > find out useful information about an audio or video file
+  > display information about what is contained in a multimedia file
+  ```bash
   ffprobe tada.wav
+  ```
   
 * ffplay
 * ffmpeg.
