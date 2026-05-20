@@ -60,3 +60,12 @@ ffmpeg -i uncompressed-stereo.wav \
        compressed.mp3
 ````
 
+#### # Extract the audio from mp4
+```bash
+ffmpeg -i Stopmotion-hot-wheels.mp4 \
+       -map 0:1 \
+       Stopmotion-hot-wheels.mp3
+```
+
+
+
