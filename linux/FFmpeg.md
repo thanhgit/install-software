@@ -15,8 +15,8 @@
   ```
   
 * ffmpeg
-  * MP4 file using the H.264 codec
-  * MP3 file using the AAC codec
+  * MP4 file using the H.264 codec, Xvid codec
+  * Audio file using the AAC codec, MP3 codec
 
 #### Install on ubuntu
 ```bash
@@ -30,3 +30,9 @@ alias ffmpeg="ffmpeg -hide_banner"
 alias ffplay="ffplay -hide_banner -autoexit"
 alias ffprobe="ffprobe -hide_banner"
 ```
+
+#### Components
+* Codecs: algorithm used to read or write multimedia content
+* Encoders: writing the content
+* Decoders: read the written content
+
