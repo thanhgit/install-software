@@ -78,6 +78,9 @@
   ```
   nameserver 169.254.254.53
   ```
+  ```
+  echo "nameserver 169.254.254.53" | sudo tee /etc/resolv.conf
+  ```
 
 * Clean up `ip a`
   ```bash
