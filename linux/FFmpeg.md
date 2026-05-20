@@ -10,8 +10,13 @@
   ```bash
   ffplay solar.mp4
   ```
+  ```bash
+  ffplay -autoexit -nodisp ding.wav
+  ```
   
-* ffmpeg.
+* ffmpeg
+  * MP4 file using the H.264 codec
+  * MP3 file using the AAC codec
 
 #### Install on ubuntu
 ```bash
