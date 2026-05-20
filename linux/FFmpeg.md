@@ -6,6 +6,11 @@
   ```
   
 * ffplay
+  > play a video file directly
+  ```bash
+  ffplay solar.mp4
+  ```
+  
 * ffmpeg.
 
 #### Install on ubuntu
