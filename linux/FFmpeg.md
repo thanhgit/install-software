@@ -58,6 +58,11 @@ alias ffprobe="ffprobe -hide_banner"
 ffmpeg -i input.mp4 -i logo-brand-100.png -filter_complex "overlay=x=main_w-overlay_w-5:y=main_h-overlay_h" -codec:a copy output.mp4
 ```
 
+#### Extract frames every 10 seconds
+```bash
+ffmpeg -i input.mp4 -vf "fps=1/10" thumb_%04d.png
+```
+
 #### Convert an uncompressed (chưa nén) audio from a microphone recording to a lossy compressed (nén mất dữ liệu) audio format
 ```bash
 ffmpeg -i uncompressed-stereo.wav \
