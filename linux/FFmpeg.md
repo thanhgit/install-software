@@ -63,6 +63,11 @@ ffmpeg -i input.mp4 -i logo-brand-100.png -filter_complex "overlay=x=main_w-over
 ffmpeg -i input.mp4 -vf "fps=1/10" thumb_%04d.png
 ```
 
+#### Lấy frame giây thứ 2
+```bash
+ffmpeg -ss 2  -i input.mp4 -vframes 1 cuoicung.png
+```
+
 #### Convert an uncompressed (chưa nén) audio from a microphone recording to a lossy compressed (nén mất dữ liệu) audio format
 ```bash
 ffmpeg -i uncompressed-stereo.wav \
