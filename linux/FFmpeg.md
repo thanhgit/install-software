@@ -110,6 +110,18 @@ ffmpeg -i sample.mp4 -filter:v "scale=w=640:h=-1" out.mp4
 ffmpeg -i sample.mp4 -filter:v "rotate=45*PI/180" out.mp4
 ```
 
+#### Cut video
+* Theo duration: `input seeking + duration`
+  > Bắt đầu từ giây từ 4, kéo dài 18 giây
+```bash
+ffmpeg -ss 4 -i videoin.mp4 -t 18 out.mp4
+```
+* Theo start - end time: `output seeking + endtime`
+  > Bắt đầu từ giây thứ 4 đến giây thứ 18
+```bash
+ffmpeg -i videoin.mp4 -ss 4 -to 18 out.mp4
+```
+
 
 
 
