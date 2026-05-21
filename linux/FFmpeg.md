@@ -82,9 +82,15 @@ ffmpeg -i videoin.mp4 -filter:a "volume = 30" out30.mp4
 ```
 
 #### Crop video
+* in_h: biến chiều cao của video gốc
+* in_w: biến chiều rộng của video gốc
 ```bash
 ffmpeg -i sample.mp4 -filter:v "crop=w=640:h=480:x=100:y=200" out.mp4
 ```
+```bash
+ffmpeg -i sample.mp4 -filter:v "crop=w=2/3*in_w:h=2/3*in_h" out.mp4
+```
+
 
 
 
