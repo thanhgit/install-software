@@ -91,6 +91,23 @@ ffmpeg -i sample.mp4 -filter:v "crop=w=640:h=480:x=100:y=200" out.mp4
 ffmpeg -i sample.mp4 -filter:v "crop=w=2/3*in_w:h=2/3*in_h" out.mp4
 ```
 
+#### Scale video
+* Thay đổi độ phân giải video
+```bash
+ffmpeg -i sample.mp4 -filter:v "scale=w=640:h=480" out.mp4
+```
+* Ép tỉ lệ %
+```bash
+ffmpeg -i sample.mp4 -filter:v "scale=w=1/2*in_w:h=1/2*in_h" out.mp4
+```
+* Ép 1 chiều, chiều còn lại tự động co để giữ nguyên tỉ lệ 
+```bash
+ffmpeg -i sample.mp4 -filter:v "scale=w=640:h=-1" out.mp4
+```
+
+
+
+
 
 
 
