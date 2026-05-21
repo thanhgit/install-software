@@ -112,9 +112,9 @@ ffmpeg -i sample.mp4 -filter:v "rotate=45*PI/180" out.mp4
 
 #### Cut video
 * Theo duration: `input seeking + duration`
-  > Bắt đầu từ giây từ 4, kéo dài 18 giây
+  > Lấy từ giây từ 4 (nhảy thẳng tới giây thứ 4), thêm 14 giây nữa => nhanh hơn
 ```bash
-ffmpeg -ss 4 -i videoin.mp4 -t 18 out.mp4
+ffmpeg -ss 4 -i videoin.mp4 -t 14 out.mp4
 ```
 * Theo start - end time: `output seeking + endtime`
   > Bắt đầu từ giây thứ 4 đến giây thứ 18
