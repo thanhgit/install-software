@@ -52,6 +52,11 @@ alias ffprobe="ffprobe -hide_banner"
     > stream có thể là audio, video, subtitles, or a file attachment (font files)
     > Ví dụ : audio stream hoặc video stream
   * metadata: như IDv3 tags (such as title, album, and artist)
+ 
+#### Watermask video
+```bash
+ffmpeg -i input.mp4 -i logo-brand-100.png -filter_complex "overlay=x=main_w-overlay_w-5:y=main_h-overlay_h" -codec:a copy output.mp4
+```
 
 #### Convert an uncompressed (chưa nén) audio from a microphone recording to a lossy compressed (nén mất dữ liệu) audio format
 ```bash
