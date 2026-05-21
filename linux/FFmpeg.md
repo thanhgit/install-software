@@ -76,6 +76,11 @@ ffmpeg -i Stopmotion-hot-wheels.mp4 \
        Stopmotion-hot-wheels-fixed.mp4
 ```
 
+#### Tăng âm lượng
+```bash
+ffmpeg -i videoin.mp4 -filter:a "volume = 30" out30.mp4
+```
+
 
 
 
