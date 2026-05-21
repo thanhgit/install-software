@@ -81,6 +81,12 @@ ffmpeg -i Stopmotion-hot-wheels.mp4 \
 ffmpeg -i videoin.mp4 -filter:a "volume = 30" out30.mp4
 ```
 
+#### Crop video
+```bash
+ffmpeg -i sample.mp4 -filter:v "crop=w=640:h=480:x=100:y=200" out.mp4
+```
+
+
 
 
 
