@@ -105,6 +105,12 @@ ffmpeg -i sample.mp4 -filter:v "scale=w=1/2*in_w:h=1/2*in_h" out.mp4
 ffmpeg -i sample.mp4 -filter:v "scale=w=640:h=-1" out.mp4
 ```
 
+#### Rotate góc video 
+```bash
+ffmpeg -i sample.mp4 -filter:v "rotate=45*PI/180" out.mp4
+```
+
+
 
 
 
