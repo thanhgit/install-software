@@ -141,3 +141,41 @@ tls:
   key: /tmp/private.key
 ```
 
+#### Uptime kuma status page
+```csss
+footer::after {
+    content: "";
+    display: block;
+    width: 100%;
+    
+    /* 1. THAY ĐƯỜNG DẪN ẢNH CỦA BẠN VÀO ĐÂY (Link phải có đuôi .png/.jpg) */
+    background-image: url("https://images2.thanhnien.vn/528068263637045248/2024/1/25/c3c8177f2e6142e8c4885dbff89eb92a-65a11aeea03da880-1706156293184503262817.jpg") !important; 
+    
+    /* Cấu hình hiển thị ảnh cân đối */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    /* 2. CHIỀU CAO ẢNH: Bạn có thể tăng/giảm số này để ảnh to hoặc nhỏ hơn */
+    height: 450px; 
+    
+    /* Khoảng cách giữa dòng chữ footer cũ và bức ảnh sơ đồ */
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    
+    /* Hiệu ứng bo góc và đổ bóng nhẹ để tách biệt với nền */
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Tự động thu nhỏ ảnh khi xem trên màn hình điện thoại */
+@media (max-width: 768px) {
+    footer::after {
+        height: 220px;
+        margin-top: 20px;
+    }
+}
+```
+
+
+
