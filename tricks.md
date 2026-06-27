@@ -141,7 +141,8 @@ tls:
   key: /tmp/private.key
 ```
 
-#### Uptime kuma status page
+#### Uptime kuma 
+* Custom status page
 ```csss
 footer::after {
     content: "";
@@ -175,6 +176,15 @@ footer::after {
         margin-top: 20px;
     }
 }
+```
+* Notification template for webhook webdis
+```
+{
+"Authorization": "Basic ***"
+}
+```
+```
+{% capture kuma_json %}{"id":{{ monitorJSON.id }},"service":"{{ name }}","status":"{{ status }}","message":"{{ msg }}","target":"{{ hostnameOrURL }}","time":"{{ heartbeatJSON.time | date: '%Y-%m-%dT%H:%M:%SZ', 0 }}","ping":{{ heartbeatJSON.ping | default: -1 }}}{% endcapture %}SET/{{ name | url_encode }}/{{ kuma_json | strip | url_encode }}
 ```
 
 
