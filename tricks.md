@@ -184,7 +184,7 @@ footer::after {
 }
 ```
 ```
-{% capture kuma_json %}{"id":{{ monitorJSON.id }},"service":"{{ name }}","status":"{{ status }}","message":"{{ msg }}","target":"{{ hostnameOrURL }}","time":"{{ heartbeatJSON.time | date: '%Y-%m-%dT%H:%M:%SZ', 0 }}","ping":{{ heartbeatJSON.ping | default: -1 }}}{% endcapture %}SET/{{ name | url_encode }}/{{ kuma_json | strip | url_encode }}
+{% capture kuma_json %}{"id":{{ monitorJSON.id }},"service":"{{ name }}","status":"{{ status }}","message":"{{ msg }}","target":"{{ hostnameOrURL }}","time":"{{ heartbeatJSON.time | date: '%Y-%m-%dT%H:%M:%SZ', 0 }}","ping":{{ heartbeatJSON.ping | default: -1 }}}{% endcapture %}SET/uptime-kuma-{{ monitorJSON.id }}/{{ kuma_json | strip | url_encode }}
 ```
 
 
