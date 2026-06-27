@@ -184,10 +184,12 @@ footer::after {
 }
 ```
   * For never expired with `SET`
+    > Lưu trữ trạng thái (State Management) của các đối tượng bị quan sát bởi uptime kuma
 ```
 {% if status contains 'Up' %}{% assign status_code = 1 %}{% else %}{% assign status_code = 0 %}{% endif %}{% capture kuma_json %}{"id":{{ monitorJSON.id }},"service":"{{ name }}","status":{{ status_code }},"message":"{{ msg }}","target":"{{ hostnameOrURL }}","time":"{{ heartbeatJSON.time | date: '%Y-%m-%dT%H:%M:%SZ', 0 }}","ping":{{ heartbeatJSON.ping | default: -1 }}}{% endcapture %}SET/uptime-kuma-{{ monitorJSON.id }}/{{ kuma_json | strip | url_encode }}
 ```
   * For TTL with `SETEX`
+    > Giám sát sinh mệnh (Heartbeat/Liveness) của đối tượng giám sát như uptime kuma
 ```
 {% if status contains 'Up' %}{% assign status_code = 1 %}{% else %}{% assign status_code = 0 %}{% endif %}{% capture kuma_json %}{"id":{{ monitorJSON.id }},"service":"{{ name }}","status":{{ status_code }},"message":"{{ msg }}","target":"{{ hostnameOrURL }}","time":"{{ heartbeatJSON.time | date: '%Y-%m-%dT%H:%M:%SZ', 0 }}","ping":{{ heartbeatJSON.ping | default: -1 }}}{% endcapture %}SETEX/uptime-kuma-{{ monitorJSON.id }}/60/{{ kuma_json | strip | url_encode }}
 ```
