@@ -4,6 +4,18 @@
 - #### File -> Preferences -> Settings
 - #### Type: `files.maxMemoryForLargeFilesMB`
 
+## Create log session
+```bash
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+exec > >(tee demo.log)
+exec 2>&1
+
+kubectl get nodes
+```
+
 ## Update software
 ```bash
 yum update --downloadonly --downloaddir=/tmp/polkit polkit
