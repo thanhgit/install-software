@@ -23,6 +23,20 @@
 **E - Evolve continuously (Liên tục tiến hóa)**
 > AI phát hiện ngoại lệ để cải tiến hệ thống.
 
+```
+Kết quả mong muốn
+↓
+Thiết kế lại công việc
+↓
+Thiết kế dữ liệu cần có
+↓
+Thiết kế vai trò con người
+↓
+AI tham gia đúng điểm
+↓
+Hệ thống liên tục cải tiến
+```
+
 #### "Pain point first"
 > "Công việc nào đang lãng phí nhất?
 > Quyết định nào đang chậm nhất?
