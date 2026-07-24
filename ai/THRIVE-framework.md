@@ -3,6 +3,8 @@
 > Biến kinh nghiệm của nhân sự thành tài sản hệ thống
 > **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
 
+=> AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
+
 **T - Think again (Tái tư duy công việc)**
 > Không tự động hóa cái cũ
 
