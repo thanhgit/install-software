@@ -1,7 +1,7 @@
 # **THRIVE framework** 
 > Hệ thống này giúp con người làm tốt hơn hay chỉ giúp cấp trên kiểm soát hơn?
 > Biến kinh nghiệm của nhân sự thành tài sản hệ thống
-
+> **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
 
 **T - Think again (Tái tư duy công việc)**
 > Không tự động hóa cái cũ
@@ -58,18 +58,3 @@ Phát hiện ngoại lệ
 ↓
 Cải tiến hệ thống
 ```
-
----
-
-Điểm tôi nghĩ cần nhấn mạnh nhất khi đưa vào Việt Nam là:
-
-> **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
-
-Vì nỗi đau lớn của nhiều doanh nghiệp Việt không phải là thiếu AI, mà là:
-
-* người giỏi nghỉ thì mất kinh nghiệm,
-* quản lý quá bận xử lý vụ việc,
-* quy trình không mở rộng được,
-* chủ doanh nghiệp trở thành "nút cổ chai".
-
-Nếu THRIVE giải quyết đúng các vấn đề đó, nó sẽ gần với một **phương pháp xây dựng doanh nghiệp AI-native**, thay vì chỉ là một framework triển khai công nghệ.
