@@ -4,6 +4,9 @@
 > **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
 
 => AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
+* Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
+* Framework thiết kế công việc trả lời: AI nên tham gia vào hệ thống vận hành như thế nào?
+* Framework quản trị thay đổi trả lời: Con người sẽ chấp nhận và cộng tác với AI ra sao?
 
 **T - Think again (Tái tư duy công việc)**
 > Không tự động hóa cái cũ
