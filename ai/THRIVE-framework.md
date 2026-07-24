@@ -37,6 +37,14 @@ AI tham gia đúng điểm
 Hệ thống liên tục cải tiến
 ```
 
+| Loại AI             | Vai trò               | Câu hỏi chính                 |
+| ------------------- | --------------------- | ----------------------------- |
+| **Digital Doer**    | Thực thi, tự động hóa | "Làm sao làm nhanh hơn?"      |
+| **Number Ninja**    | Phân tích dữ liệu     | "Điều gì đang xảy ra?"        |
+| **Silicon Psychic** | Dự đoán tương lai     | "Điều gì có thể xảy ra tiếp?" |
+| **Cyber Soulmate**  | Hiểu con người        | "Con người cần gì?"           |
+
+
 #### "Pain point first"
 > "Công việc nào đang lãng phí nhất?
 > Quyết định nào đang chậm nhất?
