@@ -85,3 +85,36 @@ Phát hiện ngoại lệ
 ↓
 Cải tiến hệ thống
 ```
+
+### Doanh nghiệp tương lai không vận hành bằng nhân sự, mà vận hành bằng tri thức được số hóa và tự động hóa
+```
+                    TẦNG 1
+             Bán niềm tin mới
+      "Doanh nghiệp phải vận hành bằng tri thức"
+
+                    ↓
+
+                    TẦNG 2
+          Giải thích tại sao điều đó đúng
+      • mất tri thức
+      • onboarding lâu
+      • SOP khó dùng
+      • AI thay đổi cách làm việc
+
+                    ↓
+
+                    TẦNG 3
+             Chứng minh bằng ví dụ
+      • case study
+      • demo
+      • video
+      • số liệu
+
+                    ↓
+
+                    TẦNG 4
+              Bán giải pháp
+      • RAG
+      • AI Agent
+      • Tư vấn triển khai
+```
