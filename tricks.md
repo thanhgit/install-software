@@ -5,6 +5,50 @@
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
 ```
 
+```yaml
+server {
+    listen 80;
+    server_name *.guest.util4dev.tech;
+    return 301 https://$host$request_uri;
+}
+
+server {
+    server_name ~^(?<app_name>.+)\.guest\.util4dev\.tech$;
+    client_max_body_size 2048M;
+
+    location / {
+        set $target_port 80800;
+	      set $target_proto http;
+	      if ($app_name = "default") { set $target_port 80800; }
+        if ($app_name = "notebook") { set $target_port 80801; }
+        if ($app_name = "teleport") { 
+		      set $target_proto https;
+		      set $target_port 8443; 
+	      }
+	      if ($app_name = "uptime") { set $target_port 3001; }
+
+	      proxy_pass $target_proto://127.0.0.1:$target_port;
+
+        proxy_redirect     off;
+        proxy_set_header   Host $host;
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   X-Forwarded-Proto $scheme;
+        proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header   X-Forwarded-Host $server_name;
+        proxy_http_version 1.1;
+        proxy_set_header   Upgrade $http_upgrade;
+        proxy_set_header   Connection "upgrade";
+    }
+
+
+    listen 443 ssl http2;
+    ssl_certificate /etc/letsencrypt/live/guest.util4dev.tech/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/guest.util4dev.tech/privkey.pem; # managed by Certbot
+}
+
+
+```
+
 ## How to increase CPU/RAM available to VSCode
 - #### File -> Preferences -> Settings
 - #### Type: `files.maxMemoryForLargeFilesMB`
