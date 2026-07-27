@@ -17,20 +17,20 @@ server {
     client_max_body_size 2048M;
 
     location / {
-		set $target_port 80800;
-		set $target_proto http;
-		if ($app_name = "default") { set $target_port 80800; }
-		if ($app_name = "notebook") { set $target_port 80801; }
-        if ($app_name = "teleport") { 
-		      set $target_proto https;
-		      set $target_port 8443; 
-	      }
-	      if ($app_name = "uptime") { set $target_port 3001; }
-
-	      proxy_pass $target_proto://127.0.0.1:$target_port;
+    	set $target_port 80800;
+    	set $target_proto http;
+    	if ($app_name = "default") { set $target_port 80800; }
+    	if ($app_name = "notebook") { set $target_port 80801; }
+        if ($app_name = "teleport") {
+        	set $target_proto https;
+        	set $target_port 8443; 
+        }
+        if ($app_name = "uptime") { set $target_port 3001; }
+        
+        proxy_pass $target_proto://127.0.0.1:$target_port;
 
         proxy_redirect     off;
-		proxy_set_header   Host $host;
+        proxy_set_header   Host $host;
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   X-Forwarded-Proto $scheme;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -45,8 +45,6 @@ server {
     ssl_certificate /etc/letsencrypt/live/guest.util4dev.tech/fullchain.pem; # managed by Certbot
     ssl_certificate_key /etc/letsencrypt/live/guest.util4dev.tech/privkey.pem; # managed by Certbot
 }
-
-
 ```
 
 ## How to increase CPU/RAM available to VSCode
