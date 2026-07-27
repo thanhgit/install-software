@@ -1,5 +1,10 @@
 # Common tricks
 
+## Certbot *.domain
+```bash
+sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
+```
+
 ## How to increase CPU/RAM available to VSCode
 - #### File -> Preferences -> Settings
 - #### Type: `files.maxMemoryForLargeFilesMB`
