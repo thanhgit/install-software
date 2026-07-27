@@ -17,7 +17,7 @@ server {
     client_max_body_size 2048M;
 
     location / {
-        set $target_port 80800;
+		set $target_port 80800;
 	      set $target_proto http;
 	      if ($app_name = "default") { set $target_port 80800; }
         if ($app_name = "notebook") { set $target_port 80801; }
