@@ -18,9 +18,9 @@ server {
 
     location / {
 		set $target_port 80800;
-	      set $target_proto http;
-	      if ($app_name = "default") { set $target_port 80800; }
-        if ($app_name = "notebook") { set $target_port 80801; }
+		set $target_proto http;
+		if ($app_name = "default") { set $target_port 80800; }
+		if ($app_name = "notebook") { set $target_port 80801; }
         if ($app_name = "teleport") { 
 		      set $target_proto https;
 		      set $target_port 8443; 
@@ -30,7 +30,7 @@ server {
 	      proxy_pass $target_proto://127.0.0.1:$target_port;
 
         proxy_redirect     off;
-        proxy_set_header   Host $host;
+		proxy_set_header   Host $host;
         proxy_set_header   X-Real-IP $remote_addr;
         proxy_set_header   X-Forwarded-Proto $scheme;
         proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
