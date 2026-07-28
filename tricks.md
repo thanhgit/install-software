@@ -20,6 +20,12 @@ To                         Action      From
 * Port `3024` cho reverse tunnel traffic (proxy_service)
 * Port `3035` cho auth_service
 
+```bash
+# teleport
+export TELEPORT_PROXY="teleport.thanhnp.util4dev.tech"
+export TELEPORT_USER="thanhnp"
+```
+
 ## Certbot *.domain
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
