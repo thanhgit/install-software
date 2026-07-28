@@ -1,5 +1,20 @@
 # Common tricks
 
+## Teleport remote `tctl`
+```bash
+sudo ufw status
+```
+```bash
+Status: active
+
+To                         Action      From
+--                         ------      ----
+22                         ALLOW       Anywhere                  
+80                         ALLOW       Anywhere                  
+443                        ALLOW       Anywhere                  
+3024                       ALLOW       Anywhere 
+```
+
 ## Certbot *.domain
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
