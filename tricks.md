@@ -1,5 +1,29 @@
 # Common tricks
 
+## Teleport - Github SSO
+* Homepage URL: `https://teleport.thanhnp.util4dev.tech`
+* Authorization callback URL: `https://teleport.thanhnp.util4dev.tech/v1/webapi/github/callback`
+* Tạo github ORG và team
+```yaml
+kind: github
+metadata:
+  name: util4dev_github_connector
+spec:
+  api_endpoint_url: ""
+  client_id: XXX
+  client_secret: XXX
+  display: GitHub
+  endpoint_url: ""
+  redirect_url: https://teleport.thanhnp.util4dev.tech/v1/webapi/github/callback
+  teams_to_logins: null
+  teams_to_roles:
+  - organization: util4dev
+    roles:
+    - access
+    team: util4dev
+version: v3
+```
+
 ## Teleport remote `tctl`
 ```bash
 sudo ufw status
