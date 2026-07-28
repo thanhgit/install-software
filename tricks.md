@@ -54,7 +54,11 @@ export TELEPORT_USER="thanhnp"
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
 ```
-
+* Check certs:
+```bash
+sudo certbot certificates
+```
+* Config
 ```yaml
 server {
     listen 80;
