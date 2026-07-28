@@ -11,10 +11,12 @@ To                         Action      From
 --                         ------      ----
 22                         ALLOW       Anywhere                  
 80                         ALLOW       Anywhere                  
-443                        ALLOW       Anywhere                  
+443                        ALLOW       Anywhere
+3023                       ALLOW       Anywhere                    
 3024                       ALLOW       Anywhere                  
 3025                       ALLOW       Anywhere 
 ```
+* Port `3024` cho auth_service remote
 * Port `3024` cho reverse tunnel traffic (proxy_service)
 * Port `3035` cho auth_service
 
