@@ -19,8 +19,17 @@ spec:
   teams_to_roles:
   - organization: util4dev
     roles:
-    - access
+    - access_app
+    - common_access_app
     team: util4dev
+  - organization: util4dev
+    roles:
+    - access
+    - auditor
+    - editor
+    - mcp-user
+    - admin-role
+    team: admin
 version: v3
 ```
 
@@ -54,7 +63,7 @@ export TELEPORT_USER="thanhnp"
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
 ```
-* Check certs:
+* Check certs
 ```bash
 sudo certbot certificates
 ```
