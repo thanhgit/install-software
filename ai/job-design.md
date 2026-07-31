@@ -24,6 +24,13 @@ Bất thường
 (điều phối)
    ↓
 Cập nhật lại hệ thống
+(Kinh nghiệm của người vận hành)
+        ↓
+Pattern của hệ thống
+        ↓
+Quy tắc vận hành
+        ↓
+Cảnh báo trước khi lỗi xảy ra
 ```
 
 **Trục 1: Tính ổn định của công việc (Work Nature)**
