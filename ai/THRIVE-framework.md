@@ -3,6 +3,14 @@
 > Biến kinh nghiệm của nhân sự thành tài sản hệ thống
 > **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
 
+| Tầng                       | Đối tượng thay đổi                                  | Ví dụ                                                                                                        |
+| -------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| **1. Operation**           | Một thao tác                                        | AI viết email nhanh hơn                                                                                      |
+| **2. Workflow**            | Chuỗi bước                                          | Đổi thứ tự viết → duyệt → gửi                                                                                |
+| **3. Role Architecture**   | Vai trò và trách nhiệm                              | AI viết, người duyệt, AI kiểm tra                                                                            |
+| **4. System Architecture** | Cách công việc được sinh ra, phân phối và điều phối | AI tự phát hiện vấn đề và tạo công việc; dashboard thay cho báo cáo; sự kiện trong hệ thống kích hoạt tác vụ |
+| **5. Strategy**            | Mục tiêu và sự cần thiết của công việc              | Bỏ hẳn báo cáo, bỏ cuộc họp, thay đổi KPI                                                                    |
+
 => AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
 * Framework thiết kế công việc trả lời: AI nên tham gia vào hệ thống vận hành như thế nào?
