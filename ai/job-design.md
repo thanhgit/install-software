@@ -50,6 +50,23 @@ Phát hiện sớm lần sau
 Giảm xác suất lặp lỗi
 ```
 
+#### Mô hình flywheel
+```
+Cài 0D
+ ↓
+Quan sát hệ thống
+ ↓
+Thu thập trạng thái bình thường
+ ↓
+Thu thập trạng thái bất thường
+ ↓
+Hiểu nguyên nhân
+ ↓
+Cải thiện dự đoán
+ ↓
+Tạo giá trị cao hơn
+```
+
 **Trục 1: Tính ổn định của công việc (Work Nature)**
 |                        |                                                  |
 | ---------------------- | ------------------------------------------------ |
