@@ -5,8 +5,8 @@
 
 Giá trị của vận hành **BAU**:
 > Con người không nên tiêu hao sự chú ý cho trạng thái bình thường; con người nên tập trung vào sự thay đổi
-* phát hiện sớmn -> giảm tác động
-* ngăn lỗi lặp lại
+* phát hiện sớmn -> giảm tác động -> ngăn lỗi lặp lại
+* Bởi nhìn theo hệ thống, nghĩ về rủi ro, kiểm tra giả định, ghi nhận bài học.
 
 ```
 Bất thường
