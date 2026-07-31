@@ -51,6 +51,10 @@ Giảm xác suất lặp lỗi
 ```
 
 #### Mô hình flywheel
+* AI càng hiểu khách hàng
+* khách hàng càng phụ thuộc
+* giá trị chuyển đổi sang 2D/3D càng lớn
+
 ```
 Cài 0D
  ↓
