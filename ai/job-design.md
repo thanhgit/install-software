@@ -12,12 +12,16 @@ Giá trị của vận hành **BAU**:
 Bất thường
    ↓
 0D: phát hiện
+(lấy tín hiệu)
    ↓
 1D: thu thập thông tin
+(từ các công cụ sẵn có)
    ↓
 2D: tạo giả thuyết
+(tạo hiểu biết vấn đề)
    ↓
 3D: phối hợp các bên
+(điều phối)
    ↓
 Cập nhật lại hệ thống
 ```
