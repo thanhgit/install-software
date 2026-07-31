@@ -27,7 +27,20 @@ quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất th�
 | 2D  | Tương tác hai chiều          | Phản hồi, xác nhận, điều chỉnh           | Đối thoại, kiểm chứng              | AI như cộng sự           |
 | 3D  | Hệ sinh thái tương tác       | Kết nối các thành phần trong hệ thống    | Phối hợp giữa người-người-người-AI | AI như hạ tầng phối hợp  |
 
-=> AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
+#### 0D: AI như "hệ thần kinh tự động"
+> rất mạnh cho BAU
+
+**Ưu điểm:**
+* giảm tải nhận thức,
+* không làm gián đoạn dòng công việc,
+* phù hợp với công việc lặp lại.
+
+**Nhưng hạn chế:**
+* AI chỉ phản ứng với điều đã được định nghĩa.
+* Không tạo ra sự cải tiến nếu không có con người đặt câu hỏi mới.
+
+
+**Dịch chuyển** AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
 * Framework thiết kế công việc trả lời: AI nên tham gia vào hệ thống vận hành như thế nào?
 * Framework quản trị thay đổi trả lời: Con người sẽ chấp nhận và cộng tác với AI ra sao?
