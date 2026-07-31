@@ -11,10 +11,11 @@
 | **4. System Architecture** | Cách công việc được sinh ra, phân phối và điều phối | AI tự phát hiện vấn đề và tạo công việc; dashboard thay cho báo cáo; sự kiện trong hệ thống kích hoạt tác vụ |
 | **5. Strategy**            | Mục tiêu và sự cần thiết của công việc              | Bỏ hẳn báo cáo, bỏ cuộc họp, thay đổi KPI                                                                    |
 
-> Đối với công việc BAU, sự khác biệt về hiệu suất phần lớn đến từ chất lượng của thói quen, quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất thần của cá nhân.
+> Đối với công việc BAU, sự khác biệt về hiệu suất phần lớn đến từ chất lượng của thói quen,</br>
+quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất thần của cá nhân.
 
-> Một tổ chức bền vững không phải là nơi hệ thống thắng con người, cũng không phải nơi cá nhân thắng hệ thống.
-> Đó là nơi hệ thống tạo ra điều kiện để con người phối hợp, và sự phối hợp của con người làm cho hệ thống ngày càng tốt hơn.
+> Một tổ chức bền vững không phải là nơi hệ thống thắng con người, cũng không phải nơi cá nhân thắng hệ thống.</br>
+Đó là nơi hệ thống tạo ra điều kiện để con người phối hợp làm cho hệ thống ngày càng tốt hơn.
 
 => AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
