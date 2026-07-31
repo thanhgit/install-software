@@ -38,16 +38,27 @@
 
 ```
 Kết quả mong muốn
-↓
+          ↓
 Thiết kế lại công việc
-↓
+          ↓
 Thiết kế dữ liệu cần có
-↓
+          ↓
 Thiết kế vai trò con người
-↓
+          ↓
 AI tham gia đúng điểm
-↓
+          ↓
 Hệ thống liên tục cải tiến
+```
+```
+Thói quen cá nhân
+        ↓
+Cách phối hợp
+        ↓
+Văn hóa tổ chức
+        ↓
+Nhận thức chung
+        ↓
+Khả năng cải tổ lớn
 ```
 
 | Loại AI             | Vai trò               | Câu hỏi chính                 |
