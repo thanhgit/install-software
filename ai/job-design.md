@@ -5,9 +5,22 @@
 
 Giá trị của vận hành **BAU**:
 > Con người không nên tiêu hao sự chú ý cho trạng thái bình thường; con người nên tập trung vào sự thay đổi
-* phát hiện sớm
-* giảm tác động
+* phát hiện sớmn -> giảm tác động
 * ngăn lỗi lặp lại
+
+```
+Bất thường
+   ↓
+0D: phát hiện
+   ↓
+1D: thu thập thông tin
+   ↓
+2D: tạo giả thuyết
+   ↓
+3D: phối hợp các bên
+   ↓
+Cập nhật lại hệ thống
+```
 
 **Trục 1: Tính ổn định của công việc (Work Nature)**
 |                        |                                                  |
