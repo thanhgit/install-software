@@ -1,6 +1,6 @@
 # **THRIVE framework** 
-> Hệ thống này giúp con người làm tốt hơn hay chỉ giúp cấp trên kiểm soát hơn?
-> Biến kinh nghiệm của nhân sự thành tài sản hệ thống
+> Hệ thống này giúp con người làm tốt hơn hay chỉ giúp cấp trên kiểm soát hơn? </br>
+> Biến kinh nghiệm của nhân sự thành tài sản hệ thống </br>
 > **Đừng bán AI transformation. Hãy bán khả năng biến một tổ chức phụ thuộc vào con người thành một tổ chức tích lũy được trí tuệ.**
 
 | Tầng                       | Đối tượng thay đổi                                  | Ví dụ                                                                                                        |
@@ -14,6 +14,7 @@
 > Đối với công việc BAU, sự khác biệt về hiệu suất phần lớn đến từ chất lượng của thói quen,</br>
 quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất thần của cá nhân.
 
+---
 > Một tổ chức bền vững không phải là nơi hệ thống thắng con người, cũng không phải nơi cá nhân thắng hệ thống.</br>
 Đó là nơi hệ thống tạo ra điều kiện để con người phối hợp làm cho hệ thống ngày càng tốt hơn.
 > * Top-down tạo hướng đi.
@@ -39,7 +40,18 @@ quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất th�
 * AI chỉ phản ứng với điều đã được định nghĩa.
 * Không tạo ra sự cải tiến nếu không có con người đặt câu hỏi mới.
 
+#### 1D: AI như công cụ tăng năng lực cá nhân
+> AI chờ lệnh
 
+#### 2D: AI như một đối tác phản hồi
+> Người → AI → Người → AI </br>
+=> giúp hình thành thói quen tư duy tốt
+
+#### 3D: AI như một lớp điều phối
+> Người A <-> AI <-> Người B <-> Hệ thống </br>
+=> giúp các thành phần trong hệ thống nhìn thấy nhau
+
+---
 **Dịch chuyển** AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
 * Framework thiết kế công việc trả lời: AI nên tham gia vào hệ thống vận hành như thế nào?
