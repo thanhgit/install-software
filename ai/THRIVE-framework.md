@@ -20,6 +20,13 @@ quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất th�
 > * Bottom-up cung cấp tín hiệu thực tế.
 > * Horizontal tạo sự phối hợp và học hỏi.
 
+| Mức | Mô hình                      | Vai trò AI                               | Vai trò con người                  | Bản chất                 |
+| --- | ---------------------------- | ---------------------------------------- | ---------------------------------- | ------------------------ |
+| 0D  | AI giám sát                  | Quan sát, phát hiện bất thường, cảnh báo | Chỉ can thiệp khi cần              | AI như hệ thống cảnh báo |
+| 1D  | Con người chủ động tương tác | Cung cấp thông tin, hỗ trợ xử lý         | Chủ động yêu cầu, điều khiển       | AI như công cụ           |
+| 2D  | Tương tác hai chiều          | Phản hồi, xác nhận, điều chỉnh           | Đối thoại, kiểm chứng              | AI như cộng sự           |
+| 3D  | Hệ sinh thái tương tác       | Kết nối các thành phần trong hệ thống    | Phối hợp giữa người-người-người-AI | AI như hạ tầng phối hợp  |
+
 => AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
 * Framework thiết kế công việc trả lời: AI nên tham gia vào hệ thống vận hành như thế nào?
