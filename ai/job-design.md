@@ -1,5 +1,7 @@
 # Ma trận thiết kế công việc
 > Bản chất công việc này là gì, mức độ bất định ra sao, và cần kiểu tương tác nào giữa `AI – con người – hệ thống`?
+> * Công việc càng ổn định → AI càng nên tự động
+> * Công việc càng bất định → AI càng nên cộng tác
 
 **Trục 1: Tính ổn định của công việc (Work Nature)**
 |                        |                                                  |
@@ -25,3 +27,13 @@ quadrantChart
     quadrant-3 0D/1D Monitoring
     quadrant-4 2D Troubleshooting
 ```
+
+**Devops job**
+| Công việc DevOps    | Tính chất                   | Mức AI phù hợp | Ví dụ                             |
+| ------------------- | --------------------------- | -------------- | --------------------------------- |
+| Server monitoring   | BAU, ổn định                | 0D             | AI cảnh báo CPU cao               |
+| Log analysis        | BAU + cần hỗ trợ            | 1D             | AI tìm lỗi trong log              |
+| CI/CD               | Có quy trình + cần trao đổi | 2D             | AI hỏi điều kiện trước deploy     |
+| Incident response   | Bất định                    | 2D             | AI cùng điều tra nguyên nhân      |
+| Cloud architecture  | Phức tạp, nhiều bên         | 3D             | AI điều phối trade-off            |
+| Engineering culture | Xã hội, dài hạn             | 3D             | AI hỗ trợ cải thiện cách phối hợp |
