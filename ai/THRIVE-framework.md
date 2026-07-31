@@ -16,6 +16,9 @@ quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất th�
 
 > Một tổ chức bền vững không phải là nơi hệ thống thắng con người, cũng không phải nơi cá nhân thắng hệ thống.</br>
 Đó là nơi hệ thống tạo ra điều kiện để con người phối hợp làm cho hệ thống ngày càng tốt hơn.
+> * Top-down tạo hướng đi.
+> * Bottom-up cung cấp tín hiệu thực tế.
+> * Horizontal tạo sự phối hợp và học hỏi.
 
 => AI capability (AI làm được gì) => AI outcome (AI giúp tổ chức đạt được gì)
 * Framework kỹ thuật (AI, RAG, Agent) trả lời: AI làm được gì?
