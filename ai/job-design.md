@@ -23,6 +23,13 @@ Giá trị của vận hành **BAU**:
 | **2D** | AI và con người trao đổi, phản biện, xác nhận              |
 | **3D** | AI hỗ trợ sự phối hợp giữa nhiều thành phần trong hệ thống |
 
+| Mức    | Câu hỏi chính                                            | Vai trò AI                                            | Phạm vi                             |
+| ------ | -------------------------------------------------------- | ----------------------------------------------------- | ----------------------------------- |
+| **0D** | "Có gì bất thường không?"                                | Quan sát, phát hiện sai lệch, cảnh báo                | Hệ thống vận hành                   |
+| **1D** | "Hãy cho tôi biết sâu hơn về chuyện này"                 | Truy xuất, phân tích, đào sâu thông tin theo yêu cầu  | Một người vận hành + dữ liệu        |
+| **2D** | "Có những khả năng nào và tôi nên cân nhắc gì?"          | Sinh giả thuyết, tổng hợp bằng chứng, đưa ra lựa chọn | Một người vận hành + một quyết định |
+| **3D** | "Vấn đề này vượt khỏi phạm vi của tôi, ai cần tham gia?" | Điều phối liên chức năng, quản lý phụ thuộc           | Nhiều nhóm trong tổ chức            |
+
 ```mermaid
 quadrantChart
     title Ma trận (Loại AI & Tính chất Công việc)
