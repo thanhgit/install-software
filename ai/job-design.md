@@ -3,6 +3,12 @@
 > * Công việc càng ổn định → AI càng nên tự động
 > * Công việc càng bất định → AI càng nên cộng tác
 
+Giá trị của vận hành **BAU**:
+> Con người không nên tiêu hao sự chú ý cho trạng thái bình thường; con người nên tập trung vào sự thay đổi
+* phát hiện sớm
+* giảm tác động
+* ngăn lỗi lặp lại
+
 **Trục 1: Tính ổn định của công việc (Work Nature)**
 |                        |                                                  |
 | ---------------------- | ------------------------------------------------ |
