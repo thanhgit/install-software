@@ -23,10 +23,10 @@ quy trình và công cụ hỗ trợ hơn là những khoảnh khắc xuất th�
 
 | Mức | Mô hình                      | Vai trò AI                               | Vai trò con người                  | Bản chất                 |
 | --- | ---------------------------- | ---------------------------------------- | ---------------------------------- | ------------------------ |
-| 0D  | AI giám sát                  | Quan sát, phát hiện bất thường, cảnh báo | Chỉ can thiệp khi cần              | AI như hệ thống cảnh báo |
-| 1D  | Con người chủ động tương tác | Cung cấp thông tin, hỗ trợ xử lý         | Chủ động yêu cầu, điều khiển       | AI như công cụ           |
-| 2D  | Tương tác hai chiều          | Phản hồi, xác nhận, điều chỉnh           | Đối thoại, kiểm chứng              | AI như cộng sự           |
-| 3D  | Hệ sinh thái tương tác       | Kết nối các thành phần trong hệ thống    | Phối hợp giữa người-người-người-AI | AI như hạ tầng phối hợp  |
+| 0D  | AI giám sát <br>(ổn định)                  | Quan sát, phát hiện bất thường, cảnh báo | Chỉ can thiệp khi cần              | AI như hệ thống cảnh báo |
+| 1D  | Con người chủ động tương tác <br>(tăng năng lực cá nhân) | Cung cấp thông tin, hỗ trợ xử lý         | Chủ động yêu cầu, điều khiển       | AI như công cụ           |
+| 2D  | Tương tác hai chiều <br>(tăng chất lượng quyết định)          | Phản hồi, xác nhận, điều chỉnh           | Đối thoại, kiểm chứng              | AI như cộng sự           |
+| 3D  | Hệ sinh thái tương tác <br>(tăng năng lực tổ chức)       | Kết nối các thành phần trong hệ thống    | Phối hợp giữa người-người-người-AI | AI như hạ tầng phối hợp  |
 
 #### 0D: AI như "hệ thần kinh tự động"
 > rất mạnh cho BAU
