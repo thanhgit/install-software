@@ -17,7 +17,7 @@
 
 ```mermaid
 quadrantChart
-    title Ma trận Lựa chọn Phương án (Loại AI & Tính chất Công việc)
+    title Ma trận (Loại AI & Tính chất Công việc)
     x-axis AI Quan sát ---> AI Cộng tác
     y-axis Công việc Ổn định ---> Công việc Bất định
     quadrant-1 3D Architecture Design
