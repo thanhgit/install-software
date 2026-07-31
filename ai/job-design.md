@@ -24,6 +24,10 @@ Bất thường
 (điều phối)
    ↓
 Cập nhật lại hệ thống
+```
+
+#### Hệ thông tự học
+```
 (Kinh nghiệm của người vận hành)
         ↓
 Pattern của hệ thống
@@ -31,6 +35,19 @@ Pattern của hệ thống
 Quy tắc vận hành
         ↓
 Cảnh báo trước khi lỗi xảy ra
+```
+```
+Sự kiện xảy ra
+      ↓
+AI ghi nhận
+      ↓
+Tìm pattern
+      ↓
+Cập nhật hiểu biết hệ thống
+      ↓
+Phát hiện sớm lần sau
+      ↓
+Giảm xác suất lặp lỗi
 ```
 
 **Trục 1: Tính ổn định của công việc (Work Nature)**
