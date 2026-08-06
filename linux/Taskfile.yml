@@ -1,0 +1,9 @@
+version: '3'
+
+tasks:
+  hello:
+    aliases:
+      - hi
+      - hey
+    cmds:
+      - echo "Hello, world!"
