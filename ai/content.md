@@ -1,4 +1,7 @@
 # Content
+> Đừng demo AI trước rồi tìm theory sau
+
+> Theory → identify broken work → redesign → build demo → learn → publish
 
 ### Mon — THINK
 > → theory / principles / frameworks
