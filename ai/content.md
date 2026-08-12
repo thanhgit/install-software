@@ -51,3 +51,22 @@
 
 ### Pillar 6 — DevOps lens
 > Tôi áp dụng systems thinking vào human workflow.
+
+
+### Xây thành content system
+
+**TikTok / Threads:**
+> Những nghịch lý về cách giải quyết vấn đề.
+
+**LinkedIn:**
+> Những nghịch lý đó trong work, management, organization và AI.
+
+**Demo:**
+> Chứng minh rằng thay đổi cấu trúc có thể làm vấn đề biến mất.
+
+**Business:**
+> Giúp doanh nghiệp tìm và redesign những cấu trúc đang tạo ra vấn đề.
+
+Và khi người ta nhìn lại toàn bộ content của bạn, họ sẽ dần nhận ra:
+* Bạn không thực sự dạy họ “dùng AI tốt hơn”.
+* Bạn đang dạy họ nhìn công việc theo một cách khác.
