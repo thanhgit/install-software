@@ -28,3 +28,9 @@
 
 ### Sau đó xoay vòng.
 
+### Thử trong 30 bài:
+* 40% — Work design theory
+* 30% — Demo / experiment với AI
+* 20% — Persona-specific problems
+* 10% — DevOps/system thinking applied to work
+
