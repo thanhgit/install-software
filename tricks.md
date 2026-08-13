@@ -1,5 +1,25 @@
 # Common tricks
 
+## Cargo - rust
+* Update cargo version
+```bash
+rustup update stable
+```
+* Remove old version
+```bash
+sudo apt remove cargo rustc
+```
+* Build binary for old system
+```bash
+rustup target add x86_64-unknown-linux-musl
+```
+```
+sudo apt update && sudo apt install musl-tools
+```
+```bash
+cargo build --release --target x86_64-unknown-linux-musl
+```
+
 ## Teleport - Github SSO
 * Homepage URL: `https://teleport.thanhnp.util4dev.tech`
 * Authorization callback URL: `https://teleport.thanhnp.util4dev.tech/v1/webapi/github/callback`
