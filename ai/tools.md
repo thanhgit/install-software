@@ -1,5 +1,35 @@
 # Tools for AI agent
 
+#### Redis + ARTA rules + Workflow state
+```
+                         Redis
+                           │
+            ┌──────────────┼──────────────┐
+            │              │              │
+         Casbin          ARTA          Workflow
+         Policy          Rules          State
+            │              │              │
+            ▼              ▼              ▼
+       ┌────────────────────────────────────┐
+       │             Go Service             │
+       └──────────────────┬─────────────────┘
+                          │
+                     Request
+                          │
+                ┌─────────┴─────────┐
+                ▼                   ▼
+             Casbin              ARTA
+          "có quyền?"        "có vi phạm?"
+                │                   │
+                └─────────┬─────────┘
+                          ▼
+                       Decision
+                          │
+                 ┌────────┼────────┐
+                 ▼        ▼        ▼
+               ALLOW   APPROVAL   DENY
+```
+
 #### Lib
 * https://github.com/scikit-fuzzy/scikit-fuzzy for fuzzy logic để mô phỏng các biến ngôn ngữ
 
