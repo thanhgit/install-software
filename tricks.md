@@ -1,5 +1,22 @@
 # Common tricks
 
+## Config Oroxy
+```
+location / {
+		proxy_pass http://172.20.0.2:8080;
+		proxy_set_header Host 172.20.0.2;
+		proxy_set_header Origin http://172.20.0.2;
+		proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+
+		proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+
+		proxy_read_timeout 90;
+}
+```
 ## Cargo - rust
 * Update cargo version
 ```bash
