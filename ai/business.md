@@ -1,4 +1,7 @@
 # Cần có Team AI Champion trong đội ngũ của mình    
+> Một chuẩn mực chỉ có thể trở thành bình thường khi nó đủ hợp lý để người ta tự nguyện làm,
+> đủ được thực hành để trở nên tự nhiên, đủ phổ biến để tạo cộng hưởng,
+> và đủ nhất quán ở người lãnh đạo để không tạo ra ngoại lệ làm phá vỡ logic của nó
 
 #### 1. `Tư duy chiến lược`: 
 * Kết nối AI với mục tiêu kinh doanh
