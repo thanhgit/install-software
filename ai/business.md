@@ -3,6 +3,13 @@
 > đủ được thực hành để trở nên tự nhiên, đủ phổ biến để tạo cộng hưởng,
 > và đủ nhất quán ở người lãnh đạo để không tạo ra ngoại lệ làm phá vỡ logic của nó
 
+* **Văn hóa** được “xây dựng” từ 3 chiều top-down, botton-up và horizontal
+* Upstream chỉ cấp nguồn và giữ cho logic không bị phá vỡ.
+* Cộng đồng tự khuếch đại nó bằng hành vi hàng ngày
+* **Thực tại là bộ lọc cuối cùng**:
+  > cái gì còn tạo ra giá trị thì còn được cộng hưởng;
+  > cái gì không còn phù hợp thì cuối cùng sẽ bị thực tại buộc phải thay đổi.
+
 #### 1. `Tư duy chiến lược`: 
 * Kết nối AI với mục tiêu kinh doanh
 *  AI Champion có khả năng `chuyển hóa công nghệ phức tạp thành kết quả cụ thể` gắn với mục tiêu doanh nghiệp
