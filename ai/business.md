@@ -4,6 +4,8 @@
 > và đủ nhất quán ở người lãnh đạo để không tạo ra ngoại lệ làm phá vỡ logic của nó
 
 * **Văn hóa** được “xây dựng” từ 3 chiều top-down, botton-up và horizontal
+  > Logic → Niềm tin → Thực hành → Cộng hưởng → Thực tại → Điều chỉnh
+
 * Upstream chỉ cấp nguồn và giữ cho logic không bị phá vỡ.
 * Cộng đồng tự khuếch đại nó bằng hành vi hàng ngày
 * **Thực tại là bộ lọc cuối cùng**:
