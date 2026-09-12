@@ -9,6 +9,16 @@ docker run --rm -i --name ui-template-de \
 		docker.io/thanhdocker/ui-template-de:1.0.4
 ```
 
+### Terminal to html
+* Install
+```
+go install github.com/buildkite/terminal-to-html/v3/cmd/terminal-to-html
+```
+* Using
+```
+cat htop.tape | terminal-to-html --preview > out.html
+```
+
 ### Đề xuất LLM model nào phù hợp với phần cứng máy hiện tại
 * Full json result
 ```bash
