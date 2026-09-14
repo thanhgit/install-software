@@ -1,5 +1,33 @@
 # Cách dùng AI-OPS giải quyết sự có
 
+**Quy trình xử lý sự cố:**
+* Tại sao có sự cố?
+  ```
+  POST /payment
+        ↓
+  payment-api
+        ↓
+  server-03
+        ↓
+  error rate 41%
+        ↓
+  server-01/02 healthy
+  ```
+* Nơi nào có thể can thiệp
+  ```
+  server-03
+     ↓
+  Load Balancer
+     ↓
+  drain supported
+     ↓
+  capacity sufficient
+  ```
+* Nên làm gì tiếp theo
+  ```
+  → Drain server-03
+  ```
+
 https://strategizeyourcareer.com/p/write-a-postmortem-like-a-senior
 https://strategizeyourcareer.com/p/why-most-engineers-fail-at-knowledge
 
