@@ -96,7 +96,12 @@ export TELEPORT_PROXY="teleport.thanhnp.util4dev.tech"
 export TELEPORT_USER="thanhnp"
 ```
 
-## Certbot *.domain
+### Cerrbot for domain
+```bash
+sudo certbot --nginx -d yourdomain.com
+```
+
+### Certbot *.domain
 ```bash
 sudo certbot certonly --manual --preferred-challenges dns -d "*.guest.util4dev.tech"
 ```
