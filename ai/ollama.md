@@ -49,6 +49,7 @@ Environment=OLLAMA_ORIGINS=*
 Environment=OLLAMA_HOST=0.0.0.0:11434
 Environment=OLLAMA_NO_CLOUD=1
 Environment=OLLAMA_FLASH_ATTENTION=1
+Environment=OLLAMA_KV_CACHE_TYPE=q8_0
 ```
 
 - #### Change OLLAMA_KV_CACHE_TYPE
