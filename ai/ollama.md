@@ -51,6 +51,13 @@ Environment=OLLAMA_NO_CLOUD=1
 Environment=OLLAMA_FLASH_ATTENTION=1
 ```
 
+- #### Change OLLAMA_KV_CACHE_TYPE
+```bash
+Environment=OLLAMA_KV_CACHE_TYPE=f16
+Environment=OLLAMA_KV_CACHE_TYPE=q8_0
+Environment=OLLAMA_KV_CACHE_TYPE=q4_0
+```
+
 #### Enable GPU
 - #### Get GPU UUID
 ```bash
