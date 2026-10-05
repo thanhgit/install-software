@@ -47,6 +47,8 @@ Environment=OLLAMA_ORIGINS=*
 - #### Change OLLAMA_HOST
 ```bash
 Environment=OLLAMA_HOST=0.0.0.0:11434
+Environment=OLLAMA_NO_CLOUD=1
+Environment=OLLAMA_FLASH_ATTENTION=1
 ```
 
 #### Enable GPU
