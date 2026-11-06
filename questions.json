@@ -1,146 +1,578 @@
 [
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Mục đích chính của bạn khi tham gia session này là gì?",
-    correct_answer: "Theo dõi và nắm bắt tình hình",
-    incorrect_answers: [
-      "Hỗ trợ phân tích và tìm nguyên nhân",
-      "Trực tiếp thực hiện công việc",
-      "Chia sẻ kinh nghiệm và kiến thức",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Team & Ownership",
+    "question": "Khi cần thay đổi một dịch vụ nhưng chưa rõ ai phụ trách, bạn nên tìm thông tin nào trước?",
+    "correct_answer": "Service catalog hoặc tài liệu ownership của hệ thống",
+    "incorrect_answers": [
+      "Danh sách nhân viên bất kỳ",
+      "Lịch sử chat gần nhất",
+      "Danh sách máy chủ đang hoạt động"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn muốn tham gia vào quá trình vận hành ở mức độ nào?",
-    correct_answer: "Quan sát và tìm hiểu",
-    incorrect_answers: [
-      "Đưa ra ý kiến và đề xuất",
-      "Phân tích vấn đề và hướng dẫn",
-      "Trực tiếp thực hiện các thao tác",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Team & Ownership",
+    "question": "Ai thường là người chịu trách nhiệm chính về một dịch vụ trong môi trường production?",
+    "correct_answer": "Team hoặc service owner được phân công",
+    "incorrect_answers": [
+      "Người tạo ticket gần nhất",
+      "Bất kỳ developer nào trong công ty",
+      "Người đang trực tuyến"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn đã từng tham gia dự án hoặc vận hành hệ thống tương tự chưa?",
-    correct_answer: "Chưa từng tham gia",
-    incorrect_answers: [
-      "Đã tìm hiểu nhưng chưa thực hành",
-      "Đã từng hỗ trợ một số công việc",
-      "Đã trực tiếp thực hiện hoặc quản lý",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Team & Ownership",
+    "question": "Khi một công việc liên quan đến nhiều team, điều gì cần được xác định rõ?",
+    "correct_answer": "Owner, phạm vi trách nhiệm và đầu mối phối hợp của từng team",
+    "incorrect_answers": [
+      "Chỉ cần người thực hiện cuối cùng",
+      "Chỉ cần deadline",
+      "Chỉ cần tên dự án"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn quen thuộc nhất với lĩnh vực nào?",
-    correct_answer: "Phần mềm và lập trình",
-    incorrect_answers: [
-      "Máy chủ, mạng và bảo mật",
-      "Dữ liệu, AI và tự động hóa",
-      "Quản lý dự án, sản phẩm và nghiệp vụ",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Team & Ownership",
+    "question": "Tài liệu nào phù hợp để tìm người liên hệ khi một hệ thống gặp sự cố?",
+    "correct_answer": "Danh sách service owner hoặc on-call contact",
+    "incorrect_answers": [
+      "Tài liệu hướng dẫn sử dụng laptop",
+      "Danh sách ngày nghỉ lễ",
+      "Bảng màu giao diện sản phẩm"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Khi gặp một vấn đề chưa rõ nguyên nhân, bạn thường làm gì đầu tiên?",
-    correct_answer: "Tìm kiếm tài liệu hoặc thông tin liên quan",
-    incorrect_answers: [
-      "Kiểm tra các dấu hiệu và dữ liệu hiện có",
-      "Hỏi người có kinh nghiệm hoặc chuyên môn",
-      "Thử nghiệm và phân tích để tìm nguyên nhân",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Team & Ownership",
+    "question": "Khi tiếp nhận một hệ thống chưa từng làm việc, thông tin nào nên được tìm hiểu đầu tiên?",
+    "correct_answer": "Mục đích hệ thống, owner, kiến trúc tổng quan và môi trường vận hành",
+    "incorrect_answers": [
+      "Tên tất cả biến trong source code",
+      "Lịch sử cá nhân của các thành viên",
+      "Các công cụ không liên quan đang được sử dụng"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn thường sử dụng máy tính và công nghệ ở mức độ nào?",
-    correct_answer: "Sử dụng các ứng dụng có sẵn",
-    incorrect_answers: [
-      "Cài đặt và cấu hình phần mềm",
-      "Sử dụng dòng lệnh và viết script",
-      "Phát triển hoặc vận hành hệ thống",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Một thay đổi mã nguồn thông thường nên được đưa vào nhánh chính thông qua quy trình nào?",
+    "correct_answer": "Pull request hoặc merge request có review theo quy định",
+    "incorrect_answers": [
+      "Push trực tiếp lên production",
+      "Gửi file source qua chat",
+      "Chỉnh sửa trực tiếp trên máy chủ"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Nếu dự án gặp sự cố, bạn có thể hỗ trợ bằng cách nào?",
-    correct_answer: "Thu thập thông tin và mô tả tình trạng",
-    incorrect_answers: [
-      "Tìm kiếm tài liệu và giải pháp liên quan",
-      "Phân tích vấn đề và đề xuất hướng xử lý",
-      "Trực tiếp thực hiện hoặc kết nối chuyên gia",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Mục đích chính của code review là gì?",
+    "correct_answer": "Phát hiện vấn đề, cải thiện chất lượng và chia sẻ hiểu biết về mã nguồn",
+    "incorrect_answers": [
+      "Thay thế hoàn toàn việc kiểm thử",
+      "Đảm bảo không bao giờ xảy ra sự cố",
+      "Chỉ để ghi nhận ai viết nhiều code nhất"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn tự tin nhất khi thực hiện công việc nào?",
-    correct_answer: "Tổng hợp thông tin và ghi nhận tình hình",
-    incorrect_answers: [
-      "Phân tích và giải quyết vấn đề",
-      "Thiết kế và triển khai giải pháp",
-      "Kiểm tra, điều phối và phối hợp công việc",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Khi một pull request thay đổi API đang được nhiều dịch vụ sử dụng, điều gì cần được kiểm tra?",
+    "correct_answer": "Tính tương thích ngược và ảnh hưởng đến các consumer",
+    "incorrect_answers": [
+      "Chỉ tên branch",
+      "Chỉ số lượng dòng code",
+      "Chỉ định dạng commit message"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Khi không chắc một thao tác có thể ảnh hưởng đến hệ thống, bạn sẽ làm gì?",
-    correct_answer: "Tạm dừng và tìm hiểu thêm trước khi thực hiện",
-    incorrect_answers: [
-      "Tìm tài liệu để đánh giá mức độ ảnh hưởng",
-      "Hỏi người chịu trách nhiệm hoặc chuyên gia",
-      "Thử nghiệm trong môi trường an toàn trước",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Thông tin nào nên có trong một ticket kỹ thuật đủ rõ để bắt đầu thực hiện?",
+    "correct_answer": "Bối cảnh, mục tiêu, phạm vi, tiêu chí chấp nhận và các phụ thuộc",
+    "incorrect_answers": [
+      "Chỉ một tiêu đề ngắn",
+      "Chỉ tên người yêu cầu",
+      "Chỉ ngày tạo ticket"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn mong muốn nhận được sự hỗ trợ từ ai khi tham gia session?",
-    correct_answer: "Người có chuyên môn kỹ thuật",
-    incorrect_answers: [
-      "Người hiểu rõ dự án và hệ thống",
-      "Quản trị viên hoặc người điều phối",
-      "AI assistant hoặc bất kỳ ai phù hợp",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Khi phát hiện yêu cầu trong ticket chưa rõ hoặc mâu thuẫn, developer nên làm gì?",
+    "correct_answer": "Làm rõ với người yêu cầu hoặc owner trước khi triển khai phần bị ảnh hưởng",
+    "incorrect_answers": [
+      "Tự chọn cách hiểu bất kỳ",
+      "Bỏ qua yêu cầu đó",
+      "Đưa thẳng thay đổi lên production"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Bạn sẵn sàng chia sẻ kiến thức và kinh nghiệm với những người khác như thế nào?",
-    correct_answer: "Chủ động chia sẻ khi có thông tin hữu ích",
-    incorrect_answers: [
-      "Chia sẻ khi được yêu cầu",
-      "Chỉ chia sẻ những nội dung thuộc chuyên môn",
-      "Muốn tìm hiểu thêm trước khi chia sẻ",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Unit test thường được dùng để kiểm tra điều gì?",
+    "correct_answer": "Hành vi của một đơn vị mã nguồn trong phạm vi cô lập",
+    "incorrect_answers": [
+      "Toàn bộ hạ tầng production",
+      "Khả năng chịu tải của toàn hệ thống",
+      "Quyền truy cập vật lý vào máy chủ"
+    ]
   },
   {
-    type: "multiple",
-    difficulty: "easy",
-    category: "Participant Discovery",
-    question: "Theo bạn, điều gì giúp bạn đóng góp giá trị nhất cho session?",
-    correct_answer: "Kiến thức và kinh nghiệm chuyên môn",
-    incorrect_answers: [
-      "Khả năng phân tích và giải quyết vấn đề",
-      "Khả năng phối hợp và kết nối mọi người",
-      "Tinh thần học hỏi và sẵn sàng hỗ trợ",
-    ],
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Development Workflow",
+    "question": "Khi nào cần cập nhật tài liệu kỹ thuật?",
+    "correct_answer": "Khi thay đổi làm tài liệu hiện tại không còn phản ánh đúng hệ thống hoặc quy trình",
+    "incorrect_answers": [
+      "Chỉ vào cuối năm",
+      "Chỉ khi có người yêu cầu bằng văn bản",
+      "Không cần cập nhật nếu code đã có comment"
+    ]
   },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Mục đích chính của việc tách Dev, Staging và Production là gì?",
+    "correct_answer": "Giảm rủi ro bằng cách kiểm thử thay đổi trước khi áp dụng vào môi trường thật",
+    "incorrect_answers": [
+      "Tạo thêm máy chủ để lưu backup",
+      "Đảm bảo mọi môi trường có dữ liệu giống hệt nhau",
+      "Cho phép bỏ qua kiểm thử"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Trước khi triển khai một phiên bản mới lên production, điều gì cần được xác nhận?",
+    "correct_answer": "Thay đổi đã qua kiểm tra cần thiết, có kế hoạch triển khai và phương án rollback",
+    "incorrect_answers": [
+      "Chỉ cần container đã build thành công",
+      "Chỉ cần developer xác nhận trên chat",
+      "Chỉ cần còn đủ dung lượng ổ đĩa"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Infrastructure as Code (IaC) chủ yếu giúp team làm gì?",
+    "correct_answer": "Quản lý và tái tạo hạ tầng bằng cấu hình có thể version control",
+    "incorrect_answers": [
+      "Thay thế hoàn toàn hệ điều hành",
+      "Mã hóa mọi dữ liệu ứng dụng",
+      "Tự động viết tài liệu nghiệp vụ"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Khi một deployment thất bại và ảnh hưởng người dùng, phương án nào thường cần được cân nhắc?",
+    "correct_answer": "Dừng rollout hoặc rollback theo quy trình đã được phê duyệt",
+    "incorrect_answers": [
+      "Xóa toàn bộ log",
+      "Tiếp tục triển khai bất kể trạng thái",
+      "Khởi động lại tất cả máy chủ ngay lập tức"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Monitoring và alerting khác nhau chủ yếu ở điểm nào?",
+    "correct_answer": "Monitoring thu thập/hiển thị trạng thái; alerting thông báo khi điều kiện cần chú ý xảy ra",
+    "incorrect_answers": [
+      "Monitoring chỉ dành cho database; alerting chỉ dành cho network",
+      "Hai khái niệm hoàn toàn giống nhau",
+      "Alerting thay thế việc thu thập metrics"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Khi một máy chủ gần hết dung lượng đĩa, thông tin nào hữu ích để điều tra?",
+    "correct_answer": "Phân vùng bị đầy, thư mục chiếm dung lượng và xu hướng tăng theo thời gian",
+    "incorrect_answers": [
+      "Tên người tạo máy chủ",
+      "Màu sắc dashboard",
+      "Số lượng pull request trong repository"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Vì sao cần có backup và kiểm tra khả năng restore?",
+    "correct_answer": "Để có thể khôi phục dữ liệu/dịch vụ và xác nhận bản backup thực sự sử dụng được",
+    "incorrect_answers": [
+      "Để thay thế monitoring",
+      "Để tăng tốc độ build",
+      "Để không cần phân quyền truy cập"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Runbook thường chứa loại thông tin nào?",
+    "correct_answer": "Các bước vận hành, kiểm tra và xử lý tình huống thường gặp",
+    "incorrect_answers": [
+      "Chỉ sơ yếu lý lịch của team",
+      "Chỉ danh sách tính năng sản phẩm",
+      "Chỉ lịch sử thay đổi giao diện"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "DevOps & Infrastructure",
+    "question": "Khi thay đổi cấu hình hạ tầng, cách làm nào giúp dễ truy vết nhất?",
+    "correct_answer": "Thực hiện qua quy trình có version control, review và ghi nhận thay đổi",
+    "incorrect_answers": [
+      "Chỉnh sửa thủ công mà không ghi lại",
+      "Chia sẻ mật khẩu root trong nhóm chat",
+      "Chỉ lưu cấu hình trên máy cá nhân"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Nguyên tắc least privilege yêu cầu điều gì?",
+    "correct_answer": "Chỉ cấp quyền tối thiểu cần thiết cho nhiệm vụ và trong thời gian phù hợp",
+    "incorrect_answers": [
+      "Cấp quyền admin cho mọi thành viên",
+      "Dùng chung một tài khoản cho cả team",
+      "Không bao giờ thay đổi quyền đã cấp"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Nơi nào nên được dùng để lưu trữ secret như API key hoặc database password?",
+    "correct_answer": "Secret manager hoặc cơ chế lưu trữ bí mật được tổ chức phê duyệt",
+    "incorrect_answers": [
+      "Repository mã nguồn công khai",
+      "File README",
+      "Tin nhắn trong kênh chat chung"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Nếu nghi ngờ một API key đã bị lộ, hành động phù hợp là gì?",
+    "correct_answer": "Báo theo quy trình incident và thu hồi hoặc rotate key bị ảnh hưởng",
+    "incorrect_answers": [
+      "Chờ xem có ai sử dụng hay không",
+      "Chỉ xóa key khỏi màn hình terminal",
+      "Gửi key cho nhiều người để xác minh"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Mục đích của MFA là gì?",
+    "correct_answer": "Bổ sung nhiều yếu tố xác minh để giảm rủi ro khi một yếu tố bị lộ",
+    "incorrect_answers": [
+      "Tăng dung lượng lưu trữ",
+      "Thay thế hoàn toàn việc phân quyền",
+      "Mã hóa source code khi build"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Khi phát hiện lỗ hổng bảo mật trong một dịch vụ nội bộ, nên làm gì?",
+    "correct_answer": "Báo cáo qua kênh bảo mật được chỉ định và cung cấp bằng chứng cần thiết",
+    "incorrect_answers": [
+      "Đăng công khai chi tiết khai thác ngay lập tức",
+      "Tự ý truy cập sâu hơn vào dữ liệu người dùng",
+      "Bỏ qua nếu chưa thấy bị khai thác"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Vì sao cần audit log cho các thao tác nhạy cảm?",
+    "correct_answer": "Để truy vết ai đã làm gì, khi nào và trên tài nguyên nào",
+    "incorrect_answers": [
+      "Để thay thế backup",
+      "Để lưu mật khẩu dạng văn bản",
+      "Để tự động cấp quyền cho người dùng"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Khi nhận được yêu cầu cấp quyền production, thông tin nào cần được làm rõ?",
+    "correct_answer": "Mục đích, phạm vi tài nguyên, thời hạn và người phê duyệt",
+    "incorrect_answers": [
+      "Chỉ tên người yêu cầu",
+      "Chỉ hệ điều hành đang sử dụng",
+      "Chỉ thời điểm người đó online"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Security",
+    "question": "Dữ liệu production có chứa thông tin nhạy cảm nên được sử dụng trong môi trường test như thế nào?",
+    "correct_answer": "Theo chính sách dữ liệu, thường cần ẩn danh hoặc dùng dữ liệu giả lập",
+    "incorrect_answers": [
+      "Sao chép nguyên trạng cho tiện kiểm thử",
+      "Đưa lên repository để mọi người dùng",
+      "Gửi qua email cá nhân"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Incident Management",
+    "question": "Khi phát hiện sự cố production, thông tin nào nên được ghi nhận ngay?",
+    "correct_answer": "Thời điểm, phạm vi ảnh hưởng, triệu chứng và các thay đổi gần đây",
+    "incorrect_answers": [
+      "Nhận định lỗi thuộc về cá nhân nào",
+      "Chỉ ảnh chụp màn hình desktop",
+      "Chỉ số lượng thành viên trong team"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Incident Management",
+    "question": "Trong quá trình xử lý incident, ưu tiên đầu tiên thường là gì?",
+    "correct_answer": "Đánh giá mức độ ảnh hưởng và khôi phục dịch vụ an toàn",
+    "incorrect_answers": [
+      "Tìm người để quy trách nhiệm",
+      "Viết báo cáo cuối cùng trước khi xử lý",
+      "Xóa các cảnh báo đang hiển thị"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Incident Management",
+    "question": "Postmortem sau sự cố nên tập trung vào điều gì?",
+    "correct_answer": "Diễn biến, nguyên nhân hệ thống, tác động và hành động phòng ngừa tái diễn",
+    "incorrect_answers": [
+      "Xếp hạng cá nhân mắc lỗi",
+      "Chỉ liệt kê lệnh đã chạy",
+      "Chỉ ghi thời gian bắt đầu và kết thúc"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Incident Management",
+    "question": "Khi cần thực hiện thao tác khẩn cấp ngoài quy trình thông thường, điều gì quan trọng?",
+    "correct_answer": "Tuân theo emergency process, giới hạn phạm vi và ghi lại đầy đủ thao tác",
+    "incorrect_answers": [
+      "Dùng tài khoản của người khác",
+      "Không cần thông báo cho owner",
+      "Tắt toàn bộ hệ thống để tránh rủi ro"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Incident Management",
+    "question": "Một alert lặp lại nhiều lần nhưng chưa gây ảnh hưởng rõ ràng nên được xử lý thế nào?",
+    "correct_answer": "Điều tra nguyên nhân, đánh giá mức độ rủi ro và điều chỉnh alert nếu phù hợp",
+    "incorrect_answers": [
+      "Luôn tắt alert",
+      "Xóa monitoring để giảm nhiễu",
+      "Mặc định coi mọi alert là false positive"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "System Architecture",
+    "question": "Tài liệu kiến trúc hệ thống nên giúp người đọc hiểu điều gì?",
+    "correct_answer": "Các thành phần, luồng dữ liệu, phụ thuộc và ranh giới giữa các hệ thống",
+    "incorrect_answers": [
+      "Chỉ danh sách nhân sự",
+      "Chỉ giao diện người dùng",
+      "Chỉ lịch sử họp của dự án"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "System Architecture",
+    "question": "Khi một dịch vụ phụ thuộc vào database dùng chung, thay đổi schema cần được phối hợp như thế nào?",
+    "correct_answer": "Đánh giá consumer bị ảnh hưởng và lập kế hoạch thay đổi tương thích",
+    "incorrect_answers": [
+      "Thay đổi trực tiếp mà không thông báo",
+      "Chỉ hỏi người viết migration",
+      "Xóa bảng cũ ngay sau khi deploy"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "System Architecture",
+    "question": "Mục đích của API contract là gì?",
+    "correct_answer": "Thống nhất cách các hệ thống giao tiếp, bao gồm request, response và lỗi",
+    "incorrect_answers": [
+      "Lưu thông tin đăng nhập của developer",
+      "Thay thế toàn bộ source code",
+      "Theo dõi thời gian làm việc của team"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Data Management",
+    "question": "Khi cần truy cập dữ liệu khách hàng để điều tra lỗi, điều gì cần được xác nhận?",
+    "correct_answer": "Mục đích hợp lệ, phạm vi dữ liệu và quyền truy cập được phê duyệt",
+    "incorrect_answers": [
+      "Chỉ cần biết tên database",
+      "Chỉ cần có kết nối VPN",
+      "Có thể truy cập toàn bộ dữ liệu để tìm nhanh hơn"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Data Management",
+    "question": "Data owner hoặc data steward thường có vai trò gì?",
+    "correct_answer": "Xác định trách nhiệm, quy tắc sử dụng và chất lượng của dữ liệu",
+    "incorrect_answers": [
+      "Quản lý toàn bộ tài khoản email",
+      "Phê duyệt mọi pull request",
+      "Thay thế database administrator trong mọi công việc"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Internal Knowledge",
+    "question": "Khi tìm cách xử lý một lỗi đã từng xảy ra, nguồn nào nên được kiểm tra trước?",
+    "correct_answer": "Incident history, postmortem và runbook liên quan",
+    "incorrect_answers": [
+      "Một bài viết bất kỳ trên mạng",
+      "Các ticket không liên quan",
+      "Lịch sử duyệt web cá nhân"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Internal Knowledge",
+    "question": "Một quyết định kỹ thuật quan trọng nên được lưu ở đâu để team có thể tra cứu?",
+    "correct_answer": "Tài liệu quyết định kiến trúc (ADR) hoặc kho tài liệu nội bộ",
+    "incorrect_answers": [
+      "Chỉ trong tin nhắn riêng",
+      "Chỉ trong trí nhớ người đề xuất",
+      "Trong tên branch của repository"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Internal Knowledge",
+    "question": "Khi phát hiện runbook đã lỗi thời, bạn nên làm gì?",
+    "correct_answer": "Thông báo owner và đề xuất cập nhật dựa trên trạng thái thực tế",
+    "incorrect_answers": [
+      "Tiếp tục làm theo dù biết không còn đúng",
+      "Xóa tài liệu mà không thông báo",
+      "Tự ý thay đổi production để khớp tài liệu"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Internal Knowledge",
+    "question": "Vì sao cần ghi lại các workaround đang được sử dụng?",
+    "correct_answer": "Để team hiểu giới hạn hiện tại, rủi ro và kế hoạch xử lý lâu dài",
+    "incorrect_answers": [
+      "Để workaround trở thành giải pháp vĩnh viễn",
+      "Để tránh tạo ticket",
+      "Để không cần phân tích nguyên nhân gốc"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Collaboration",
+    "question": "Khi bàn giao công việc giữa hai ca trực, thông tin nào quan trọng nhất?",
+    "correct_answer": "Trạng thái hiện tại, việc đã làm, rủi ro còn lại và bước tiếp theo",
+    "incorrect_answers": [
+      "Chỉ tên người bàn giao",
+      "Chỉ thời gian ca trực",
+      "Chỉ số lượng cảnh báo đã nhận"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Collaboration",
+    "question": "Khi không đủ thông tin để tự xử lý một vấn đề, cách phối hợp phù hợp là gì?",
+    "correct_answer": "Nêu rõ điều đã biết, điều chưa biết, bằng chứng và hỗ trợ cần thiết",
+    "incorrect_answers": [
+      "Đoán nguyên nhân rồi tự thay đổi hệ thống",
+      "Chờ người khác tự phát hiện",
+      "Chuyển vấn đề cho tất cả mọi người mà không có ngữ cảnh"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Collaboration",
+    "question": "Khi một thay đổi có thể ảnh hưởng đến team khác, thời điểm nào nên thông báo?",
+    "correct_answer": "Trước khi thay đổi được triển khai, với đủ thông tin để đánh giá tác động",
+    "incorrect_answers": [
+      "Chỉ sau khi có sự cố",
+      "Chỉ trong buổi tổng kết cuối tháng",
+      "Không cần thông báo nếu code đã review"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Release & Change Management",
+    "question": "Mục đích của change record là gì?",
+    "correct_answer": "Ghi nhận nội dung, lý do, phạm vi ảnh hưởng, phê duyệt và kết quả thay đổi",
+    "incorrect_answers": [
+      "Lưu mật khẩu triển khai",
+      "Thay thế toàn bộ monitoring",
+      "Ghi nhận số giờ làm việc cá nhân"
+    ]
+  },
+  {
+    "type": "multiple",
+    "difficulty": "easy",
+    "category": "Release & Change Management",
+    "question": "Một release có rủi ro cao nên có kế hoạch rollback hoặc recovery như thế nào?",
+    "correct_answer": "Được xác định trước, có điều kiện kích hoạt và người chịu trách nhiệm rõ ràng",
+    "incorrect_answers": [
+      "Chỉ quyết định sau khi production gặp lỗi",
+      "Để người trực tự tìm cách bất kỳ",
+      "Không cần nếu đã có backup"
+    ]
+  }
 ]
