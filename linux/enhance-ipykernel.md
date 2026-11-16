@@ -22,6 +22,17 @@ evcxr_jupyter --install
 }
 ```
 
+#### Đăng ký node kernel
+```bash
+npm install -g @tlockney/cdp-kernel
+cdp-kernel install --runtime node
+cdp-kernel install --runtime deno
+cdp-kernel install --runtime node --deno-compat
+cdp-kernel install --runtime bun
+cdp-kernel install --runtime workerd
+cdp-kernel install --runtime celld
+```
+
 #### Tắt Jedi để gợi ý code (Autocomplete) phản hồi tức thì
 * Thiết lập profile tại `~/.ipython/profile_default/ipython_config.py`
 ```
@@ -49,7 +60,6 @@ thêm c.HistoryManager.enabled = False
 
 * Cài đặt gói hỗ trợ kernel
   ```bash
-  
   pip install jupyter_client
   ```
 
