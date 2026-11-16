@@ -17,18 +17,24 @@ thêm c.HistoryManager.enabled = False
 * Thêm decorator `@numba.njit` trước các hàm chứa vòng lặp tính toán số học để biên dịch trực tiếp sang mã máy thay vì chạy qua trình thông dịch Python chậm chạp
 
 #### Thay ipykernel bằng xeus-python (Nhân viết bằng C++)
-* Bản tiêu chuẩn `xpython`
-* Bản siêu nhẹ `xpython-raw`
+* Bản tiêu chuẩn `xpython` ~ (Nhân C++ có hỗ trợ lệnh magic của IPython)
+* Bản siêu nhẹ `xpython-raw` ~ (Nhân C++ thuần túy, bỏ qua IPython, nhẹ và khởi động nhanh nhất)
 * Nếu chọn nhân XPython Raw (bỏ qua lớp IPython), tốc độ khởi động, gợi ý code và thực thi cell tăng thêm khoảng 15%,
 * Tuy nhiên bạn sẽ mất các lệnh magic như %timeit hay %%bash
   ```bash
   pip install xeus-python
   ```
 
-* Kiểm tra nhân
+* Cài đặt gói hỗ trợ kernel
+  ```bash
+  
+  pip install jupyter_client
   ```
+
+* Kiểm tra nhân
+  ```bash
   jupyter kernelspec list
-  ``
+  ```
 
 #### Gom nhóm lệnh print()
 * In ra output một lần ở cuối
