@@ -1,5 +1,27 @@
 # Enhance Jupiter notebook
 
+#### Đăng ký rust kernel
+```bash
+# Rust toolchain
+rustup component add rust-src
+
+# Cài Evcxr
+cargo install --locked evcxr_jupyter
+
+# Đăng ký Rust kernel
+evcxr_jupyter --install
+```
+
+```
+{
+  "kernelspec": {
+    "display_name": "Rust",
+    "language": "rust",
+    "name": "rust"
+  }
+}
+```
+
 #### Tắt Jedi để gợi ý code (Autocomplete) phản hồi tức thì
 * Thiết lập profile tại `~/.ipython/profile_default/ipython_config.py`
 ```
