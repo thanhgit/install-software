@@ -25,6 +25,11 @@ thêm c.HistoryManager.enabled = False
   pip install xeus-python
   ```
 
+* Kiểm tra nhân
+  ```
+  jupyter kernelspec list
+  ``
+
 #### Gom nhóm lệnh print()
 * In ra output một lần ở cuối
 ```python
