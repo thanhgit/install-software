@@ -6,6 +6,11 @@
 %config IPCompleter.use_jedi = False
 ```
 
+#### Tắt lịch sử lưu trữ (HistoryManager) trong file ipython_config.py
+```python
+thêm c.HistoryManager.enabled = False
+```
+
 #### Thay ipykernel bằng xeus-python (Nhân viết bằng C++)
 * Nếu chọn nhân XPython Raw (bỏ qua lớp IPython), tốc độ khởi động, gợi ý code và thực thi cell tăng thêm khoảng 15%,
 * Tuy nhiên bạn sẽ mất các lệnh magic như %timeit hay %%bash
