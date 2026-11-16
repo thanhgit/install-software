@@ -36,6 +36,16 @@ thêm c.HistoryManager.enabled = False
   jupyter kernelspec list
   ```
 
+* Set `xpython-raw`
+  ```
+  # ---
+  # jupyter:
+  #   kernelspec:
+  #     display_name: XPython Raw
+  #     language: python
+  #     name: xpython-raw
+  # ---
+  ```
 #### Gom nhóm lệnh print()
 * In ra output một lần ở cuối
 ```python
