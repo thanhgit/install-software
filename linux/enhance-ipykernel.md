@@ -25,6 +25,8 @@ evcxr_jupyter --install
 #### Đăng ký node kernel
 ```bash
 npm install -g @tlockney/cdp-kernel
+```
+```bash
 cdp-kernel install --runtime node
 cdp-kernel install --runtime deno
 cdp-kernel install --runtime node --deno-compat
