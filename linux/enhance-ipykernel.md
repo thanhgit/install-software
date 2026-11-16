@@ -11,6 +11,10 @@
 thêm c.HistoryManager.enabled = False
 ```
 
+#### Dùng thư viện / trình biên dịch
+* Dùng Polars hoặc DuckDB thay Pandas
+* Biên dịch hàm nặng bằng Numba hoặc Cython
+
 #### Thay ipykernel bằng xeus-python (Nhân viết bằng C++)
 * Nếu chọn nhân XPython Raw (bỏ qua lớp IPython), tốc độ khởi động, gợi ý code và thực thi cell tăng thêm khoảng 15%,
 * Tuy nhiên bạn sẽ mất các lệnh magic như %timeit hay %%bash
