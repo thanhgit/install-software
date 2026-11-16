@@ -46,6 +46,22 @@ thêm c.HistoryManager.enabled = False
   #     name: xpython-raw
   # ---
   ```
+* Config jupyter
+  ```
+  # ---
+  # jupyter:
+  #   jupytext:
+  #     text_representation:
+  #       extension: .py
+  #       format_name: percent
+  #       format_version: '1.3'
+  #       jupytext_version: 1.19.6
+  #   kernelspec:
+  #     display_name: Python 3
+  #     language: python
+  #     name: python3
+  # ---
+  ```
 #### Gom nhóm lệnh print()
 * In ra output một lần ở cuối
 ```python
