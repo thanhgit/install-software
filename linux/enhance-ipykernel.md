@@ -6,4 +6,7 @@
 %config IPCompleter.use_jedi = False
 ```
 
-#### %config IPCompleter.use_jedi = False
+#### . Thay ipykernel bằng xeus-python (Nhân viết bằng C++)
+```bash
+pip install xeus-python
+```
