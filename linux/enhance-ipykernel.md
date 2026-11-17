@@ -3,8 +3,17 @@
 #### Đăng kí kernel in docker
 * Dockerfile
   ```dockerfile
-  FROM python:3.10-slim
+  FROM python:3.12-slim
+  
+  # Prevent Python from writing .pyc files and buffering stdout/stderr
+  ENV PYTHONDONTWRITEBYTECODE=1 \
+      PYTHONUNBUFFERED=1
+  
+  # Install only ipykernel (and any specific libraries your code needs)
   RUN pip install --no-cache-dir ipykernel
+  
+  # Default command to launch the kernel when a connection file is mounted
+  ENTRYPOINT ["python", "-m", "ipykernel_launcher"]
   ```
 * Build image
   ```bash
