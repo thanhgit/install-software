@@ -219,3 +219,22 @@ thêm c.HistoryManager.enabled = False
 ```python
 print("\n".join(logs))
 ```
+
+#### Dùng E2B API
+```bash
+pip install e2b-code-interpreter
+```
+```python
+import os
+from e2b_code_interpreter import Sandbox
+
+os.environ["E2B_API_KEY"] = "e2b_..." # Điền API key của bạn
+
+# Tạo sandbox mới (hoặc dùng Sandbox.connect("sandbox_id") để nối vào sandbox đang có)
+sbx = Sandbox.create() 
+print("Sandbox ID dùng chung:", sbx.sandbox_id)
+
+# Chạy code trên E2B và nhận kết quả (text, biểu đồ, dataframe...) về Jupyter local
+execution = sbx.run_code("x = 10 + 25; x")
+print(execution.text)  # Kết quả: 35
+```
