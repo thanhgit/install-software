@@ -19,15 +19,7 @@
   ```bash
   docker build -t my-jupyter-image .
   ```
-* Install utility tool
-  ```
-  pip install dockernel
-  ```
-* Đăng ký
-  ```
-  dockernel install my-jupyter-image --name "Python Docker"
-  ```
-* Manual config at: ` ~/.local/share/jupyter/kernels/docker-python/kernel.json`
+* Đăng ký tại: ` ~/.local/share/jupyter/kernels/docker-python/kernel.json`
   ```json
   {
     "argv": [
