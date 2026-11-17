@@ -2,11 +2,15 @@
 
 #### Đăng kí kernel in docker
 * Dockerfile
-```dockerfile
-FROM python:3.10-slim
-RUN pip install --no-cache-dir ipykernel
-```
-* Install wrraper
+  ```dockerfile
+  FROM python:3.10-slim
+  RUN pip install --no-cache-dir ipykernel
+  ```
+* Build image
+  ```bash
+  docker build -t my-jupyter-image .
+  ```
+* Install utility tool
   ```
   pip install dockernel
   ```
