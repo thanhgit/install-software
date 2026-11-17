@@ -6,6 +6,19 @@ pip install bash_kernel
 python -m bash_kernel.install
 ```
 
+#### Đăng ký golang kernel
+```
+go install github.com/janpfeifer/gonb@latest && \
+  go install golang.org/x/tools/cmd/goimports@latest && \
+  go install golang.org/x/tools/gopls@latest
+```
+```
+gonb --install
+```
+
+#### Đăng ký C++ kernel
+* https://github.com/jupyter-xeus/xeus-cling
+  
 #### Đăng ký SQL kernel
 * https://github.com/jupyter-xeus/xeus-sql
   
