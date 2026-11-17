@@ -1,5 +1,14 @@
 # Enhance Jupiter notebook
 
+#### Đăng ký bash kernel
+```
+pip install bash_kernel
+python -m bash_kernel.install
+```
+
+#### Đăng ký SQL kernel
+* https://github.com/jupyter-xeus/xeus-sql
+  
 #### Đăng ký rust kernel
 ```bash
 # Rust toolchain
