@@ -1,5 +1,29 @@
 # Enhance Jupiter notebook
 
+#### Đăng kí kernel in docker
+* Dockerfile
+```dockerfile
+FROM python:3.10-slim
+RUN pip install --no-cache-dir ipykernel
+```
+* Install wrraper
+  ```
+  pip install dockernel
+  ```
+* Manual config
+  ```json
+  {
+    "argv": [
+      "docker", "run", "--rm", "--network=host",
+      "-v", "{connection_file}:/connection-spec.json",
+      "my-python-image:latest",
+      "python", "-m", "ipykernel_launcher", "-f", "/connection-spec.json"
+    ],
+    "display_name": "Python (Docker)",
+    "language": "python"
+  }
+  ```
+
 #### Đăng ký bash kernel
 ```
 pip install bash_kernel
