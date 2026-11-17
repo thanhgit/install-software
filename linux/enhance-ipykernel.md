@@ -19,6 +19,69 @@
   ```bash
   docker build -t my-jupyter-image .
   ```
+* docker_kernel_wrapper.py
+  ```
+  import json
+  import os
+  import subprocess
+  import sys
+  
+  def main():
+      image_name = sys.argv[1]
+      conn_file = sys.argv[2]
+  
+      parent_pid = os.getpid()
+      container_name = f"jupyter-kernel-{parent_pid}"
+  
+      with open(conn_file, "r") as f:
+          conn_data = json.load(f)
+  
+      conn_data["ip"] = "0.0.0.0"
+      with open(conn_file, "w") as f:
+          json.dump(conn_data, f)
+  
+      port_keys = ["shell_port", "iopub_port", "stdin_port", "control_port", "hb_port"]
+      port_args = []
+      for key in port_keys:
+          port = conn_data[key]
+          port_args.extend(["-p", f"{port}:{port}"])
+  
+      # Tạo tiến trình giám sát độc lập để dọn dẹp container khi tiến trình chính bị ngắt
+      watchdog_code = f"""
+  import time, subprocess, os
+  pid = {parent_pid}
+  while True:
+      try:
+          os.kill(pid, 0)
+      except OSError:
+          break
+      time.sleep(1)
+  subprocess.run(["docker", "rm", "-f", "{container_name}"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+  """
+      popen_kwargs = {}
+      if os.name == "nt":
+          popen_kwargs["creationflags"] = subprocess.DETACHED_PROCESS | subprocess.CREATE_NEW_PROCESS_GROUP
+      else:
+          popen_kwargs["start_new_session"] = True
+  
+      subprocess.Popen([sys.executable, "-c", watchdog_code], **popen_kwargs)
+  
+      # Khởi chạy Docker container
+      cmd = [
+          "docker", "run", "--rm",
+          "--name", container_name,
+          *port_args,
+          "-v", f"{conn_file}:/connection-spec.json",
+          image_name,
+          "python", "-m", "ipykernel_launcher", "-f", "/connection-spec.json"
+      ]
+  
+      subprocess.run(cmd)
+  
+  if __name__ == "__main__":
+      main()
+
+  ```
 * Đăng ký tại: ` ~/.local/share/jupyter/kernels/docker-python/kernel.json`
   ```json
   {
