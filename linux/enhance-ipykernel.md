@@ -27,13 +27,13 @@
   ```
   dockernel install my-jupyter-image --name "Python Docker"
   ```
-* Manual config
+* Manual config at: ` ~/.local/share/jupyter/kernels/docker-python/kernel.json`
   ```json
   {
     "argv": [
       "docker", "run", "--rm", "--network=host",
       "-v", "{connection_file}:/connection-spec.json",
-      "my-python-image:latest",
+      "my-jupyter-image",
       "python", "-m", "ipykernel_launcher", "-f", "/connection-spec.json"
     ],
     "display_name": "Python (Docker)",
