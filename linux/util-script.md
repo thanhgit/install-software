@@ -1,5 +1,38 @@
 # Utitity scripts
 
+#### For golang
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"time"
+)
+
+type ServerStatus struct {
+	Name      string `json:"name"`
+	Active    bool   `json:"active"`
+	CheckedAt string `json:"checked_at"`
+}
+
+func checkServer(name string) string {
+	status := ServerStatus{
+		Name:      name,
+		Active:    true,
+		CheckedAt: time.Now().Format("15:04:05"),
+	}
+	data, _ := json.MarshalIndent(status, "", "  ")
+	return string(data)
+}
+
+func main() {
+	fmt.Println("Đang kiểm tra kết nối hệ thống...")
+	result := checkServer("Jupyter-Go-Node-01")
+	fmt.Println(result)
+}
+```
+
 #### For typescript
 ```typescript
 // 1. Kiểm tra hỗ trợ TypeScript Interface & Top-level await
