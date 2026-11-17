@@ -1,5 +1,62 @@
 # Utitity scripts
 
+#### For python3
+```python
+%%time
+import asyncio
+import random
+import statistics
+from dataclasses import dataclass
+from typing import List
+from IPython.display import display, Markdown
+
+# 1. Kiểm tra Dataclass & Type Hinting (Python 3.7+)
+@dataclass
+class TaskMetric:
+    name: str
+    duration_ms: float
+    status: str
+
+# 2. Kiểm tra lập trình bất đồng bộ (Async/Await)
+async def simulate_worker(name: str) -> TaskMetric:
+    delay = random.uniform(0.05, 0.25)
+    await asyncio.sleep(delay)
+    ms = round(delay * 1000, 2)
+    return TaskMetric(
+        name=name,
+        duration_ms=ms,
+        status="OK" if ms < 180 else "SLOW"
+    )
+
+async def run_benchmark(tasks: List[str]) -> List[TaskMetric]:
+    coroutines = [simulate_worker(t) for t in tasks]
+    return await asyncio.gather(*coroutines)
+
+# 3. Thực thi trực tiếp với Top-level await (Tính năng đặc trưng của IPython)
+print("Đang chạy kiểm tra bất đồng bộ trên Python Kernel...")
+results = await run_benchmark(["Data-Ingestion", "Model-Inference", "Cache-Sync", "DB-Backup"])
+
+# 4. Tính toán thống kê & hiển thị Rich Output (Markdown)
+durations = [r.duration_ms for r in results]
+avg_time = round(statistics.mean(durations), 2)
+
+rows = "\n".join(
+    f"| `{r.name}` | {r.duration_ms} ms | **{r.status}** |"
+    for r in results
+)
+
+report = f"""
+# Kết quả kiểm tra Python 3
+* **Thời gian phản hồi trung bình:** `{avg_time} ms`
+
+| Tác vụ | Thời gian xử lý | Trạng thái |
+| :--- | :---: | :---: |
+{rows}
+"""
+
+display(Markdown(report))
+```
+
 #### For golang
 ```go
 package main
