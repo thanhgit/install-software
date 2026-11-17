@@ -43,5 +43,33 @@ jupyter.md`
 | :--- | :---: | :---: |
 ${tableRows}
 `;
+```
 
+#### For rust
+```rust
+// Định nghĩa một struct đơn giản
+#[derive(Debug)]
+struct Task {
+    id: u32,
+    title: String,
+    done: bool,
+}
+
+// Hàm tiện ích lọc các công việc chưa hoàn thành
+fn get_pending_tasks(tasks: &[Task]) -> Vec<&Task> {
+    tasks.iter().filter(|t| !t.done).collect()
+}
+
+// Khởi tạo dữ liệu và chạy thử nghiệm
+let tasks = vec![
+    Task { id: 1, title: String::from("Cài đặt Rust Kernel"), done: true },
+    Task { id: 2, title: String::from("Chạy thử script"), done: false },
+    Task { id: 3, title: String::from("Tối ưu hóa hiệu năng"), done: false },
+];
+
+let pending = get_pending_tasks(&tasks);
+println!("Số việc chưa làm: {}", pending.len());
+for task in pending {
+    println!("- [{}] {}", task.id, task.title);
+}
 ```
