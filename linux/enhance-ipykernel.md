@@ -1,5 +1,28 @@
 # Enhance Jupiter notebook
 
+#### Đăng kí E2B API
+```
+from IPython.core.magic import register_cell_magic
+from e2b_code_interpreter import Sandbox
+
+sbx = Sandbox.create(api_key="e2b_...")
+
+@register_cell_magic
+def e2b(line, cell):
+    execution = sbx.run_code(cell)
+    if execution.error:
+        print(f"Lỗi: {execution.error.name}: {execution.error.value}")
+    for log in execution.logs.stdout:
+        print(log, end="")
+    if execution.text:
+        return execution.text
+```
+```
+%%e2b
+import platform
+print("Đang chạy trên:", platform.node())
+```
+
 #### Đăng kí kernel in docker
 * Dockerfile
   ```dockerfile
