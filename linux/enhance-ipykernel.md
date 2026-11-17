@@ -86,12 +86,12 @@
   ```json
   {
     "argv": [
-      "docker", "run", "--rm", "--network=host",
-      "-v", "{connection_file}:/connection-spec.json",
-      "my-jupyter-image",
-      "python", "-m", "ipykernel_launcher", "-f", "/connection-spec.json"
+      "python",
+      "/home/thanhnp/.local/share/jupyter/kernels/py-docker/docker_kernel_wrapper.py",
+      "lightweight-ipykernel:latest",
+      "{connection_file}"
     ],
-    "display_name": "Python (Docker)",
+    "display_name": "Python 3.12 (Docker)",
     "language": "python"
   }
   ```
