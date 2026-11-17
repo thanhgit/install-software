@@ -119,3 +119,12 @@ for task in pending {
     println!("- [{}] {}", task.id, task.title);
 }
 ```
+
+#### Generate QR code
+```rust
+// In a Jupyter notebook cell:
+:dep qrcode-generator-evcxr
+use qrcode_generator_evcxr::draw_qrcode;
+
+draw_qrcode("https://example.com");
+```
