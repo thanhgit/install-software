@@ -20,7 +20,7 @@
   docker build -t my-jupyter-image .
   ```
 * docker_kernel_wrapper.py
-  ```
+  ```python
   import json
   import os
   import subprocess
