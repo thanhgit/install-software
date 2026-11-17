@@ -14,6 +14,10 @@
   ```
   pip install dockernel
   ```
+* Đăng ký
+  ```
+  dockernel install my-jupyter-image --name "Python Docker"
+  ```
 * Manual config
   ```json
   {
