@@ -24,6 +24,12 @@ import platform
 print("Đang chạy trên:", platform.node())
 ```
 
+#### Đăng kí ansible kernel
+```bash
+pip install ansible-kernel
+python -m ansible_kernel.install
+```
+
 #### Đăng kí kernel in docker
 * Dockerfile
   ```dockerfile
