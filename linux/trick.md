@@ -17,7 +17,16 @@
 #### Configure Permissions (Run Without sudo)
 * Using `setcap` to grant the binary the necessary capabilities so you can run it as a standard user
   ```bash
-  sudo setcap 'cap_net_raw,cap_bpf,cap_perfmon+eip' /usr/bin/rustnet
+  # Tạo một group riêng cho các tool giám sát mạng (hoặc dùng group hiện có)
+  sudo groupadd netmon
+  sudo usermod -aG netmon $USER
+  
+  # Chuyển quyền sở hữu group của binary và chỉ cho phép owner + group thực thi
+  sudo chown root:netmon /usr/bin/rustnet
+  sudo chmod 750 /usr/bin/rustnet
+  
+  # Gán lại capability (vì lệnh chown/chmod ở trên sẽ tự động xóa mất setcap cũ)
+  sudo setcap 'cap_net_raw,cap_bpf,cap_perfmon+ep' /usr/bin/rustnet
   ```
 * Using `visudo`
   ```bash
