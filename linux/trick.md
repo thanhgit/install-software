@@ -1,5 +1,10 @@
 # Enhance ubuntu boot
 
+#### Configure Permissions (Run Without sudo)
+```bash
+sudo setcap 'cap_net_raw,cap_bpf,cap_perfmon+eip' /usr/bin/rustnet
+```
+
 #### Disable some service
 ```bash
 sudo systemctl disable NetworkManager-wait-online.service
