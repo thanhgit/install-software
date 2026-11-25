@@ -1,9 +1,17 @@
 # Enhance ubuntu boot
 
 #### Configure Permissions (Run Without sudo)
-```bash
-sudo setcap 'cap_net_raw,cap_bpf,cap_perfmon+eip' /usr/bin/rustnet
-```
+* Using `setcap` to grant the binary the necessary capabilities so you can run it as a standard user
+  ```bash
+  sudo setcap 'cap_net_raw,cap_bpf,cap_perfmon+eip' /usr/bin/rustnet
+  ```
+* Using `visudo`
+  ```bash
+  sudo visudo -f /etc/sudoers.d/rustnet
+  ```
+  ```text
+  ten_user ALL=(ALL) NOPASSWD: /usr/bin/rustnet
+  ```
 
 #### Disable some service
 ```bash
