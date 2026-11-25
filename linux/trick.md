@@ -16,6 +16,13 @@
   echo "alias rustnet='sudo /usr/bin/rustnet'" >> ~/.bashrc
   source ~/.bashrc
   ```
+* Dùng SUID Bit (chmod u+s) — (Không khuyến khích)
+  * để ép file thực thi luôn chạy dưới quyền chủ sở hữu (root) bất kể ai gọi nó
+  * cấp toàn bộ quyền root cho tiến trình
+  ```bash
+  sudo chown root:root /usr/bin/rustnet
+  sudo chmod u+s /usr/bin/rustnet
+  ```
 
 #### Disable some service
 ```bash
