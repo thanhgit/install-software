@@ -1,5 +1,19 @@
 # Enhance ubuntu boot
 
+#### Check caps in binary
+* Install
+  ```
+  sudo apt install bpfcc-tools
+  ```
+* Mở terminal 1 để soi log capability từ kernel:
+  ```
+  sudo capable-bpfcc
+  ```
+* Mở terminal 2 chạy thử app bằng sudo để xem terminal 1 báo thiếu những CAP nào
+  ```
+  sudo rustnet
+  ```
+
 #### Configure Permissions (Run Without sudo)
 * Using `setcap` to grant the binary the necessary capabilities so you can run it as a standard user
   ```bash
