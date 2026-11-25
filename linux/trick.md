@@ -12,6 +12,10 @@
   ```text
   ten_user ALL=(ALL) NOPASSWD: /usr/bin/rustnet
   ```
+  ```
+  echo "alias rustnet='sudo /usr/bin/rustnet'" >> ~/.bashrc
+  source ~/.bashrc
+  ```
 
 #### Disable some service
 ```bash
